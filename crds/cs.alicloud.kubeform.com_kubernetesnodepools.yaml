@@ -1,0 +1,587 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: alicloud.kubeform.com
+    app.kubernetes.io/part-of: kubeform.com
+  name: kubernetesnodepools.cs.alicloud.kubeform.com
+spec:
+  group: cs.alicloud.kubeform.com
+  names:
+    kind: KubernetesNodePool
+    listKind: KubernetesNodePoolList
+    plural: kubernetesnodepools
+    singular: kubernetesnodepool
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              providerRef:
+                description: LocalObjectReference contains enough information to let
+                  you locate the referenced object inside the same namespace.
+                properties:
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                      TODO: Add other useful fields. apiVersion, kind, uid?'
+                    type: string
+                type: object
+              resource:
+                properties:
+                  autoRenew:
+                    type: boolean
+                  autoRenewPeriod:
+                    format: int64
+                    type: integer
+                  clusterID:
+                    type: string
+                  dataDisks:
+                    items:
+                      properties:
+                        autoSnapshotPolicyID:
+                          type: string
+                        category:
+                          type: string
+                        device:
+                          type: string
+                        encrypted:
+                          type: string
+                        kmsKeyID:
+                          type: string
+                        name:
+                          type: string
+                        performanceLevel:
+                          type: string
+                        size:
+                          format: int64
+                          type: integer
+                        snapshotID:
+                          type: string
+                      type: object
+                    type: array
+                  formatDisk:
+                    type: boolean
+                  id:
+                    type: string
+                  imageID:
+                    type: string
+                  installCloudMonitor:
+                    type: boolean
+                  instanceChargeType:
+                    type: string
+                  instanceTypes:
+                    items:
+                      type: string
+                    maxItems: 10
+                    minItems: 1
+                    type: array
+                  instances:
+                    items:
+                      type: string
+                    maxItems: 100
+                    type: array
+                  internetChargeType:
+                    type: string
+                  internetMaxBandwidthOut:
+                    format: int64
+                    type: integer
+                  keepInstanceName:
+                    type: boolean
+                  keyName:
+                    type: string
+                  kmsEncryptedPassword:
+                    type: string
+                  labels:
+                    items:
+                      properties:
+                        key:
+                          type: string
+                        value:
+                          type: string
+                      required:
+                      - key
+                      type: object
+                    type: array
+                  management:
+                    properties:
+                      autoRepair:
+                        type: boolean
+                      autoUpgrade:
+                        type: boolean
+                      maxUnavailable:
+                        format: int64
+                        type: integer
+                      surge:
+                        format: int64
+                        type: integer
+                      surgePercentage:
+                        format: int64
+                        type: integer
+                    required:
+                    - maxUnavailable
+                    type: object
+                  name:
+                    type: string
+                  nodeCount:
+                    format: int64
+                    type: integer
+                  nodeNameMode:
+                    type: string
+                  period:
+                    format: int64
+                    type: integer
+                  periodUnit:
+                    type: string
+                  platform:
+                    type: string
+                  resourceGroupID:
+                    type: string
+                  scalingConfig:
+                    properties:
+                      eipBandwidth:
+                        format: int64
+                        type: integer
+                      eipInternetChargeType:
+                        type: string
+                      isBondEip:
+                        type: boolean
+                      maxSize:
+                        format: int64
+                        type: integer
+                      minSize:
+                        format: int64
+                        type: integer
+                      type:
+                        type: string
+                    required:
+                    - maxSize
+                    - minSize
+                    type: object
+                  scalingGroupID:
+                    type: string
+                  scalingPolicy:
+                    type: string
+                  securityGroupID:
+                    type: string
+                  spotPriceLimit:
+                    items:
+                      properties:
+                        instanceType:
+                          type: string
+                        priceLimit:
+                          type: string
+                      type: object
+                    type: array
+                  spotStrategy:
+                    type: string
+                  systemDiskCategory:
+                    type: string
+                  systemDiskPerformanceLevel:
+                    type: string
+                  systemDiskSize:
+                    format: int64
+                    type: integer
+                  tags:
+                    additionalProperties:
+                      type: string
+                    type: object
+                  taints:
+                    items:
+                      properties:
+                        effect:
+                          type: string
+                        key:
+                          type: string
+                        value:
+                          type: string
+                      required:
+                      - key
+                      type: object
+                    type: array
+                  timeouts:
+                    properties:
+                      create:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      default:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      delete:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      read:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      update:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                    type: object
+                  unschedulable:
+                    type: boolean
+                  userData:
+                    type: string
+                  vpcID:
+                    type: string
+                  vswitchIDS:
+                    items:
+                      type: string
+                    minItems: 1
+                    type: array
+                required:
+                - clusterID
+                - instanceTypes
+                - name
+                - vswitchIDS
+                type: object
+              secretRef:
+                description: LocalObjectReference contains enough information to let
+                  you locate the referenced object inside the same namespace.
+                properties:
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                      TODO: Add other useful fields. apiVersion, kind, uid?'
+                    type: string
+                type: object
+              state:
+                properties:
+                  autoRenew:
+                    type: boolean
+                  autoRenewPeriod:
+                    format: int64
+                    type: integer
+                  clusterID:
+                    type: string
+                  dataDisks:
+                    items:
+                      properties:
+                        autoSnapshotPolicyID:
+                          type: string
+                        category:
+                          type: string
+                        device:
+                          type: string
+                        encrypted:
+                          type: string
+                        kmsKeyID:
+                          type: string
+                        name:
+                          type: string
+                        performanceLevel:
+                          type: string
+                        size:
+                          format: int64
+                          type: integer
+                        snapshotID:
+                          type: string
+                      type: object
+                    type: array
+                  formatDisk:
+                    type: boolean
+                  id:
+                    type: string
+                  imageID:
+                    type: string
+                  installCloudMonitor:
+                    type: boolean
+                  instanceChargeType:
+                    type: string
+                  instanceTypes:
+                    items:
+                      type: string
+                    maxItems: 10
+                    minItems: 1
+                    type: array
+                  instances:
+                    items:
+                      type: string
+                    maxItems: 100
+                    type: array
+                  internetChargeType:
+                    type: string
+                  internetMaxBandwidthOut:
+                    format: int64
+                    type: integer
+                  keepInstanceName:
+                    type: boolean
+                  keyName:
+                    type: string
+                  kmsEncryptedPassword:
+                    type: string
+                  labels:
+                    items:
+                      properties:
+                        key:
+                          type: string
+                        value:
+                          type: string
+                      required:
+                      - key
+                      type: object
+                    type: array
+                  management:
+                    properties:
+                      autoRepair:
+                        type: boolean
+                      autoUpgrade:
+                        type: boolean
+                      maxUnavailable:
+                        format: int64
+                        type: integer
+                      surge:
+                        format: int64
+                        type: integer
+                      surgePercentage:
+                        format: int64
+                        type: integer
+                    required:
+                    - maxUnavailable
+                    type: object
+                  name:
+                    type: string
+                  nodeCount:
+                    format: int64
+                    type: integer
+                  nodeNameMode:
+                    type: string
+                  period:
+                    format: int64
+                    type: integer
+                  periodUnit:
+                    type: string
+                  platform:
+                    type: string
+                  resourceGroupID:
+                    type: string
+                  scalingConfig:
+                    properties:
+                      eipBandwidth:
+                        format: int64
+                        type: integer
+                      eipInternetChargeType:
+                        type: string
+                      isBondEip:
+                        type: boolean
+                      maxSize:
+                        format: int64
+                        type: integer
+                      minSize:
+                        format: int64
+                        type: integer
+                      type:
+                        type: string
+                    required:
+                    - maxSize
+                    - minSize
+                    type: object
+                  scalingGroupID:
+                    type: string
+                  scalingPolicy:
+                    type: string
+                  securityGroupID:
+                    type: string
+                  spotPriceLimit:
+                    items:
+                      properties:
+                        instanceType:
+                          type: string
+                        priceLimit:
+                          type: string
+                      type: object
+                    type: array
+                  spotStrategy:
+                    type: string
+                  systemDiskCategory:
+                    type: string
+                  systemDiskPerformanceLevel:
+                    type: string
+                  systemDiskSize:
+                    format: int64
+                    type: integer
+                  tags:
+                    additionalProperties:
+                      type: string
+                    type: object
+                  taints:
+                    items:
+                      properties:
+                        effect:
+                          type: string
+                        key:
+                          type: string
+                        value:
+                          type: string
+                      required:
+                      - key
+                      type: object
+                    type: array
+                  timeouts:
+                    properties:
+                      create:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      default:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      delete:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      read:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                      update:
+                        description: A Duration represents the elapsed time between
+                          two instants as an int64 nanosecond count. The representation
+                          limits the largest representable duration to approximately
+                          290 years.
+                        format: int64
+                        type: integer
+                    type: object
+                  unschedulable:
+                    type: boolean
+                  userData:
+                    type: string
+                  vpcID:
+                    type: string
+                  vswitchIDS:
+                    items:
+                      type: string
+                    minItems: 1
+                    type: array
+                required:
+                - clusterID
+                - instanceTypes
+                - name
+                - vswitchIDS
+                type: object
+              terminationPolicy:
+                enum:
+                - Delete
+                - DoNotTerminate
+                type: string
+              updatePolicy:
+                enum:
+                - Destroy
+                - DoNotDestroy
+                type: string
+            required:
+            - providerRef
+            - resource
+            type: object
+          status:
+            properties:
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another. This should be when the underlying condition changed.  If
+                        that is not known, then using the time when the API field
+                        changed is acceptable.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition. This field may be empty.
+                      type: string
+                    observedGeneration:
+                      description: If set, this represents the .metadata.generation
+                        that the condition was set based upon. For instance, if .metadata.generation
+                        is currently 12, but the .status.condition[x].observedGeneration
+                        is 9, the condition is out of date with respect to the current
+                        state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: The reason for the condition's last transition
+                        in CamelCase. The specific API may choose whether or not this
+                        field is considered a guaranteed API. This field may not be
+                        empty.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of condition in CamelCase or in foo.example.com/CamelCase.
+                        Many .condition.type values are consistent across resources
+                        like Available, but because arbitrary conditions can be useful
+                        (see .node.status.conditions), the ability to deconflict is
+                        important.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              observedGeneration:
+                description: Resource generation, which is updated on mutation by
+                  the API Server.
+                format: int64
+                type: integer
+              phase:
+                description: Status defines the set of statuses a resource can have.
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
