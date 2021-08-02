@@ -41,6 +41,15 @@ type Repo struct {
 	Status            RepoStatus `json:"status,omitempty"`
 }
 
+type RepoSpecDomainList struct {
+	// +optional
+	Internal *string `json:"internal,omitempty" tf:"internal"`
+	// +optional
+	Public *string `json:"public,omitempty" tf:"public"`
+	// +optional
+	Vpc *string `json:"vpc,omitempty" tf:"vpc"`
+}
+
 type RepoSpec struct {
 	State *RepoSpecResource `json:"state,omitempty" tf:"-"`
 

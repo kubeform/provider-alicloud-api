@@ -50,6 +50,26 @@ type EdgeKubernetesSpecAddons struct {
 	Name *string `json:"name,omitempty" tf:"name"`
 }
 
+type EdgeKubernetesSpecCertificateAuthority struct {
+	// +optional
+	ClientCert *string `json:"clientCert,omitempty" tf:"client_cert"`
+	// +optional
+	ClientKey *string `json:"clientKey,omitempty" tf:"client_key"`
+	// +optional
+	ClusterCert *string `json:"clusterCert,omitempty" tf:"cluster_cert"`
+}
+
+type EdgeKubernetesSpecConnections struct {
+	// +optional
+	ApiServerInternet *string `json:"apiServerInternet,omitempty" tf:"api_server_internet"`
+	// +optional
+	ApiServerIntranet *string `json:"apiServerIntranet,omitempty" tf:"api_server_intranet"`
+	// +optional
+	MasterPublicIP *string `json:"masterPublicIP,omitempty" tf:"master_public_ip"`
+	// +optional
+	ServiceDomain *string `json:"serviceDomain,omitempty" tf:"service_domain"`
+}
+
 type EdgeKubernetesSpecLogConfig struct {
 	// +optional
 	Project *string `json:"project,omitempty" tf:"project"`
