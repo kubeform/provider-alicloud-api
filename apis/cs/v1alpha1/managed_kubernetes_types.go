@@ -50,6 +50,26 @@ type ManagedKubernetesSpecAddons struct {
 	Name *string `json:"name,omitempty" tf:"name"`
 }
 
+type ManagedKubernetesSpecCertificateAuthority struct {
+	// +optional
+	ClientCert *string `json:"clientCert,omitempty" tf:"client_cert"`
+	// +optional
+	ClientKey *string `json:"clientKey,omitempty" tf:"client_key"`
+	// +optional
+	ClusterCert *string `json:"clusterCert,omitempty" tf:"cluster_cert"`
+}
+
+type ManagedKubernetesSpecConnections struct {
+	// +optional
+	ApiServerInternet *string `json:"apiServerInternet,omitempty" tf:"api_server_internet"`
+	// +optional
+	ApiServerIntranet *string `json:"apiServerIntranet,omitempty" tf:"api_server_intranet"`
+	// +optional
+	MasterPublicIP *string `json:"masterPublicIP,omitempty" tf:"master_public_ip"`
+	// +optional
+	ServiceDomain *string `json:"serviceDomain,omitempty" tf:"service_domain"`
+}
+
 type ManagedKubernetesSpecLogConfig struct {
 	// +optional
 	Project *string `json:"project,omitempty" tf:"project"`
@@ -61,6 +81,13 @@ type ManagedKubernetesSpecMaintenanceWindow struct {
 	Enable          *bool   `json:"enable" tf:"enable"`
 	MaintenanceTime *string `json:"maintenanceTime" tf:"maintenance_time"`
 	WeeklyPeriod    *string `json:"weeklyPeriod" tf:"weekly_period"`
+}
+
+type ManagedKubernetesSpecRuntime struct {
+	// +optional
+	Name *string `json:"name,omitempty" tf:"name"`
+	// +optional
+	Version *string `json:"version,omitempty" tf:"version"`
 }
 
 type ManagedKubernetesSpecTaints struct {
