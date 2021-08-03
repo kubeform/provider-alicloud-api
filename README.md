@@ -3,7 +3,7 @@
 
 # provider-alicloud-api
 
-Kubeform CRDs for [Terraform Alicloud Provider](https://github.com/alicloud/terraform-provider-alicloud)
+Kubeform CRDs for [Terraform AliCloud Provider](https://github.com/aliyun/terraform-provider-alicloud)
 
 ## Installation
 
