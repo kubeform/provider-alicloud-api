@@ -20,9 +20,12 @@ package v1alpha1
 
 import (
 	"fmt"
+	"strings"
 
 	base "kubeform.dev/apimachinery/api/v1alpha1"
+	"kubeform.dev/provider-alicloud-api/util"
 
+	jsoniter "github.com/json-iterator/go"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
@@ -38,6 +41,29 @@ func (r *ContainerGroup) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 var _ webhook.Validator = &ContainerGroup{}
 
+var containergroupForceNewList = map[string]bool{
+	"/container_group_name":                   true,
+	"/containers/*/ports/*/port":              true,
+	"/containers/*/ports/*/protocol":          true,
+	"/eci_security_context/*/sysctls/*/name":  true,
+	"/eci_security_context/*/sysctls/*/value": true,
+	"/host_aliases/*/hostnames":               true,
+	"/host_aliases/*/ip":                      true,
+	"/init_containers/*/ports/*/port":         true,
+	"/init_containers/*/ports/*/protocol":     true,
+	"/instance_type":                          true,
+	"/ram_role_name":                          true,
+	"/resource_group_id":                      true,
+	"/security_group_id":                      true,
+	"/volumes/*/disk_volume_disk_id":          true,
+	"/volumes/*/disk_volume_fs_type":          true,
+	"/volumes/*/flex_volume_driver":           true,
+	"/volumes/*/flex_volume_fs_type":          true,
+	"/volumes/*/flex_volume_options":          true,
+	"/vswitch_id":                             true,
+	"/zone_id":                                true,
+}
+
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
 func (r *ContainerGroup) ValidateCreate() error {
 	return nil
@@ -45,6 +71,53 @@ func (r *ContainerGroup) ValidateCreate() error {
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
 func (r *ContainerGroup) ValidateUpdate(old runtime.Object) error {
+	if r.Spec.Resource.ID == "" {
+		return nil
+	}
+	newObj := r.Spec.Resource
+	res := old.(*ContainerGroup)
+	oldObj := res.Spec.Resource
+
+	jsnitr := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		TagKey:                 "tf",
+		ValidateJsonRawMessage: true,
+		TypeEncoders:           GetEncoder(),
+		TypeDecoders:           GetDecoder(),
+	}.Froze()
+
+	byteNew, err := jsnitr.Marshal(newObj)
+	if err != nil {
+		return err
+	}
+	tempNew := make(map[string]interface{})
+	err = jsnitr.Unmarshal(byteNew, &tempNew)
+	if err != nil {
+		return err
+	}
+
+	byteOld, err := jsnitr.Marshal(oldObj)
+	if err != nil {
+		return err
+	}
+	tempOld := make(map[string]interface{})
+	err = jsnitr.Unmarshal(byteOld, &tempOld)
+	if err != nil {
+		return err
+	}
+
+	for key := range containergroupForceNewList {
+		keySplit := strings.Split(key, "/*")
+		length := len(keySplit)
+		checkIfAnyDif := false
+		util.CheckIfAnyDifference("", keySplit, 0, length, &checkIfAnyDif, tempOld, tempOld, tempNew)
+		util.CheckIfAnyDifference("", keySplit, 0, length, &checkIfAnyDif, tempNew, tempOld, tempNew)
+
+		if checkIfAnyDif && r.Spec.UpdatePolicy == base.UpdatePolicyDoNotDestroy {
+			return fmt.Errorf(`containergroup "%v/%v" immutable field can't be updated. To update, change spec.updatePolicy to Destroy`, r.Namespace, r.Name)
+		}
+	}
 	return nil
 }
 

@@ -20,9 +20,12 @@ package v1alpha1
 
 import (
 	"fmt"
+	"strings"
 
 	base "kubeform.dev/apimachinery/api/v1alpha1"
+	"kubeform.dev/provider-alicloud-api/util"
 
+	jsoniter "github.com/json-iterator/go"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
@@ -38,6 +41,28 @@ func (r *ServerlessKubernetes) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 var _ webhook.Validator = &ServerlessKubernetes{}
 
+var serverlesskubernetesForceNewList = map[string]bool{
+	"/client_cert":                    true,
+	"/client_key":                     true,
+	"/cluster_ca_cert":                true,
+	"/endpoint_public_access_enabled": true,
+	"/force_update":                   true,
+	"/kube_config":                    true,
+	"/load_balancer_spec":             true,
+	"/logging_type":                   true,
+	"/name_prefix":                    true,
+	"/new_nat_gateway":                true,
+	"/private_zone":                   true,
+	"/resource_group_id":              true,
+	"/service_cidr":                   true,
+	"/service_discovery_types":        true,
+	"/sls_project_name":               true,
+	"/time_zone":                      true,
+	"/vpc_id":                         true,
+	"/vswitch_id":                     true,
+	"/zone_id":                        true,
+}
+
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
 func (r *ServerlessKubernetes) ValidateCreate() error {
 	return nil
@@ -45,6 +70,53 @@ func (r *ServerlessKubernetes) ValidateCreate() error {
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
 func (r *ServerlessKubernetes) ValidateUpdate(old runtime.Object) error {
+	if r.Spec.Resource.ID == "" {
+		return nil
+	}
+	newObj := r.Spec.Resource
+	res := old.(*ServerlessKubernetes)
+	oldObj := res.Spec.Resource
+
+	jsnitr := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		TagKey:                 "tf",
+		ValidateJsonRawMessage: true,
+		TypeEncoders:           GetEncoder(),
+		TypeDecoders:           GetDecoder(),
+	}.Froze()
+
+	byteNew, err := jsnitr.Marshal(newObj)
+	if err != nil {
+		return err
+	}
+	tempNew := make(map[string]interface{})
+	err = jsnitr.Unmarshal(byteNew, &tempNew)
+	if err != nil {
+		return err
+	}
+
+	byteOld, err := jsnitr.Marshal(oldObj)
+	if err != nil {
+		return err
+	}
+	tempOld := make(map[string]interface{})
+	err = jsnitr.Unmarshal(byteOld, &tempOld)
+	if err != nil {
+		return err
+	}
+
+	for key := range serverlesskubernetesForceNewList {
+		keySplit := strings.Split(key, "/*")
+		length := len(keySplit)
+		checkIfAnyDif := false
+		util.CheckIfAnyDifference("", keySplit, 0, length, &checkIfAnyDif, tempOld, tempOld, tempNew)
+		util.CheckIfAnyDifference("", keySplit, 0, length, &checkIfAnyDif, tempNew, tempOld, tempNew)
+
+		if checkIfAnyDif && r.Spec.UpdatePolicy == base.UpdatePolicyDoNotDestroy {
+			return fmt.Errorf(`serverlesskubernetes "%v/%v" immutable field can't be updated. To update, change spec.updatePolicy to Destroy`, r.Namespace, r.Name)
+		}
+	}
 	return nil
 }
 
