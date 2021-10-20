@@ -51,6 +51,8 @@ type K8sClusterSpec struct {
 	TerminationPolicy base.TerminationPolicy `json:"terminationPolicy,omitempty" tf:"-"`
 
 	ProviderRef core.LocalObjectReference `json:"providerRef" tf:"-"`
+
+	BackendRef *core.LocalObjectReference `json:"backendRef,omitempty" tf:"-"`
 }
 
 type K8sClusterSpecResource struct {
