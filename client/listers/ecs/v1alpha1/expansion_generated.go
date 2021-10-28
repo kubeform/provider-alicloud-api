@@ -50,6 +50,14 @@ type DedicatedHostListerExpansion interface{}
 // DedicatedHostNamespaceLister.
 type DedicatedHostNamespaceListerExpansion interface{}
 
+// DeploymentSetListerExpansion allows custom methods to be added to
+// DeploymentSetLister.
+type DeploymentSetListerExpansion interface{}
+
+// DeploymentSetNamespaceListerExpansion allows custom methods to be added to
+// DeploymentSetNamespaceLister.
+type DeploymentSetNamespaceListerExpansion interface{}
+
 // DiskListerExpansion allows custom methods to be added to
 // DiskLister.
 type DiskListerExpansion interface{}

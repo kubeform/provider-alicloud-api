@@ -24,6 +24,10 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// MailDomains returns a MailDomainInformer.
+	MailDomains() MailDomainInformer
+	// MailMailAddresses returns a MailMailAddressInformer.
+	MailMailAddresses() MailMailAddressInformer
 	// MailReceiverses returns a MailReceiversInformer.
 	MailReceiverses() MailReceiversInformer
 }
@@ -37,6 +41,16 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// MailDomains returns a MailDomainInformer.
+func (v *version) MailDomains() MailDomainInformer {
+	return &mailDomainInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// MailMailAddresses returns a MailMailAddressInformer.
+func (v *version) MailMailAddresses() MailMailAddressInformer {
+	return &mailMailAddressInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // MailReceiverses returns a MailReceiversInformer.

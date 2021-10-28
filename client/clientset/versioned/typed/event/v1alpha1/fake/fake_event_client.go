@@ -33,8 +33,16 @@ func (c *FakeEventV1alpha1) BridgeEventBuses(namespace string) v1alpha1.BridgeEv
 	return &FakeBridgeEventBuses{c, namespace}
 }
 
-func (c *FakeEventV1alpha1) BridgeSchemaGroups(namespace string) v1alpha1.BridgeSchemaGroupInterface {
-	return &FakeBridgeSchemaGroups{c, namespace}
+func (c *FakeEventV1alpha1) BridgeEventSources(namespace string) v1alpha1.BridgeEventSourceInterface {
+	return &FakeBridgeEventSources{c, namespace}
+}
+
+func (c *FakeEventV1alpha1) BridgeRules(namespace string) v1alpha1.BridgeRuleInterface {
+	return &FakeBridgeRules{c, namespace}
+}
+
+func (c *FakeEventV1alpha1) BridgeSlrs(namespace string) v1alpha1.BridgeSlrInterface {
+	return &FakeBridgeSlrs{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

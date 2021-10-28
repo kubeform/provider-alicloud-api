@@ -28,7 +28,9 @@ import (
 type EventV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	BridgeEventBusesGetter
-	BridgeSchemaGroupsGetter
+	BridgeEventSourcesGetter
+	BridgeRulesGetter
+	BridgeSlrsGetter
 }
 
 // EventV1alpha1Client is used to interact with features provided by the event.alicloud.kubeform.com group.
@@ -40,8 +42,16 @@ func (c *EventV1alpha1Client) BridgeEventBuses(namespace string) BridgeEventBusI
 	return newBridgeEventBuses(c, namespace)
 }
 
-func (c *EventV1alpha1Client) BridgeSchemaGroups(namespace string) BridgeSchemaGroupInterface {
-	return newBridgeSchemaGroups(c, namespace)
+func (c *EventV1alpha1Client) BridgeEventSources(namespace string) BridgeEventSourceInterface {
+	return newBridgeEventSources(c, namespace)
+}
+
+func (c *EventV1alpha1Client) BridgeRules(namespace string) BridgeRuleInterface {
+	return newBridgeRules(c, namespace)
+}
+
+func (c *EventV1alpha1Client) BridgeSlrs(namespace string) BridgeSlrInterface {
+	return newBridgeSlrs(c, namespace)
 }
 
 // NewForConfig creates a new EventV1alpha1Client for the given config.

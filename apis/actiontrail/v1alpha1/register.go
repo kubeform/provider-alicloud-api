@@ -58,6 +58,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Actiontrail{},
 		&ActiontrailList{},
+		&HistoryDeliveryJob{},
+		&HistoryDeliveryJobList{},
 		&Trail{},
 		&TrailList{},
 	)

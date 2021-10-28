@@ -74,6 +74,8 @@ type ImageSpecResource struct {
 	// +optional
 	Architecture *string `json:"architecture,omitempty" tf:"architecture"`
 	// +optional
+	DeleteAutoSnapshot *bool `json:"deleteAutoSnapshot,omitempty" tf:"delete_auto_snapshot"`
+	// +optional
 	Description *string `json:"description,omitempty" tf:"description"`
 	// +optional
 	DiskDeviceMapping []ImageSpecDiskDeviceMapping `json:"diskDeviceMapping,omitempty" tf:"disk_device_mapping"`

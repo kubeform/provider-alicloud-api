@@ -80,6 +80,8 @@ spec:
                     type: integer
                   prefessionalService:
                     type: string
+                  region:
+                    type: string
                   renewPeriod:
                     format: int64
                     type: integer
@@ -130,6 +132,8 @@ spec:
                     format: int64
                     type: integer
                   prefessionalService:
+                    type: string
+                  region:
                     type: string
                   renewPeriod:
                     format: int64

@@ -100,6 +100,8 @@ spec:
                     type: string
                   natType:
                     type: string
+                  networkType:
+                    type: string
                   paymentType:
                     type: string
                   period:
@@ -206,6 +208,8 @@ spec:
                   natGatewayName:
                     type: string
                   natType:
+                    type: string
+                  networkType:
                     type: string
                   paymentType:
                     type: string

@@ -64,6 +64,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&CommandList{},
 		&DedicatedHost{},
 		&DedicatedHostList{},
+		&DeploymentSet{},
+		&DeploymentSetList{},
 		&Disk{},
 		&DiskList{},
 		&DiskAttachment{},

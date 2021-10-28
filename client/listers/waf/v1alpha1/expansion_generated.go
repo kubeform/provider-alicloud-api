@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// CertificateListerExpansion allows custom methods to be added to
+// CertificateLister.
+type CertificateListerExpansion interface{}
+
+// CertificateNamespaceListerExpansion allows custom methods to be added to
+// CertificateNamespaceLister.
+type CertificateNamespaceListerExpansion interface{}
+
 // DomainListerExpansion allows custom methods to be added to
 // DomainLister.
 type DomainListerExpansion interface{}

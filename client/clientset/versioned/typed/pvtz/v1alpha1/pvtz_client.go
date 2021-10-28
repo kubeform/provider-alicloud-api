@@ -27,6 +27,7 @@ import (
 
 type PvtzV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	UserVpcAuthorizationsGetter
 	ZonesGetter
 	ZoneAttachmentsGetter
 	ZoneRecordsGetter
@@ -35,6 +36,10 @@ type PvtzV1alpha1Interface interface {
 // PvtzV1alpha1Client is used to interact with features provided by the pvtz.alicloud.kubeform.com group.
 type PvtzV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *PvtzV1alpha1Client) UserVpcAuthorizations(namespace string) UserVpcAuthorizationInterface {
+	return newUserVpcAuthorizations(c, namespace)
 }
 
 func (c *PvtzV1alpha1Client) Zones(namespace string) ZoneInterface {

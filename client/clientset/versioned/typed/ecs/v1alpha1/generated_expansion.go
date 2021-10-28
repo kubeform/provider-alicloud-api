@@ -26,6 +26,8 @@ type CommandExpansion interface{}
 
 type DedicatedHostExpansion interface{}
 
+type DeploymentSetExpansion interface{}
+
 type DiskExpansion interface{}
 
 type DiskAttachmentExpansion interface{}

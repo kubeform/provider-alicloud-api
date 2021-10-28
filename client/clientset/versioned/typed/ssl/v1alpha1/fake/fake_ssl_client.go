@@ -29,6 +29,10 @@ type FakeSslV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeSslV1alpha1) CertificatesServiceCertificates(namespace string) v1alpha1.CertificatesServiceCertificateInterface {
+	return &FakeCertificatesServiceCertificates{c, namespace}
+}
+
 func (c *FakeSslV1alpha1) VpnClientCerts(namespace string) v1alpha1.VpnClientCertInterface {
 	return &FakeVpnClientCerts{c, namespace}
 }

@@ -33,12 +33,21 @@ type AlicloudSpecAssumeRole struct {
 }
 
 type AlicloudSpecEndpoints struct {
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom acr endpoints.
+	// +optional
+	Acr *string `json:"acr,omitempty" tf:"acr"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom Actiontrail endpoints.
 	// +optional
 	Actiontrail *string `json:"actiontrail,omitempty" tf:"actiontrail"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom AnalyticDB endpoints.
 	// +optional
 	Adb *string `json:"adb,omitempty" tf:"adb"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom alb endpoints.
+	// +optional
+	Alb *string `json:"alb,omitempty" tf:"alb"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom alidfs endpoints.
+	// +optional
+	Alidfs *string `json:"alidfs,omitempty" tf:"alidfs"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom alidns endpoints.
 	// +optional
 	Alidns *string `json:"alidns,omitempty" tf:"alidns"`
@@ -48,6 +57,12 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom Api Gateway endpoints.
 	// +optional
 	Apigateway *string `json:"apigateway,omitempty" tf:"apigateway"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom arms endpoints.
+	// +optional
+	Arms *string `json:"arms,omitempty" tf:"arms"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom bastionhost endpoints.
+	// +optional
+	Bastionhost *string `json:"bastionhost,omitempty" tf:"bastionhost"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom brain_industrial endpoints.
 	// +optional
 	BrainIndustrial *string `json:"brainIndustrial,omitempty" tf:"brain_industrial"`
@@ -63,12 +78,27 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom cbn endpoints.
 	// +optional
 	Cbn *string `json:"cbn,omitempty" tf:"cbn"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom cddc endpoints.
+	// +optional
+	Cddc *string `json:"cddc,omitempty" tf:"cddc"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom CDN endpoints.
 	// +optional
 	Cdn *string `json:"cdn,omitempty" tf:"cdn"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom cds endpoints.
 	// +optional
 	Cds *string `json:"cds,omitempty" tf:"cds"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom clickhouse endpoints.
+	// +optional
+	Clickhouse *string `json:"clickhouse,omitempty" tf:"clickhouse"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom cloudauth endpoints.
+	// +optional
+	Cloudauth *string `json:"cloudauth,omitempty" tf:"cloudauth"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom cloudphone endpoints.
+	// +optional
+	Cloudphone *string `json:"cloudphone,omitempty" tf:"cloudphone"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom cloudsso endpoints.
+	// +optional
+	Cloudsso *string `json:"cloudsso,omitempty" tf:"cloudsso"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom Cloud Monitor endpoints.
 	// +optional
 	Cms *string `json:"cms,omitempty" tf:"cms"`
@@ -84,6 +114,12 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom Datahub endpoints.
 	// +optional
 	Datahub *string `json:"datahub,omitempty" tf:"datahub"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom dataworkspublic endpoints.
+	// +optional
+	Dataworkspublic *string `json:"dataworkspublic,omitempty" tf:"dataworkspublic"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom dbfs endpoints.
+	// +optional
+	Dbfs *string `json:"dbfs,omitempty" tf:"dbfs"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom dcdn endpoints.
 	// +optional
 	Dcdn *string `json:"dcdn,omitempty" tf:"dcdn"`
@@ -96,6 +132,12 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom MongoDB endpoints.
 	// +optional
 	Dds *string `json:"dds,omitempty" tf:"dds"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom devopsrdc endpoints.
+	// +optional
+	Devopsrdc *string `json:"devopsrdc,omitempty" tf:"devopsrdc"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom dg endpoints.
+	// +optional
+	Dg *string `json:"dg,omitempty" tf:"dg"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom dm endpoints.
 	// +optional
 	Dm *string `json:"dm,omitempty" tf:"dm"`
@@ -108,12 +150,21 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom DRDS endpoints.
 	// +optional
 	Drds *string `json:"drds,omitempty" tf:"drds"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom dts endpoints.
+	// +optional
+	Dts *string `json:"dts,omitempty" tf:"dts"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom eais endpoints.
+	// +optional
+	Eais *string `json:"eais,omitempty" tf:"eais"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom eci endpoints.
 	// +optional
 	Eci *string `json:"eci,omitempty" tf:"eci"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ECS endpoints.
 	// +optional
 	Ecs *string `json:"ecs,omitempty" tf:"ecs"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ehpc endpoints.
+	// +optional
+	Ehpc *string `json:"ehpc,omitempty" tf:"ehpc"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom eipanycast endpoints.
 	// +optional
 	Eipanycast *string `json:"eipanycast,omitempty" tf:"eipanycast"`
@@ -123,6 +174,9 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom EMR endpoints.
 	// +optional
 	Emr *string `json:"emr,omitempty" tf:"emr"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ens endpoints.
+	// +optional
+	Ens *string `json:"ens,omitempty" tf:"ens"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom Autoscaling endpoints.
 	// +optional
 	Ess *string `json:"ess,omitempty" tf:"ess"`
@@ -138,15 +192,36 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ga endpoints.
 	// +optional
 	Ga *string `json:"ga,omitempty" tf:"ga"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom gds endpoints.
+	// +optional
+	Gds *string `json:"gds,omitempty" tf:"gds"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom GPDB endpoints.
 	// +optional
 	Gpdb *string `json:"gpdb,omitempty" tf:"gpdb"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom gwsecd endpoints.
+	// +optional
+	Gwsecd *string `json:"gwsecd,omitempty" tf:"gwsecd"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom hbr endpoints.
+	// +optional
+	Hbr *string `json:"hbr,omitempty" tf:"hbr"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom hcs_sgw endpoints.
+	// +optional
+	HcsSgw *string `json:"hcsSgw,omitempty" tf:"hcs_sgw"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom hitsdb endpoints.
 	// +optional
 	Hitsdb *string `json:"hitsdb,omitempty" tf:"hitsdb"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom imm endpoints.
+	// +optional
+	Imm *string `json:"imm,omitempty" tf:"imm"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom imp endpoints.
+	// +optional
+	Imp *string `json:"imp,omitempty" tf:"imp"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ims endpoints.
 	// +optional
 	Ims *string `json:"ims,omitempty" tf:"ims"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom iot endpoints.
+	// +optional
+	Iot *string `json:"iot,omitempty" tf:"iot"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom KMS endpoints.
 	// +optional
 	Kms *string `json:"kms,omitempty" tf:"kms"`
@@ -165,9 +240,15 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom MaxCompute endpoints.
 	// +optional
 	Maxcompute *string `json:"maxcompute,omitempty" tf:"maxcompute"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom mhub endpoints.
+	// +optional
+	Mhub *string `json:"mhub,omitempty" tf:"mhub"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom MNS endpoints.
 	// +optional
 	Mns *string `json:"mns,omitempty" tf:"mns"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom mscopensubscription endpoints.
+	// +optional
+	Mscopensubscription *string `json:"mscopensubscription,omitempty" tf:"mscopensubscription"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom mse endpoints.
 	// +optional
 	Mse *string `json:"mse,omitempty" tf:"mse"`
@@ -183,6 +264,9 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom oos endpoints.
 	// +optional
 	Oos *string `json:"oos,omitempty" tf:"oos"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom opensearch endpoints.
+	// +optional
+	Opensearch *string `json:"opensearch,omitempty" tf:"opensearch"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom OSS endpoints.
 	// +optional
 	Oss *string `json:"oss,omitempty" tf:"oss"`
@@ -198,6 +282,9 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom Private Zone endpoints.
 	// +optional
 	Pvtz *string `json:"pvtz,omitempty" tf:"pvtz"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom quickbi endpoints.
+	// +optional
+	Quickbi *string `json:"quickbi,omitempty" tf:"quickbi"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom quotas endpoints.
 	// +optional
 	Quotas *string `json:"quotas,omitempty" tf:"quotas"`
@@ -210,6 +297,9 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom RDS endpoints.
 	// +optional
 	Rds *string `json:"rds,omitempty" tf:"rds"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom redisa endpoints.
+	// +optional
+	Redisa *string `json:"redisa,omitempty" tf:"redisa"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom resourcemanager endpoints.
 	// +optional
 	Resourcemanager *string `json:"resourcemanager,omitempty" tf:"resourcemanager"`
@@ -219,6 +309,21 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ros endpoints.
 	// +optional
 	Ros *string `json:"ros,omitempty" tf:"ros"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom sas endpoints.
+	// +optional
+	Sas *string `json:"sas,omitempty" tf:"sas"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom scdn endpoints.
+	// +optional
+	Scdn *string `json:"scdn,omitempty" tf:"scdn"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom sddp endpoints.
+	// +optional
+	Sddp *string `json:"sddp,omitempty" tf:"sddp"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom serverless endpoints.
+	// +optional
+	Serverless *string `json:"serverless,omitempty" tf:"serverless"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom servicemesh endpoints.
+	// +optional
+	Servicemesh *string `json:"servicemesh,omitempty" tf:"servicemesh"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom sgw endpoints.
 	// +optional
 	Sgw *string `json:"sgw,omitempty" tf:"sgw"`
@@ -228,9 +333,21 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom STS endpoints.
 	// +optional
 	Sts *string `json:"sts,omitempty" tf:"sts"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom swas endpoints.
+	// +optional
+	Swas *string `json:"swas,omitempty" tf:"swas"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom vod endpoints.
+	// +optional
+	Vod *string `json:"vod,omitempty" tf:"vod"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom VPC and VPN endpoints.
 	// +optional
 	Vpc *string `json:"vpc,omitempty" tf:"vpc"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom vs endpoints.
+	// +optional
+	Vs *string `json:"vs,omitempty" tf:"vs"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom waf endpoints.
+	// +optional
+	Waf *string `json:"waf,omitempty" tf:"waf"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom waf_openapi endpoints.
 	// +optional
 	WafOpenapi *string `json:"wafOpenapi,omitempty" tf:"waf_openapi"`
@@ -281,16 +398,21 @@ type AlicloudSpec struct {
 	// The secret key for API operations. You can retrieve this from the 'Security Management' section of the Alibaba Cloud console.
 	// +optional
 	SecretKey *string `json:"secretKey,omitempty" tf:"secret_key"`
+	// The security transport for the assume role invoking.
+	// +optional
+	SecureTransport *string `json:"secureTransport,omitempty" tf:"secure_transport"`
 	// security token. A security token is only required if you are using Security Token Service.
 	// +optional
 	SecurityToken *string `json:"securityToken,omitempty" tf:"security_token"`
+	// +optional
+	SecurityTransport *string `json:"securityTransport,omitempty" tf:"security_transport"`
 	// The path to the shared credentials file. If not set this defaults to ~/.aliyun/config.json
 	// +optional
 	SharedCredentialsFile *string `json:"sharedCredentialsFile,omitempty" tf:"shared_credentials_file"`
 	// Skip static validation of region ID. Used by users of alternative AlibabaCloud-like APIs or users w/ access to regions that are not public (yet).
 	// +optional
 	SkipRegionValidation *bool `json:"skipRegionValidation,omitempty" tf:"skip_region_validation"`
-	// The access key for API operations. You can retrieve this from the 'Security Management' section of the Alibaba Cloud console.
+	// The source ip for the assume role invoking.
 	// +optional
 	SourceIP *string `json:"sourceIP,omitempty" tf:"source_ip"`
 }

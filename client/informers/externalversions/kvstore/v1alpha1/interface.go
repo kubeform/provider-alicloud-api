@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// Accounts returns a AccountInformer.
 	Accounts() AccountInformer
+	// AuditLogConfigs returns a AuditLogConfigInformer.
+	AuditLogConfigs() AuditLogConfigInformer
 	// BackupPolicies returns a BackupPolicyInformer.
 	BackupPolicies() BackupPolicyInformer
 	// Connections returns a ConnectionInformer.
@@ -48,6 +50,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Accounts returns a AccountInformer.
 func (v *version) Accounts() AccountInformer {
 	return &accountInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AuditLogConfigs returns a AuditLogConfigInformer.
+func (v *version) AuditLogConfigs() AuditLogConfigInformer {
+	return &auditLogConfigInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // BackupPolicies returns a BackupPolicyInformer.

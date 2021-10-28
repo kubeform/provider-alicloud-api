@@ -57,16 +57,25 @@ spec:
                 type: object
               resource:
                 properties:
+                  capacity:
+                    format: int64
+                    type: integer
                   description:
                     type: string
                   encryptType:
                     format: int64
                     type: integer
+                  fileSystemType:
+                    type: string
                   id:
+                    type: string
+                  kmsKeyID:
                     type: string
                   protocolType:
                     type: string
                   storageType:
+                    type: string
+                  zoneID:
                     type: string
                 required:
                 - protocolType
@@ -74,16 +83,25 @@ spec:
                 type: object
               state:
                 properties:
+                  capacity:
+                    format: int64
+                    type: integer
                   description:
                     type: string
                   encryptType:
                     format: int64
                     type: integer
+                  fileSystemType:
+                    type: string
                   id:
+                    type: string
+                  kmsKeyID:
                     type: string
                   protocolType:
                     type: string
                   storageType:
+                    type: string
+                  zoneID:
                     type: string
                 required:
                 - protocolType

@@ -57,6 +57,8 @@ spec:
                 type: object
               resource:
                 properties:
+                  configID:
+                    type: string
                   domainName:
                     type: string
                   functionArgs:
@@ -74,6 +76,8 @@ spec:
                   functionName:
                     type: string
                   id:
+                    type: string
+                  status:
                     type: string
                 required:
                 - domainName
@@ -82,6 +86,8 @@ spec:
                 type: object
               state:
                 properties:
+                  configID:
+                    type: string
                   domainName:
                     type: string
                   functionArgs:
@@ -99,6 +105,8 @@ spec:
                   functionName:
                     type: string
                   id:
+                    type: string
+                  status:
                     type: string
                 required:
                 - domainName

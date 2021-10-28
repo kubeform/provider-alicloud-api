@@ -20,4 +20,8 @@ package v1alpha1
 
 type BridgeEventBusExpansion interface{}
 
-type BridgeSchemaGroupExpansion interface{}
+type BridgeEventSourceExpansion interface{}
+
+type BridgeRuleExpansion interface{}
+
+type BridgeSlrExpansion interface{}

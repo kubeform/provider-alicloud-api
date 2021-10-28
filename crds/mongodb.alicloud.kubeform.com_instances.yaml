@@ -86,11 +86,32 @@ spec:
                     type: string
                   name:
                     type: string
+                  orderType:
+                    type: string
                   period:
                     format: int64
                     type: integer
                   replicaSetName:
                     type: string
+                  replicaSets:
+                    items:
+                      properties:
+                        connectionDomain:
+                          type: string
+                        connectionPort:
+                          type: string
+                        networkType:
+                          type: string
+                        replicaSetRole:
+                          type: string
+                        vpcCloudInstanceID:
+                          type: string
+                        vpcID:
+                          type: string
+                        vswitchID:
+                          type: string
+                      type: object
+                    type: array
                   replicationFactor:
                     format: int64
                     type: integer
@@ -202,11 +223,32 @@ spec:
                     type: string
                   name:
                     type: string
+                  orderType:
+                    type: string
                   period:
                     format: int64
                     type: integer
                   replicaSetName:
                     type: string
+                  replicaSets:
+                    items:
+                      properties:
+                        connectionDomain:
+                          type: string
+                        connectionPort:
+                          type: string
+                        networkType:
+                          type: string
+                        replicaSetRole:
+                          type: string
+                        vpcCloudInstanceID:
+                          type: string
+                        vpcID:
+                          type: string
+                        vswitchID:
+                          type: string
+                      type: object
+                    type: array
                   replicationFactor:
                     format: int64
                     type: integer

@@ -19,15 +19,22 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"unsafe"
+
 	jsoniter "github.com/json-iterator/go"
+	"github.com/modern-go/reflect2"
 )
 
 func GetEncoder() map[string]jsoniter.ValEncoder {
-	return map[string]jsoniter.ValEncoder{}
+	return map[string]jsoniter.ValEncoder{
+		jsoniter.MustGetKind(reflect2.TypeOf(SsoDirectorySpecSamlIdentityProviderConfiguration{}).Type1()): SsoDirectorySpecSamlIdentityProviderConfigurationCodec{},
+	}
 }
 
 func GetDecoder() map[string]jsoniter.ValDecoder {
-	return map[string]jsoniter.ValDecoder{}
+	return map[string]jsoniter.ValDecoder{
+		jsoniter.MustGetKind(reflect2.TypeOf(SsoDirectorySpecSamlIdentityProviderConfiguration{}).Type1()): SsoDirectorySpecSamlIdentityProviderConfigurationCodec{},
+	}
 }
 
 func getEncodersWithout(typ string) map[string]jsoniter.ValEncoder {
@@ -40,4 +47,83 @@ func getDecodersWithout(typ string) map[string]jsoniter.ValDecoder {
 	origMap := GetDecoder()
 	delete(origMap, typ)
 	return origMap
+}
+
+// +k8s:deepcopy-gen=false
+type SsoDirectorySpecSamlIdentityProviderConfigurationCodec struct {
+}
+
+func (SsoDirectorySpecSamlIdentityProviderConfigurationCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) == nil
+}
+
+func (SsoDirectorySpecSamlIdentityProviderConfigurationCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr)
+	var objs []SsoDirectorySpecSamlIdentityProviderConfiguration
+	if obj != nil {
+		objs = []SsoDirectorySpecSamlIdentityProviderConfiguration{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(SsoDirectorySpecSamlIdentityProviderConfiguration{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (SsoDirectorySpecSamlIdentityProviderConfigurationCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) = SsoDirectorySpecSamlIdentityProviderConfiguration{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []SsoDirectorySpecSamlIdentityProviderConfiguration
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(SsoDirectorySpecSamlIdentityProviderConfiguration{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) = objs[0]
+			} else {
+				*(*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) = SsoDirectorySpecSamlIdentityProviderConfiguration{}
+			}
+		} else {
+			*(*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) = SsoDirectorySpecSamlIdentityProviderConfiguration{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj SsoDirectorySpecSamlIdentityProviderConfiguration
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(SsoDirectorySpecSamlIdentityProviderConfiguration{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) = obj
+		} else {
+			*(*SsoDirectorySpecSamlIdentityProviderConfiguration)(ptr) = SsoDirectorySpecSamlIdentityProviderConfiguration{}
+		}
+	default:
+		iter.ReportError("decode SsoDirectorySpecSamlIdentityProviderConfiguration", "unexpected JSON type")
+	}
 }

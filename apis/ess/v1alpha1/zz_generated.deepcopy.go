@@ -958,6 +958,11 @@ func (in *ScalingConfigurationSpecResource) DeepCopyInto(out *ScalingConfigurati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.ResourceGroupID != nil {
+		in, out := &in.ResourceGroupID, &out.ResourceGroupID
+		*out = new(string)
+		**out = **in
+	}
 	if in.RoleName != nil {
 		in, out := &in.RoleName, &out.RoleName
 		*out = new(string)

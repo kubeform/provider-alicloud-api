@@ -29,6 +29,10 @@ type FakeSecurityV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeSecurityV1alpha1) CenterGroups(namespace string) v1alpha1.CenterGroupInterface {
+	return &FakeCenterGroups{c, namespace}
+}
+
 func (c *FakeSecurityV1alpha1) Groups(namespace string) v1alpha1.GroupInterface {
 	return &FakeGroups{c, namespace}
 }

@@ -18,6 +18,16 @@ limitations under the License.
 
 package v1alpha1
 
+type DhcpOptionsSetExpansion interface{}
+
 type FlowLogExpansion interface{}
+
+type NatIPExpansion interface{}
+
+type NatIPCIDRExpansion interface{}
+
+type TrafficMirrorFilterExpansion interface{}
+
+type TrafficMirrorFilterEgressRuleExpansion interface{}
 
 type VpcExpansion interface{}

@@ -64,6 +64,19 @@ spec:
                     type: string
                   connectionString:
                     type: string
+                  dbClusterIPArray:
+                    items:
+                      properties:
+                        dbClusterIPArrayName:
+                          type: string
+                        modifyMode:
+                          type: string
+                        securityIPS:
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
                   dbNodeClass:
                     type: string
                   dbNodeCount:
@@ -174,6 +187,19 @@ spec:
                     type: string
                   connectionString:
                     type: string
+                  dbClusterIPArray:
+                    items:
+                      properties:
+                        dbClusterIPArrayName:
+                          type: string
+                        modifyMode:
+                          type: string
+                        securityIPS:
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
                   dbNodeClass:
                     type: string
                   dbNodeCount:

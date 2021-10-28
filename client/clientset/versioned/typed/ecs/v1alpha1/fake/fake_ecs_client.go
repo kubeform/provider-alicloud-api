@@ -45,6 +45,10 @@ func (c *FakeEcsV1alpha1) DedicatedHosts(namespace string) v1alpha1.DedicatedHos
 	return &FakeDedicatedHosts{c, namespace}
 }
 
+func (c *FakeEcsV1alpha1) DeploymentSets(namespace string) v1alpha1.DeploymentSetInterface {
+	return &FakeDeploymentSets{c, namespace}
+}
+
 func (c *FakeEcsV1alpha1) Disks(namespace string) v1alpha1.DiskInterface {
 	return &FakeDisks{c, namespace}
 }

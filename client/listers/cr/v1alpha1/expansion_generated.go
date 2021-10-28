@@ -50,6 +50,14 @@ type EeSyncRuleListerExpansion interface{}
 // EeSyncRuleNamespaceLister.
 type EeSyncRuleNamespaceListerExpansion interface{}
 
+// EndpointACLPolicyListerExpansion allows custom methods to be added to
+// EndpointACLPolicyLister.
+type EndpointACLPolicyListerExpansion interface{}
+
+// EndpointACLPolicyNamespaceListerExpansion allows custom methods to be added to
+// EndpointACLPolicyNamespaceLister.
+type EndpointACLPolicyNamespaceListerExpansion interface{}
+
 // NamespaceListerExpansion allows custom methods to be added to
 // NamespaceLister.
 type NamespaceListerExpansion interface{}

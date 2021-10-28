@@ -141,6 +141,8 @@ spec:
                     type: string
                   passwordInherit:
                     type: boolean
+                  resourceGroupID:
+                    type: string
                   roleName:
                     type: string
                   scalingConfigurationName:
@@ -264,6 +266,8 @@ spec:
                     type: string
                   passwordInherit:
                     type: boolean
+                  resourceGroupID:
+                    type: string
                   roleName:
                     type: string
                   scalingConfigurationName:

@@ -26,6 +26,8 @@ type EeRepoExpansion interface{}
 
 type EeSyncRuleExpansion interface{}
 
+type EndpointACLPolicyExpansion interface{}
+
 type NamespaceExpansion interface{}
 
 type RepoExpansion interface{}

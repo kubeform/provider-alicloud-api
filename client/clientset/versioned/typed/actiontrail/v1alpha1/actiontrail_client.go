@@ -28,6 +28,7 @@ import (
 type ActiontrailV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	ActiontrailsGetter
+	HistoryDeliveryJobsGetter
 	TrailsGetter
 }
 
@@ -38,6 +39,10 @@ type ActiontrailV1alpha1Client struct {
 
 func (c *ActiontrailV1alpha1Client) Actiontrails(namespace string) ActiontrailInterface {
 	return newActiontrails(c, namespace)
+}
+
+func (c *ActiontrailV1alpha1Client) HistoryDeliveryJobs(namespace string) HistoryDeliveryJobInterface {
+	return newHistoryDeliveryJobs(c, namespace)
 }
 
 func (c *ActiontrailV1alpha1Client) Trails(namespace string) TrailInterface {

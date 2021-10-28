@@ -61,6 +61,8 @@ spec:
                     type: string
                   addressName:
                     type: string
+                  autoPay:
+                    type: boolean
                   bandwidth:
                     type: string
                   deletionProtection:
@@ -141,6 +143,8 @@ spec:
                     type: string
                   addressName:
                     type: string
+                  autoPay:
+                    type: boolean
                   bandwidth:
                     type: string
                   deletionProtection:

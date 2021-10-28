@@ -71,6 +71,8 @@ type InstanceSpecResource struct {
 	Period              *int64  `json:"period,omitempty" tf:"period"`
 	PrefessionalService *string `json:"prefessionalService" tf:"prefessional_service"`
 	// +optional
+	Region *string `json:"region,omitempty" tf:"region"`
+	// +optional
 	RenewPeriod *int64 `json:"renewPeriod,omitempty" tf:"renew_period"`
 	// +optional
 	RenewalStatus *string `json:"renewalStatus,omitempty" tf:"renewal_status"`

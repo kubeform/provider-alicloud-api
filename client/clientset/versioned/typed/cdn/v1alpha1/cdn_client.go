@@ -30,6 +30,7 @@ type CdnV1alpha1Interface interface {
 	DomainsGetter
 	DomainConfigsGetter
 	DomainNewsGetter
+	RealTimeLogDeliveriesGetter
 }
 
 // CdnV1alpha1Client is used to interact with features provided by the cdn.alicloud.kubeform.com group.
@@ -47,6 +48,10 @@ func (c *CdnV1alpha1Client) DomainConfigs(namespace string) DomainConfigInterfac
 
 func (c *CdnV1alpha1Client) DomainNews(namespace string) DomainNewInterface {
 	return newDomainNews(c, namespace)
+}
+
+func (c *CdnV1alpha1Client) RealTimeLogDeliveries(namespace string) RealTimeLogDeliveryInterface {
+	return newRealTimeLogDeliveries(c, namespace)
 }
 
 // NewForConfig creates a new CdnV1alpha1Client for the given config.

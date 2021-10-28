@@ -30,6 +30,24 @@ type Interface interface {
 	ConnectNetworkAttachments() ConnectNetworkAttachmentInformer
 	// ConnectNetworkGrants returns a ConnectNetworkGrantInformer.
 	ConnectNetworkGrants() ConnectNetworkGrantInformer
+	// FirewallControlPolicies returns a FirewallControlPolicyInformer.
+	FirewallControlPolicies() FirewallControlPolicyInformer
+	// FirewallControlPolicyOrders returns a FirewallControlPolicyOrderInformer.
+	FirewallControlPolicyOrders() FirewallControlPolicyOrderInformer
+	// FirewallInstances returns a FirewallInstanceInformer.
+	FirewallInstances() FirewallInstanceInformer
+	// SsoAccessConfigurations returns a SsoAccessConfigurationInformer.
+	SsoAccessConfigurations() SsoAccessConfigurationInformer
+	// SsoDirectories returns a SsoDirectoryInformer.
+	SsoDirectories() SsoDirectoryInformer
+	// SsoGroups returns a SsoGroupInformer.
+	SsoGroups() SsoGroupInformer
+	// SsoScimServerCredentials returns a SsoScimServerCredentialInformer.
+	SsoScimServerCredentials() SsoScimServerCredentialInformer
+	// SsoUsers returns a SsoUserInformer.
+	SsoUsers() SsoUserInformer
+	// StorageGatewayGateways returns a StorageGatewayGatewayInformer.
+	StorageGatewayGateways() StorageGatewayGatewayInformer
 	// StorageGatewayStorageBundles returns a StorageGatewayStorageBundleInformer.
 	StorageGatewayStorageBundles() StorageGatewayStorageBundleInformer
 }
@@ -58,6 +76,51 @@ func (v *version) ConnectNetworkAttachments() ConnectNetworkAttachmentInformer {
 // ConnectNetworkGrants returns a ConnectNetworkGrantInformer.
 func (v *version) ConnectNetworkGrants() ConnectNetworkGrantInformer {
 	return &connectNetworkGrantInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// FirewallControlPolicies returns a FirewallControlPolicyInformer.
+func (v *version) FirewallControlPolicies() FirewallControlPolicyInformer {
+	return &firewallControlPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// FirewallControlPolicyOrders returns a FirewallControlPolicyOrderInformer.
+func (v *version) FirewallControlPolicyOrders() FirewallControlPolicyOrderInformer {
+	return &firewallControlPolicyOrderInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// FirewallInstances returns a FirewallInstanceInformer.
+func (v *version) FirewallInstances() FirewallInstanceInformer {
+	return &firewallInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SsoAccessConfigurations returns a SsoAccessConfigurationInformer.
+func (v *version) SsoAccessConfigurations() SsoAccessConfigurationInformer {
+	return &ssoAccessConfigurationInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SsoDirectories returns a SsoDirectoryInformer.
+func (v *version) SsoDirectories() SsoDirectoryInformer {
+	return &ssoDirectoryInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SsoGroups returns a SsoGroupInformer.
+func (v *version) SsoGroups() SsoGroupInformer {
+	return &ssoGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SsoScimServerCredentials returns a SsoScimServerCredentialInformer.
+func (v *version) SsoScimServerCredentials() SsoScimServerCredentialInformer {
+	return &ssoScimServerCredentialInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SsoUsers returns a SsoUserInformer.
+func (v *version) SsoUsers() SsoUserInformer {
+	return &ssoUserInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayGateways returns a StorageGatewayGatewayInformer.
+func (v *version) StorageGatewayGateways() StorageGatewayGatewayInformer {
+	return &storageGatewayGatewayInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // StorageGatewayStorageBundles returns a StorageGatewayStorageBundleInformer.

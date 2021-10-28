@@ -32,6 +32,8 @@ type Interface interface {
 	Commands() CommandInformer
 	// DedicatedHosts returns a DedicatedHostInformer.
 	DedicatedHosts() DedicatedHostInformer
+	// DeploymentSets returns a DeploymentSetInformer.
+	DeploymentSets() DeploymentSetInformer
 	// Disks returns a DiskInformer.
 	Disks() DiskInformer
 	// DiskAttachments returns a DiskAttachmentInformer.
@@ -81,6 +83,11 @@ func (v *version) Commands() CommandInformer {
 // DedicatedHosts returns a DedicatedHostInformer.
 func (v *version) DedicatedHosts() DedicatedHostInformer {
 	return &dedicatedHostInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// DeploymentSets returns a DeploymentSetInformer.
+func (v *version) DeploymentSets() DeploymentSetInformer {
+	return &deploymentSetInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Disks returns a DiskInformer.

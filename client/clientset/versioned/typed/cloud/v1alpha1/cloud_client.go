@@ -30,6 +30,15 @@ type CloudV1alpha1Interface interface {
 	ConnectNetworksGetter
 	ConnectNetworkAttachmentsGetter
 	ConnectNetworkGrantsGetter
+	FirewallControlPoliciesGetter
+	FirewallControlPolicyOrdersGetter
+	FirewallInstancesGetter
+	SsoAccessConfigurationsGetter
+	SsoDirectoriesGetter
+	SsoGroupsGetter
+	SsoScimServerCredentialsGetter
+	SsoUsersGetter
+	StorageGatewayGatewaysGetter
 	StorageGatewayStorageBundlesGetter
 }
 
@@ -48,6 +57,42 @@ func (c *CloudV1alpha1Client) ConnectNetworkAttachments(namespace string) Connec
 
 func (c *CloudV1alpha1Client) ConnectNetworkGrants(namespace string) ConnectNetworkGrantInterface {
 	return newConnectNetworkGrants(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) FirewallControlPolicies(namespace string) FirewallControlPolicyInterface {
+	return newFirewallControlPolicies(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) FirewallControlPolicyOrders(namespace string) FirewallControlPolicyOrderInterface {
+	return newFirewallControlPolicyOrders(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) FirewallInstances(namespace string) FirewallInstanceInterface {
+	return newFirewallInstances(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) SsoAccessConfigurations(namespace string) SsoAccessConfigurationInterface {
+	return newSsoAccessConfigurations(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) SsoDirectories(namespace string) SsoDirectoryInterface {
+	return newSsoDirectories(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) SsoGroups(namespace string) SsoGroupInterface {
+	return newSsoGroups(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) SsoScimServerCredentials(namespace string) SsoScimServerCredentialInterface {
+	return newSsoScimServerCredentials(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) SsoUsers(namespace string) SsoUserInterface {
+	return newSsoUsers(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayGateways(namespace string) StorageGatewayGatewayInterface {
+	return newStorageGatewayGateways(c, namespace)
 }
 
 func (c *CloudV1alpha1Client) StorageGatewayStorageBundles(namespace string) StorageGatewayStorageBundleInterface {

@@ -24,6 +24,8 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// CenterGroups returns a CenterGroupInformer.
+	CenterGroups() CenterGroupInformer
 	// Groups returns a GroupInformer.
 	Groups() GroupInformer
 	// GroupRules returns a GroupRuleInformer.
@@ -39,6 +41,11 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// CenterGroups returns a CenterGroupInformer.
+func (v *version) CenterGroups() CenterGroupInformer {
+	return &centerGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Groups returns a GroupInformer.

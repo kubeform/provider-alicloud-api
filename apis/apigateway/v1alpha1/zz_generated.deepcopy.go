@@ -428,6 +428,11 @@ func (in *ApiSpecResource) DeepCopyInto(out *ApiSpecResource) {
 		*out = new(ApiSpecFcServiceConfig)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.ForceNonceCheck != nil {
+		in, out := &in.ForceNonceCheck, &out.ForceNonceCheck
+		*out = new(bool)
+		**out = **in
+	}
 	if in.GroupID != nil {
 		in, out := &in.GroupID, &out.GroupID
 		*out = new(string)

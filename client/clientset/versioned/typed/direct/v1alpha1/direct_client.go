@@ -27,12 +27,22 @@ import (
 
 type DirectV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	MailDomainsGetter
+	MailMailAddressesGetter
 	MailReceiversesGetter
 }
 
 // DirectV1alpha1Client is used to interact with features provided by the direct.alicloud.kubeform.com group.
 type DirectV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *DirectV1alpha1Client) MailDomains(namespace string) MailDomainInterface {
+	return newMailDomains(c, namespace)
+}
+
+func (c *DirectV1alpha1Client) MailMailAddresses(namespace string) MailMailAddressInterface {
+	return newMailMailAddresses(c, namespace)
 }
 
 func (c *DirectV1alpha1Client) MailReceiverses(namespace string) MailReceiversInterface {

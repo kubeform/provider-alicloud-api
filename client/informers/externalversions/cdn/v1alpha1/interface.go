@@ -30,6 +30,8 @@ type Interface interface {
 	DomainConfigs() DomainConfigInformer
 	// DomainNews returns a DomainNewInformer.
 	DomainNews() DomainNewInformer
+	// RealTimeLogDeliveries returns a RealTimeLogDeliveryInformer.
+	RealTimeLogDeliveries() RealTimeLogDeliveryInformer
 }
 
 type version struct {
@@ -56,4 +58,9 @@ func (v *version) DomainConfigs() DomainConfigInformer {
 // DomainNews returns a DomainNewInformer.
 func (v *version) DomainNews() DomainNewInformer {
 	return &domainNewInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// RealTimeLogDeliveries returns a RealTimeLogDeliveryInformer.
+func (v *version) RealTimeLogDeliveries() RealTimeLogDeliveryInformer {
+	return &realTimeLogDeliveryInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

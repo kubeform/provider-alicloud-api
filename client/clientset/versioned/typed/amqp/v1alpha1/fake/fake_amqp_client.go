@@ -29,8 +29,16 @@ type FakeAmqpV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeAmqpV1alpha1) Bindings(namespace string) v1alpha1.BindingInterface {
+	return &FakeBindings{c, namespace}
+}
+
 func (c *FakeAmqpV1alpha1) Exchanges(namespace string) v1alpha1.ExchangeInterface {
 	return &FakeExchanges{c, namespace}
+}
+
+func (c *FakeAmqpV1alpha1) Instances(namespace string) v1alpha1.InstanceInterface {
+	return &FakeInstances{c, namespace}
 }
 
 func (c *FakeAmqpV1alpha1) Queues(namespace string) v1alpha1.QueueInterface {

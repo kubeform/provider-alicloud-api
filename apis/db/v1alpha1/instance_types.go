@@ -94,6 +94,8 @@ type InstanceSpecResource struct {
 	// +optional
 	DbInstanceStorageType *string `json:"dbInstanceStorageType,omitempty" tf:"db_instance_storage_type"`
 	// +optional
+	DbTimeZone *string `json:"dbTimeZone,omitempty" tf:"db_time_zone"`
+	// +optional
 	EncryptionKey *string `json:"encryptionKey,omitempty" tf:"encryption_key"`
 	Engine        *string `json:"engine" tf:"engine"`
 	EngineVersion *string `json:"engineVersion" tf:"engine_version"`
@@ -124,6 +126,8 @@ type InstanceSpecResource struct {
 	// +optional
 	PrivateIPAddress *string `json:"privateIPAddress,omitempty" tf:"private_ip_address"`
 	// +optional
+	ReleasedKeepPolicy *string `json:"releasedKeepPolicy,omitempty" tf:"released_keep_policy"`
+	// +optional
 	ReplicationACL *string `json:"replicationACL,omitempty" tf:"replication_acl"`
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
@@ -150,6 +154,12 @@ type InstanceSpecResource struct {
 	SslAction *string `json:"sslAction,omitempty" tf:"ssl_action"`
 	// +optional
 	SslStatus *string `json:"sslStatus,omitempty" tf:"ssl_status"`
+	// +optional
+	StorageAutoScale *string `json:"storageAutoScale,omitempty" tf:"storage_auto_scale"`
+	// +optional
+	StorageThreshold *int64 `json:"storageThreshold,omitempty" tf:"storage_threshold"`
+	// +optional
+	StorageUpperBound *int64 `json:"storageUpperBound,omitempty" tf:"storage_upper_bound"`
 	// +optional
 	SwitchTime *string `json:"switchTime,omitempty" tf:"switch_time"`
 	// +optional

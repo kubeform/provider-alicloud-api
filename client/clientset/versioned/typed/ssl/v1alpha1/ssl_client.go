@@ -27,6 +27,7 @@ import (
 
 type SslV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	CertificatesServiceCertificatesGetter
 	VpnClientCertsGetter
 	VpnServersGetter
 }
@@ -34,6 +35,10 @@ type SslV1alpha1Interface interface {
 // SslV1alpha1Client is used to interact with features provided by the ssl.alicloud.kubeform.com group.
 type SslV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *SslV1alpha1Client) CertificatesServiceCertificates(namespace string) CertificatesServiceCertificateInterface {
+	return newCertificatesServiceCertificates(c, namespace)
 }
 
 func (c *SslV1alpha1Client) VpnClientCerts(namespace string) VpnClientCertInterface {

@@ -23,17 +23,23 @@ import (
 
 	actiontrailv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/actiontrail/v1alpha1"
 	adbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/adb/v1alpha1"
+	albv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alb/v1alpha1"
 	alidnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alidns/v1alpha1"
 	alikafkav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alikafka/v1alpha1"
 	amqpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/amqp/v1alpha1"
 	apigatewayv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/apigateway/v1alpha1"
+	armsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/arms/v1alpha1"
 	autov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/auto/v1alpha1"
+	bastionhostv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/bastionhost/v1alpha1"
 	brainv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/brain/v1alpha1"
 	casv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cas/v1alpha1"
 	cassandrav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cassandra/v1alpha1"
+	cddcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cddc/v1alpha1"
 	cdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cdn/v1alpha1"
 	cenv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cen/v1alpha1"
+	clickv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/click/v1alpha1"
 	cloudv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cloud/v1alpha1"
+	cloudauthv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cloudauth/v1alpha1"
 	cmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cms/v1alpha1"
 	commonv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/common/v1alpha1"
 	configv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/config/v1alpha1"
@@ -41,71 +47,100 @@ import (
 	copyv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/copy/v1alpha1"
 	crv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cr/v1alpha1"
 	csv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cs/v1alpha1"
+	datav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/data/v1alpha1"
+	databasev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/database/v1alpha1"
 	datahubv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/datahub/v1alpha1"
 	dbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/db/v1alpha1"
+	dbfsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dbfs/v1alpha1"
 	dcdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dcdn/v1alpha1"
 	ddosbgpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ddosbgp/v1alpha1"
 	ddoscoov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ddoscoo/v1alpha1"
+	dfsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dfs/v1alpha1"
 	directv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/direct/v1alpha1"
 	diskv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/disk/v1alpha1"
 	dmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dms/v1alpha1"
 	dnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dns/v1alpha1"
 	drdsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/drds/v1alpha1"
+	dtsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dts/v1alpha1"
+	eaisv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eais/v1alpha1"
+	ecdv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecd/v1alpha1"
 	eciv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eci/v1alpha1"
+	ecpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecp/v1alpha1"
 	ecsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecs/v1alpha1"
 	edasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/edas/v1alpha1"
+	ehpcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ehpc/v1alpha1"
 	eipv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eip/v1alpha1"
 	eipanycastv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eipanycast/v1alpha1"
 	elasticsearchv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/elasticsearch/v1alpha1"
 	emrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/emr/v1alpha1"
+	ensv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ens/v1alpha1"
 	essv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ess/v1alpha1"
 	eventv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/event/v1alpha1"
+	expressv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/express/v1alpha1"
 	fcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/fc/v1alpha1"
 	fnfv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/fnf/v1alpha1"
 	forwardv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/forward/v1alpha1"
 	gav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ga/v1alpha1"
 	gpdbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/gpdb/v1alpha1"
+	graphv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/graph/v1alpha1"
 	havipv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/havip/v1alpha1"
 	hbasev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/hbase/v1alpha1"
+	hbrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/hbr/v1alpha1"
 	imagev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/image/v1alpha1"
+	immv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/imm/v1alpha1"
+	impv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/imp/v1alpha1"
 	instancev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/instance/v1alpha1"
+	iotv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/iot/v1alpha1"
 	keyv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/key/v1alpha1"
 	kmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/kms/v1alpha1"
 	kvstorev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/kvstore/v1alpha1"
 	launchv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/launch/v1alpha1"
+	lindormv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/lindorm/v1alpha1"
 	logv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/log/v1alpha1"
 	logtailv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/logtail/v1alpha1"
 	marketv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/market/v1alpha1"
 	maxcomputev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/maxcompute/v1alpha1"
+	mhubv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mhub/v1alpha1"
 	mnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mns/v1alpha1"
 	mongodbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mongodb/v1alpha1"
+	mscv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/msc/v1alpha1"
 	msev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mse/v1alpha1"
 	nasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/nas/v1alpha1"
 	natv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/nat/v1alpha1"
 	networkv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/network/v1alpha1"
 	onsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ons/v1alpha1"
 	oosv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/oos/v1alpha1"
+	openv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/open/v1alpha1"
 	ossv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/oss/v1alpha1"
 	otsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ots/v1alpha1"
 	polardbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/polardb/v1alpha1"
 	privatelinkv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/privatelink/v1alpha1"
 	pvtzv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/pvtz/v1alpha1"
+	quickv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/quick/v1alpha1"
 	quotasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/quotas/v1alpha1"
 	ramv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ram/v1alpha1"
+	rdcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/rdc/v1alpha1"
 	rdsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/rds/v1alpha1"
 	reservedv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/reserved/v1alpha1"
 	resourcev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/resource/v1alpha1"
 	rosv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ros/v1alpha1"
 	routev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/route/v1alpha1"
 	routerv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/router/v1alpha1"
+	saev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sae/v1alpha1"
 	sagv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sag/v1alpha1"
+	scdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/scdn/v1alpha1"
+	sddpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sddp/v1alpha1"
 	securityv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/security/v1alpha1"
+	servicev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/service/v1alpha1"
+	simplev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/simple/v1alpha1"
 	slbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/slb/v1alpha1"
 	snapshotv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/snapshot/v1alpha1"
 	snatv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/snat/v1alpha1"
 	sslv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ssl/v1alpha1"
 	subnetv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/subnet/v1alpha1"
 	tsdbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/tsdb/v1alpha1"
+	videov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/video/v1alpha1"
+	vodv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vod/v1alpha1"
 	vpcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vpc/v1alpha1"
 	vpnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vpn/v1alpha1"
 	vswitchv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vswitch/v1alpha1"
@@ -121,17 +156,23 @@ type Interface interface {
 	Discovery() discovery.DiscoveryInterface
 	ActiontrailV1alpha1() actiontrailv1alpha1.ActiontrailV1alpha1Interface
 	AdbV1alpha1() adbv1alpha1.AdbV1alpha1Interface
+	AlbV1alpha1() albv1alpha1.AlbV1alpha1Interface
 	AlidnsV1alpha1() alidnsv1alpha1.AlidnsV1alpha1Interface
 	AlikafkaV1alpha1() alikafkav1alpha1.AlikafkaV1alpha1Interface
 	AmqpV1alpha1() amqpv1alpha1.AmqpV1alpha1Interface
 	ApigatewayV1alpha1() apigatewayv1alpha1.ApigatewayV1alpha1Interface
+	ArmsV1alpha1() armsv1alpha1.ArmsV1alpha1Interface
 	AutoV1alpha1() autov1alpha1.AutoV1alpha1Interface
+	BastionhostV1alpha1() bastionhostv1alpha1.BastionhostV1alpha1Interface
 	BrainV1alpha1() brainv1alpha1.BrainV1alpha1Interface
 	CasV1alpha1() casv1alpha1.CasV1alpha1Interface
 	CassandraV1alpha1() cassandrav1alpha1.CassandraV1alpha1Interface
+	CddcV1alpha1() cddcv1alpha1.CddcV1alpha1Interface
 	CdnV1alpha1() cdnv1alpha1.CdnV1alpha1Interface
 	CenV1alpha1() cenv1alpha1.CenV1alpha1Interface
+	ClickV1alpha1() clickv1alpha1.ClickV1alpha1Interface
 	CloudV1alpha1() cloudv1alpha1.CloudV1alpha1Interface
+	CloudauthV1alpha1() cloudauthv1alpha1.CloudauthV1alpha1Interface
 	CmsV1alpha1() cmsv1alpha1.CmsV1alpha1Interface
 	CommonV1alpha1() commonv1alpha1.CommonV1alpha1Interface
 	ConfigV1alpha1() configv1alpha1.ConfigV1alpha1Interface
@@ -139,71 +180,100 @@ type Interface interface {
 	CopyV1alpha1() copyv1alpha1.CopyV1alpha1Interface
 	CrV1alpha1() crv1alpha1.CrV1alpha1Interface
 	CsV1alpha1() csv1alpha1.CsV1alpha1Interface
+	DataV1alpha1() datav1alpha1.DataV1alpha1Interface
+	DatabaseV1alpha1() databasev1alpha1.DatabaseV1alpha1Interface
 	DatahubV1alpha1() datahubv1alpha1.DatahubV1alpha1Interface
 	DbV1alpha1() dbv1alpha1.DbV1alpha1Interface
+	DbfsV1alpha1() dbfsv1alpha1.DbfsV1alpha1Interface
 	DcdnV1alpha1() dcdnv1alpha1.DcdnV1alpha1Interface
 	DdosbgpV1alpha1() ddosbgpv1alpha1.DdosbgpV1alpha1Interface
 	DdoscooV1alpha1() ddoscoov1alpha1.DdoscooV1alpha1Interface
+	DfsV1alpha1() dfsv1alpha1.DfsV1alpha1Interface
 	DirectV1alpha1() directv1alpha1.DirectV1alpha1Interface
 	DiskV1alpha1() diskv1alpha1.DiskV1alpha1Interface
 	DmsV1alpha1() dmsv1alpha1.DmsV1alpha1Interface
 	DnsV1alpha1() dnsv1alpha1.DnsV1alpha1Interface
 	DrdsV1alpha1() drdsv1alpha1.DrdsV1alpha1Interface
+	DtsV1alpha1() dtsv1alpha1.DtsV1alpha1Interface
+	EaisV1alpha1() eaisv1alpha1.EaisV1alpha1Interface
+	EcdV1alpha1() ecdv1alpha1.EcdV1alpha1Interface
 	EciV1alpha1() eciv1alpha1.EciV1alpha1Interface
+	EcpV1alpha1() ecpv1alpha1.EcpV1alpha1Interface
 	EcsV1alpha1() ecsv1alpha1.EcsV1alpha1Interface
 	EdasV1alpha1() edasv1alpha1.EdasV1alpha1Interface
+	EhpcV1alpha1() ehpcv1alpha1.EhpcV1alpha1Interface
 	EipV1alpha1() eipv1alpha1.EipV1alpha1Interface
 	EipanycastV1alpha1() eipanycastv1alpha1.EipanycastV1alpha1Interface
 	ElasticsearchV1alpha1() elasticsearchv1alpha1.ElasticsearchV1alpha1Interface
 	EmrV1alpha1() emrv1alpha1.EmrV1alpha1Interface
+	EnsV1alpha1() ensv1alpha1.EnsV1alpha1Interface
 	EssV1alpha1() essv1alpha1.EssV1alpha1Interface
 	EventV1alpha1() eventv1alpha1.EventV1alpha1Interface
+	ExpressV1alpha1() expressv1alpha1.ExpressV1alpha1Interface
 	FcV1alpha1() fcv1alpha1.FcV1alpha1Interface
 	FnfV1alpha1() fnfv1alpha1.FnfV1alpha1Interface
 	ForwardV1alpha1() forwardv1alpha1.ForwardV1alpha1Interface
 	GaV1alpha1() gav1alpha1.GaV1alpha1Interface
 	GpdbV1alpha1() gpdbv1alpha1.GpdbV1alpha1Interface
+	GraphV1alpha1() graphv1alpha1.GraphV1alpha1Interface
 	HavipV1alpha1() havipv1alpha1.HavipV1alpha1Interface
 	HbaseV1alpha1() hbasev1alpha1.HbaseV1alpha1Interface
+	HbrV1alpha1() hbrv1alpha1.HbrV1alpha1Interface
 	ImageV1alpha1() imagev1alpha1.ImageV1alpha1Interface
+	ImmV1alpha1() immv1alpha1.ImmV1alpha1Interface
+	ImpV1alpha1() impv1alpha1.ImpV1alpha1Interface
 	InstanceV1alpha1() instancev1alpha1.InstanceV1alpha1Interface
+	IotV1alpha1() iotv1alpha1.IotV1alpha1Interface
 	KeyV1alpha1() keyv1alpha1.KeyV1alpha1Interface
 	KmsV1alpha1() kmsv1alpha1.KmsV1alpha1Interface
 	KvstoreV1alpha1() kvstorev1alpha1.KvstoreV1alpha1Interface
 	LaunchV1alpha1() launchv1alpha1.LaunchV1alpha1Interface
+	LindormV1alpha1() lindormv1alpha1.LindormV1alpha1Interface
 	LogV1alpha1() logv1alpha1.LogV1alpha1Interface
 	LogtailV1alpha1() logtailv1alpha1.LogtailV1alpha1Interface
 	MarketV1alpha1() marketv1alpha1.MarketV1alpha1Interface
 	MaxcomputeV1alpha1() maxcomputev1alpha1.MaxcomputeV1alpha1Interface
+	MhubV1alpha1() mhubv1alpha1.MhubV1alpha1Interface
 	MnsV1alpha1() mnsv1alpha1.MnsV1alpha1Interface
 	MongodbV1alpha1() mongodbv1alpha1.MongodbV1alpha1Interface
+	MscV1alpha1() mscv1alpha1.MscV1alpha1Interface
 	MseV1alpha1() msev1alpha1.MseV1alpha1Interface
 	NasV1alpha1() nasv1alpha1.NasV1alpha1Interface
 	NatV1alpha1() natv1alpha1.NatV1alpha1Interface
 	NetworkV1alpha1() networkv1alpha1.NetworkV1alpha1Interface
 	OnsV1alpha1() onsv1alpha1.OnsV1alpha1Interface
 	OosV1alpha1() oosv1alpha1.OosV1alpha1Interface
+	OpenV1alpha1() openv1alpha1.OpenV1alpha1Interface
 	OssV1alpha1() ossv1alpha1.OssV1alpha1Interface
 	OtsV1alpha1() otsv1alpha1.OtsV1alpha1Interface
 	PolardbV1alpha1() polardbv1alpha1.PolardbV1alpha1Interface
 	PrivatelinkV1alpha1() privatelinkv1alpha1.PrivatelinkV1alpha1Interface
 	PvtzV1alpha1() pvtzv1alpha1.PvtzV1alpha1Interface
+	QuickV1alpha1() quickv1alpha1.QuickV1alpha1Interface
 	QuotasV1alpha1() quotasv1alpha1.QuotasV1alpha1Interface
 	RamV1alpha1() ramv1alpha1.RamV1alpha1Interface
+	RdcV1alpha1() rdcv1alpha1.RdcV1alpha1Interface
 	RdsV1alpha1() rdsv1alpha1.RdsV1alpha1Interface
 	ReservedV1alpha1() reservedv1alpha1.ReservedV1alpha1Interface
 	ResourceV1alpha1() resourcev1alpha1.ResourceV1alpha1Interface
 	RosV1alpha1() rosv1alpha1.RosV1alpha1Interface
 	RouteV1alpha1() routev1alpha1.RouteV1alpha1Interface
 	RouterV1alpha1() routerv1alpha1.RouterV1alpha1Interface
+	SaeV1alpha1() saev1alpha1.SaeV1alpha1Interface
 	SagV1alpha1() sagv1alpha1.SagV1alpha1Interface
+	ScdnV1alpha1() scdnv1alpha1.ScdnV1alpha1Interface
+	SddpV1alpha1() sddpv1alpha1.SddpV1alpha1Interface
 	SecurityV1alpha1() securityv1alpha1.SecurityV1alpha1Interface
+	ServiceV1alpha1() servicev1alpha1.ServiceV1alpha1Interface
+	SimpleV1alpha1() simplev1alpha1.SimpleV1alpha1Interface
 	SlbV1alpha1() slbv1alpha1.SlbV1alpha1Interface
 	SnapshotV1alpha1() snapshotv1alpha1.SnapshotV1alpha1Interface
 	SnatV1alpha1() snatv1alpha1.SnatV1alpha1Interface
 	SslV1alpha1() sslv1alpha1.SslV1alpha1Interface
 	SubnetV1alpha1() subnetv1alpha1.SubnetV1alpha1Interface
 	TsdbV1alpha1() tsdbv1alpha1.TsdbV1alpha1Interface
+	VideoV1alpha1() videov1alpha1.VideoV1alpha1Interface
+	VodV1alpha1() vodv1alpha1.VodV1alpha1Interface
 	VpcV1alpha1() vpcv1alpha1.VpcV1alpha1Interface
 	VpnV1alpha1() vpnv1alpha1.VpnV1alpha1Interface
 	VswitchV1alpha1() vswitchv1alpha1.VswitchV1alpha1Interface
@@ -217,17 +287,23 @@ type Clientset struct {
 	*discovery.DiscoveryClient
 	actiontrailV1alpha1   *actiontrailv1alpha1.ActiontrailV1alpha1Client
 	adbV1alpha1           *adbv1alpha1.AdbV1alpha1Client
+	albV1alpha1           *albv1alpha1.AlbV1alpha1Client
 	alidnsV1alpha1        *alidnsv1alpha1.AlidnsV1alpha1Client
 	alikafkaV1alpha1      *alikafkav1alpha1.AlikafkaV1alpha1Client
 	amqpV1alpha1          *amqpv1alpha1.AmqpV1alpha1Client
 	apigatewayV1alpha1    *apigatewayv1alpha1.ApigatewayV1alpha1Client
+	armsV1alpha1          *armsv1alpha1.ArmsV1alpha1Client
 	autoV1alpha1          *autov1alpha1.AutoV1alpha1Client
+	bastionhostV1alpha1   *bastionhostv1alpha1.BastionhostV1alpha1Client
 	brainV1alpha1         *brainv1alpha1.BrainV1alpha1Client
 	casV1alpha1           *casv1alpha1.CasV1alpha1Client
 	cassandraV1alpha1     *cassandrav1alpha1.CassandraV1alpha1Client
+	cddcV1alpha1          *cddcv1alpha1.CddcV1alpha1Client
 	cdnV1alpha1           *cdnv1alpha1.CdnV1alpha1Client
 	cenV1alpha1           *cenv1alpha1.CenV1alpha1Client
+	clickV1alpha1         *clickv1alpha1.ClickV1alpha1Client
 	cloudV1alpha1         *cloudv1alpha1.CloudV1alpha1Client
+	cloudauthV1alpha1     *cloudauthv1alpha1.CloudauthV1alpha1Client
 	cmsV1alpha1           *cmsv1alpha1.CmsV1alpha1Client
 	commonV1alpha1        *commonv1alpha1.CommonV1alpha1Client
 	configV1alpha1        *configv1alpha1.ConfigV1alpha1Client
@@ -235,71 +311,100 @@ type Clientset struct {
 	copyV1alpha1          *copyv1alpha1.CopyV1alpha1Client
 	crV1alpha1            *crv1alpha1.CrV1alpha1Client
 	csV1alpha1            *csv1alpha1.CsV1alpha1Client
+	dataV1alpha1          *datav1alpha1.DataV1alpha1Client
+	databaseV1alpha1      *databasev1alpha1.DatabaseV1alpha1Client
 	datahubV1alpha1       *datahubv1alpha1.DatahubV1alpha1Client
 	dbV1alpha1            *dbv1alpha1.DbV1alpha1Client
+	dbfsV1alpha1          *dbfsv1alpha1.DbfsV1alpha1Client
 	dcdnV1alpha1          *dcdnv1alpha1.DcdnV1alpha1Client
 	ddosbgpV1alpha1       *ddosbgpv1alpha1.DdosbgpV1alpha1Client
 	ddoscooV1alpha1       *ddoscoov1alpha1.DdoscooV1alpha1Client
+	dfsV1alpha1           *dfsv1alpha1.DfsV1alpha1Client
 	directV1alpha1        *directv1alpha1.DirectV1alpha1Client
 	diskV1alpha1          *diskv1alpha1.DiskV1alpha1Client
 	dmsV1alpha1           *dmsv1alpha1.DmsV1alpha1Client
 	dnsV1alpha1           *dnsv1alpha1.DnsV1alpha1Client
 	drdsV1alpha1          *drdsv1alpha1.DrdsV1alpha1Client
+	dtsV1alpha1           *dtsv1alpha1.DtsV1alpha1Client
+	eaisV1alpha1          *eaisv1alpha1.EaisV1alpha1Client
+	ecdV1alpha1           *ecdv1alpha1.EcdV1alpha1Client
 	eciV1alpha1           *eciv1alpha1.EciV1alpha1Client
+	ecpV1alpha1           *ecpv1alpha1.EcpV1alpha1Client
 	ecsV1alpha1           *ecsv1alpha1.EcsV1alpha1Client
 	edasV1alpha1          *edasv1alpha1.EdasV1alpha1Client
+	ehpcV1alpha1          *ehpcv1alpha1.EhpcV1alpha1Client
 	eipV1alpha1           *eipv1alpha1.EipV1alpha1Client
 	eipanycastV1alpha1    *eipanycastv1alpha1.EipanycastV1alpha1Client
 	elasticsearchV1alpha1 *elasticsearchv1alpha1.ElasticsearchV1alpha1Client
 	emrV1alpha1           *emrv1alpha1.EmrV1alpha1Client
+	ensV1alpha1           *ensv1alpha1.EnsV1alpha1Client
 	essV1alpha1           *essv1alpha1.EssV1alpha1Client
 	eventV1alpha1         *eventv1alpha1.EventV1alpha1Client
+	expressV1alpha1       *expressv1alpha1.ExpressV1alpha1Client
 	fcV1alpha1            *fcv1alpha1.FcV1alpha1Client
 	fnfV1alpha1           *fnfv1alpha1.FnfV1alpha1Client
 	forwardV1alpha1       *forwardv1alpha1.ForwardV1alpha1Client
 	gaV1alpha1            *gav1alpha1.GaV1alpha1Client
 	gpdbV1alpha1          *gpdbv1alpha1.GpdbV1alpha1Client
+	graphV1alpha1         *graphv1alpha1.GraphV1alpha1Client
 	havipV1alpha1         *havipv1alpha1.HavipV1alpha1Client
 	hbaseV1alpha1         *hbasev1alpha1.HbaseV1alpha1Client
+	hbrV1alpha1           *hbrv1alpha1.HbrV1alpha1Client
 	imageV1alpha1         *imagev1alpha1.ImageV1alpha1Client
+	immV1alpha1           *immv1alpha1.ImmV1alpha1Client
+	impV1alpha1           *impv1alpha1.ImpV1alpha1Client
 	instanceV1alpha1      *instancev1alpha1.InstanceV1alpha1Client
+	iotV1alpha1           *iotv1alpha1.IotV1alpha1Client
 	keyV1alpha1           *keyv1alpha1.KeyV1alpha1Client
 	kmsV1alpha1           *kmsv1alpha1.KmsV1alpha1Client
 	kvstoreV1alpha1       *kvstorev1alpha1.KvstoreV1alpha1Client
 	launchV1alpha1        *launchv1alpha1.LaunchV1alpha1Client
+	lindormV1alpha1       *lindormv1alpha1.LindormV1alpha1Client
 	logV1alpha1           *logv1alpha1.LogV1alpha1Client
 	logtailV1alpha1       *logtailv1alpha1.LogtailV1alpha1Client
 	marketV1alpha1        *marketv1alpha1.MarketV1alpha1Client
 	maxcomputeV1alpha1    *maxcomputev1alpha1.MaxcomputeV1alpha1Client
+	mhubV1alpha1          *mhubv1alpha1.MhubV1alpha1Client
 	mnsV1alpha1           *mnsv1alpha1.MnsV1alpha1Client
 	mongodbV1alpha1       *mongodbv1alpha1.MongodbV1alpha1Client
+	mscV1alpha1           *mscv1alpha1.MscV1alpha1Client
 	mseV1alpha1           *msev1alpha1.MseV1alpha1Client
 	nasV1alpha1           *nasv1alpha1.NasV1alpha1Client
 	natV1alpha1           *natv1alpha1.NatV1alpha1Client
 	networkV1alpha1       *networkv1alpha1.NetworkV1alpha1Client
 	onsV1alpha1           *onsv1alpha1.OnsV1alpha1Client
 	oosV1alpha1           *oosv1alpha1.OosV1alpha1Client
+	openV1alpha1          *openv1alpha1.OpenV1alpha1Client
 	ossV1alpha1           *ossv1alpha1.OssV1alpha1Client
 	otsV1alpha1           *otsv1alpha1.OtsV1alpha1Client
 	polardbV1alpha1       *polardbv1alpha1.PolardbV1alpha1Client
 	privatelinkV1alpha1   *privatelinkv1alpha1.PrivatelinkV1alpha1Client
 	pvtzV1alpha1          *pvtzv1alpha1.PvtzV1alpha1Client
+	quickV1alpha1         *quickv1alpha1.QuickV1alpha1Client
 	quotasV1alpha1        *quotasv1alpha1.QuotasV1alpha1Client
 	ramV1alpha1           *ramv1alpha1.RamV1alpha1Client
+	rdcV1alpha1           *rdcv1alpha1.RdcV1alpha1Client
 	rdsV1alpha1           *rdsv1alpha1.RdsV1alpha1Client
 	reservedV1alpha1      *reservedv1alpha1.ReservedV1alpha1Client
 	resourceV1alpha1      *resourcev1alpha1.ResourceV1alpha1Client
 	rosV1alpha1           *rosv1alpha1.RosV1alpha1Client
 	routeV1alpha1         *routev1alpha1.RouteV1alpha1Client
 	routerV1alpha1        *routerv1alpha1.RouterV1alpha1Client
+	saeV1alpha1           *saev1alpha1.SaeV1alpha1Client
 	sagV1alpha1           *sagv1alpha1.SagV1alpha1Client
+	scdnV1alpha1          *scdnv1alpha1.ScdnV1alpha1Client
+	sddpV1alpha1          *sddpv1alpha1.SddpV1alpha1Client
 	securityV1alpha1      *securityv1alpha1.SecurityV1alpha1Client
+	serviceV1alpha1       *servicev1alpha1.ServiceV1alpha1Client
+	simpleV1alpha1        *simplev1alpha1.SimpleV1alpha1Client
 	slbV1alpha1           *slbv1alpha1.SlbV1alpha1Client
 	snapshotV1alpha1      *snapshotv1alpha1.SnapshotV1alpha1Client
 	snatV1alpha1          *snatv1alpha1.SnatV1alpha1Client
 	sslV1alpha1           *sslv1alpha1.SslV1alpha1Client
 	subnetV1alpha1        *subnetv1alpha1.SubnetV1alpha1Client
 	tsdbV1alpha1          *tsdbv1alpha1.TsdbV1alpha1Client
+	videoV1alpha1         *videov1alpha1.VideoV1alpha1Client
+	vodV1alpha1           *vodv1alpha1.VodV1alpha1Client
 	vpcV1alpha1           *vpcv1alpha1.VpcV1alpha1Client
 	vpnV1alpha1           *vpnv1alpha1.VpnV1alpha1Client
 	vswitchV1alpha1       *vswitchv1alpha1.VswitchV1alpha1Client
@@ -315,6 +420,11 @@ func (c *Clientset) ActiontrailV1alpha1() actiontrailv1alpha1.ActiontrailV1alpha
 // AdbV1alpha1 retrieves the AdbV1alpha1Client
 func (c *Clientset) AdbV1alpha1() adbv1alpha1.AdbV1alpha1Interface {
 	return c.adbV1alpha1
+}
+
+// AlbV1alpha1 retrieves the AlbV1alpha1Client
+func (c *Clientset) AlbV1alpha1() albv1alpha1.AlbV1alpha1Interface {
+	return c.albV1alpha1
 }
 
 // AlidnsV1alpha1 retrieves the AlidnsV1alpha1Client
@@ -337,9 +447,19 @@ func (c *Clientset) ApigatewayV1alpha1() apigatewayv1alpha1.ApigatewayV1alpha1In
 	return c.apigatewayV1alpha1
 }
 
+// ArmsV1alpha1 retrieves the ArmsV1alpha1Client
+func (c *Clientset) ArmsV1alpha1() armsv1alpha1.ArmsV1alpha1Interface {
+	return c.armsV1alpha1
+}
+
 // AutoV1alpha1 retrieves the AutoV1alpha1Client
 func (c *Clientset) AutoV1alpha1() autov1alpha1.AutoV1alpha1Interface {
 	return c.autoV1alpha1
+}
+
+// BastionhostV1alpha1 retrieves the BastionhostV1alpha1Client
+func (c *Clientset) BastionhostV1alpha1() bastionhostv1alpha1.BastionhostV1alpha1Interface {
+	return c.bastionhostV1alpha1
 }
 
 // BrainV1alpha1 retrieves the BrainV1alpha1Client
@@ -357,6 +477,11 @@ func (c *Clientset) CassandraV1alpha1() cassandrav1alpha1.CassandraV1alpha1Inter
 	return c.cassandraV1alpha1
 }
 
+// CddcV1alpha1 retrieves the CddcV1alpha1Client
+func (c *Clientset) CddcV1alpha1() cddcv1alpha1.CddcV1alpha1Interface {
+	return c.cddcV1alpha1
+}
+
 // CdnV1alpha1 retrieves the CdnV1alpha1Client
 func (c *Clientset) CdnV1alpha1() cdnv1alpha1.CdnV1alpha1Interface {
 	return c.cdnV1alpha1
@@ -367,9 +492,19 @@ func (c *Clientset) CenV1alpha1() cenv1alpha1.CenV1alpha1Interface {
 	return c.cenV1alpha1
 }
 
+// ClickV1alpha1 retrieves the ClickV1alpha1Client
+func (c *Clientset) ClickV1alpha1() clickv1alpha1.ClickV1alpha1Interface {
+	return c.clickV1alpha1
+}
+
 // CloudV1alpha1 retrieves the CloudV1alpha1Client
 func (c *Clientset) CloudV1alpha1() cloudv1alpha1.CloudV1alpha1Interface {
 	return c.cloudV1alpha1
+}
+
+// CloudauthV1alpha1 retrieves the CloudauthV1alpha1Client
+func (c *Clientset) CloudauthV1alpha1() cloudauthv1alpha1.CloudauthV1alpha1Interface {
+	return c.cloudauthV1alpha1
 }
 
 // CmsV1alpha1 retrieves the CmsV1alpha1Client
@@ -407,6 +542,16 @@ func (c *Clientset) CsV1alpha1() csv1alpha1.CsV1alpha1Interface {
 	return c.csV1alpha1
 }
 
+// DataV1alpha1 retrieves the DataV1alpha1Client
+func (c *Clientset) DataV1alpha1() datav1alpha1.DataV1alpha1Interface {
+	return c.dataV1alpha1
+}
+
+// DatabaseV1alpha1 retrieves the DatabaseV1alpha1Client
+func (c *Clientset) DatabaseV1alpha1() databasev1alpha1.DatabaseV1alpha1Interface {
+	return c.databaseV1alpha1
+}
+
 // DatahubV1alpha1 retrieves the DatahubV1alpha1Client
 func (c *Clientset) DatahubV1alpha1() datahubv1alpha1.DatahubV1alpha1Interface {
 	return c.datahubV1alpha1
@@ -415,6 +560,11 @@ func (c *Clientset) DatahubV1alpha1() datahubv1alpha1.DatahubV1alpha1Interface {
 // DbV1alpha1 retrieves the DbV1alpha1Client
 func (c *Clientset) DbV1alpha1() dbv1alpha1.DbV1alpha1Interface {
 	return c.dbV1alpha1
+}
+
+// DbfsV1alpha1 retrieves the DbfsV1alpha1Client
+func (c *Clientset) DbfsV1alpha1() dbfsv1alpha1.DbfsV1alpha1Interface {
+	return c.dbfsV1alpha1
 }
 
 // DcdnV1alpha1 retrieves the DcdnV1alpha1Client
@@ -430,6 +580,11 @@ func (c *Clientset) DdosbgpV1alpha1() ddosbgpv1alpha1.DdosbgpV1alpha1Interface {
 // DdoscooV1alpha1 retrieves the DdoscooV1alpha1Client
 func (c *Clientset) DdoscooV1alpha1() ddoscoov1alpha1.DdoscooV1alpha1Interface {
 	return c.ddoscooV1alpha1
+}
+
+// DfsV1alpha1 retrieves the DfsV1alpha1Client
+func (c *Clientset) DfsV1alpha1() dfsv1alpha1.DfsV1alpha1Interface {
+	return c.dfsV1alpha1
 }
 
 // DirectV1alpha1 retrieves the DirectV1alpha1Client
@@ -457,9 +612,29 @@ func (c *Clientset) DrdsV1alpha1() drdsv1alpha1.DrdsV1alpha1Interface {
 	return c.drdsV1alpha1
 }
 
+// DtsV1alpha1 retrieves the DtsV1alpha1Client
+func (c *Clientset) DtsV1alpha1() dtsv1alpha1.DtsV1alpha1Interface {
+	return c.dtsV1alpha1
+}
+
+// EaisV1alpha1 retrieves the EaisV1alpha1Client
+func (c *Clientset) EaisV1alpha1() eaisv1alpha1.EaisV1alpha1Interface {
+	return c.eaisV1alpha1
+}
+
+// EcdV1alpha1 retrieves the EcdV1alpha1Client
+func (c *Clientset) EcdV1alpha1() ecdv1alpha1.EcdV1alpha1Interface {
+	return c.ecdV1alpha1
+}
+
 // EciV1alpha1 retrieves the EciV1alpha1Client
 func (c *Clientset) EciV1alpha1() eciv1alpha1.EciV1alpha1Interface {
 	return c.eciV1alpha1
+}
+
+// EcpV1alpha1 retrieves the EcpV1alpha1Client
+func (c *Clientset) EcpV1alpha1() ecpv1alpha1.EcpV1alpha1Interface {
+	return c.ecpV1alpha1
 }
 
 // EcsV1alpha1 retrieves the EcsV1alpha1Client
@@ -470,6 +645,11 @@ func (c *Clientset) EcsV1alpha1() ecsv1alpha1.EcsV1alpha1Interface {
 // EdasV1alpha1 retrieves the EdasV1alpha1Client
 func (c *Clientset) EdasV1alpha1() edasv1alpha1.EdasV1alpha1Interface {
 	return c.edasV1alpha1
+}
+
+// EhpcV1alpha1 retrieves the EhpcV1alpha1Client
+func (c *Clientset) EhpcV1alpha1() ehpcv1alpha1.EhpcV1alpha1Interface {
+	return c.ehpcV1alpha1
 }
 
 // EipV1alpha1 retrieves the EipV1alpha1Client
@@ -492,6 +672,11 @@ func (c *Clientset) EmrV1alpha1() emrv1alpha1.EmrV1alpha1Interface {
 	return c.emrV1alpha1
 }
 
+// EnsV1alpha1 retrieves the EnsV1alpha1Client
+func (c *Clientset) EnsV1alpha1() ensv1alpha1.EnsV1alpha1Interface {
+	return c.ensV1alpha1
+}
+
 // EssV1alpha1 retrieves the EssV1alpha1Client
 func (c *Clientset) EssV1alpha1() essv1alpha1.EssV1alpha1Interface {
 	return c.essV1alpha1
@@ -500,6 +685,11 @@ func (c *Clientset) EssV1alpha1() essv1alpha1.EssV1alpha1Interface {
 // EventV1alpha1 retrieves the EventV1alpha1Client
 func (c *Clientset) EventV1alpha1() eventv1alpha1.EventV1alpha1Interface {
 	return c.eventV1alpha1
+}
+
+// ExpressV1alpha1 retrieves the ExpressV1alpha1Client
+func (c *Clientset) ExpressV1alpha1() expressv1alpha1.ExpressV1alpha1Interface {
+	return c.expressV1alpha1
 }
 
 // FcV1alpha1 retrieves the FcV1alpha1Client
@@ -527,6 +717,11 @@ func (c *Clientset) GpdbV1alpha1() gpdbv1alpha1.GpdbV1alpha1Interface {
 	return c.gpdbV1alpha1
 }
 
+// GraphV1alpha1 retrieves the GraphV1alpha1Client
+func (c *Clientset) GraphV1alpha1() graphv1alpha1.GraphV1alpha1Interface {
+	return c.graphV1alpha1
+}
+
 // HavipV1alpha1 retrieves the HavipV1alpha1Client
 func (c *Clientset) HavipV1alpha1() havipv1alpha1.HavipV1alpha1Interface {
 	return c.havipV1alpha1
@@ -537,14 +732,34 @@ func (c *Clientset) HbaseV1alpha1() hbasev1alpha1.HbaseV1alpha1Interface {
 	return c.hbaseV1alpha1
 }
 
+// HbrV1alpha1 retrieves the HbrV1alpha1Client
+func (c *Clientset) HbrV1alpha1() hbrv1alpha1.HbrV1alpha1Interface {
+	return c.hbrV1alpha1
+}
+
 // ImageV1alpha1 retrieves the ImageV1alpha1Client
 func (c *Clientset) ImageV1alpha1() imagev1alpha1.ImageV1alpha1Interface {
 	return c.imageV1alpha1
 }
 
+// ImmV1alpha1 retrieves the ImmV1alpha1Client
+func (c *Clientset) ImmV1alpha1() immv1alpha1.ImmV1alpha1Interface {
+	return c.immV1alpha1
+}
+
+// ImpV1alpha1 retrieves the ImpV1alpha1Client
+func (c *Clientset) ImpV1alpha1() impv1alpha1.ImpV1alpha1Interface {
+	return c.impV1alpha1
+}
+
 // InstanceV1alpha1 retrieves the InstanceV1alpha1Client
 func (c *Clientset) InstanceV1alpha1() instancev1alpha1.InstanceV1alpha1Interface {
 	return c.instanceV1alpha1
+}
+
+// IotV1alpha1 retrieves the IotV1alpha1Client
+func (c *Clientset) IotV1alpha1() iotv1alpha1.IotV1alpha1Interface {
+	return c.iotV1alpha1
 }
 
 // KeyV1alpha1 retrieves the KeyV1alpha1Client
@@ -567,6 +782,11 @@ func (c *Clientset) LaunchV1alpha1() launchv1alpha1.LaunchV1alpha1Interface {
 	return c.launchV1alpha1
 }
 
+// LindormV1alpha1 retrieves the LindormV1alpha1Client
+func (c *Clientset) LindormV1alpha1() lindormv1alpha1.LindormV1alpha1Interface {
+	return c.lindormV1alpha1
+}
+
 // LogV1alpha1 retrieves the LogV1alpha1Client
 func (c *Clientset) LogV1alpha1() logv1alpha1.LogV1alpha1Interface {
 	return c.logV1alpha1
@@ -587,6 +807,11 @@ func (c *Clientset) MaxcomputeV1alpha1() maxcomputev1alpha1.MaxcomputeV1alpha1In
 	return c.maxcomputeV1alpha1
 }
 
+// MhubV1alpha1 retrieves the MhubV1alpha1Client
+func (c *Clientset) MhubV1alpha1() mhubv1alpha1.MhubV1alpha1Interface {
+	return c.mhubV1alpha1
+}
+
 // MnsV1alpha1 retrieves the MnsV1alpha1Client
 func (c *Clientset) MnsV1alpha1() mnsv1alpha1.MnsV1alpha1Interface {
 	return c.mnsV1alpha1
@@ -595,6 +820,11 @@ func (c *Clientset) MnsV1alpha1() mnsv1alpha1.MnsV1alpha1Interface {
 // MongodbV1alpha1 retrieves the MongodbV1alpha1Client
 func (c *Clientset) MongodbV1alpha1() mongodbv1alpha1.MongodbV1alpha1Interface {
 	return c.mongodbV1alpha1
+}
+
+// MscV1alpha1 retrieves the MscV1alpha1Client
+func (c *Clientset) MscV1alpha1() mscv1alpha1.MscV1alpha1Interface {
+	return c.mscV1alpha1
 }
 
 // MseV1alpha1 retrieves the MseV1alpha1Client
@@ -627,6 +857,11 @@ func (c *Clientset) OosV1alpha1() oosv1alpha1.OosV1alpha1Interface {
 	return c.oosV1alpha1
 }
 
+// OpenV1alpha1 retrieves the OpenV1alpha1Client
+func (c *Clientset) OpenV1alpha1() openv1alpha1.OpenV1alpha1Interface {
+	return c.openV1alpha1
+}
+
 // OssV1alpha1 retrieves the OssV1alpha1Client
 func (c *Clientset) OssV1alpha1() ossv1alpha1.OssV1alpha1Interface {
 	return c.ossV1alpha1
@@ -652,6 +887,11 @@ func (c *Clientset) PvtzV1alpha1() pvtzv1alpha1.PvtzV1alpha1Interface {
 	return c.pvtzV1alpha1
 }
 
+// QuickV1alpha1 retrieves the QuickV1alpha1Client
+func (c *Clientset) QuickV1alpha1() quickv1alpha1.QuickV1alpha1Interface {
+	return c.quickV1alpha1
+}
+
 // QuotasV1alpha1 retrieves the QuotasV1alpha1Client
 func (c *Clientset) QuotasV1alpha1() quotasv1alpha1.QuotasV1alpha1Interface {
 	return c.quotasV1alpha1
@@ -660,6 +900,11 @@ func (c *Clientset) QuotasV1alpha1() quotasv1alpha1.QuotasV1alpha1Interface {
 // RamV1alpha1 retrieves the RamV1alpha1Client
 func (c *Clientset) RamV1alpha1() ramv1alpha1.RamV1alpha1Interface {
 	return c.ramV1alpha1
+}
+
+// RdcV1alpha1 retrieves the RdcV1alpha1Client
+func (c *Clientset) RdcV1alpha1() rdcv1alpha1.RdcV1alpha1Interface {
+	return c.rdcV1alpha1
 }
 
 // RdsV1alpha1 retrieves the RdsV1alpha1Client
@@ -692,14 +937,39 @@ func (c *Clientset) RouterV1alpha1() routerv1alpha1.RouterV1alpha1Interface {
 	return c.routerV1alpha1
 }
 
+// SaeV1alpha1 retrieves the SaeV1alpha1Client
+func (c *Clientset) SaeV1alpha1() saev1alpha1.SaeV1alpha1Interface {
+	return c.saeV1alpha1
+}
+
 // SagV1alpha1 retrieves the SagV1alpha1Client
 func (c *Clientset) SagV1alpha1() sagv1alpha1.SagV1alpha1Interface {
 	return c.sagV1alpha1
 }
 
+// ScdnV1alpha1 retrieves the ScdnV1alpha1Client
+func (c *Clientset) ScdnV1alpha1() scdnv1alpha1.ScdnV1alpha1Interface {
+	return c.scdnV1alpha1
+}
+
+// SddpV1alpha1 retrieves the SddpV1alpha1Client
+func (c *Clientset) SddpV1alpha1() sddpv1alpha1.SddpV1alpha1Interface {
+	return c.sddpV1alpha1
+}
+
 // SecurityV1alpha1 retrieves the SecurityV1alpha1Client
 func (c *Clientset) SecurityV1alpha1() securityv1alpha1.SecurityV1alpha1Interface {
 	return c.securityV1alpha1
+}
+
+// ServiceV1alpha1 retrieves the ServiceV1alpha1Client
+func (c *Clientset) ServiceV1alpha1() servicev1alpha1.ServiceV1alpha1Interface {
+	return c.serviceV1alpha1
+}
+
+// SimpleV1alpha1 retrieves the SimpleV1alpha1Client
+func (c *Clientset) SimpleV1alpha1() simplev1alpha1.SimpleV1alpha1Interface {
+	return c.simpleV1alpha1
 }
 
 // SlbV1alpha1 retrieves the SlbV1alpha1Client
@@ -730,6 +1000,16 @@ func (c *Clientset) SubnetV1alpha1() subnetv1alpha1.SubnetV1alpha1Interface {
 // TsdbV1alpha1 retrieves the TsdbV1alpha1Client
 func (c *Clientset) TsdbV1alpha1() tsdbv1alpha1.TsdbV1alpha1Interface {
 	return c.tsdbV1alpha1
+}
+
+// VideoV1alpha1 retrieves the VideoV1alpha1Client
+func (c *Clientset) VideoV1alpha1() videov1alpha1.VideoV1alpha1Interface {
+	return c.videoV1alpha1
+}
+
+// VodV1alpha1 retrieves the VodV1alpha1Client
+func (c *Clientset) VodV1alpha1() vodv1alpha1.VodV1alpha1Interface {
+	return c.vodV1alpha1
 }
 
 // VpcV1alpha1 retrieves the VpcV1alpha1Client
@@ -786,6 +1066,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.albV1alpha1, err = albv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.alidnsV1alpha1, err = alidnsv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
@@ -802,7 +1086,15 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.armsV1alpha1, err = armsv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.autoV1alpha1, err = autov1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.bastionhostV1alpha1, err = bastionhostv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -818,6 +1110,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.cddcV1alpha1, err = cddcv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.cdnV1alpha1, err = cdnv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
@@ -826,7 +1122,15 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.clickV1alpha1, err = clickv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.cloudV1alpha1, err = cloudv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.cloudauthV1alpha1, err = cloudauthv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -858,11 +1162,23 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.dataV1alpha1, err = datav1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.databaseV1alpha1, err = databasev1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.datahubV1alpha1, err = datahubv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
 	cs.dbV1alpha1, err = dbv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.dbfsV1alpha1, err = dbfsv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -875,6 +1191,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 		return nil, err
 	}
 	cs.ddoscooV1alpha1, err = ddoscoov1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.dfsV1alpha1, err = dfsv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -898,7 +1218,23 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.dtsV1alpha1, err = dtsv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.eaisV1alpha1, err = eaisv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.ecdV1alpha1, err = ecdv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.eciV1alpha1, err = eciv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.ecpV1alpha1, err = ecpv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -907,6 +1243,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 		return nil, err
 	}
 	cs.edasV1alpha1, err = edasv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.ehpcV1alpha1, err = ehpcv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -926,11 +1266,19 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.ensV1alpha1, err = ensv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.essV1alpha1, err = essv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
 	cs.eventV1alpha1, err = eventv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.expressV1alpha1, err = expressv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -954,6 +1302,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.graphV1alpha1, err = graphv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.havipV1alpha1, err = havipv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
@@ -962,11 +1314,27 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.hbrV1alpha1, err = hbrv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.imageV1alpha1, err = imagev1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
+	cs.immV1alpha1, err = immv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.impV1alpha1, err = impv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.instanceV1alpha1, err = instancev1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.iotV1alpha1, err = iotv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -986,6 +1354,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.lindormV1alpha1, err = lindormv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.logV1alpha1, err = logv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
@@ -1002,11 +1374,19 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.mhubV1alpha1, err = mhubv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.mnsV1alpha1, err = mnsv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
 	cs.mongodbV1alpha1, err = mongodbv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.mscV1alpha1, err = mscv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -1034,6 +1414,10 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.openV1alpha1, err = openv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.ossV1alpha1, err = ossv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
@@ -1054,11 +1438,19 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.quickV1alpha1, err = quickv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.quotasV1alpha1, err = quotasv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
 	cs.ramV1alpha1, err = ramv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.rdcV1alpha1, err = rdcv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -1086,11 +1478,31 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.saeV1alpha1, err = saev1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.sagV1alpha1, err = sagv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
+	cs.scdnV1alpha1, err = scdnv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.sddpV1alpha1, err = sddpv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	cs.securityV1alpha1, err = securityv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.serviceV1alpha1, err = servicev1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.simpleV1alpha1, err = simplev1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -1115,6 +1527,14 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 		return nil, err
 	}
 	cs.tsdbV1alpha1, err = tsdbv1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.videoV1alpha1, err = videov1alpha1.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
+	cs.vodV1alpha1, err = vodv1alpha1.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -1152,17 +1572,23 @@ func NewForConfigOrDie(c *rest.Config) *Clientset {
 	var cs Clientset
 	cs.actiontrailV1alpha1 = actiontrailv1alpha1.NewForConfigOrDie(c)
 	cs.adbV1alpha1 = adbv1alpha1.NewForConfigOrDie(c)
+	cs.albV1alpha1 = albv1alpha1.NewForConfigOrDie(c)
 	cs.alidnsV1alpha1 = alidnsv1alpha1.NewForConfigOrDie(c)
 	cs.alikafkaV1alpha1 = alikafkav1alpha1.NewForConfigOrDie(c)
 	cs.amqpV1alpha1 = amqpv1alpha1.NewForConfigOrDie(c)
 	cs.apigatewayV1alpha1 = apigatewayv1alpha1.NewForConfigOrDie(c)
+	cs.armsV1alpha1 = armsv1alpha1.NewForConfigOrDie(c)
 	cs.autoV1alpha1 = autov1alpha1.NewForConfigOrDie(c)
+	cs.bastionhostV1alpha1 = bastionhostv1alpha1.NewForConfigOrDie(c)
 	cs.brainV1alpha1 = brainv1alpha1.NewForConfigOrDie(c)
 	cs.casV1alpha1 = casv1alpha1.NewForConfigOrDie(c)
 	cs.cassandraV1alpha1 = cassandrav1alpha1.NewForConfigOrDie(c)
+	cs.cddcV1alpha1 = cddcv1alpha1.NewForConfigOrDie(c)
 	cs.cdnV1alpha1 = cdnv1alpha1.NewForConfigOrDie(c)
 	cs.cenV1alpha1 = cenv1alpha1.NewForConfigOrDie(c)
+	cs.clickV1alpha1 = clickv1alpha1.NewForConfigOrDie(c)
 	cs.cloudV1alpha1 = cloudv1alpha1.NewForConfigOrDie(c)
+	cs.cloudauthV1alpha1 = cloudauthv1alpha1.NewForConfigOrDie(c)
 	cs.cmsV1alpha1 = cmsv1alpha1.NewForConfigOrDie(c)
 	cs.commonV1alpha1 = commonv1alpha1.NewForConfigOrDie(c)
 	cs.configV1alpha1 = configv1alpha1.NewForConfigOrDie(c)
@@ -1170,71 +1596,100 @@ func NewForConfigOrDie(c *rest.Config) *Clientset {
 	cs.copyV1alpha1 = copyv1alpha1.NewForConfigOrDie(c)
 	cs.crV1alpha1 = crv1alpha1.NewForConfigOrDie(c)
 	cs.csV1alpha1 = csv1alpha1.NewForConfigOrDie(c)
+	cs.dataV1alpha1 = datav1alpha1.NewForConfigOrDie(c)
+	cs.databaseV1alpha1 = databasev1alpha1.NewForConfigOrDie(c)
 	cs.datahubV1alpha1 = datahubv1alpha1.NewForConfigOrDie(c)
 	cs.dbV1alpha1 = dbv1alpha1.NewForConfigOrDie(c)
+	cs.dbfsV1alpha1 = dbfsv1alpha1.NewForConfigOrDie(c)
 	cs.dcdnV1alpha1 = dcdnv1alpha1.NewForConfigOrDie(c)
 	cs.ddosbgpV1alpha1 = ddosbgpv1alpha1.NewForConfigOrDie(c)
 	cs.ddoscooV1alpha1 = ddoscoov1alpha1.NewForConfigOrDie(c)
+	cs.dfsV1alpha1 = dfsv1alpha1.NewForConfigOrDie(c)
 	cs.directV1alpha1 = directv1alpha1.NewForConfigOrDie(c)
 	cs.diskV1alpha1 = diskv1alpha1.NewForConfigOrDie(c)
 	cs.dmsV1alpha1 = dmsv1alpha1.NewForConfigOrDie(c)
 	cs.dnsV1alpha1 = dnsv1alpha1.NewForConfigOrDie(c)
 	cs.drdsV1alpha1 = drdsv1alpha1.NewForConfigOrDie(c)
+	cs.dtsV1alpha1 = dtsv1alpha1.NewForConfigOrDie(c)
+	cs.eaisV1alpha1 = eaisv1alpha1.NewForConfigOrDie(c)
+	cs.ecdV1alpha1 = ecdv1alpha1.NewForConfigOrDie(c)
 	cs.eciV1alpha1 = eciv1alpha1.NewForConfigOrDie(c)
+	cs.ecpV1alpha1 = ecpv1alpha1.NewForConfigOrDie(c)
 	cs.ecsV1alpha1 = ecsv1alpha1.NewForConfigOrDie(c)
 	cs.edasV1alpha1 = edasv1alpha1.NewForConfigOrDie(c)
+	cs.ehpcV1alpha1 = ehpcv1alpha1.NewForConfigOrDie(c)
 	cs.eipV1alpha1 = eipv1alpha1.NewForConfigOrDie(c)
 	cs.eipanycastV1alpha1 = eipanycastv1alpha1.NewForConfigOrDie(c)
 	cs.elasticsearchV1alpha1 = elasticsearchv1alpha1.NewForConfigOrDie(c)
 	cs.emrV1alpha1 = emrv1alpha1.NewForConfigOrDie(c)
+	cs.ensV1alpha1 = ensv1alpha1.NewForConfigOrDie(c)
 	cs.essV1alpha1 = essv1alpha1.NewForConfigOrDie(c)
 	cs.eventV1alpha1 = eventv1alpha1.NewForConfigOrDie(c)
+	cs.expressV1alpha1 = expressv1alpha1.NewForConfigOrDie(c)
 	cs.fcV1alpha1 = fcv1alpha1.NewForConfigOrDie(c)
 	cs.fnfV1alpha1 = fnfv1alpha1.NewForConfigOrDie(c)
 	cs.forwardV1alpha1 = forwardv1alpha1.NewForConfigOrDie(c)
 	cs.gaV1alpha1 = gav1alpha1.NewForConfigOrDie(c)
 	cs.gpdbV1alpha1 = gpdbv1alpha1.NewForConfigOrDie(c)
+	cs.graphV1alpha1 = graphv1alpha1.NewForConfigOrDie(c)
 	cs.havipV1alpha1 = havipv1alpha1.NewForConfigOrDie(c)
 	cs.hbaseV1alpha1 = hbasev1alpha1.NewForConfigOrDie(c)
+	cs.hbrV1alpha1 = hbrv1alpha1.NewForConfigOrDie(c)
 	cs.imageV1alpha1 = imagev1alpha1.NewForConfigOrDie(c)
+	cs.immV1alpha1 = immv1alpha1.NewForConfigOrDie(c)
+	cs.impV1alpha1 = impv1alpha1.NewForConfigOrDie(c)
 	cs.instanceV1alpha1 = instancev1alpha1.NewForConfigOrDie(c)
+	cs.iotV1alpha1 = iotv1alpha1.NewForConfigOrDie(c)
 	cs.keyV1alpha1 = keyv1alpha1.NewForConfigOrDie(c)
 	cs.kmsV1alpha1 = kmsv1alpha1.NewForConfigOrDie(c)
 	cs.kvstoreV1alpha1 = kvstorev1alpha1.NewForConfigOrDie(c)
 	cs.launchV1alpha1 = launchv1alpha1.NewForConfigOrDie(c)
+	cs.lindormV1alpha1 = lindormv1alpha1.NewForConfigOrDie(c)
 	cs.logV1alpha1 = logv1alpha1.NewForConfigOrDie(c)
 	cs.logtailV1alpha1 = logtailv1alpha1.NewForConfigOrDie(c)
 	cs.marketV1alpha1 = marketv1alpha1.NewForConfigOrDie(c)
 	cs.maxcomputeV1alpha1 = maxcomputev1alpha1.NewForConfigOrDie(c)
+	cs.mhubV1alpha1 = mhubv1alpha1.NewForConfigOrDie(c)
 	cs.mnsV1alpha1 = mnsv1alpha1.NewForConfigOrDie(c)
 	cs.mongodbV1alpha1 = mongodbv1alpha1.NewForConfigOrDie(c)
+	cs.mscV1alpha1 = mscv1alpha1.NewForConfigOrDie(c)
 	cs.mseV1alpha1 = msev1alpha1.NewForConfigOrDie(c)
 	cs.nasV1alpha1 = nasv1alpha1.NewForConfigOrDie(c)
 	cs.natV1alpha1 = natv1alpha1.NewForConfigOrDie(c)
 	cs.networkV1alpha1 = networkv1alpha1.NewForConfigOrDie(c)
 	cs.onsV1alpha1 = onsv1alpha1.NewForConfigOrDie(c)
 	cs.oosV1alpha1 = oosv1alpha1.NewForConfigOrDie(c)
+	cs.openV1alpha1 = openv1alpha1.NewForConfigOrDie(c)
 	cs.ossV1alpha1 = ossv1alpha1.NewForConfigOrDie(c)
 	cs.otsV1alpha1 = otsv1alpha1.NewForConfigOrDie(c)
 	cs.polardbV1alpha1 = polardbv1alpha1.NewForConfigOrDie(c)
 	cs.privatelinkV1alpha1 = privatelinkv1alpha1.NewForConfigOrDie(c)
 	cs.pvtzV1alpha1 = pvtzv1alpha1.NewForConfigOrDie(c)
+	cs.quickV1alpha1 = quickv1alpha1.NewForConfigOrDie(c)
 	cs.quotasV1alpha1 = quotasv1alpha1.NewForConfigOrDie(c)
 	cs.ramV1alpha1 = ramv1alpha1.NewForConfigOrDie(c)
+	cs.rdcV1alpha1 = rdcv1alpha1.NewForConfigOrDie(c)
 	cs.rdsV1alpha1 = rdsv1alpha1.NewForConfigOrDie(c)
 	cs.reservedV1alpha1 = reservedv1alpha1.NewForConfigOrDie(c)
 	cs.resourceV1alpha1 = resourcev1alpha1.NewForConfigOrDie(c)
 	cs.rosV1alpha1 = rosv1alpha1.NewForConfigOrDie(c)
 	cs.routeV1alpha1 = routev1alpha1.NewForConfigOrDie(c)
 	cs.routerV1alpha1 = routerv1alpha1.NewForConfigOrDie(c)
+	cs.saeV1alpha1 = saev1alpha1.NewForConfigOrDie(c)
 	cs.sagV1alpha1 = sagv1alpha1.NewForConfigOrDie(c)
+	cs.scdnV1alpha1 = scdnv1alpha1.NewForConfigOrDie(c)
+	cs.sddpV1alpha1 = sddpv1alpha1.NewForConfigOrDie(c)
 	cs.securityV1alpha1 = securityv1alpha1.NewForConfigOrDie(c)
+	cs.serviceV1alpha1 = servicev1alpha1.NewForConfigOrDie(c)
+	cs.simpleV1alpha1 = simplev1alpha1.NewForConfigOrDie(c)
 	cs.slbV1alpha1 = slbv1alpha1.NewForConfigOrDie(c)
 	cs.snapshotV1alpha1 = snapshotv1alpha1.NewForConfigOrDie(c)
 	cs.snatV1alpha1 = snatv1alpha1.NewForConfigOrDie(c)
 	cs.sslV1alpha1 = sslv1alpha1.NewForConfigOrDie(c)
 	cs.subnetV1alpha1 = subnetv1alpha1.NewForConfigOrDie(c)
 	cs.tsdbV1alpha1 = tsdbv1alpha1.NewForConfigOrDie(c)
+	cs.videoV1alpha1 = videov1alpha1.NewForConfigOrDie(c)
+	cs.vodV1alpha1 = vodv1alpha1.NewForConfigOrDie(c)
 	cs.vpcV1alpha1 = vpcv1alpha1.NewForConfigOrDie(c)
 	cs.vpnV1alpha1 = vpnv1alpha1.NewForConfigOrDie(c)
 	cs.vswitchV1alpha1 = vswitchv1alpha1.NewForConfigOrDie(c)
@@ -1250,17 +1705,23 @@ func New(c rest.Interface) *Clientset {
 	var cs Clientset
 	cs.actiontrailV1alpha1 = actiontrailv1alpha1.New(c)
 	cs.adbV1alpha1 = adbv1alpha1.New(c)
+	cs.albV1alpha1 = albv1alpha1.New(c)
 	cs.alidnsV1alpha1 = alidnsv1alpha1.New(c)
 	cs.alikafkaV1alpha1 = alikafkav1alpha1.New(c)
 	cs.amqpV1alpha1 = amqpv1alpha1.New(c)
 	cs.apigatewayV1alpha1 = apigatewayv1alpha1.New(c)
+	cs.armsV1alpha1 = armsv1alpha1.New(c)
 	cs.autoV1alpha1 = autov1alpha1.New(c)
+	cs.bastionhostV1alpha1 = bastionhostv1alpha1.New(c)
 	cs.brainV1alpha1 = brainv1alpha1.New(c)
 	cs.casV1alpha1 = casv1alpha1.New(c)
 	cs.cassandraV1alpha1 = cassandrav1alpha1.New(c)
+	cs.cddcV1alpha1 = cddcv1alpha1.New(c)
 	cs.cdnV1alpha1 = cdnv1alpha1.New(c)
 	cs.cenV1alpha1 = cenv1alpha1.New(c)
+	cs.clickV1alpha1 = clickv1alpha1.New(c)
 	cs.cloudV1alpha1 = cloudv1alpha1.New(c)
+	cs.cloudauthV1alpha1 = cloudauthv1alpha1.New(c)
 	cs.cmsV1alpha1 = cmsv1alpha1.New(c)
 	cs.commonV1alpha1 = commonv1alpha1.New(c)
 	cs.configV1alpha1 = configv1alpha1.New(c)
@@ -1268,71 +1729,100 @@ func New(c rest.Interface) *Clientset {
 	cs.copyV1alpha1 = copyv1alpha1.New(c)
 	cs.crV1alpha1 = crv1alpha1.New(c)
 	cs.csV1alpha1 = csv1alpha1.New(c)
+	cs.dataV1alpha1 = datav1alpha1.New(c)
+	cs.databaseV1alpha1 = databasev1alpha1.New(c)
 	cs.datahubV1alpha1 = datahubv1alpha1.New(c)
 	cs.dbV1alpha1 = dbv1alpha1.New(c)
+	cs.dbfsV1alpha1 = dbfsv1alpha1.New(c)
 	cs.dcdnV1alpha1 = dcdnv1alpha1.New(c)
 	cs.ddosbgpV1alpha1 = ddosbgpv1alpha1.New(c)
 	cs.ddoscooV1alpha1 = ddoscoov1alpha1.New(c)
+	cs.dfsV1alpha1 = dfsv1alpha1.New(c)
 	cs.directV1alpha1 = directv1alpha1.New(c)
 	cs.diskV1alpha1 = diskv1alpha1.New(c)
 	cs.dmsV1alpha1 = dmsv1alpha1.New(c)
 	cs.dnsV1alpha1 = dnsv1alpha1.New(c)
 	cs.drdsV1alpha1 = drdsv1alpha1.New(c)
+	cs.dtsV1alpha1 = dtsv1alpha1.New(c)
+	cs.eaisV1alpha1 = eaisv1alpha1.New(c)
+	cs.ecdV1alpha1 = ecdv1alpha1.New(c)
 	cs.eciV1alpha1 = eciv1alpha1.New(c)
+	cs.ecpV1alpha1 = ecpv1alpha1.New(c)
 	cs.ecsV1alpha1 = ecsv1alpha1.New(c)
 	cs.edasV1alpha1 = edasv1alpha1.New(c)
+	cs.ehpcV1alpha1 = ehpcv1alpha1.New(c)
 	cs.eipV1alpha1 = eipv1alpha1.New(c)
 	cs.eipanycastV1alpha1 = eipanycastv1alpha1.New(c)
 	cs.elasticsearchV1alpha1 = elasticsearchv1alpha1.New(c)
 	cs.emrV1alpha1 = emrv1alpha1.New(c)
+	cs.ensV1alpha1 = ensv1alpha1.New(c)
 	cs.essV1alpha1 = essv1alpha1.New(c)
 	cs.eventV1alpha1 = eventv1alpha1.New(c)
+	cs.expressV1alpha1 = expressv1alpha1.New(c)
 	cs.fcV1alpha1 = fcv1alpha1.New(c)
 	cs.fnfV1alpha1 = fnfv1alpha1.New(c)
 	cs.forwardV1alpha1 = forwardv1alpha1.New(c)
 	cs.gaV1alpha1 = gav1alpha1.New(c)
 	cs.gpdbV1alpha1 = gpdbv1alpha1.New(c)
+	cs.graphV1alpha1 = graphv1alpha1.New(c)
 	cs.havipV1alpha1 = havipv1alpha1.New(c)
 	cs.hbaseV1alpha1 = hbasev1alpha1.New(c)
+	cs.hbrV1alpha1 = hbrv1alpha1.New(c)
 	cs.imageV1alpha1 = imagev1alpha1.New(c)
+	cs.immV1alpha1 = immv1alpha1.New(c)
+	cs.impV1alpha1 = impv1alpha1.New(c)
 	cs.instanceV1alpha1 = instancev1alpha1.New(c)
+	cs.iotV1alpha1 = iotv1alpha1.New(c)
 	cs.keyV1alpha1 = keyv1alpha1.New(c)
 	cs.kmsV1alpha1 = kmsv1alpha1.New(c)
 	cs.kvstoreV1alpha1 = kvstorev1alpha1.New(c)
 	cs.launchV1alpha1 = launchv1alpha1.New(c)
+	cs.lindormV1alpha1 = lindormv1alpha1.New(c)
 	cs.logV1alpha1 = logv1alpha1.New(c)
 	cs.logtailV1alpha1 = logtailv1alpha1.New(c)
 	cs.marketV1alpha1 = marketv1alpha1.New(c)
 	cs.maxcomputeV1alpha1 = maxcomputev1alpha1.New(c)
+	cs.mhubV1alpha1 = mhubv1alpha1.New(c)
 	cs.mnsV1alpha1 = mnsv1alpha1.New(c)
 	cs.mongodbV1alpha1 = mongodbv1alpha1.New(c)
+	cs.mscV1alpha1 = mscv1alpha1.New(c)
 	cs.mseV1alpha1 = msev1alpha1.New(c)
 	cs.nasV1alpha1 = nasv1alpha1.New(c)
 	cs.natV1alpha1 = natv1alpha1.New(c)
 	cs.networkV1alpha1 = networkv1alpha1.New(c)
 	cs.onsV1alpha1 = onsv1alpha1.New(c)
 	cs.oosV1alpha1 = oosv1alpha1.New(c)
+	cs.openV1alpha1 = openv1alpha1.New(c)
 	cs.ossV1alpha1 = ossv1alpha1.New(c)
 	cs.otsV1alpha1 = otsv1alpha1.New(c)
 	cs.polardbV1alpha1 = polardbv1alpha1.New(c)
 	cs.privatelinkV1alpha1 = privatelinkv1alpha1.New(c)
 	cs.pvtzV1alpha1 = pvtzv1alpha1.New(c)
+	cs.quickV1alpha1 = quickv1alpha1.New(c)
 	cs.quotasV1alpha1 = quotasv1alpha1.New(c)
 	cs.ramV1alpha1 = ramv1alpha1.New(c)
+	cs.rdcV1alpha1 = rdcv1alpha1.New(c)
 	cs.rdsV1alpha1 = rdsv1alpha1.New(c)
 	cs.reservedV1alpha1 = reservedv1alpha1.New(c)
 	cs.resourceV1alpha1 = resourcev1alpha1.New(c)
 	cs.rosV1alpha1 = rosv1alpha1.New(c)
 	cs.routeV1alpha1 = routev1alpha1.New(c)
 	cs.routerV1alpha1 = routerv1alpha1.New(c)
+	cs.saeV1alpha1 = saev1alpha1.New(c)
 	cs.sagV1alpha1 = sagv1alpha1.New(c)
+	cs.scdnV1alpha1 = scdnv1alpha1.New(c)
+	cs.sddpV1alpha1 = sddpv1alpha1.New(c)
 	cs.securityV1alpha1 = securityv1alpha1.New(c)
+	cs.serviceV1alpha1 = servicev1alpha1.New(c)
+	cs.simpleV1alpha1 = simplev1alpha1.New(c)
 	cs.slbV1alpha1 = slbv1alpha1.New(c)
 	cs.snapshotV1alpha1 = snapshotv1alpha1.New(c)
 	cs.snatV1alpha1 = snatv1alpha1.New(c)
 	cs.sslV1alpha1 = sslv1alpha1.New(c)
 	cs.subnetV1alpha1 = subnetv1alpha1.New(c)
 	cs.tsdbV1alpha1 = tsdbv1alpha1.New(c)
+	cs.videoV1alpha1 = videov1alpha1.New(c)
+	cs.vodV1alpha1 = vodv1alpha1.New(c)
 	cs.vpcV1alpha1 = vpcv1alpha1.New(c)
 	cs.vpnV1alpha1 = vpnv1alpha1.New(c)
 	cs.vswitchV1alpha1 = vswitchv1alpha1.New(c)

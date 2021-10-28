@@ -136,6 +136,11 @@ func (in *AddressSpecResource) DeepCopyInto(out *AddressSpecResource) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutoPay != nil {
+		in, out := &in.AutoPay, &out.AutoPay
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Bandwidth != nil {
 		in, out := &in.Bandwidth, &out.Bandwidth
 		*out = new(string)
@@ -502,6 +507,11 @@ func (in *EipSpecResource) DeepCopyInto(out *EipSpecResource) {
 	if in.AddressName != nil {
 		in, out := &in.AddressName, &out.AddressName
 		*out = new(string)
+		**out = **in
+	}
+	if in.AutoPay != nil {
+		in, out := &in.AutoPay, &out.AutoPay
+		*out = new(bool)
 		**out = **in
 	}
 	if in.Bandwidth != nil {

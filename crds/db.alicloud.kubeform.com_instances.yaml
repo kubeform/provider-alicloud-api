@@ -88,6 +88,8 @@ spec:
                     type: string
                   dbInstanceStorageType:
                     type: string
+                  dbTimeZone:
+                    type: string
                   encryptionKey:
                     type: string
                   engine:
@@ -137,6 +139,8 @@ spec:
                     type: string
                   privateIPAddress:
                     type: string
+                  releasedKeepPolicy:
+                    type: string
                   replicationACL:
                     type: string
                   resourceGroupID:
@@ -169,6 +173,14 @@ spec:
                     type: string
                   sslStatus:
                     type: string
+                  storageAutoScale:
+                    type: string
+                  storageThreshold:
+                    format: int64
+                    type: integer
+                  storageUpperBound:
+                    format: int64
+                    type: integer
                   switchTime:
                     type: string
                   tags:
@@ -270,6 +282,8 @@ spec:
                     type: string
                   dbInstanceStorageType:
                     type: string
+                  dbTimeZone:
+                    type: string
                   encryptionKey:
                     type: string
                   engine:
@@ -319,6 +333,8 @@ spec:
                     type: string
                   privateIPAddress:
                     type: string
+                  releasedKeepPolicy:
+                    type: string
                   replicationACL:
                     type: string
                   resourceGroupID:
@@ -351,6 +367,14 @@ spec:
                     type: string
                   sslStatus:
                     type: string
+                  storageAutoScale:
+                    type: string
+                  storageThreshold:
+                    format: int64
+                    type: integer
+                  storageUpperBound:
+                    format: int64
+                    type: integer
                   switchTime:
                     type: string
                   tags:

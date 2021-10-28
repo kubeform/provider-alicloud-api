@@ -42,9 +42,11 @@ func (r *FileSystem) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &FileSystem{}
 
 var filesystemForceNewList = map[string]bool{
-	"/encrypt_type":  true,
-	"/protocol_type": true,
-	"/storage_type":  true,
+	"/encrypt_type":     true,
+	"/file_system_type": true,
+	"/protocol_type":    true,
+	"/storage_type":     true,
+	"/zone_id":          true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type

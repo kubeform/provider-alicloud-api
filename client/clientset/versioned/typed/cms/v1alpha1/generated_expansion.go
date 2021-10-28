@@ -26,6 +26,8 @@ type AlarmContactGroupExpansion interface{}
 
 type GroupMetricRuleExpansion interface{}
 
+type MetricRuleTemplateExpansion interface{}
+
 type MonitorGroupExpansion interface{}
 
 type MonitorGroupInstancesExpansion interface{}

@@ -63,6 +63,31 @@ spec:
                     type: array
                   backupTime:
                     type: string
+                  configServerList:
+                    items:
+                      properties:
+                        connectString:
+                          type: string
+                        maxConnections:
+                          format: int64
+                          type: integer
+                        maxIops:
+                          format: int64
+                          type: integer
+                        nodeClass:
+                          type: string
+                        nodeDescription:
+                          type: string
+                        nodeID:
+                          type: string
+                        nodeStorage:
+                          format: int64
+                          type: integer
+                        port:
+                          format: int64
+                          type: integer
+                      type: object
+                    type: array
                   engineVersion:
                     type: string
                   id:
@@ -94,6 +119,8 @@ spec:
                     minItems: 2
                     type: array
                   name:
+                    type: string
+                  orderType:
                     type: string
                   period:
                     format: int64
@@ -199,6 +226,31 @@ spec:
                     type: array
                   backupTime:
                     type: string
+                  configServerList:
+                    items:
+                      properties:
+                        connectString:
+                          type: string
+                        maxConnections:
+                          format: int64
+                          type: integer
+                        maxIops:
+                          format: int64
+                          type: integer
+                        nodeClass:
+                          type: string
+                        nodeDescription:
+                          type: string
+                        nodeID:
+                          type: string
+                        nodeStorage:
+                          format: int64
+                          type: integer
+                        port:
+                          format: int64
+                          type: integer
+                      type: object
+                    type: array
                   engineVersion:
                     type: string
                   id:
@@ -230,6 +282,8 @@ spec:
                     minItems: 2
                     type: array
                   name:
+                    type: string
+                  orderType:
                     type: string
                   period:
                     format: int64

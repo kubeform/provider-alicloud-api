@@ -224,6 +224,11 @@ func (in *GatewaySpecResource) DeepCopyInto(out *GatewaySpecResource) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.NetworkType != nil {
+		in, out := &in.NetworkType, &out.NetworkType
+		*out = new(string)
+		**out = **in
+	}
 	if in.PaymentType != nil {
 		in, out := &in.PaymentType, &out.PaymentType
 		*out = new(string)

@@ -45,6 +45,10 @@ func (c *FakeCrV1alpha1) EeSyncRules(namespace string) v1alpha1.EeSyncRuleInterf
 	return &FakeEeSyncRules{c, namespace}
 }
 
+func (c *FakeCrV1alpha1) EndpointACLPolicies(namespace string) v1alpha1.EndpointACLPolicyInterface {
+	return &FakeEndpointACLPolicies{c, namespace}
+}
+
 func (c *FakeCrV1alpha1) Namespaces(namespace string) v1alpha1.NamespaceInterface {
 	return &FakeNamespaces{c, namespace}
 }

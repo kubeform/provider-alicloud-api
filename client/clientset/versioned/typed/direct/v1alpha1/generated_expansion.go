@@ -18,4 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+type MailDomainExpansion interface{}
+
+type MailMailAddressExpansion interface{}
+
 type MailReceiversExpansion interface{}

@@ -64,6 +64,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&EeRepoList{},
 		&EeSyncRule{},
 		&EeSyncRuleList{},
+		&EndpointACLPolicy{},
+		&EndpointACLPolicyList{},
 		&Namespace{},
 		&NamespaceList{},
 		&Repo{},

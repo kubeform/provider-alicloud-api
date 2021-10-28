@@ -31,6 +31,7 @@ type EcsV1alpha1Interface interface {
 	AutoSnapshotPolicyAttachmentsGetter
 	CommandsGetter
 	DedicatedHostsGetter
+	DeploymentSetsGetter
 	DisksGetter
 	DiskAttachmentsGetter
 	HpcClustersGetter
@@ -61,6 +62,10 @@ func (c *EcsV1alpha1Client) Commands(namespace string) CommandInterface {
 
 func (c *EcsV1alpha1Client) DedicatedHosts(namespace string) DedicatedHostInterface {
 	return newDedicatedHosts(c, namespace)
+}
+
+func (c *EcsV1alpha1Client) DeploymentSets(namespace string) DeploymentSetInterface {
+	return newDeploymentSets(c, namespace)
 }
 
 func (c *EcsV1alpha1Client) Disks(namespace string) DiskInterface {

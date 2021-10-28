@@ -77,6 +77,10 @@ func (c *FakeSlbV1alpha1) Slbs(namespace string) v1alpha1.SlbInterface {
 	return &FakeSlbs{c, namespace}
 }
 
+func (c *FakeSlbV1alpha1) TlsCipherPolicies(namespace string) v1alpha1.TlsCipherPolicyInterface {
+	return &FakeTlsCipherPolicies{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeSlbV1alpha1) RESTClient() rest.Interface {

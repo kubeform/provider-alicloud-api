@@ -41,6 +41,42 @@ func (c *FakeCloudV1alpha1) ConnectNetworkGrants(namespace string) v1alpha1.Conn
 	return &FakeConnectNetworkGrants{c, namespace}
 }
 
+func (c *FakeCloudV1alpha1) FirewallControlPolicies(namespace string) v1alpha1.FirewallControlPolicyInterface {
+	return &FakeFirewallControlPolicies{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) FirewallControlPolicyOrders(namespace string) v1alpha1.FirewallControlPolicyOrderInterface {
+	return &FakeFirewallControlPolicyOrders{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) FirewallInstances(namespace string) v1alpha1.FirewallInstanceInterface {
+	return &FakeFirewallInstances{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) SsoAccessConfigurations(namespace string) v1alpha1.SsoAccessConfigurationInterface {
+	return &FakeSsoAccessConfigurations{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) SsoDirectories(namespace string) v1alpha1.SsoDirectoryInterface {
+	return &FakeSsoDirectories{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) SsoGroups(namespace string) v1alpha1.SsoGroupInterface {
+	return &FakeSsoGroups{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) SsoScimServerCredentials(namespace string) v1alpha1.SsoScimServerCredentialInterface {
+	return &FakeSsoScimServerCredentials{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) SsoUsers(namespace string) v1alpha1.SsoUserInterface {
+	return &FakeSsoUsers{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayGateways(namespace string) v1alpha1.StorageGatewayGatewayInterface {
+	return &FakeStorageGatewayGateways{c, namespace}
+}
+
 func (c *FakeCloudV1alpha1) StorageGatewayStorageBundles(namespace string) v1alpha1.StorageGatewayStorageBundleInterface {
 	return &FakeStorageGatewayStorageBundles{c, namespace}
 }

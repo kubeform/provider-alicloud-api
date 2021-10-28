@@ -45,6 +45,10 @@ func (c *FakeCmsV1alpha1) GroupMetricRules(namespace string) v1alpha1.GroupMetri
 	return &FakeGroupMetricRules{c, namespace}
 }
 
+func (c *FakeCmsV1alpha1) MetricRuleTemplates(namespace string) v1alpha1.MetricRuleTemplateInterface {
+	return &FakeMetricRuleTemplates{c, namespace}
+}
+
 func (c *FakeCmsV1alpha1) MonitorGroups(namespace string) v1alpha1.MonitorGroupInterface {
 	return &FakeMonitorGroups{c, namespace}
 }

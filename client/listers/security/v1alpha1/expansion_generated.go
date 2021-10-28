@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// CenterGroupListerExpansion allows custom methods to be added to
+// CenterGroupLister.
+type CenterGroupListerExpansion interface{}
+
+// CenterGroupNamespaceListerExpansion allows custom methods to be added to
+// CenterGroupNamespaceLister.
+type CenterGroupNamespaceListerExpansion interface{}
+
 // GroupListerExpansion allows custom methods to be added to
 // GroupLister.
 type GroupListerExpansion interface{}

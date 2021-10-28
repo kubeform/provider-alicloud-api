@@ -57,6 +57,8 @@ spec:
                 type: object
               resource:
                 properties:
+                  deleteAutoSnapshot:
+                    type: boolean
                   description:
                     type: string
                   encrypted:
@@ -124,6 +126,8 @@ spec:
                 type: object
               state:
                 properties:
+                  deleteAutoSnapshot:
+                    type: boolean
                   description:
                     type: string
                   encrypted:

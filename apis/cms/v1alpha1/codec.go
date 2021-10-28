@@ -27,25 +27,33 @@ import (
 
 func GetEncoder() map[string]jsoniter.ValEncoder {
 	return map[string]jsoniter.ValEncoder{
-		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsCritical{}).Type1()):           AlarmSpecEscalationsCriticalCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsInfo{}).Type1()):               AlarmSpecEscalationsInfoCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsWarn{}).Type1()):               AlarmSpecEscalationsWarnCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalations{}).Type1()):         GroupMetricRuleSpecEscalationsCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsCritical{}).Type1()): GroupMetricRuleSpecEscalationsCriticalCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsInfo{}).Type1()):     GroupMetricRuleSpecEscalationsInfoCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsWarn{}).Type1()):     GroupMetricRuleSpecEscalationsWarnCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsCritical{}).Type1()):                            AlarmSpecEscalationsCriticalCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsInfo{}).Type1()):                                AlarmSpecEscalationsInfoCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsWarn{}).Type1()):                                AlarmSpecEscalationsWarnCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalations{}).Type1()):                          GroupMetricRuleSpecEscalationsCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsCritical{}).Type1()):                  GroupMetricRuleSpecEscalationsCriticalCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsInfo{}).Type1()):                      GroupMetricRuleSpecEscalationsInfoCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsWarn{}).Type1()):                      GroupMetricRuleSpecEscalationsWarnCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalations{}).Type1()):         MetricRuleTemplateSpecAlertTemplatesEscalationsCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}).Type1()): MetricRuleTemplateSpecAlertTemplatesEscalationsCriticalCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}).Type1()):     MetricRuleTemplateSpecAlertTemplatesEscalationsInfoCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}).Type1()):     MetricRuleTemplateSpecAlertTemplatesEscalationsWarnCodec{},
 	}
 }
 
 func GetDecoder() map[string]jsoniter.ValDecoder {
 	return map[string]jsoniter.ValDecoder{
-		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsCritical{}).Type1()):           AlarmSpecEscalationsCriticalCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsInfo{}).Type1()):               AlarmSpecEscalationsInfoCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsWarn{}).Type1()):               AlarmSpecEscalationsWarnCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalations{}).Type1()):         GroupMetricRuleSpecEscalationsCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsCritical{}).Type1()): GroupMetricRuleSpecEscalationsCriticalCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsInfo{}).Type1()):     GroupMetricRuleSpecEscalationsInfoCodec{},
-		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsWarn{}).Type1()):     GroupMetricRuleSpecEscalationsWarnCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsCritical{}).Type1()):                            AlarmSpecEscalationsCriticalCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsInfo{}).Type1()):                                AlarmSpecEscalationsInfoCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(AlarmSpecEscalationsWarn{}).Type1()):                                AlarmSpecEscalationsWarnCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalations{}).Type1()):                          GroupMetricRuleSpecEscalationsCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsCritical{}).Type1()):                  GroupMetricRuleSpecEscalationsCriticalCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsInfo{}).Type1()):                      GroupMetricRuleSpecEscalationsInfoCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(GroupMetricRuleSpecEscalationsWarn{}).Type1()):                      GroupMetricRuleSpecEscalationsWarnCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalations{}).Type1()):         MetricRuleTemplateSpecAlertTemplatesEscalationsCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}).Type1()): MetricRuleTemplateSpecAlertTemplatesEscalationsCriticalCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}).Type1()):     MetricRuleTemplateSpecAlertTemplatesEscalationsInfoCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}).Type1()):     MetricRuleTemplateSpecAlertTemplatesEscalationsWarnCodec{},
 	}
 }
 
@@ -611,5 +619,321 @@ func (GroupMetricRuleSpecEscalationsWarnCodec) Decode(ptr unsafe.Pointer, iter *
 		}
 	default:
 		iter.ReportError("decode GroupMetricRuleSpecEscalationsWarn", "unexpected JSON type")
+	}
+}
+
+// +k8s:deepcopy-gen=false
+type MetricRuleTemplateSpecAlertTemplatesEscalationsCodec struct {
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) == nil
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr)
+	var objs []MetricRuleTemplateSpecAlertTemplatesEscalations
+	if obj != nil {
+		objs = []MetricRuleTemplateSpecAlertTemplatesEscalations{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalations{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalations{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []MetricRuleTemplateSpecAlertTemplatesEscalations
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalations{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) = objs[0]
+			} else {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalations{}
+			}
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalations{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj MetricRuleTemplateSpecAlertTemplatesEscalations
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalations{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) = obj
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalations)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalations{}
+		}
+	default:
+		iter.ReportError("decode MetricRuleTemplateSpecAlertTemplatesEscalations", "unexpected JSON type")
+	}
+}
+
+// +k8s:deepcopy-gen=false
+type MetricRuleTemplateSpecAlertTemplatesEscalationsCriticalCodec struct {
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsCriticalCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) == nil
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsCriticalCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr)
+	var objs []MetricRuleTemplateSpecAlertTemplatesEscalationsCritical
+	if obj != nil {
+		objs = []MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsCriticalCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []MetricRuleTemplateSpecAlertTemplatesEscalationsCritical
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) = objs[0]
+			} else {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}
+			}
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj MetricRuleTemplateSpecAlertTemplatesEscalationsCritical
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) = obj
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsCritical)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsCritical{}
+		}
+	default:
+		iter.ReportError("decode MetricRuleTemplateSpecAlertTemplatesEscalationsCritical", "unexpected JSON type")
+	}
+}
+
+// +k8s:deepcopy-gen=false
+type MetricRuleTemplateSpecAlertTemplatesEscalationsInfoCodec struct {
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsInfoCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) == nil
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsInfoCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr)
+	var objs []MetricRuleTemplateSpecAlertTemplatesEscalationsInfo
+	if obj != nil {
+		objs = []MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsInfoCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []MetricRuleTemplateSpecAlertTemplatesEscalationsInfo
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) = objs[0]
+			} else {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}
+			}
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj MetricRuleTemplateSpecAlertTemplatesEscalationsInfo
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) = obj
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsInfo)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsInfo{}
+		}
+	default:
+		iter.ReportError("decode MetricRuleTemplateSpecAlertTemplatesEscalationsInfo", "unexpected JSON type")
+	}
+}
+
+// +k8s:deepcopy-gen=false
+type MetricRuleTemplateSpecAlertTemplatesEscalationsWarnCodec struct {
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsWarnCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) == nil
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsWarnCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr)
+	var objs []MetricRuleTemplateSpecAlertTemplatesEscalationsWarn
+	if obj != nil {
+		objs = []MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (MetricRuleTemplateSpecAlertTemplatesEscalationsWarnCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []MetricRuleTemplateSpecAlertTemplatesEscalationsWarn
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) = objs[0]
+			} else {
+				*(*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}
+			}
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj MetricRuleTemplateSpecAlertTemplatesEscalationsWarn
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) = obj
+		} else {
+			*(*MetricRuleTemplateSpecAlertTemplatesEscalationsWarn)(ptr) = MetricRuleTemplateSpecAlertTemplatesEscalationsWarn{}
+		}
+	default:
+		iter.ReportError("decode MetricRuleTemplateSpecAlertTemplatesEscalationsWarn", "unexpected JSON type")
 	}
 }

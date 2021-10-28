@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// DhcpOptionsSetListerExpansion allows custom methods to be added to
+// DhcpOptionsSetLister.
+type DhcpOptionsSetListerExpansion interface{}
+
+// DhcpOptionsSetNamespaceListerExpansion allows custom methods to be added to
+// DhcpOptionsSetNamespaceLister.
+type DhcpOptionsSetNamespaceListerExpansion interface{}
+
 // FlowLogListerExpansion allows custom methods to be added to
 // FlowLogLister.
 type FlowLogListerExpansion interface{}
@@ -25,6 +33,38 @@ type FlowLogListerExpansion interface{}
 // FlowLogNamespaceListerExpansion allows custom methods to be added to
 // FlowLogNamespaceLister.
 type FlowLogNamespaceListerExpansion interface{}
+
+// NatIPListerExpansion allows custom methods to be added to
+// NatIPLister.
+type NatIPListerExpansion interface{}
+
+// NatIPNamespaceListerExpansion allows custom methods to be added to
+// NatIPNamespaceLister.
+type NatIPNamespaceListerExpansion interface{}
+
+// NatIPCIDRListerExpansion allows custom methods to be added to
+// NatIPCIDRLister.
+type NatIPCIDRListerExpansion interface{}
+
+// NatIPCIDRNamespaceListerExpansion allows custom methods to be added to
+// NatIPCIDRNamespaceLister.
+type NatIPCIDRNamespaceListerExpansion interface{}
+
+// TrafficMirrorFilterListerExpansion allows custom methods to be added to
+// TrafficMirrorFilterLister.
+type TrafficMirrorFilterListerExpansion interface{}
+
+// TrafficMirrorFilterNamespaceListerExpansion allows custom methods to be added to
+// TrafficMirrorFilterNamespaceLister.
+type TrafficMirrorFilterNamespaceListerExpansion interface{}
+
+// TrafficMirrorFilterEgressRuleListerExpansion allows custom methods to be added to
+// TrafficMirrorFilterEgressRuleLister.
+type TrafficMirrorFilterEgressRuleListerExpansion interface{}
+
+// TrafficMirrorFilterEgressRuleNamespaceListerExpansion allows custom methods to be added to
+// TrafficMirrorFilterEgressRuleNamespaceLister.
+type TrafficMirrorFilterEgressRuleNamespaceListerExpansion interface{}
 
 // VpcListerExpansion allows custom methods to be added to
 // VpcLister.

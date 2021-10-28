@@ -33,6 +33,10 @@ func (c *FakeActiontrailV1alpha1) Actiontrails(namespace string) v1alpha1.Action
 	return &FakeActiontrails{c, namespace}
 }
 
+func (c *FakeActiontrailV1alpha1) HistoryDeliveryJobs(namespace string) v1alpha1.HistoryDeliveryJobInterface {
+	return &FakeHistoryDeliveryJobs{c, namespace}
+}
+
 func (c *FakeActiontrailV1alpha1) Trails(namespace string) v1alpha1.TrailInterface {
 	return &FakeTrails{c, namespace}
 }

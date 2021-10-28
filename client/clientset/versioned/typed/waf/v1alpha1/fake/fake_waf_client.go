@@ -29,6 +29,10 @@ type FakeWafV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeWafV1alpha1) Certificates(namespace string) v1alpha1.CertificateInterface {
+	return &FakeCertificates{c, namespace}
+}
+
 func (c *FakeWafV1alpha1) Domains(namespace string) v1alpha1.DomainInterface {
 	return &FakeDomains{c, namespace}
 }

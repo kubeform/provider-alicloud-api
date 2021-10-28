@@ -18,6 +18,22 @@ limitations under the License.
 
 package v1alpha1
 
+// MailDomainListerExpansion allows custom methods to be added to
+// MailDomainLister.
+type MailDomainListerExpansion interface{}
+
+// MailDomainNamespaceListerExpansion allows custom methods to be added to
+// MailDomainNamespaceLister.
+type MailDomainNamespaceListerExpansion interface{}
+
+// MailMailAddressListerExpansion allows custom methods to be added to
+// MailMailAddressLister.
+type MailMailAddressListerExpansion interface{}
+
+// MailMailAddressNamespaceListerExpansion allows custom methods to be added to
+// MailMailAddressNamespaceLister.
+type MailMailAddressNamespaceListerExpansion interface{}
+
 // MailReceiversListerExpansion allows custom methods to be added to
 // MailReceiversLister.
 type MailReceiversListerExpansion interface{}

@@ -59,31 +59,39 @@ spec:
                 properties:
                   cert:
                     type: string
+                  certificateName:
+                    type: string
                   id:
                     type: string
                   key:
                     type: string
+                  lang:
+                    type: string
                   name:
+                    description: Deprecated
                     type: string
                 required:
                 - cert
                 - key
-                - name
                 type: object
               state:
                 properties:
                   cert:
                     type: string
+                  certificateName:
+                    type: string
                   id:
                     type: string
                   key:
                     type: string
+                  lang:
+                    type: string
                   name:
+                    description: Deprecated
                     type: string
                 required:
                 - cert
                 - key
-                - name
                 type: object
               terminationPolicy:
                 enum:

@@ -18,6 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+type CenterGroupExpansion interface{}
+
 type GroupExpansion interface{}
 
 type GroupRuleExpansion interface{}

@@ -24,8 +24,18 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// DhcpOptionsSets returns a DhcpOptionsSetInformer.
+	DhcpOptionsSets() DhcpOptionsSetInformer
 	// FlowLogs returns a FlowLogInformer.
 	FlowLogs() FlowLogInformer
+	// NatIPs returns a NatIPInformer.
+	NatIPs() NatIPInformer
+	// NatIPCIDRs returns a NatIPCIDRInformer.
+	NatIPCIDRs() NatIPCIDRInformer
+	// TrafficMirrorFilters returns a TrafficMirrorFilterInformer.
+	TrafficMirrorFilters() TrafficMirrorFilterInformer
+	// TrafficMirrorFilterEgressRules returns a TrafficMirrorFilterEgressRuleInformer.
+	TrafficMirrorFilterEgressRules() TrafficMirrorFilterEgressRuleInformer
 	// Vpcs returns a VpcInformer.
 	Vpcs() VpcInformer
 }
@@ -41,9 +51,34 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// DhcpOptionsSets returns a DhcpOptionsSetInformer.
+func (v *version) DhcpOptionsSets() DhcpOptionsSetInformer {
+	return &dhcpOptionsSetInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // FlowLogs returns a FlowLogInformer.
 func (v *version) FlowLogs() FlowLogInformer {
 	return &flowLogInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// NatIPs returns a NatIPInformer.
+func (v *version) NatIPs() NatIPInformer {
+	return &natIPInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// NatIPCIDRs returns a NatIPCIDRInformer.
+func (v *version) NatIPCIDRs() NatIPCIDRInformer {
+	return &natIPCIDRInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TrafficMirrorFilters returns a TrafficMirrorFilterInformer.
+func (v *version) TrafficMirrorFilters() TrafficMirrorFilterInformer {
+	return &trafficMirrorFilterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TrafficMirrorFilterEgressRules returns a TrafficMirrorFilterEgressRuleInformer.
+func (v *version) TrafficMirrorFilterEgressRules() TrafficMirrorFilterEgressRuleInformer {
+	return &trafficMirrorFilterEgressRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Vpcs returns a VpcInformer.

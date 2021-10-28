@@ -24,6 +24,8 @@ import (
 	fakeactiontrailv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/actiontrail/v1alpha1/fake"
 	adbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/adb/v1alpha1"
 	fakeadbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/adb/v1alpha1/fake"
+	albv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alb/v1alpha1"
+	fakealbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alb/v1alpha1/fake"
 	alidnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alidns/v1alpha1"
 	fakealidnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alidns/v1alpha1/fake"
 	alikafkav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/alikafka/v1alpha1"
@@ -32,20 +34,30 @@ import (
 	fakeamqpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/amqp/v1alpha1/fake"
 	apigatewayv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/apigateway/v1alpha1"
 	fakeapigatewayv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/apigateway/v1alpha1/fake"
+	armsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/arms/v1alpha1"
+	fakearmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/arms/v1alpha1/fake"
 	autov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/auto/v1alpha1"
 	fakeautov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/auto/v1alpha1/fake"
+	bastionhostv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/bastionhost/v1alpha1"
+	fakebastionhostv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/bastionhost/v1alpha1/fake"
 	brainv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/brain/v1alpha1"
 	fakebrainv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/brain/v1alpha1/fake"
 	casv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cas/v1alpha1"
 	fakecasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cas/v1alpha1/fake"
 	cassandrav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cassandra/v1alpha1"
 	fakecassandrav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cassandra/v1alpha1/fake"
+	cddcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cddc/v1alpha1"
+	fakecddcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cddc/v1alpha1/fake"
 	cdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cdn/v1alpha1"
 	fakecdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cdn/v1alpha1/fake"
 	cenv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cen/v1alpha1"
 	fakecenv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cen/v1alpha1/fake"
+	clickv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/click/v1alpha1"
+	fakeclickv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/click/v1alpha1/fake"
 	cloudv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cloud/v1alpha1"
 	fakecloudv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cloud/v1alpha1/fake"
+	cloudauthv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cloudauth/v1alpha1"
+	fakecloudauthv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cloudauth/v1alpha1/fake"
 	cmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cms/v1alpha1"
 	fakecmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cms/v1alpha1/fake"
 	commonv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/common/v1alpha1"
@@ -60,16 +72,24 @@ import (
 	fakecrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cr/v1alpha1/fake"
 	csv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cs/v1alpha1"
 	fakecsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/cs/v1alpha1/fake"
+	datav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/data/v1alpha1"
+	fakedatav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/data/v1alpha1/fake"
+	databasev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/database/v1alpha1"
+	fakedatabasev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/database/v1alpha1/fake"
 	datahubv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/datahub/v1alpha1"
 	fakedatahubv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/datahub/v1alpha1/fake"
 	dbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/db/v1alpha1"
 	fakedbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/db/v1alpha1/fake"
+	dbfsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dbfs/v1alpha1"
+	fakedbfsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dbfs/v1alpha1/fake"
 	dcdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dcdn/v1alpha1"
 	fakedcdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dcdn/v1alpha1/fake"
 	ddosbgpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ddosbgp/v1alpha1"
 	fakeddosbgpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ddosbgp/v1alpha1/fake"
 	ddoscoov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ddoscoo/v1alpha1"
 	fakeddoscoov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ddoscoo/v1alpha1/fake"
+	dfsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dfs/v1alpha1"
+	fakedfsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dfs/v1alpha1/fake"
 	directv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/direct/v1alpha1"
 	fakedirectv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/direct/v1alpha1/fake"
 	diskv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/disk/v1alpha1"
@@ -80,12 +100,22 @@ import (
 	fakednsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dns/v1alpha1/fake"
 	drdsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/drds/v1alpha1"
 	fakedrdsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/drds/v1alpha1/fake"
+	dtsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dts/v1alpha1"
+	fakedtsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/dts/v1alpha1/fake"
+	eaisv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eais/v1alpha1"
+	fakeeaisv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eais/v1alpha1/fake"
+	ecdv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecd/v1alpha1"
+	fakeecdv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecd/v1alpha1/fake"
 	eciv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eci/v1alpha1"
 	fakeeciv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eci/v1alpha1/fake"
+	ecpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecp/v1alpha1"
+	fakeecpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecp/v1alpha1/fake"
 	ecsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecs/v1alpha1"
 	fakeecsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ecs/v1alpha1/fake"
 	edasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/edas/v1alpha1"
 	fakeedasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/edas/v1alpha1/fake"
+	ehpcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ehpc/v1alpha1"
+	fakeehpcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ehpc/v1alpha1/fake"
 	eipv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eip/v1alpha1"
 	fakeeipv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eip/v1alpha1/fake"
 	eipanycastv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/eipanycast/v1alpha1"
@@ -94,10 +124,14 @@ import (
 	fakeelasticsearchv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/elasticsearch/v1alpha1/fake"
 	emrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/emr/v1alpha1"
 	fakeemrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/emr/v1alpha1/fake"
+	ensv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ens/v1alpha1"
+	fakeensv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ens/v1alpha1/fake"
 	essv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ess/v1alpha1"
 	fakeessv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ess/v1alpha1/fake"
 	eventv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/event/v1alpha1"
 	fakeeventv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/event/v1alpha1/fake"
+	expressv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/express/v1alpha1"
+	fakeexpressv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/express/v1alpha1/fake"
 	fcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/fc/v1alpha1"
 	fakefcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/fc/v1alpha1/fake"
 	fnfv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/fnf/v1alpha1"
@@ -108,14 +142,24 @@ import (
 	fakegav1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ga/v1alpha1/fake"
 	gpdbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/gpdb/v1alpha1"
 	fakegpdbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/gpdb/v1alpha1/fake"
+	graphv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/graph/v1alpha1"
+	fakegraphv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/graph/v1alpha1/fake"
 	havipv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/havip/v1alpha1"
 	fakehavipv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/havip/v1alpha1/fake"
 	hbasev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/hbase/v1alpha1"
 	fakehbasev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/hbase/v1alpha1/fake"
+	hbrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/hbr/v1alpha1"
+	fakehbrv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/hbr/v1alpha1/fake"
 	imagev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/image/v1alpha1"
 	fakeimagev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/image/v1alpha1/fake"
+	immv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/imm/v1alpha1"
+	fakeimmv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/imm/v1alpha1/fake"
+	impv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/imp/v1alpha1"
+	fakeimpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/imp/v1alpha1/fake"
 	instancev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/instance/v1alpha1"
 	fakeinstancev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/instance/v1alpha1/fake"
+	iotv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/iot/v1alpha1"
+	fakeiotv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/iot/v1alpha1/fake"
 	keyv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/key/v1alpha1"
 	fakekeyv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/key/v1alpha1/fake"
 	kmsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/kms/v1alpha1"
@@ -124,6 +168,8 @@ import (
 	fakekvstorev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/kvstore/v1alpha1/fake"
 	launchv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/launch/v1alpha1"
 	fakelaunchv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/launch/v1alpha1/fake"
+	lindormv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/lindorm/v1alpha1"
+	fakelindormv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/lindorm/v1alpha1/fake"
 	logv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/log/v1alpha1"
 	fakelogv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/log/v1alpha1/fake"
 	logtailv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/logtail/v1alpha1"
@@ -132,10 +178,14 @@ import (
 	fakemarketv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/market/v1alpha1/fake"
 	maxcomputev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/maxcompute/v1alpha1"
 	fakemaxcomputev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/maxcompute/v1alpha1/fake"
+	mhubv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mhub/v1alpha1"
+	fakemhubv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mhub/v1alpha1/fake"
 	mnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mns/v1alpha1"
 	fakemnsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mns/v1alpha1/fake"
 	mongodbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mongodb/v1alpha1"
 	fakemongodbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mongodb/v1alpha1/fake"
+	mscv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/msc/v1alpha1"
+	fakemscv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/msc/v1alpha1/fake"
 	msev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mse/v1alpha1"
 	fakemsev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/mse/v1alpha1/fake"
 	nasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/nas/v1alpha1"
@@ -148,6 +198,8 @@ import (
 	fakeonsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ons/v1alpha1/fake"
 	oosv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/oos/v1alpha1"
 	fakeoosv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/oos/v1alpha1/fake"
+	openv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/open/v1alpha1"
+	fakeopenv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/open/v1alpha1/fake"
 	ossv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/oss/v1alpha1"
 	fakeossv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/oss/v1alpha1/fake"
 	otsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ots/v1alpha1"
@@ -158,10 +210,14 @@ import (
 	fakeprivatelinkv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/privatelink/v1alpha1/fake"
 	pvtzv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/pvtz/v1alpha1"
 	fakepvtzv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/pvtz/v1alpha1/fake"
+	quickv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/quick/v1alpha1"
+	fakequickv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/quick/v1alpha1/fake"
 	quotasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/quotas/v1alpha1"
 	fakequotasv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/quotas/v1alpha1/fake"
 	ramv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ram/v1alpha1"
 	fakeramv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/ram/v1alpha1/fake"
+	rdcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/rdc/v1alpha1"
+	fakerdcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/rdc/v1alpha1/fake"
 	rdsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/rds/v1alpha1"
 	fakerdsv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/rds/v1alpha1/fake"
 	reservedv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/reserved/v1alpha1"
@@ -174,10 +230,20 @@ import (
 	fakeroutev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/route/v1alpha1/fake"
 	routerv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/router/v1alpha1"
 	fakerouterv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/router/v1alpha1/fake"
+	saev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sae/v1alpha1"
+	fakesaev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sae/v1alpha1/fake"
 	sagv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sag/v1alpha1"
 	fakesagv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sag/v1alpha1/fake"
+	scdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/scdn/v1alpha1"
+	fakescdnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/scdn/v1alpha1/fake"
+	sddpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sddp/v1alpha1"
+	fakesddpv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/sddp/v1alpha1/fake"
 	securityv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/security/v1alpha1"
 	fakesecurityv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/security/v1alpha1/fake"
+	servicev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/service/v1alpha1"
+	fakeservicev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/service/v1alpha1/fake"
+	simplev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/simple/v1alpha1"
+	fakesimplev1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/simple/v1alpha1/fake"
 	slbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/slb/v1alpha1"
 	fakeslbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/slb/v1alpha1/fake"
 	snapshotv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/snapshot/v1alpha1"
@@ -190,6 +256,10 @@ import (
 	fakesubnetv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/subnet/v1alpha1/fake"
 	tsdbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/tsdb/v1alpha1"
 	faketsdbv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/tsdb/v1alpha1/fake"
+	videov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/video/v1alpha1"
+	fakevideov1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/video/v1alpha1/fake"
+	vodv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vod/v1alpha1"
+	fakevodv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vod/v1alpha1/fake"
 	vpcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vpc/v1alpha1"
 	fakevpcv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vpc/v1alpha1/fake"
 	vpnv1alpha1 "kubeform.dev/provider-alicloud-api/client/clientset/versioned/typed/vpn/v1alpha1"
@@ -265,6 +335,11 @@ func (c *Clientset) AdbV1alpha1() adbv1alpha1.AdbV1alpha1Interface {
 	return &fakeadbv1alpha1.FakeAdbV1alpha1{Fake: &c.Fake}
 }
 
+// AlbV1alpha1 retrieves the AlbV1alpha1Client
+func (c *Clientset) AlbV1alpha1() albv1alpha1.AlbV1alpha1Interface {
+	return &fakealbv1alpha1.FakeAlbV1alpha1{Fake: &c.Fake}
+}
+
 // AlidnsV1alpha1 retrieves the AlidnsV1alpha1Client
 func (c *Clientset) AlidnsV1alpha1() alidnsv1alpha1.AlidnsV1alpha1Interface {
 	return &fakealidnsv1alpha1.FakeAlidnsV1alpha1{Fake: &c.Fake}
@@ -285,9 +360,19 @@ func (c *Clientset) ApigatewayV1alpha1() apigatewayv1alpha1.ApigatewayV1alpha1In
 	return &fakeapigatewayv1alpha1.FakeApigatewayV1alpha1{Fake: &c.Fake}
 }
 
+// ArmsV1alpha1 retrieves the ArmsV1alpha1Client
+func (c *Clientset) ArmsV1alpha1() armsv1alpha1.ArmsV1alpha1Interface {
+	return &fakearmsv1alpha1.FakeArmsV1alpha1{Fake: &c.Fake}
+}
+
 // AutoV1alpha1 retrieves the AutoV1alpha1Client
 func (c *Clientset) AutoV1alpha1() autov1alpha1.AutoV1alpha1Interface {
 	return &fakeautov1alpha1.FakeAutoV1alpha1{Fake: &c.Fake}
+}
+
+// BastionhostV1alpha1 retrieves the BastionhostV1alpha1Client
+func (c *Clientset) BastionhostV1alpha1() bastionhostv1alpha1.BastionhostV1alpha1Interface {
+	return &fakebastionhostv1alpha1.FakeBastionhostV1alpha1{Fake: &c.Fake}
 }
 
 // BrainV1alpha1 retrieves the BrainV1alpha1Client
@@ -305,6 +390,11 @@ func (c *Clientset) CassandraV1alpha1() cassandrav1alpha1.CassandraV1alpha1Inter
 	return &fakecassandrav1alpha1.FakeCassandraV1alpha1{Fake: &c.Fake}
 }
 
+// CddcV1alpha1 retrieves the CddcV1alpha1Client
+func (c *Clientset) CddcV1alpha1() cddcv1alpha1.CddcV1alpha1Interface {
+	return &fakecddcv1alpha1.FakeCddcV1alpha1{Fake: &c.Fake}
+}
+
 // CdnV1alpha1 retrieves the CdnV1alpha1Client
 func (c *Clientset) CdnV1alpha1() cdnv1alpha1.CdnV1alpha1Interface {
 	return &fakecdnv1alpha1.FakeCdnV1alpha1{Fake: &c.Fake}
@@ -315,9 +405,19 @@ func (c *Clientset) CenV1alpha1() cenv1alpha1.CenV1alpha1Interface {
 	return &fakecenv1alpha1.FakeCenV1alpha1{Fake: &c.Fake}
 }
 
+// ClickV1alpha1 retrieves the ClickV1alpha1Client
+func (c *Clientset) ClickV1alpha1() clickv1alpha1.ClickV1alpha1Interface {
+	return &fakeclickv1alpha1.FakeClickV1alpha1{Fake: &c.Fake}
+}
+
 // CloudV1alpha1 retrieves the CloudV1alpha1Client
 func (c *Clientset) CloudV1alpha1() cloudv1alpha1.CloudV1alpha1Interface {
 	return &fakecloudv1alpha1.FakeCloudV1alpha1{Fake: &c.Fake}
+}
+
+// CloudauthV1alpha1 retrieves the CloudauthV1alpha1Client
+func (c *Clientset) CloudauthV1alpha1() cloudauthv1alpha1.CloudauthV1alpha1Interface {
+	return &fakecloudauthv1alpha1.FakeCloudauthV1alpha1{Fake: &c.Fake}
 }
 
 // CmsV1alpha1 retrieves the CmsV1alpha1Client
@@ -355,6 +455,16 @@ func (c *Clientset) CsV1alpha1() csv1alpha1.CsV1alpha1Interface {
 	return &fakecsv1alpha1.FakeCsV1alpha1{Fake: &c.Fake}
 }
 
+// DataV1alpha1 retrieves the DataV1alpha1Client
+func (c *Clientset) DataV1alpha1() datav1alpha1.DataV1alpha1Interface {
+	return &fakedatav1alpha1.FakeDataV1alpha1{Fake: &c.Fake}
+}
+
+// DatabaseV1alpha1 retrieves the DatabaseV1alpha1Client
+func (c *Clientset) DatabaseV1alpha1() databasev1alpha1.DatabaseV1alpha1Interface {
+	return &fakedatabasev1alpha1.FakeDatabaseV1alpha1{Fake: &c.Fake}
+}
+
 // DatahubV1alpha1 retrieves the DatahubV1alpha1Client
 func (c *Clientset) DatahubV1alpha1() datahubv1alpha1.DatahubV1alpha1Interface {
 	return &fakedatahubv1alpha1.FakeDatahubV1alpha1{Fake: &c.Fake}
@@ -363,6 +473,11 @@ func (c *Clientset) DatahubV1alpha1() datahubv1alpha1.DatahubV1alpha1Interface {
 // DbV1alpha1 retrieves the DbV1alpha1Client
 func (c *Clientset) DbV1alpha1() dbv1alpha1.DbV1alpha1Interface {
 	return &fakedbv1alpha1.FakeDbV1alpha1{Fake: &c.Fake}
+}
+
+// DbfsV1alpha1 retrieves the DbfsV1alpha1Client
+func (c *Clientset) DbfsV1alpha1() dbfsv1alpha1.DbfsV1alpha1Interface {
+	return &fakedbfsv1alpha1.FakeDbfsV1alpha1{Fake: &c.Fake}
 }
 
 // DcdnV1alpha1 retrieves the DcdnV1alpha1Client
@@ -378,6 +493,11 @@ func (c *Clientset) DdosbgpV1alpha1() ddosbgpv1alpha1.DdosbgpV1alpha1Interface {
 // DdoscooV1alpha1 retrieves the DdoscooV1alpha1Client
 func (c *Clientset) DdoscooV1alpha1() ddoscoov1alpha1.DdoscooV1alpha1Interface {
 	return &fakeddoscoov1alpha1.FakeDdoscooV1alpha1{Fake: &c.Fake}
+}
+
+// DfsV1alpha1 retrieves the DfsV1alpha1Client
+func (c *Clientset) DfsV1alpha1() dfsv1alpha1.DfsV1alpha1Interface {
+	return &fakedfsv1alpha1.FakeDfsV1alpha1{Fake: &c.Fake}
 }
 
 // DirectV1alpha1 retrieves the DirectV1alpha1Client
@@ -405,9 +525,29 @@ func (c *Clientset) DrdsV1alpha1() drdsv1alpha1.DrdsV1alpha1Interface {
 	return &fakedrdsv1alpha1.FakeDrdsV1alpha1{Fake: &c.Fake}
 }
 
+// DtsV1alpha1 retrieves the DtsV1alpha1Client
+func (c *Clientset) DtsV1alpha1() dtsv1alpha1.DtsV1alpha1Interface {
+	return &fakedtsv1alpha1.FakeDtsV1alpha1{Fake: &c.Fake}
+}
+
+// EaisV1alpha1 retrieves the EaisV1alpha1Client
+func (c *Clientset) EaisV1alpha1() eaisv1alpha1.EaisV1alpha1Interface {
+	return &fakeeaisv1alpha1.FakeEaisV1alpha1{Fake: &c.Fake}
+}
+
+// EcdV1alpha1 retrieves the EcdV1alpha1Client
+func (c *Clientset) EcdV1alpha1() ecdv1alpha1.EcdV1alpha1Interface {
+	return &fakeecdv1alpha1.FakeEcdV1alpha1{Fake: &c.Fake}
+}
+
 // EciV1alpha1 retrieves the EciV1alpha1Client
 func (c *Clientset) EciV1alpha1() eciv1alpha1.EciV1alpha1Interface {
 	return &fakeeciv1alpha1.FakeEciV1alpha1{Fake: &c.Fake}
+}
+
+// EcpV1alpha1 retrieves the EcpV1alpha1Client
+func (c *Clientset) EcpV1alpha1() ecpv1alpha1.EcpV1alpha1Interface {
+	return &fakeecpv1alpha1.FakeEcpV1alpha1{Fake: &c.Fake}
 }
 
 // EcsV1alpha1 retrieves the EcsV1alpha1Client
@@ -418,6 +558,11 @@ func (c *Clientset) EcsV1alpha1() ecsv1alpha1.EcsV1alpha1Interface {
 // EdasV1alpha1 retrieves the EdasV1alpha1Client
 func (c *Clientset) EdasV1alpha1() edasv1alpha1.EdasV1alpha1Interface {
 	return &fakeedasv1alpha1.FakeEdasV1alpha1{Fake: &c.Fake}
+}
+
+// EhpcV1alpha1 retrieves the EhpcV1alpha1Client
+func (c *Clientset) EhpcV1alpha1() ehpcv1alpha1.EhpcV1alpha1Interface {
+	return &fakeehpcv1alpha1.FakeEhpcV1alpha1{Fake: &c.Fake}
 }
 
 // EipV1alpha1 retrieves the EipV1alpha1Client
@@ -440,6 +585,11 @@ func (c *Clientset) EmrV1alpha1() emrv1alpha1.EmrV1alpha1Interface {
 	return &fakeemrv1alpha1.FakeEmrV1alpha1{Fake: &c.Fake}
 }
 
+// EnsV1alpha1 retrieves the EnsV1alpha1Client
+func (c *Clientset) EnsV1alpha1() ensv1alpha1.EnsV1alpha1Interface {
+	return &fakeensv1alpha1.FakeEnsV1alpha1{Fake: &c.Fake}
+}
+
 // EssV1alpha1 retrieves the EssV1alpha1Client
 func (c *Clientset) EssV1alpha1() essv1alpha1.EssV1alpha1Interface {
 	return &fakeessv1alpha1.FakeEssV1alpha1{Fake: &c.Fake}
@@ -448,6 +598,11 @@ func (c *Clientset) EssV1alpha1() essv1alpha1.EssV1alpha1Interface {
 // EventV1alpha1 retrieves the EventV1alpha1Client
 func (c *Clientset) EventV1alpha1() eventv1alpha1.EventV1alpha1Interface {
 	return &fakeeventv1alpha1.FakeEventV1alpha1{Fake: &c.Fake}
+}
+
+// ExpressV1alpha1 retrieves the ExpressV1alpha1Client
+func (c *Clientset) ExpressV1alpha1() expressv1alpha1.ExpressV1alpha1Interface {
+	return &fakeexpressv1alpha1.FakeExpressV1alpha1{Fake: &c.Fake}
 }
 
 // FcV1alpha1 retrieves the FcV1alpha1Client
@@ -475,6 +630,11 @@ func (c *Clientset) GpdbV1alpha1() gpdbv1alpha1.GpdbV1alpha1Interface {
 	return &fakegpdbv1alpha1.FakeGpdbV1alpha1{Fake: &c.Fake}
 }
 
+// GraphV1alpha1 retrieves the GraphV1alpha1Client
+func (c *Clientset) GraphV1alpha1() graphv1alpha1.GraphV1alpha1Interface {
+	return &fakegraphv1alpha1.FakeGraphV1alpha1{Fake: &c.Fake}
+}
+
 // HavipV1alpha1 retrieves the HavipV1alpha1Client
 func (c *Clientset) HavipV1alpha1() havipv1alpha1.HavipV1alpha1Interface {
 	return &fakehavipv1alpha1.FakeHavipV1alpha1{Fake: &c.Fake}
@@ -485,14 +645,34 @@ func (c *Clientset) HbaseV1alpha1() hbasev1alpha1.HbaseV1alpha1Interface {
 	return &fakehbasev1alpha1.FakeHbaseV1alpha1{Fake: &c.Fake}
 }
 
+// HbrV1alpha1 retrieves the HbrV1alpha1Client
+func (c *Clientset) HbrV1alpha1() hbrv1alpha1.HbrV1alpha1Interface {
+	return &fakehbrv1alpha1.FakeHbrV1alpha1{Fake: &c.Fake}
+}
+
 // ImageV1alpha1 retrieves the ImageV1alpha1Client
 func (c *Clientset) ImageV1alpha1() imagev1alpha1.ImageV1alpha1Interface {
 	return &fakeimagev1alpha1.FakeImageV1alpha1{Fake: &c.Fake}
 }
 
+// ImmV1alpha1 retrieves the ImmV1alpha1Client
+func (c *Clientset) ImmV1alpha1() immv1alpha1.ImmV1alpha1Interface {
+	return &fakeimmv1alpha1.FakeImmV1alpha1{Fake: &c.Fake}
+}
+
+// ImpV1alpha1 retrieves the ImpV1alpha1Client
+func (c *Clientset) ImpV1alpha1() impv1alpha1.ImpV1alpha1Interface {
+	return &fakeimpv1alpha1.FakeImpV1alpha1{Fake: &c.Fake}
+}
+
 // InstanceV1alpha1 retrieves the InstanceV1alpha1Client
 func (c *Clientset) InstanceV1alpha1() instancev1alpha1.InstanceV1alpha1Interface {
 	return &fakeinstancev1alpha1.FakeInstanceV1alpha1{Fake: &c.Fake}
+}
+
+// IotV1alpha1 retrieves the IotV1alpha1Client
+func (c *Clientset) IotV1alpha1() iotv1alpha1.IotV1alpha1Interface {
+	return &fakeiotv1alpha1.FakeIotV1alpha1{Fake: &c.Fake}
 }
 
 // KeyV1alpha1 retrieves the KeyV1alpha1Client
@@ -515,6 +695,11 @@ func (c *Clientset) LaunchV1alpha1() launchv1alpha1.LaunchV1alpha1Interface {
 	return &fakelaunchv1alpha1.FakeLaunchV1alpha1{Fake: &c.Fake}
 }
 
+// LindormV1alpha1 retrieves the LindormV1alpha1Client
+func (c *Clientset) LindormV1alpha1() lindormv1alpha1.LindormV1alpha1Interface {
+	return &fakelindormv1alpha1.FakeLindormV1alpha1{Fake: &c.Fake}
+}
+
 // LogV1alpha1 retrieves the LogV1alpha1Client
 func (c *Clientset) LogV1alpha1() logv1alpha1.LogV1alpha1Interface {
 	return &fakelogv1alpha1.FakeLogV1alpha1{Fake: &c.Fake}
@@ -535,6 +720,11 @@ func (c *Clientset) MaxcomputeV1alpha1() maxcomputev1alpha1.MaxcomputeV1alpha1In
 	return &fakemaxcomputev1alpha1.FakeMaxcomputeV1alpha1{Fake: &c.Fake}
 }
 
+// MhubV1alpha1 retrieves the MhubV1alpha1Client
+func (c *Clientset) MhubV1alpha1() mhubv1alpha1.MhubV1alpha1Interface {
+	return &fakemhubv1alpha1.FakeMhubV1alpha1{Fake: &c.Fake}
+}
+
 // MnsV1alpha1 retrieves the MnsV1alpha1Client
 func (c *Clientset) MnsV1alpha1() mnsv1alpha1.MnsV1alpha1Interface {
 	return &fakemnsv1alpha1.FakeMnsV1alpha1{Fake: &c.Fake}
@@ -543,6 +733,11 @@ func (c *Clientset) MnsV1alpha1() mnsv1alpha1.MnsV1alpha1Interface {
 // MongodbV1alpha1 retrieves the MongodbV1alpha1Client
 func (c *Clientset) MongodbV1alpha1() mongodbv1alpha1.MongodbV1alpha1Interface {
 	return &fakemongodbv1alpha1.FakeMongodbV1alpha1{Fake: &c.Fake}
+}
+
+// MscV1alpha1 retrieves the MscV1alpha1Client
+func (c *Clientset) MscV1alpha1() mscv1alpha1.MscV1alpha1Interface {
+	return &fakemscv1alpha1.FakeMscV1alpha1{Fake: &c.Fake}
 }
 
 // MseV1alpha1 retrieves the MseV1alpha1Client
@@ -575,6 +770,11 @@ func (c *Clientset) OosV1alpha1() oosv1alpha1.OosV1alpha1Interface {
 	return &fakeoosv1alpha1.FakeOosV1alpha1{Fake: &c.Fake}
 }
 
+// OpenV1alpha1 retrieves the OpenV1alpha1Client
+func (c *Clientset) OpenV1alpha1() openv1alpha1.OpenV1alpha1Interface {
+	return &fakeopenv1alpha1.FakeOpenV1alpha1{Fake: &c.Fake}
+}
+
 // OssV1alpha1 retrieves the OssV1alpha1Client
 func (c *Clientset) OssV1alpha1() ossv1alpha1.OssV1alpha1Interface {
 	return &fakeossv1alpha1.FakeOssV1alpha1{Fake: &c.Fake}
@@ -600,6 +800,11 @@ func (c *Clientset) PvtzV1alpha1() pvtzv1alpha1.PvtzV1alpha1Interface {
 	return &fakepvtzv1alpha1.FakePvtzV1alpha1{Fake: &c.Fake}
 }
 
+// QuickV1alpha1 retrieves the QuickV1alpha1Client
+func (c *Clientset) QuickV1alpha1() quickv1alpha1.QuickV1alpha1Interface {
+	return &fakequickv1alpha1.FakeQuickV1alpha1{Fake: &c.Fake}
+}
+
 // QuotasV1alpha1 retrieves the QuotasV1alpha1Client
 func (c *Clientset) QuotasV1alpha1() quotasv1alpha1.QuotasV1alpha1Interface {
 	return &fakequotasv1alpha1.FakeQuotasV1alpha1{Fake: &c.Fake}
@@ -608,6 +813,11 @@ func (c *Clientset) QuotasV1alpha1() quotasv1alpha1.QuotasV1alpha1Interface {
 // RamV1alpha1 retrieves the RamV1alpha1Client
 func (c *Clientset) RamV1alpha1() ramv1alpha1.RamV1alpha1Interface {
 	return &fakeramv1alpha1.FakeRamV1alpha1{Fake: &c.Fake}
+}
+
+// RdcV1alpha1 retrieves the RdcV1alpha1Client
+func (c *Clientset) RdcV1alpha1() rdcv1alpha1.RdcV1alpha1Interface {
+	return &fakerdcv1alpha1.FakeRdcV1alpha1{Fake: &c.Fake}
 }
 
 // RdsV1alpha1 retrieves the RdsV1alpha1Client
@@ -640,14 +850,39 @@ func (c *Clientset) RouterV1alpha1() routerv1alpha1.RouterV1alpha1Interface {
 	return &fakerouterv1alpha1.FakeRouterV1alpha1{Fake: &c.Fake}
 }
 
+// SaeV1alpha1 retrieves the SaeV1alpha1Client
+func (c *Clientset) SaeV1alpha1() saev1alpha1.SaeV1alpha1Interface {
+	return &fakesaev1alpha1.FakeSaeV1alpha1{Fake: &c.Fake}
+}
+
 // SagV1alpha1 retrieves the SagV1alpha1Client
 func (c *Clientset) SagV1alpha1() sagv1alpha1.SagV1alpha1Interface {
 	return &fakesagv1alpha1.FakeSagV1alpha1{Fake: &c.Fake}
 }
 
+// ScdnV1alpha1 retrieves the ScdnV1alpha1Client
+func (c *Clientset) ScdnV1alpha1() scdnv1alpha1.ScdnV1alpha1Interface {
+	return &fakescdnv1alpha1.FakeScdnV1alpha1{Fake: &c.Fake}
+}
+
+// SddpV1alpha1 retrieves the SddpV1alpha1Client
+func (c *Clientset) SddpV1alpha1() sddpv1alpha1.SddpV1alpha1Interface {
+	return &fakesddpv1alpha1.FakeSddpV1alpha1{Fake: &c.Fake}
+}
+
 // SecurityV1alpha1 retrieves the SecurityV1alpha1Client
 func (c *Clientset) SecurityV1alpha1() securityv1alpha1.SecurityV1alpha1Interface {
 	return &fakesecurityv1alpha1.FakeSecurityV1alpha1{Fake: &c.Fake}
+}
+
+// ServiceV1alpha1 retrieves the ServiceV1alpha1Client
+func (c *Clientset) ServiceV1alpha1() servicev1alpha1.ServiceV1alpha1Interface {
+	return &fakeservicev1alpha1.FakeServiceV1alpha1{Fake: &c.Fake}
+}
+
+// SimpleV1alpha1 retrieves the SimpleV1alpha1Client
+func (c *Clientset) SimpleV1alpha1() simplev1alpha1.SimpleV1alpha1Interface {
+	return &fakesimplev1alpha1.FakeSimpleV1alpha1{Fake: &c.Fake}
 }
 
 // SlbV1alpha1 retrieves the SlbV1alpha1Client
@@ -678,6 +913,16 @@ func (c *Clientset) SubnetV1alpha1() subnetv1alpha1.SubnetV1alpha1Interface {
 // TsdbV1alpha1 retrieves the TsdbV1alpha1Client
 func (c *Clientset) TsdbV1alpha1() tsdbv1alpha1.TsdbV1alpha1Interface {
 	return &faketsdbv1alpha1.FakeTsdbV1alpha1{Fake: &c.Fake}
+}
+
+// VideoV1alpha1 retrieves the VideoV1alpha1Client
+func (c *Clientset) VideoV1alpha1() videov1alpha1.VideoV1alpha1Interface {
+	return &fakevideov1alpha1.FakeVideoV1alpha1{Fake: &c.Fake}
+}
+
+// VodV1alpha1 retrieves the VodV1alpha1Client
+func (c *Clientset) VodV1alpha1() vodv1alpha1.VodV1alpha1Interface {
+	return &fakevodv1alpha1.FakeVodV1alpha1{Fake: &c.Fake}
 }
 
 // VpcV1alpha1 retrieves the VpcV1alpha1Client

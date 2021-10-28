@@ -124,8 +124,18 @@ func (in *CertificateSpecResource) DeepCopyInto(out *CertificateSpecResource) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.CertificateName != nil {
+		in, out := &in.CertificateName, &out.CertificateName
+		*out = new(string)
+		**out = **in
+	}
 	if in.Key != nil {
 		in, out := &in.Key, &out.Key
+		*out = new(string)
+		**out = **in
+	}
+	if in.Lang != nil {
+		in, out := &in.Lang, &out.Lang
 		*out = new(string)
 		**out = **in
 	}

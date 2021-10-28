@@ -41,6 +41,10 @@ func (c *FakeCdnV1alpha1) DomainNews(namespace string) v1alpha1.DomainNewInterfa
 	return &FakeDomainNews{c, namespace}
 }
 
+func (c *FakeCdnV1alpha1) RealTimeLogDeliveries(namespace string) v1alpha1.RealTimeLogDeliveryInterface {
+	return &FakeRealTimeLogDeliveries{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeCdnV1alpha1) RESTClient() rest.Interface {

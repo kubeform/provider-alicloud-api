@@ -27,7 +27,9 @@ import (
 
 type AmqpV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	BindingsGetter
 	ExchangesGetter
+	InstancesGetter
 	QueuesGetter
 	VirtualHostsGetter
 }
@@ -37,8 +39,16 @@ type AmqpV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *AmqpV1alpha1Client) Bindings(namespace string) BindingInterface {
+	return newBindings(c, namespace)
+}
+
 func (c *AmqpV1alpha1Client) Exchanges(namespace string) ExchangeInterface {
 	return newExchanges(c, namespace)
+}
+
+func (c *AmqpV1alpha1Client) Instances(namespace string) InstanceInterface {
+	return newInstances(c, namespace)
 }
 
 func (c *AmqpV1alpha1Client) Queues(namespace string) QueueInterface {
