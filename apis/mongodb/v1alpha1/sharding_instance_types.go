@@ -41,6 +41,25 @@ type ShardingInstance struct {
 	Status            ShardingInstanceStatus `json:"status,omitempty"`
 }
 
+type ShardingInstanceSpecConfigServerList struct {
+	// +optional
+	ConnectString *string `json:"connectString,omitempty" tf:"connect_string"`
+	// +optional
+	MaxConnections *int64 `json:"maxConnections,omitempty" tf:"max_connections"`
+	// +optional
+	MaxIops *int64 `json:"maxIops,omitempty" tf:"max_iops"`
+	// +optional
+	NodeClass *string `json:"nodeClass,omitempty" tf:"node_class"`
+	// +optional
+	NodeDescription *string `json:"nodeDescription,omitempty" tf:"node_description"`
+	// +optional
+	NodeID *string `json:"nodeID,omitempty" tf:"node_id"`
+	// +optional
+	NodeStorage *int64 `json:"nodeStorage,omitempty" tf:"node_storage"`
+	// +optional
+	Port *int64 `json:"port,omitempty" tf:"port"`
+}
+
 type ShardingInstanceSpecMongoList struct {
 	// +optional
 	ConnectString *string `json:"connectString,omitempty" tf:"connect_string"`
@@ -86,8 +105,10 @@ type ShardingInstanceSpecResource struct {
 	// +optional
 	BackupPeriod []string `json:"backupPeriod,omitempty" tf:"backup_period"`
 	// +optional
-	BackupTime    *string `json:"backupTime,omitempty" tf:"backup_time"`
-	EngineVersion *string `json:"engineVersion" tf:"engine_version"`
+	BackupTime *string `json:"backupTime,omitempty" tf:"backup_time"`
+	// +optional
+	ConfigServerList []ShardingInstanceSpecConfigServerList `json:"configServerList,omitempty" tf:"config_server_list"`
+	EngineVersion    *string                                `json:"engineVersion" tf:"engine_version"`
 	// +optional
 	InstanceChargeType *string `json:"instanceChargeType,omitempty" tf:"instance_charge_type"`
 	// +optional
@@ -99,6 +120,8 @@ type ShardingInstanceSpecResource struct {
 	MongoList []ShardingInstanceSpecMongoList `json:"mongoList" tf:"mongo_list"`
 	// +optional
 	Name *string `json:"name,omitempty" tf:"name"`
+	// +optional
+	OrderType *string `json:"orderType,omitempty" tf:"order_type"`
 	// +optional
 	Period *int64 `json:"period,omitempty" tf:"period"`
 	// +optional

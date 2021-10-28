@@ -29,6 +29,10 @@ type FakePvtzV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakePvtzV1alpha1) UserVpcAuthorizations(namespace string) v1alpha1.UserVpcAuthorizationInterface {
+	return &FakeUserVpcAuthorizations{c, namespace}
+}
+
 func (c *FakePvtzV1alpha1) Zones(namespace string) v1alpha1.ZoneInterface {
 	return &FakeZones{c, namespace}
 }

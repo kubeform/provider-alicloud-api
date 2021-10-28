@@ -67,6 +67,8 @@ spec:
                     items:
                       type: string
                     type: array
+                  resourceDirectoryType:
+                    type: string
                   variableMap:
                     additionalProperties:
                       type: string
@@ -87,6 +89,8 @@ spec:
                     items:
                       type: string
                     type: array
+                  resourceDirectoryType:
+                    type: string
                   variableMap:
                     additionalProperties:
                       type: string

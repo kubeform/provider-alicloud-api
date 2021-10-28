@@ -27,6 +27,7 @@ import (
 
 type WafV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	CertificatesGetter
 	DomainsGetter
 	InstancesGetter
 }
@@ -34,6 +35,10 @@ type WafV1alpha1Interface interface {
 // WafV1alpha1Client is used to interact with features provided by the waf.alicloud.kubeform.com group.
 type WafV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *WafV1alpha1Client) Certificates(namespace string) CertificateInterface {
+	return newCertificates(c, namespace)
 }
 
 func (c *WafV1alpha1Client) Domains(namespace string) DomainInterface {

@@ -52,10 +52,14 @@ type EeInstanceSpec struct {
 
 	ProviderRef core.LocalObjectReference `json:"providerRef" tf:"-"`
 
+	SecretRef *core.LocalObjectReference `json:"secretRef,omitempty" tf:"-"`
+
 	BackendRef *core.LocalObjectReference `json:"backendRef,omitempty" tf:"-"`
 }
 
 type EeInstanceSpecResource struct {
+	Timeouts *base.ResourceTimeout `json:"timeouts,omitempty" tf:"timeouts"`
+
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
@@ -66,6 +70,12 @@ type EeInstanceSpecResource struct {
 	EndTime      *string `json:"endTime,omitempty" tf:"end_time"`
 	InstanceName *string `json:"instanceName" tf:"instance_name"`
 	InstanceType *string `json:"instanceType" tf:"instance_type"`
+	// +optional
+	KmsEncryptedPassword *string `json:"kmsEncryptedPassword,omitempty" tf:"kms_encrypted_password"`
+	// +optional
+	KmsEncryptionContext map[string]string `json:"kmsEncryptionContext,omitempty" tf:"kms_encryption_context"`
+	// +optional
+	Password *string `json:"-" sensitive:"true" tf:"password"`
 	// +optional
 	PaymentType *string `json:"paymentType,omitempty" tf:"payment_type"`
 	// +optional

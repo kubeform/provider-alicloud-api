@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// UserVpcAuthorizationListerExpansion allows custom methods to be added to
+// UserVpcAuthorizationLister.
+type UserVpcAuthorizationListerExpansion interface{}
+
+// UserVpcAuthorizationNamespaceListerExpansion allows custom methods to be added to
+// UserVpcAuthorizationNamespaceLister.
+type UserVpcAuthorizationNamespaceListerExpansion interface{}
+
 // ZoneListerExpansion allows custom methods to be added to
 // ZoneLister.
 type ZoneListerExpansion interface{}

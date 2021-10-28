@@ -72,6 +72,10 @@ type EndpointSpecResource struct {
 	// +optional
 	ReadWriteMode *string `json:"readWriteMode,omitempty" tf:"read_write_mode"`
 	// +optional
+	SslAutoRotate *string `json:"sslAutoRotate,omitempty" tf:"ssl_auto_rotate"`
+	// +optional
+	SslCertificateURL *string `json:"sslCertificateURL,omitempty" tf:"ssl_certificate_url"`
+	// +optional
 	SslConnectionString *string `json:"sslConnectionString,omitempty" tf:"ssl_connection_string"`
 	// +optional
 	SslEnabled *string `json:"sslEnabled,omitempty" tf:"ssl_enabled"`

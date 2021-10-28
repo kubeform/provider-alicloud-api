@@ -135,7 +135,9 @@ type ApiSpecResource struct {
 	Description        *string                     `json:"description" tf:"description"`
 	// +optional
 	FcServiceConfig *ApiSpecFcServiceConfig `json:"fcServiceConfig,omitempty" tf:"fc_service_config"`
-	GroupID         *string                 `json:"groupID" tf:"group_id"`
+	// +optional
+	ForceNonceCheck *bool   `json:"forceNonceCheck,omitempty" tf:"force_nonce_check"`
+	GroupID         *string `json:"groupID" tf:"group_id"`
 	// +optional
 	HttpServiceConfig *ApiSpecHttpServiceConfig `json:"httpServiceConfig,omitempty" tf:"http_service_config"`
 	// +optional

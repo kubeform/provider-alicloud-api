@@ -58,6 +58,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Account{},
 		&AccountList{},
+		&AuditLogConfig{},
+		&AuditLogConfigList{},
 		&BackupPolicy{},
 		&BackupPolicyList{},
 		&Connection{},

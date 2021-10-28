@@ -41,6 +41,23 @@ type Instance struct {
 	Status            InstanceStatus `json:"status,omitempty"`
 }
 
+type InstanceSpecReplicaSets struct {
+	// +optional
+	ConnectionDomain *string `json:"connectionDomain,omitempty" tf:"connection_domain"`
+	// +optional
+	ConnectionPort *string `json:"connectionPort,omitempty" tf:"connection_port"`
+	// +optional
+	NetworkType *string `json:"networkType,omitempty" tf:"network_type"`
+	// +optional
+	ReplicaSetRole *string `json:"replicaSetRole,omitempty" tf:"replica_set_role"`
+	// +optional
+	VpcCloudInstanceID *string `json:"vpcCloudInstanceID,omitempty" tf:"vpc_cloud_instance_id"`
+	// +optional
+	VpcID *string `json:"vpcID,omitempty" tf:"vpc_id"`
+	// +optional
+	VswitchID *string `json:"vswitchID,omitempty" tf:"vswitch_id"`
+}
+
 type InstanceSpec struct {
 	State *InstanceSpecResource `json:"state,omitempty" tf:"-"`
 
@@ -84,9 +101,13 @@ type InstanceSpecResource struct {
 	// +optional
 	Name *string `json:"name,omitempty" tf:"name"`
 	// +optional
+	OrderType *string `json:"orderType,omitempty" tf:"order_type"`
+	// +optional
 	Period *int64 `json:"period,omitempty" tf:"period"`
 	// +optional
 	ReplicaSetName *string `json:"replicaSetName,omitempty" tf:"replica_set_name"`
+	// +optional
+	ReplicaSets []InstanceSpecReplicaSets `json:"replicaSets,omitempty" tf:"replica_sets"`
 	// +optional
 	ReplicationFactor *int64 `json:"replicationFactor,omitempty" tf:"replication_factor"`
 	// +optional

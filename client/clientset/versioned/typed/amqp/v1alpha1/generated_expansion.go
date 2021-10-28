@@ -18,7 +18,11 @@ limitations under the License.
 
 package v1alpha1
 
+type BindingExpansion interface{}
+
 type ExchangeExpansion interface{}
+
+type InstanceExpansion interface{}
 
 type QueueExpansion interface{}
 

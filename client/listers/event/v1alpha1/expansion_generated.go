@@ -26,10 +26,26 @@ type BridgeEventBusListerExpansion interface{}
 // BridgeEventBusNamespaceLister.
 type BridgeEventBusNamespaceListerExpansion interface{}
 
-// BridgeSchemaGroupListerExpansion allows custom methods to be added to
-// BridgeSchemaGroupLister.
-type BridgeSchemaGroupListerExpansion interface{}
+// BridgeEventSourceListerExpansion allows custom methods to be added to
+// BridgeEventSourceLister.
+type BridgeEventSourceListerExpansion interface{}
 
-// BridgeSchemaGroupNamespaceListerExpansion allows custom methods to be added to
-// BridgeSchemaGroupNamespaceLister.
-type BridgeSchemaGroupNamespaceListerExpansion interface{}
+// BridgeEventSourceNamespaceListerExpansion allows custom methods to be added to
+// BridgeEventSourceNamespaceLister.
+type BridgeEventSourceNamespaceListerExpansion interface{}
+
+// BridgeRuleListerExpansion allows custom methods to be added to
+// BridgeRuleLister.
+type BridgeRuleListerExpansion interface{}
+
+// BridgeRuleNamespaceListerExpansion allows custom methods to be added to
+// BridgeRuleNamespaceLister.
+type BridgeRuleNamespaceListerExpansion interface{}
+
+// BridgeSlrListerExpansion allows custom methods to be added to
+// BridgeSlrLister.
+type BridgeSlrListerExpansion interface{}
+
+// BridgeSlrNamespaceListerExpansion allows custom methods to be added to
+// BridgeSlrNamespaceLister.
+type BridgeSlrNamespaceListerExpansion interface{}

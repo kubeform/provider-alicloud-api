@@ -1099,6 +1099,11 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DbTimeZone != nil {
+		in, out := &in.DbTimeZone, &out.DbTimeZone
+		*out = new(string)
+		**out = **in
+	}
 	if in.EncryptionKey != nil {
 		in, out := &in.EncryptionKey, &out.EncryptionKey
 		*out = new(string)
@@ -1186,6 +1191,11 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ReleasedKeepPolicy != nil {
+		in, out := &in.ReleasedKeepPolicy, &out.ReleasedKeepPolicy
+		*out = new(string)
+		**out = **in
+	}
 	if in.ReplicationACL != nil {
 		in, out := &in.ReplicationACL, &out.ReplicationACL
 		*out = new(string)
@@ -1249,6 +1259,21 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 	if in.SslStatus != nil {
 		in, out := &in.SslStatus, &out.SslStatus
 		*out = new(string)
+		**out = **in
+	}
+	if in.StorageAutoScale != nil {
+		in, out := &in.StorageAutoScale, &out.StorageAutoScale
+		*out = new(string)
+		**out = **in
+	}
+	if in.StorageThreshold != nil {
+		in, out := &in.StorageThreshold, &out.StorageThreshold
+		*out = new(int64)
+		**out = **in
+	}
+	if in.StorageUpperBound != nil {
+		in, out := &in.StorageUpperBound, &out.StorageUpperBound
+		*out = new(int64)
 		**out = **in
 	}
 	if in.SwitchTime != nil {

@@ -41,3 +41,5 @@ type ServerCertificateExpansion interface{}
 type ServerGroupExpansion interface{}
 
 type SlbExpansion interface{}
+
+type TlsCipherPolicyExpansion interface{}

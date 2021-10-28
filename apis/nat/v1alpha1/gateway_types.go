@@ -95,6 +95,8 @@ type GatewaySpecResource struct {
 	// +optional
 	NatType *string `json:"natType,omitempty" tf:"nat_type"`
 	// +optional
+	NetworkType *string `json:"networkType,omitempty" tf:"network_type"`
+	// +optional
 	PaymentType *string `json:"paymentType,omitempty" tf:"payment_type"`
 	// +optional
 	Period *int64 `json:"period,omitempty" tf:"period"`

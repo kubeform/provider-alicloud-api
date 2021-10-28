@@ -80,6 +80,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&ServerGroupList{},
 		&Slb{},
 		&SlbList{},
+		&TlsCipherPolicy{},
+		&TlsCipherPolicyList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

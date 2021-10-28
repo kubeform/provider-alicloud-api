@@ -71,14 +71,11 @@ spec:
                                 type: string
                               parameterValue:
                                 type: string
-                            required:
-                            - parameterName
                             type: object
                           type: array
                         managedRuleIdentifier:
                           type: string
                       required:
-                      - configRuleParameters
                       - managedRuleIdentifier
                       type: object
                     type: array
@@ -152,14 +149,11 @@ spec:
                                 type: string
                               parameterValue:
                                 type: string
-                            required:
-                            - parameterName
                             type: object
                           type: array
                         managedRuleIdentifier:
                           type: string
                       required:
-                      - configRuleParameters
                       - managedRuleIdentifier
                       type: object
                     type: array

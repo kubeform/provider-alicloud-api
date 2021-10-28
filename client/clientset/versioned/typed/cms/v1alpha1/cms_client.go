@@ -31,6 +31,7 @@ type CmsV1alpha1Interface interface {
 	AlarmContactsGetter
 	AlarmContactGroupsGetter
 	GroupMetricRulesGetter
+	MetricRuleTemplatesGetter
 	MonitorGroupsGetter
 	MonitorGroupInstancesesGetter
 	SiteMonitorsGetter
@@ -55,6 +56,10 @@ func (c *CmsV1alpha1Client) AlarmContactGroups(namespace string) AlarmContactGro
 
 func (c *CmsV1alpha1Client) GroupMetricRules(namespace string) GroupMetricRuleInterface {
 	return newGroupMetricRules(c, namespace)
+}
+
+func (c *CmsV1alpha1Client) MetricRuleTemplates(namespace string) MetricRuleTemplateInterface {
+	return newMetricRuleTemplates(c, namespace)
 }
 
 func (c *CmsV1alpha1Client) MonitorGroups(namespace string) MonitorGroupInterface {

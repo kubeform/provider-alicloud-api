@@ -132,6 +132,8 @@ type ScalingConfigurationSpecResource struct {
 	// +optional
 	PasswordInherit *bool `json:"passwordInherit,omitempty" tf:"password_inherit"`
 	// +optional
+	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
+	// +optional
 	RoleName *string `json:"roleName,omitempty" tf:"role_name"`
 	// +optional
 	ScalingConfigurationName *string `json:"scalingConfigurationName,omitempty" tf:"scaling_configuration_name"`

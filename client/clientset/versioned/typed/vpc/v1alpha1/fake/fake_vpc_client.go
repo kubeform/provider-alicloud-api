@@ -29,8 +29,28 @@ type FakeVpcV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeVpcV1alpha1) DhcpOptionsSets(namespace string) v1alpha1.DhcpOptionsSetInterface {
+	return &FakeDhcpOptionsSets{c, namespace}
+}
+
 func (c *FakeVpcV1alpha1) FlowLogs(namespace string) v1alpha1.FlowLogInterface {
 	return &FakeFlowLogs{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) NatIPs(namespace string) v1alpha1.NatIPInterface {
+	return &FakeNatIPs{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) NatIPCIDRs(namespace string) v1alpha1.NatIPCIDRInterface {
+	return &FakeNatIPCIDRs{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) TrafficMirrorFilters(namespace string) v1alpha1.TrafficMirrorFilterInterface {
+	return &FakeTrafficMirrorFilters{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) TrafficMirrorFilterEgressRules(namespace string) v1alpha1.TrafficMirrorFilterEgressRuleInterface {
+	return &FakeTrafficMirrorFilterEgressRules{c, namespace}
 }
 
 func (c *FakeVpcV1alpha1) Vpcs(namespace string) v1alpha1.VpcInterface {

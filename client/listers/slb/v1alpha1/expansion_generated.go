@@ -113,3 +113,11 @@ type SlbListerExpansion interface{}
 // SlbNamespaceListerExpansion allows custom methods to be added to
 // SlbNamespaceLister.
 type SlbNamespaceListerExpansion interface{}
+
+// TlsCipherPolicyListerExpansion allows custom methods to be added to
+// TlsCipherPolicyLister.
+type TlsCipherPolicyListerExpansion interface{}
+
+// TlsCipherPolicyNamespaceListerExpansion allows custom methods to be added to
+// TlsCipherPolicyNamespaceLister.
+type TlsCipherPolicyNamespaceListerExpansion interface{}

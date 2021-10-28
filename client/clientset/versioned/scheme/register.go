@@ -21,17 +21,23 @@ package scheme
 import (
 	actiontrailv1alpha1 "kubeform.dev/provider-alicloud-api/apis/actiontrail/v1alpha1"
 	adbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/adb/v1alpha1"
+	albv1alpha1 "kubeform.dev/provider-alicloud-api/apis/alb/v1alpha1"
 	alidnsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/alidns/v1alpha1"
 	alikafkav1alpha1 "kubeform.dev/provider-alicloud-api/apis/alikafka/v1alpha1"
 	amqpv1alpha1 "kubeform.dev/provider-alicloud-api/apis/amqp/v1alpha1"
 	apigatewayv1alpha1 "kubeform.dev/provider-alicloud-api/apis/apigateway/v1alpha1"
+	armsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/arms/v1alpha1"
 	autov1alpha1 "kubeform.dev/provider-alicloud-api/apis/auto/v1alpha1"
+	bastionhostv1alpha1 "kubeform.dev/provider-alicloud-api/apis/bastionhost/v1alpha1"
 	brainv1alpha1 "kubeform.dev/provider-alicloud-api/apis/brain/v1alpha1"
 	casv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cas/v1alpha1"
 	cassandrav1alpha1 "kubeform.dev/provider-alicloud-api/apis/cassandra/v1alpha1"
+	cddcv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cddc/v1alpha1"
 	cdnv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cdn/v1alpha1"
 	cenv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cen/v1alpha1"
+	clickv1alpha1 "kubeform.dev/provider-alicloud-api/apis/click/v1alpha1"
 	cloudv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cloud/v1alpha1"
+	cloudauthv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cloudauth/v1alpha1"
 	cmsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cms/v1alpha1"
 	commonv1alpha1 "kubeform.dev/provider-alicloud-api/apis/common/v1alpha1"
 	configv1alpha1 "kubeform.dev/provider-alicloud-api/apis/config/v1alpha1"
@@ -39,71 +45,100 @@ import (
 	copyv1alpha1 "kubeform.dev/provider-alicloud-api/apis/copy/v1alpha1"
 	crv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cr/v1alpha1"
 	csv1alpha1 "kubeform.dev/provider-alicloud-api/apis/cs/v1alpha1"
+	datav1alpha1 "kubeform.dev/provider-alicloud-api/apis/data/v1alpha1"
+	databasev1alpha1 "kubeform.dev/provider-alicloud-api/apis/database/v1alpha1"
 	datahubv1alpha1 "kubeform.dev/provider-alicloud-api/apis/datahub/v1alpha1"
 	dbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/db/v1alpha1"
+	dbfsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/dbfs/v1alpha1"
 	dcdnv1alpha1 "kubeform.dev/provider-alicloud-api/apis/dcdn/v1alpha1"
 	ddosbgpv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ddosbgp/v1alpha1"
 	ddoscoov1alpha1 "kubeform.dev/provider-alicloud-api/apis/ddoscoo/v1alpha1"
+	dfsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/dfs/v1alpha1"
 	directv1alpha1 "kubeform.dev/provider-alicloud-api/apis/direct/v1alpha1"
 	diskv1alpha1 "kubeform.dev/provider-alicloud-api/apis/disk/v1alpha1"
 	dmsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/dms/v1alpha1"
 	dnsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/dns/v1alpha1"
 	drdsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/drds/v1alpha1"
+	dtsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/dts/v1alpha1"
+	eaisv1alpha1 "kubeform.dev/provider-alicloud-api/apis/eais/v1alpha1"
+	ecdv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ecd/v1alpha1"
 	eciv1alpha1 "kubeform.dev/provider-alicloud-api/apis/eci/v1alpha1"
+	ecpv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ecp/v1alpha1"
 	ecsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ecs/v1alpha1"
 	edasv1alpha1 "kubeform.dev/provider-alicloud-api/apis/edas/v1alpha1"
+	ehpcv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ehpc/v1alpha1"
 	eipv1alpha1 "kubeform.dev/provider-alicloud-api/apis/eip/v1alpha1"
 	eipanycastv1alpha1 "kubeform.dev/provider-alicloud-api/apis/eipanycast/v1alpha1"
 	elasticsearchv1alpha1 "kubeform.dev/provider-alicloud-api/apis/elasticsearch/v1alpha1"
 	emrv1alpha1 "kubeform.dev/provider-alicloud-api/apis/emr/v1alpha1"
+	ensv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ens/v1alpha1"
 	essv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ess/v1alpha1"
 	eventv1alpha1 "kubeform.dev/provider-alicloud-api/apis/event/v1alpha1"
+	expressv1alpha1 "kubeform.dev/provider-alicloud-api/apis/express/v1alpha1"
 	fcv1alpha1 "kubeform.dev/provider-alicloud-api/apis/fc/v1alpha1"
 	fnfv1alpha1 "kubeform.dev/provider-alicloud-api/apis/fnf/v1alpha1"
 	forwardv1alpha1 "kubeform.dev/provider-alicloud-api/apis/forward/v1alpha1"
 	gav1alpha1 "kubeform.dev/provider-alicloud-api/apis/ga/v1alpha1"
 	gpdbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/gpdb/v1alpha1"
+	graphv1alpha1 "kubeform.dev/provider-alicloud-api/apis/graph/v1alpha1"
 	havipv1alpha1 "kubeform.dev/provider-alicloud-api/apis/havip/v1alpha1"
 	hbasev1alpha1 "kubeform.dev/provider-alicloud-api/apis/hbase/v1alpha1"
+	hbrv1alpha1 "kubeform.dev/provider-alicloud-api/apis/hbr/v1alpha1"
 	imagev1alpha1 "kubeform.dev/provider-alicloud-api/apis/image/v1alpha1"
+	immv1alpha1 "kubeform.dev/provider-alicloud-api/apis/imm/v1alpha1"
+	impv1alpha1 "kubeform.dev/provider-alicloud-api/apis/imp/v1alpha1"
 	instancev1alpha1 "kubeform.dev/provider-alicloud-api/apis/instance/v1alpha1"
+	iotv1alpha1 "kubeform.dev/provider-alicloud-api/apis/iot/v1alpha1"
 	keyv1alpha1 "kubeform.dev/provider-alicloud-api/apis/key/v1alpha1"
 	kmsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/kms/v1alpha1"
 	kvstorev1alpha1 "kubeform.dev/provider-alicloud-api/apis/kvstore/v1alpha1"
 	launchv1alpha1 "kubeform.dev/provider-alicloud-api/apis/launch/v1alpha1"
+	lindormv1alpha1 "kubeform.dev/provider-alicloud-api/apis/lindorm/v1alpha1"
 	logv1alpha1 "kubeform.dev/provider-alicloud-api/apis/log/v1alpha1"
 	logtailv1alpha1 "kubeform.dev/provider-alicloud-api/apis/logtail/v1alpha1"
 	marketv1alpha1 "kubeform.dev/provider-alicloud-api/apis/market/v1alpha1"
 	maxcomputev1alpha1 "kubeform.dev/provider-alicloud-api/apis/maxcompute/v1alpha1"
+	mhubv1alpha1 "kubeform.dev/provider-alicloud-api/apis/mhub/v1alpha1"
 	mnsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/mns/v1alpha1"
 	mongodbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/mongodb/v1alpha1"
+	mscv1alpha1 "kubeform.dev/provider-alicloud-api/apis/msc/v1alpha1"
 	msev1alpha1 "kubeform.dev/provider-alicloud-api/apis/mse/v1alpha1"
 	nasv1alpha1 "kubeform.dev/provider-alicloud-api/apis/nas/v1alpha1"
 	natv1alpha1 "kubeform.dev/provider-alicloud-api/apis/nat/v1alpha1"
 	networkv1alpha1 "kubeform.dev/provider-alicloud-api/apis/network/v1alpha1"
 	onsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ons/v1alpha1"
 	oosv1alpha1 "kubeform.dev/provider-alicloud-api/apis/oos/v1alpha1"
+	openv1alpha1 "kubeform.dev/provider-alicloud-api/apis/open/v1alpha1"
 	ossv1alpha1 "kubeform.dev/provider-alicloud-api/apis/oss/v1alpha1"
 	otsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ots/v1alpha1"
 	polardbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/polardb/v1alpha1"
 	privatelinkv1alpha1 "kubeform.dev/provider-alicloud-api/apis/privatelink/v1alpha1"
 	pvtzv1alpha1 "kubeform.dev/provider-alicloud-api/apis/pvtz/v1alpha1"
+	quickv1alpha1 "kubeform.dev/provider-alicloud-api/apis/quick/v1alpha1"
 	quotasv1alpha1 "kubeform.dev/provider-alicloud-api/apis/quotas/v1alpha1"
 	ramv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ram/v1alpha1"
+	rdcv1alpha1 "kubeform.dev/provider-alicloud-api/apis/rdc/v1alpha1"
 	rdsv1alpha1 "kubeform.dev/provider-alicloud-api/apis/rds/v1alpha1"
 	reservedv1alpha1 "kubeform.dev/provider-alicloud-api/apis/reserved/v1alpha1"
 	resourcev1alpha1 "kubeform.dev/provider-alicloud-api/apis/resource/v1alpha1"
 	rosv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ros/v1alpha1"
 	routev1alpha1 "kubeform.dev/provider-alicloud-api/apis/route/v1alpha1"
 	routerv1alpha1 "kubeform.dev/provider-alicloud-api/apis/router/v1alpha1"
+	saev1alpha1 "kubeform.dev/provider-alicloud-api/apis/sae/v1alpha1"
 	sagv1alpha1 "kubeform.dev/provider-alicloud-api/apis/sag/v1alpha1"
+	scdnv1alpha1 "kubeform.dev/provider-alicloud-api/apis/scdn/v1alpha1"
+	sddpv1alpha1 "kubeform.dev/provider-alicloud-api/apis/sddp/v1alpha1"
 	securityv1alpha1 "kubeform.dev/provider-alicloud-api/apis/security/v1alpha1"
+	servicev1alpha1 "kubeform.dev/provider-alicloud-api/apis/service/v1alpha1"
+	simplev1alpha1 "kubeform.dev/provider-alicloud-api/apis/simple/v1alpha1"
 	slbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/slb/v1alpha1"
 	snapshotv1alpha1 "kubeform.dev/provider-alicloud-api/apis/snapshot/v1alpha1"
 	snatv1alpha1 "kubeform.dev/provider-alicloud-api/apis/snat/v1alpha1"
 	sslv1alpha1 "kubeform.dev/provider-alicloud-api/apis/ssl/v1alpha1"
 	subnetv1alpha1 "kubeform.dev/provider-alicloud-api/apis/subnet/v1alpha1"
 	tsdbv1alpha1 "kubeform.dev/provider-alicloud-api/apis/tsdb/v1alpha1"
+	videov1alpha1 "kubeform.dev/provider-alicloud-api/apis/video/v1alpha1"
+	vodv1alpha1 "kubeform.dev/provider-alicloud-api/apis/vod/v1alpha1"
 	vpcv1alpha1 "kubeform.dev/provider-alicloud-api/apis/vpc/v1alpha1"
 	vpnv1alpha1 "kubeform.dev/provider-alicloud-api/apis/vpn/v1alpha1"
 	vswitchv1alpha1 "kubeform.dev/provider-alicloud-api/apis/vswitch/v1alpha1"
@@ -123,17 +158,23 @@ var ParameterCodec = runtime.NewParameterCodec(Scheme)
 var localSchemeBuilder = runtime.SchemeBuilder{
 	actiontrailv1alpha1.AddToScheme,
 	adbv1alpha1.AddToScheme,
+	albv1alpha1.AddToScheme,
 	alidnsv1alpha1.AddToScheme,
 	alikafkav1alpha1.AddToScheme,
 	amqpv1alpha1.AddToScheme,
 	apigatewayv1alpha1.AddToScheme,
+	armsv1alpha1.AddToScheme,
 	autov1alpha1.AddToScheme,
+	bastionhostv1alpha1.AddToScheme,
 	brainv1alpha1.AddToScheme,
 	casv1alpha1.AddToScheme,
 	cassandrav1alpha1.AddToScheme,
+	cddcv1alpha1.AddToScheme,
 	cdnv1alpha1.AddToScheme,
 	cenv1alpha1.AddToScheme,
+	clickv1alpha1.AddToScheme,
 	cloudv1alpha1.AddToScheme,
+	cloudauthv1alpha1.AddToScheme,
 	cmsv1alpha1.AddToScheme,
 	commonv1alpha1.AddToScheme,
 	configv1alpha1.AddToScheme,
@@ -141,71 +182,100 @@ var localSchemeBuilder = runtime.SchemeBuilder{
 	copyv1alpha1.AddToScheme,
 	crv1alpha1.AddToScheme,
 	csv1alpha1.AddToScheme,
+	datav1alpha1.AddToScheme,
+	databasev1alpha1.AddToScheme,
 	datahubv1alpha1.AddToScheme,
 	dbv1alpha1.AddToScheme,
+	dbfsv1alpha1.AddToScheme,
 	dcdnv1alpha1.AddToScheme,
 	ddosbgpv1alpha1.AddToScheme,
 	ddoscoov1alpha1.AddToScheme,
+	dfsv1alpha1.AddToScheme,
 	directv1alpha1.AddToScheme,
 	diskv1alpha1.AddToScheme,
 	dmsv1alpha1.AddToScheme,
 	dnsv1alpha1.AddToScheme,
 	drdsv1alpha1.AddToScheme,
+	dtsv1alpha1.AddToScheme,
+	eaisv1alpha1.AddToScheme,
+	ecdv1alpha1.AddToScheme,
 	eciv1alpha1.AddToScheme,
+	ecpv1alpha1.AddToScheme,
 	ecsv1alpha1.AddToScheme,
 	edasv1alpha1.AddToScheme,
+	ehpcv1alpha1.AddToScheme,
 	eipv1alpha1.AddToScheme,
 	eipanycastv1alpha1.AddToScheme,
 	elasticsearchv1alpha1.AddToScheme,
 	emrv1alpha1.AddToScheme,
+	ensv1alpha1.AddToScheme,
 	essv1alpha1.AddToScheme,
 	eventv1alpha1.AddToScheme,
+	expressv1alpha1.AddToScheme,
 	fcv1alpha1.AddToScheme,
 	fnfv1alpha1.AddToScheme,
 	forwardv1alpha1.AddToScheme,
 	gav1alpha1.AddToScheme,
 	gpdbv1alpha1.AddToScheme,
+	graphv1alpha1.AddToScheme,
 	havipv1alpha1.AddToScheme,
 	hbasev1alpha1.AddToScheme,
+	hbrv1alpha1.AddToScheme,
 	imagev1alpha1.AddToScheme,
+	immv1alpha1.AddToScheme,
+	impv1alpha1.AddToScheme,
 	instancev1alpha1.AddToScheme,
+	iotv1alpha1.AddToScheme,
 	keyv1alpha1.AddToScheme,
 	kmsv1alpha1.AddToScheme,
 	kvstorev1alpha1.AddToScheme,
 	launchv1alpha1.AddToScheme,
+	lindormv1alpha1.AddToScheme,
 	logv1alpha1.AddToScheme,
 	logtailv1alpha1.AddToScheme,
 	marketv1alpha1.AddToScheme,
 	maxcomputev1alpha1.AddToScheme,
+	mhubv1alpha1.AddToScheme,
 	mnsv1alpha1.AddToScheme,
 	mongodbv1alpha1.AddToScheme,
+	mscv1alpha1.AddToScheme,
 	msev1alpha1.AddToScheme,
 	nasv1alpha1.AddToScheme,
 	natv1alpha1.AddToScheme,
 	networkv1alpha1.AddToScheme,
 	onsv1alpha1.AddToScheme,
 	oosv1alpha1.AddToScheme,
+	openv1alpha1.AddToScheme,
 	ossv1alpha1.AddToScheme,
 	otsv1alpha1.AddToScheme,
 	polardbv1alpha1.AddToScheme,
 	privatelinkv1alpha1.AddToScheme,
 	pvtzv1alpha1.AddToScheme,
+	quickv1alpha1.AddToScheme,
 	quotasv1alpha1.AddToScheme,
 	ramv1alpha1.AddToScheme,
+	rdcv1alpha1.AddToScheme,
 	rdsv1alpha1.AddToScheme,
 	reservedv1alpha1.AddToScheme,
 	resourcev1alpha1.AddToScheme,
 	rosv1alpha1.AddToScheme,
 	routev1alpha1.AddToScheme,
 	routerv1alpha1.AddToScheme,
+	saev1alpha1.AddToScheme,
 	sagv1alpha1.AddToScheme,
+	scdnv1alpha1.AddToScheme,
+	sddpv1alpha1.AddToScheme,
 	securityv1alpha1.AddToScheme,
+	servicev1alpha1.AddToScheme,
+	simplev1alpha1.AddToScheme,
 	slbv1alpha1.AddToScheme,
 	snapshotv1alpha1.AddToScheme,
 	snatv1alpha1.AddToScheme,
 	sslv1alpha1.AddToScheme,
 	subnetv1alpha1.AddToScheme,
 	tsdbv1alpha1.AddToScheme,
+	videov1alpha1.AddToScheme,
+	vodv1alpha1.AddToScheme,
 	vpcv1alpha1.AddToScheme,
 	vpnv1alpha1.AddToScheme,
 	vswitchv1alpha1.AddToScheme,

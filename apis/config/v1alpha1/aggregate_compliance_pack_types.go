@@ -42,12 +42,15 @@ type AggregateCompliancePack struct {
 }
 
 type AggregateCompliancePackSpecConfigRulesConfigRuleParameters struct {
-	ParameterName  *string `json:"parameterName" tf:"parameter_name"`
-	ParameterValue *string `json:"parameterValue" tf:"parameter_value"`
+	// +optional
+	ParameterName *string `json:"parameterName,omitempty" tf:"parameter_name"`
+	// +optional
+	ParameterValue *string `json:"parameterValue,omitempty" tf:"parameter_value"`
 }
 
 type AggregateCompliancePackSpecConfigRules struct {
-	ConfigRuleParameters  []AggregateCompliancePackSpecConfigRulesConfigRuleParameters `json:"configRuleParameters" tf:"config_rule_parameters"`
+	// +optional
+	ConfigRuleParameters  []AggregateCompliancePackSpecConfigRulesConfigRuleParameters `json:"configRuleParameters,omitempty" tf:"config_rule_parameters"`
 	ManagedRuleIdentifier *string                                                      `json:"managedRuleIdentifier" tf:"managed_rule_identifier"`
 }
 

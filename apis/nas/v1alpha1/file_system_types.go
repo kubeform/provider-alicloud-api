@@ -59,11 +59,19 @@ type FileSystemSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
+	Capacity *int64 `json:"capacity,omitempty" tf:"capacity"`
+	// +optional
 	Description *string `json:"description,omitempty" tf:"description"`
 	// +optional
-	EncryptType  *int64  `json:"encryptType,omitempty" tf:"encrypt_type"`
+	EncryptType *int64 `json:"encryptType,omitempty" tf:"encrypt_type"`
+	// +optional
+	FileSystemType *string `json:"fileSystemType,omitempty" tf:"file_system_type"`
+	// +optional
+	KmsKeyID     *string `json:"kmsKeyID,omitempty" tf:"kms_key_id"`
 	ProtocolType *string `json:"protocolType" tf:"protocol_type"`
 	StorageType  *string `json:"storageType" tf:"storage_type"`
+	// +optional
+	ZoneID *string `json:"zoneID,omitempty" tf:"zone_id"`
 }
 
 type FileSystemStatus struct {

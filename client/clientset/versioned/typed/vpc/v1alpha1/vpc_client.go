@@ -27,7 +27,12 @@ import (
 
 type VpcV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	DhcpOptionsSetsGetter
 	FlowLogsGetter
+	NatIPsGetter
+	NatIPCIDRsGetter
+	TrafficMirrorFiltersGetter
+	TrafficMirrorFilterEgressRulesGetter
 	VpcsGetter
 }
 
@@ -36,8 +41,28 @@ type VpcV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *VpcV1alpha1Client) DhcpOptionsSets(namespace string) DhcpOptionsSetInterface {
+	return newDhcpOptionsSets(c, namespace)
+}
+
 func (c *VpcV1alpha1Client) FlowLogs(namespace string) FlowLogInterface {
 	return newFlowLogs(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) NatIPs(namespace string) NatIPInterface {
+	return newNatIPs(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) NatIPCIDRs(namespace string) NatIPCIDRInterface {
+	return newNatIPCIDRs(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) TrafficMirrorFilters(namespace string) TrafficMirrorFilterInterface {
+	return newTrafficMirrorFilters(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) TrafficMirrorFilterEgressRules(namespace string) TrafficMirrorFilterEgressRuleInterface {
+	return newTrafficMirrorFilterEgressRules(c, namespace)
 }
 
 func (c *VpcV1alpha1Client) Vpcs(namespace string) VpcInterface {

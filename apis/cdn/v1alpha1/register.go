@@ -62,6 +62,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&DomainConfigList{},
 		&DomainNew{},
 		&DomainNewList{},
+		&RealTimeLogDelivery{},
+		&RealTimeLogDeliveryList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

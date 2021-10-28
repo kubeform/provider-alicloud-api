@@ -20,6 +20,8 @@ package v1alpha1
 
 type AccountExpansion interface{}
 
+type AuditLogConfigExpansion interface{}
+
 type BackupPolicyExpansion interface{}
 
 type ConnectionExpansion interface{}

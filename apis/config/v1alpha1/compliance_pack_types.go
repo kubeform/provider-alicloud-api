@@ -42,13 +42,15 @@ type CompliancePack struct {
 }
 
 type CompliancePackSpecConfigRulesConfigRuleParameters struct {
-	ParameterName *string `json:"parameterName" tf:"parameter_name"`
+	// +optional
+	ParameterName *string `json:"parameterName,omitempty" tf:"parameter_name"`
 	// +optional
 	ParameterValue *string `json:"parameterValue,omitempty" tf:"parameter_value"`
 }
 
 type CompliancePackSpecConfigRules struct {
-	ConfigRuleParameters  []CompliancePackSpecConfigRulesConfigRuleParameters `json:"configRuleParameters" tf:"config_rule_parameters"`
+	// +optional
+	ConfigRuleParameters  []CompliancePackSpecConfigRulesConfigRuleParameters `json:"configRuleParameters,omitempty" tf:"config_rule_parameters"`
 	ManagedRuleIdentifier *string                                             `json:"managedRuleIdentifier" tf:"managed_rule_identifier"`
 }
 

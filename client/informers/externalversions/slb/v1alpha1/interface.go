@@ -48,6 +48,8 @@ type Interface interface {
 	ServerGroups() ServerGroupInformer
 	// Slbs returns a SlbInformer.
 	Slbs() SlbInformer
+	// TlsCipherPolicies returns a TlsCipherPolicyInformer.
+	TlsCipherPolicies() TlsCipherPolicyInformer
 }
 
 type version struct {
@@ -119,4 +121,9 @@ func (v *version) ServerGroups() ServerGroupInformer {
 // Slbs returns a SlbInformer.
 func (v *version) Slbs() SlbInformer {
 	return &slbInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TlsCipherPolicies returns a TlsCipherPolicyInformer.
+func (v *version) TlsCipherPolicies() TlsCipherPolicyInformer {
+	return &tlsCipherPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

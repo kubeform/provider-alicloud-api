@@ -41,3 +41,11 @@ type DomainNewListerExpansion interface{}
 // DomainNewNamespaceListerExpansion allows custom methods to be added to
 // DomainNewNamespaceLister.
 type DomainNewNamespaceListerExpansion interface{}
+
+// RealTimeLogDeliveryListerExpansion allows custom methods to be added to
+// RealTimeLogDeliveryLister.
+type RealTimeLogDeliveryListerExpansion interface{}
+
+// RealTimeLogDeliveryNamespaceListerExpansion allows custom methods to be added to
+// RealTimeLogDeliveryNamespaceLister.
+type RealTimeLogDeliveryNamespaceListerExpansion interface{}

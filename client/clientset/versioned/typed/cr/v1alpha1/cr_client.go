@@ -31,6 +31,7 @@ type CrV1alpha1Interface interface {
 	EeNamespacesGetter
 	EeReposGetter
 	EeSyncRulesGetter
+	EndpointACLPoliciesGetter
 	NamespacesGetter
 	ReposGetter
 }
@@ -54,6 +55,10 @@ func (c *CrV1alpha1Client) EeRepos(namespace string) EeRepoInterface {
 
 func (c *CrV1alpha1Client) EeSyncRules(namespace string) EeSyncRuleInterface {
 	return newEeSyncRules(c, namespace)
+}
+
+func (c *CrV1alpha1Client) EndpointACLPolicies(namespace string) EndpointACLPolicyInterface {
+	return newEndpointACLPolicies(c, namespace)
 }
 
 func (c *CrV1alpha1Client) Namespaces(namespace string) NamespaceInterface {

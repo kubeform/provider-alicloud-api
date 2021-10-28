@@ -65,6 +65,8 @@ type AddressSpecResource struct {
 	// +optional
 	AddressName *string `json:"addressName,omitempty" tf:"address_name"`
 	// +optional
+	AutoPay *bool `json:"autoPay,omitempty" tf:"auto_pay"`
+	// +optional
 	Bandwidth *string `json:"bandwidth,omitempty" tf:"bandwidth"`
 	// +optional
 	DeletionProtection *bool `json:"deletionProtection,omitempty" tf:"deletion_protection"`

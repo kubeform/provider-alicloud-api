@@ -61,6 +61,8 @@ type CopySpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
+	DeleteAutoSnapshot *bool `json:"deleteAutoSnapshot,omitempty" tf:"delete_auto_snapshot"`
+	// +optional
 	Description *string `json:"description,omitempty" tf:"description"`
 	// +optional
 	Encrypted *bool `json:"encrypted,omitempty" tf:"encrypted"`

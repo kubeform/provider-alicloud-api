@@ -42,9 +42,10 @@ func (r *Certificate) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &Certificate{}
 
 var certificateForceNewList = map[string]bool{
-	"/cert": true,
-	"/key":  true,
-	"/name": true,
+	"/cert":             true,
+	"/certificate_name": true,
+	"/key":              true,
+	"/name":             true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type

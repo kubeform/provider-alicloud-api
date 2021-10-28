@@ -32,6 +32,8 @@ type Interface interface {
 	AlarmContactGroups() AlarmContactGroupInformer
 	// GroupMetricRules returns a GroupMetricRuleInformer.
 	GroupMetricRules() GroupMetricRuleInformer
+	// MetricRuleTemplates returns a MetricRuleTemplateInformer.
+	MetricRuleTemplates() MetricRuleTemplateInformer
 	// MonitorGroups returns a MonitorGroupInformer.
 	MonitorGroups() MonitorGroupInformer
 	// MonitorGroupInstanceses returns a MonitorGroupInstancesInformer.
@@ -69,6 +71,11 @@ func (v *version) AlarmContactGroups() AlarmContactGroupInformer {
 // GroupMetricRules returns a GroupMetricRuleInformer.
 func (v *version) GroupMetricRules() GroupMetricRuleInformer {
 	return &groupMetricRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// MetricRuleTemplates returns a MetricRuleTemplateInformer.
+func (v *version) MetricRuleTemplates() MetricRuleTemplateInformer {
+	return &metricRuleTemplateInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // MonitorGroups returns a MonitorGroupInformer.

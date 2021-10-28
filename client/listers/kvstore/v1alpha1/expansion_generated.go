@@ -26,6 +26,14 @@ type AccountListerExpansion interface{}
 // AccountNamespaceLister.
 type AccountNamespaceListerExpansion interface{}
 
+// AuditLogConfigListerExpansion allows custom methods to be added to
+// AuditLogConfigLister.
+type AuditLogConfigListerExpansion interface{}
+
+// AuditLogConfigNamespaceListerExpansion allows custom methods to be added to
+// AuditLogConfigNamespaceLister.
+type AuditLogConfigNamespaceListerExpansion interface{}
+
 // BackupPolicyListerExpansion allows custom methods to be added to
 // BackupPolicyLister.
 type BackupPolicyListerExpansion interface{}

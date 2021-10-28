@@ -126,6 +126,11 @@ func (in *CopySpecResource) DeepCopyInto(out *CopySpecResource) {
 		*out = new(apiv1alpha1.ResourceTimeout)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.DeleteAutoSnapshot != nil {
+		in, out := &in.DeleteAutoSnapshot, &out.DeleteAutoSnapshot
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -493,6 +498,11 @@ func (in *ImageSpecResource) DeepCopyInto(out *ImageSpecResource) {
 	if in.Architecture != nil {
 		in, out := &in.Architecture, &out.Architecture
 		*out = new(string)
+		**out = **in
+	}
+	if in.DeleteAutoSnapshot != nil {
+		in, out := &in.DeleteAutoSnapshot, &out.DeleteAutoSnapshot
+		*out = new(bool)
 		**out = **in
 	}
 	if in.Description != nil {

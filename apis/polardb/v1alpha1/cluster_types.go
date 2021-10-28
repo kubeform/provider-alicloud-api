@@ -41,6 +41,15 @@ type Cluster struct {
 	Status            ClusterStatus `json:"status,omitempty"`
 }
 
+type ClusterSpecDbClusterIPArray struct {
+	// +optional
+	DbClusterIPArrayName *string `json:"dbClusterIPArrayName,omitempty" tf:"db_cluster_ip_array_name"`
+	// +optional
+	ModifyMode *string `json:"modifyMode,omitempty" tf:"modify_mode"`
+	// +optional
+	SecurityIPS []string `json:"securityIPS,omitempty" tf:"security_ips"`
+}
+
 type ClusterSpecParameters struct {
 	Name  *string `json:"name" tf:"name"`
 	Value *string `json:"value" tf:"value"`
@@ -71,7 +80,9 @@ type ClusterSpecResource struct {
 	CollectorStatus *string `json:"collectorStatus,omitempty" tf:"collector_status"`
 	// +optional
 	ConnectionString *string `json:"connectionString,omitempty" tf:"connection_string"`
-	DbNodeClass      *string `json:"dbNodeClass" tf:"db_node_class"`
+	// +optional
+	DbClusterIPArray []ClusterSpecDbClusterIPArray `json:"dbClusterIPArray,omitempty" tf:"db_cluster_ip_array"`
+	DbNodeClass      *string                       `json:"dbNodeClass" tf:"db_node_class"`
 	// +optional
 	DbNodeCount *int64  `json:"dbNodeCount,omitempty" tf:"db_node_count"`
 	DbType      *string `json:"dbType" tf:"db_type"`

@@ -63,6 +63,8 @@ type AuditSpecResource struct {
 	// +optional
 	MultiAccount []string `json:"multiAccount,omitempty" tf:"multi_account"`
 	// +optional
+	ResourceDirectoryType *string `json:"resourceDirectoryType,omitempty" tf:"resource_directory_type"`
+	// +optional
 	VariableMap map[string]string `json:"variableMap,omitempty" tf:"variable_map"`
 }
 

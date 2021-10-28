@@ -41,10 +41,7 @@ func (r *DomainConfig) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 var _ webhook.Validator = &DomainConfig{}
 
-var domainconfigForceNewList = map[string]bool{
-	"/domain_name":   true,
-	"/function_name": true,
-}
+var domainconfigForceNewList = map[string]bool{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
 func (r *DomainConfig) ValidateCreate() error {

@@ -64,6 +64,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&AlarmContactGroupList{},
 		&GroupMetricRule{},
 		&GroupMetricRuleList{},
+		&MetricRuleTemplate{},
+		&MetricRuleTemplateList{},
 		&MonitorGroup{},
 		&MonitorGroupList{},
 		&MonitorGroupInstances{},

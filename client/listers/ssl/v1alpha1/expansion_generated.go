@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// CertificatesServiceCertificateListerExpansion allows custom methods to be added to
+// CertificatesServiceCertificateLister.
+type CertificatesServiceCertificateListerExpansion interface{}
+
+// CertificatesServiceCertificateNamespaceListerExpansion allows custom methods to be added to
+// CertificatesServiceCertificateNamespaceLister.
+type CertificatesServiceCertificateNamespaceListerExpansion interface{}
+
 // VpnClientCertListerExpansion allows custom methods to be added to
 // VpnClientCertLister.
 type VpnClientCertListerExpansion interface{}

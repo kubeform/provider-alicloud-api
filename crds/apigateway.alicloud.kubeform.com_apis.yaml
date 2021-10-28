@@ -99,6 +99,8 @@ spec:
                     - serviceName
                     - timeout
                     type: object
+                  forceNonceCheck:
+                    type: boolean
                   groupID:
                     type: string
                   httpServiceConfig:
@@ -271,6 +273,8 @@ spec:
                     - serviceName
                     - timeout
                     type: object
+                  forceNonceCheck:
+                    type: boolean
                   groupID:
                     type: string
                   httpServiceConfig:

@@ -24,8 +24,12 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Bindings returns a BindingInformer.
+	Bindings() BindingInformer
 	// Exchanges returns a ExchangeInformer.
 	Exchanges() ExchangeInformer
+	// Instances returns a InstanceInformer.
+	Instances() InstanceInformer
 	// Queues returns a QueueInformer.
 	Queues() QueueInformer
 	// VirtualHosts returns a VirtualHostInformer.
@@ -43,9 +47,19 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// Bindings returns a BindingInformer.
+func (v *version) Bindings() BindingInformer {
+	return &bindingInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Exchanges returns a ExchangeInformer.
 func (v *version) Exchanges() ExchangeInformer {
 	return &exchangeInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Instances returns a InstanceInformer.
+func (v *version) Instances() InstanceInformer {
+	return &instanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Queues returns a QueueInformer.

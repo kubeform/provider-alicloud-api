@@ -59,8 +59,14 @@ type CertificateSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	Cert *string `json:"cert" tf:"cert"`
-	Key  *string `json:"key" tf:"key"`
-	Name *string `json:"name" tf:"name"`
+	// +optional
+	CertificateName *string `json:"certificateName,omitempty" tf:"certificate_name"`
+	Key             *string `json:"key" tf:"key"`
+	// +optional
+	Lang *string `json:"lang,omitempty" tf:"lang"`
+	// +optional
+	// Deprecated
+	Name *string `json:"name,omitempty" tf:"name"`
 }
 
 type CertificateStatus struct {

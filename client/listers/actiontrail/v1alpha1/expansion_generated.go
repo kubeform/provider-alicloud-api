@@ -26,6 +26,14 @@ type ActiontrailListerExpansion interface{}
 // ActiontrailNamespaceLister.
 type ActiontrailNamespaceListerExpansion interface{}
 
+// HistoryDeliveryJobListerExpansion allows custom methods to be added to
+// HistoryDeliveryJobLister.
+type HistoryDeliveryJobListerExpansion interface{}
+
+// HistoryDeliveryJobNamespaceListerExpansion allows custom methods to be added to
+// HistoryDeliveryJobNamespaceLister.
+type HistoryDeliveryJobNamespaceListerExpansion interface{}
+
 // TrailListerExpansion allows custom methods to be added to
 // TrailLister.
 type TrailListerExpansion interface{}

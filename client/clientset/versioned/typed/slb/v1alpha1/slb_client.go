@@ -39,6 +39,7 @@ type SlbV1alpha1Interface interface {
 	ServerCertificatesGetter
 	ServerGroupsGetter
 	SlbsGetter
+	TlsCipherPoliciesGetter
 }
 
 // SlbV1alpha1Client is used to interact with features provided by the slb.alicloud.kubeform.com group.
@@ -92,6 +93,10 @@ func (c *SlbV1alpha1Client) ServerGroups(namespace string) ServerGroupInterface 
 
 func (c *SlbV1alpha1Client) Slbs(namespace string) SlbInterface {
 	return newSlbs(c, namespace)
+}
+
+func (c *SlbV1alpha1Client) TlsCipherPolicies(namespace string) TlsCipherPolicyInterface {
+	return newTlsCipherPolicies(c, namespace)
 }
 
 // NewForConfig creates a new SlbV1alpha1Client for the given config.

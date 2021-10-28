@@ -58,8 +58,12 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&BridgeEventBus{},
 		&BridgeEventBusList{},
-		&BridgeSchemaGroup{},
-		&BridgeSchemaGroupList{},
+		&BridgeEventSource{},
+		&BridgeEventSourceList{},
+		&BridgeRule{},
+		&BridgeRuleList{},
+		&BridgeSlr{},
+		&BridgeSlrList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

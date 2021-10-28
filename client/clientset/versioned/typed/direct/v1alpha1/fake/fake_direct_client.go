@@ -29,6 +29,14 @@ type FakeDirectV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeDirectV1alpha1) MailDomains(namespace string) v1alpha1.MailDomainInterface {
+	return &FakeMailDomains{c, namespace}
+}
+
+func (c *FakeDirectV1alpha1) MailMailAddresses(namespace string) v1alpha1.MailMailAddressInterface {
+	return &FakeMailMailAddresses{c, namespace}
+}
+
 func (c *FakeDirectV1alpha1) MailReceiverses(namespace string) v1alpha1.MailReceiversInterface {
 	return &FakeMailReceiverses{c, namespace}
 }

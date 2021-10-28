@@ -24,4 +24,22 @@ type ConnectNetworkAttachmentExpansion interface{}
 
 type ConnectNetworkGrantExpansion interface{}
 
+type FirewallControlPolicyExpansion interface{}
+
+type FirewallControlPolicyOrderExpansion interface{}
+
+type FirewallInstanceExpansion interface{}
+
+type SsoAccessConfigurationExpansion interface{}
+
+type SsoDirectoryExpansion interface{}
+
+type SsoGroupExpansion interface{}
+
+type SsoScimServerCredentialExpansion interface{}
+
+type SsoUserExpansion interface{}
+
+type StorageGatewayGatewayExpansion interface{}
+
 type StorageGatewayStorageBundleExpansion interface{}

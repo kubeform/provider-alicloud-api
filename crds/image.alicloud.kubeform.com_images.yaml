@@ -59,6 +59,8 @@ spec:
                 properties:
                   architecture:
                     type: string
+                  deleteAutoSnapshot:
+                    type: boolean
                   description:
                     type: string
                   diskDeviceMapping:
@@ -139,6 +141,8 @@ spec:
                 properties:
                   architecture:
                     type: string
+                  deleteAutoSnapshot:
+                    type: boolean
                   description:
                     type: string
                   diskDeviceMapping:

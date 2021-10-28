@@ -77,6 +77,10 @@ spec:
                     type: array
                   readWriteMode:
                     type: string
+                  sslAutoRotate:
+                    type: string
+                  sslCertificateURL:
+                    type: string
                   sslConnectionString:
                     type: string
                   sslEnabled:
@@ -107,6 +111,10 @@ spec:
                       type: string
                     type: array
                   readWriteMode:
+                    type: string
+                  sslAutoRotate:
+                    type: string
+                  sslCertificateURL:
                     type: string
                   sslConnectionString:
                     type: string

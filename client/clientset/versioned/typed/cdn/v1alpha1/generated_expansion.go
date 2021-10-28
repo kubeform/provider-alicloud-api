@@ -23,3 +23,5 @@ type DomainExpansion interface{}
 type DomainConfigExpansion interface{}
 
 type DomainNewExpansion interface{}
+
+type RealTimeLogDeliveryExpansion interface{}

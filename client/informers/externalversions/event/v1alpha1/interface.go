@@ -26,8 +26,12 @@ import (
 type Interface interface {
 	// BridgeEventBuses returns a BridgeEventBusInformer.
 	BridgeEventBuses() BridgeEventBusInformer
-	// BridgeSchemaGroups returns a BridgeSchemaGroupInformer.
-	BridgeSchemaGroups() BridgeSchemaGroupInformer
+	// BridgeEventSources returns a BridgeEventSourceInformer.
+	BridgeEventSources() BridgeEventSourceInformer
+	// BridgeRules returns a BridgeRuleInformer.
+	BridgeRules() BridgeRuleInformer
+	// BridgeSlrs returns a BridgeSlrInformer.
+	BridgeSlrs() BridgeSlrInformer
 }
 
 type version struct {
@@ -46,7 +50,17 @@ func (v *version) BridgeEventBuses() BridgeEventBusInformer {
 	return &bridgeEventBusInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
-// BridgeSchemaGroups returns a BridgeSchemaGroupInformer.
-func (v *version) BridgeSchemaGroups() BridgeSchemaGroupInformer {
-	return &bridgeSchemaGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+// BridgeEventSources returns a BridgeEventSourceInformer.
+func (v *version) BridgeEventSources() BridgeEventSourceInformer {
+	return &bridgeEventSourceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// BridgeRules returns a BridgeRuleInformer.
+func (v *version) BridgeRules() BridgeRuleInformer {
+	return &bridgeRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// BridgeSlrs returns a BridgeSlrInformer.
+func (v *version) BridgeSlrs() BridgeSlrInformer {
+	return &bridgeSlrInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

@@ -32,6 +32,8 @@ type Interface interface {
 	EeRepos() EeRepoInformer
 	// EeSyncRules returns a EeSyncRuleInformer.
 	EeSyncRules() EeSyncRuleInformer
+	// EndpointACLPolicies returns a EndpointACLPolicyInformer.
+	EndpointACLPolicies() EndpointACLPolicyInformer
 	// Namespaces returns a NamespaceInformer.
 	Namespaces() NamespaceInformer
 	// Repos returns a RepoInformer.
@@ -67,6 +69,11 @@ func (v *version) EeRepos() EeRepoInformer {
 // EeSyncRules returns a EeSyncRuleInformer.
 func (v *version) EeSyncRules() EeSyncRuleInformer {
 	return &eeSyncRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// EndpointACLPolicies returns a EndpointACLPolicyInformer.
+func (v *version) EndpointACLPolicies() EndpointACLPolicyInformer {
+	return &endpointACLPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Namespaces returns a NamespaceInformer.

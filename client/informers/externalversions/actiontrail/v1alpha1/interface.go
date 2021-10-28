@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// Actiontrails returns a ActiontrailInformer.
 	Actiontrails() ActiontrailInformer
+	// HistoryDeliveryJobs returns a HistoryDeliveryJobInformer.
+	HistoryDeliveryJobs() HistoryDeliveryJobInformer
 	// Trails returns a TrailInformer.
 	Trails() TrailInformer
 }
@@ -44,6 +46,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Actiontrails returns a ActiontrailInformer.
 func (v *version) Actiontrails() ActiontrailInformer {
 	return &actiontrailInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// HistoryDeliveryJobs returns a HistoryDeliveryJobInformer.
+func (v *version) HistoryDeliveryJobs() HistoryDeliveryJobInformer {
+	return &historyDeliveryJobInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Trails returns a TrailInformer.

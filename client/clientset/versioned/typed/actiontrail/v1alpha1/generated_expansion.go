@@ -20,4 +20,6 @@ package v1alpha1
 
 type ActiontrailExpansion interface{}
 
+type HistoryDeliveryJobExpansion interface{}
+
 type TrailExpansion interface{}

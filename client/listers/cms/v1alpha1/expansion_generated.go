@@ -50,6 +50,14 @@ type GroupMetricRuleListerExpansion interface{}
 // GroupMetricRuleNamespaceLister.
 type GroupMetricRuleNamespaceListerExpansion interface{}
 
+// MetricRuleTemplateListerExpansion allows custom methods to be added to
+// MetricRuleTemplateLister.
+type MetricRuleTemplateListerExpansion interface{}
+
+// MetricRuleTemplateNamespaceListerExpansion allows custom methods to be added to
+// MetricRuleTemplateNamespaceLister.
+type MetricRuleTemplateNamespaceListerExpansion interface{}
+
 // MonitorGroupListerExpansion allows custom methods to be added to
 // MonitorGroupLister.
 type MonitorGroupListerExpansion interface{}

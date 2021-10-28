@@ -33,6 +33,10 @@ func (c *FakeDcdnV1alpha1) Domains(namespace string) v1alpha1.DomainInterface {
 	return &FakeDomains{c, namespace}
 }
 
+func (c *FakeDcdnV1alpha1) DomainConfigs(namespace string) v1alpha1.DomainConfigInterface {
+	return &FakeDomainConfigs{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeDcdnV1alpha1) RESTClient() rest.Interface {

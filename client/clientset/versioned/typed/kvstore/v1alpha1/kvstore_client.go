@@ -28,6 +28,7 @@ import (
 type KvstoreV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AccountsGetter
+	AuditLogConfigsGetter
 	BackupPoliciesGetter
 	ConnectionsGetter
 	InstancesGetter
@@ -40,6 +41,10 @@ type KvstoreV1alpha1Client struct {
 
 func (c *KvstoreV1alpha1Client) Accounts(namespace string) AccountInterface {
 	return newAccounts(c, namespace)
+}
+
+func (c *KvstoreV1alpha1Client) AuditLogConfigs(namespace string) AuditLogConfigInterface {
+	return newAuditLogConfigs(c, namespace)
 }
 
 func (c *KvstoreV1alpha1Client) BackupPolicies(namespace string) BackupPolicyInterface {

@@ -33,6 +33,10 @@ func (c *FakeKvstoreV1alpha1) Accounts(namespace string) v1alpha1.AccountInterfa
 	return &FakeAccounts{c, namespace}
 }
 
+func (c *FakeKvstoreV1alpha1) AuditLogConfigs(namespace string) v1alpha1.AuditLogConfigInterface {
+	return &FakeAuditLogConfigs{c, namespace}
+}
+
 func (c *FakeKvstoreV1alpha1) BackupPolicies(namespace string) v1alpha1.BackupPolicyInterface {
 	return &FakeBackupPolicies{c, namespace}
 }
