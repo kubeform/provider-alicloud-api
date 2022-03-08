@@ -42,8 +42,13 @@ func (r *K8sApplication) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &K8sApplication{}
 
 var k8sapplicationForceNewList = map[string]bool{
-	"/cluster_id":   true,
-	"/package_type": true,
+	"/application_name":      true,
+	"/cluster_id":            true,
+	"/internet_slb_id":       true,
+	"/internet_slb_port":     true,
+	"/internet_slb_protocol": true,
+	"/internet_target_port":  true,
+	"/package_type":          true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -89,7 +94,7 @@ func (r *K8sApplication) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range k8sapplicationForceNewList {
+	for key, _ := range k8sapplicationForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

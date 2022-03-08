@@ -30,6 +30,8 @@ type Interface interface {
 	Domains() DomainInformer
 	// Instances returns a InstanceInformer.
 	Instances() InstanceInformer
+	// ProtectionModules returns a ProtectionModuleInformer.
+	ProtectionModules() ProtectionModuleInformer
 }
 
 type version struct {
@@ -56,4 +58,9 @@ func (v *version) Domains() DomainInformer {
 // Instances returns a InstanceInformer.
 func (v *version) Instances() InstanceInformer {
 	return &instanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ProtectionModules returns a ProtectionModuleInformer.
+func (v *version) ProtectionModules() ProtectionModuleInformer {
+	return &protectionModuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

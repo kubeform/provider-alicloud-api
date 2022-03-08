@@ -111,6 +111,15 @@ spec:
                           type: string
                       type: object
                     type: object
+                  controlPlaneLogComponents:
+                    items:
+                      type: string
+                    minItems: 1
+                    type: array
+                  controlPlaneLogProject:
+                    type: string
+                  controlPlaneLogTtl:
+                    type: string
                   cpuPolicy:
                     type: string
                   customSan:
@@ -205,6 +214,10 @@ spec:
                     type: array
                   resourceGroupID:
                     type: string
+                  retainResources:
+                    items:
+                      type: string
+                    type: array
                   runtime:
                     additionalProperties:
                       properties:
@@ -450,6 +463,15 @@ spec:
                           type: string
                       type: object
                     type: object
+                  controlPlaneLogComponents:
+                    items:
+                      type: string
+                    minItems: 1
+                    type: array
+                  controlPlaneLogProject:
+                    type: string
+                  controlPlaneLogTtl:
+                    type: string
                   cpuPolicy:
                     type: string
                   customSan:
@@ -544,6 +566,10 @@ spec:
                     type: array
                   resourceGroupID:
                     type: string
+                  retainResources:
+                    items:
+                      type: string
+                    type: array
                   runtime:
                     additionalProperties:
                       properties:

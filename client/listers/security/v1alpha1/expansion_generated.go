@@ -26,6 +26,14 @@ type CenterGroupListerExpansion interface{}
 // CenterGroupNamespaceLister.
 type CenterGroupNamespaceListerExpansion interface{}
 
+// CenterServiceLinkedRoleListerExpansion allows custom methods to be added to
+// CenterServiceLinkedRoleLister.
+type CenterServiceLinkedRoleListerExpansion interface{}
+
+// CenterServiceLinkedRoleNamespaceListerExpansion allows custom methods to be added to
+// CenterServiceLinkedRoleNamespaceLister.
+type CenterServiceLinkedRoleNamespaceListerExpansion interface{}
+
 // GroupListerExpansion allows custom methods to be added to
 // GroupLister.
 type GroupListerExpansion interface{}

@@ -59,6 +59,8 @@ spec:
                 properties:
                   consumerID:
                     type: string
+                  description:
+                    type: string
                   id:
                     type: string
                   instanceID:
@@ -74,6 +76,8 @@ spec:
               state:
                 properties:
                   consumerID:
+                    type: string
+                  description:
                     type: string
                   id:
                     type: string

@@ -61,7 +61,6 @@ var synchronizationjobForceNewList = map[string]bool{
 	"/dts_instance_id":                    true,
 	"/error_notice":                       true,
 	"/error_phone":                        true,
-	"/reserve":                            true,
 	"/source_endpoint_database_name":      true,
 	"/source_endpoint_engine_name":        true,
 	"/source_endpoint_instance_id":        true,
@@ -120,7 +119,7 @@ func (r *SynchronizationJob) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range synchronizationjobForceNewList {
+	for key, _ := range synchronizationjobForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -62,6 +62,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&MailMailAddressList{},
 		&MailReceivers{},
 		&MailReceiversList{},
+		&MailTag{},
+		&MailTagList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

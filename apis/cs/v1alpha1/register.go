@@ -64,6 +64,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&EdgeKubernetesList{},
 		&Kubernetes{},
 		&KubernetesList{},
+		&KubernetesAddon{},
+		&KubernetesAddonList{},
 		&KubernetesAutoscaler{},
 		&KubernetesAutoscalerList{},
 		&KubernetesNodePool{},

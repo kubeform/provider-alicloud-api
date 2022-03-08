@@ -20,6 +20,12 @@ package v1alpha1
 
 type AcceleratorExpansion interface{}
 
+type AclExpansion interface{}
+
+type AclAttachmentExpansion interface{}
+
+type AdditionalCertificateExpansion interface{}
+
 type BandwidthPackageExpansion interface{}
 
 type BandwidthPackageAttachmentExpansion interface{}

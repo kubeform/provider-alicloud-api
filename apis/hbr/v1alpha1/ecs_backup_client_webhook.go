@@ -88,7 +88,7 @@ func (r *EcsBackupClient) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range ecsbackupclientForceNewList {
+	for key, _ := range ecsbackupclientForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

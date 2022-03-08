@@ -41,7 +41,9 @@ func (r *SubContact) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 var _ webhook.Validator = &SubContact{}
 
-var subcontactForceNewList = map[string]bool{}
+var subcontactForceNewList = map[string]bool{
+	"/position": true,
+}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
 func (r *SubContact) ValidateCreate() error {
@@ -86,7 +88,7 @@ func (r *SubContact) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range subcontactForceNewList {
+	for key, _ := range subcontactForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

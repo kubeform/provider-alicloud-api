@@ -86,7 +86,7 @@ func (r *HpcCluster) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range hpcclusterForceNewList {
+	for key, _ := range hpcclusterForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

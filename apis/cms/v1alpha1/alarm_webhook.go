@@ -90,7 +90,7 @@ func (r *Alarm) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range alarmForceNewList {
+	for key, _ := range alarmForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

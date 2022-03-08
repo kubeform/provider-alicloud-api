@@ -90,7 +90,7 @@ func (r *BridgeRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range bridgeruleForceNewList {
+	for key, _ := range bridgeruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

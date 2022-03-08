@@ -29,6 +29,14 @@ type FakeCrV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeCrV1alpha1) ChartNamespaces(namespace string) v1alpha1.ChartNamespaceInterface {
+	return &FakeChartNamespaces{c, namespace}
+}
+
+func (c *FakeCrV1alpha1) ChartRepositories(namespace string) v1alpha1.ChartRepositoryInterface {
+	return &FakeChartRepositories{c, namespace}
+}
+
 func (c *FakeCrV1alpha1) EeInstances(namespace string) v1alpha1.EeInstanceInterface {
 	return &FakeEeInstances{c, namespace}
 }

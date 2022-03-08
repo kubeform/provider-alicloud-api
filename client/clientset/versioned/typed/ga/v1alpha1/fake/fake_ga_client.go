@@ -33,6 +33,18 @@ func (c *FakeGaV1alpha1) Accelerators(namespace string) v1alpha1.AcceleratorInte
 	return &FakeAccelerators{c, namespace}
 }
 
+func (c *FakeGaV1alpha1) Acls(namespace string) v1alpha1.AclInterface {
+	return &FakeAcls{c, namespace}
+}
+
+func (c *FakeGaV1alpha1) AclAttachments(namespace string) v1alpha1.AclAttachmentInterface {
+	return &FakeAclAttachments{c, namespace}
+}
+
+func (c *FakeGaV1alpha1) AdditionalCertificates(namespace string) v1alpha1.AdditionalCertificateInterface {
+	return &FakeAdditionalCertificates{c, namespace}
+}
+
 func (c *FakeGaV1alpha1) BandwidthPackages(namespace string) v1alpha1.BandwidthPackageInterface {
 	return &FakeBandwidthPackages{c, namespace}
 }

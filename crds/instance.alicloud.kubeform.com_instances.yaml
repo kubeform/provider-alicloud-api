@@ -101,6 +101,10 @@ spec:
                     type: array
                   deletionProtection:
                     type: boolean
+                  deploymentSetGroupNo:
+                    type: string
+                  deploymentSetID:
+                    type: string
                   description:
                     type: string
                   dryRun:
@@ -108,6 +112,8 @@ spec:
                   forceDelete:
                     type: boolean
                   hostName:
+                    type: string
+                  hpcClusterID:
                     type: string
                   id:
                     type: string
@@ -158,6 +164,13 @@ spec:
                     type: string
                   roleName:
                     type: string
+                  secondaryPrivateIPAddressCount:
+                    format: int64
+                    type: integer
+                  secondaryPrivateIPS:
+                    items:
+                      type: string
+                    type: array
                   securityEnhancementStrategy:
                     type: string
                   securityGroups:
@@ -296,6 +309,10 @@ spec:
                     type: array
                   deletionProtection:
                     type: boolean
+                  deploymentSetGroupNo:
+                    type: string
+                  deploymentSetID:
+                    type: string
                   description:
                     type: string
                   dryRun:
@@ -303,6 +320,8 @@ spec:
                   forceDelete:
                     type: boolean
                   hostName:
+                    type: string
+                  hpcClusterID:
                     type: string
                   id:
                     type: string
@@ -353,6 +372,13 @@ spec:
                     type: string
                   roleName:
                     type: string
+                  secondaryPrivateIPAddressCount:
+                    format: int64
+                    type: integer
+                  secondaryPrivateIPS:
+                    items:
+                      type: string
+                    type: array
                   securityEnhancementStrategy:
                     type: string
                   securityGroups:

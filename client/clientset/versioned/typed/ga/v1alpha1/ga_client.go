@@ -28,6 +28,9 @@ import (
 type GaV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AcceleratorsGetter
+	AclsGetter
+	AclAttachmentsGetter
+	AdditionalCertificatesGetter
 	BandwidthPackagesGetter
 	BandwidthPackageAttachmentsGetter
 	EndpointGroupsGetter
@@ -43,6 +46,18 @@ type GaV1alpha1Client struct {
 
 func (c *GaV1alpha1Client) Accelerators(namespace string) AcceleratorInterface {
 	return newAccelerators(c, namespace)
+}
+
+func (c *GaV1alpha1Client) Acls(namespace string) AclInterface {
+	return newAcls(c, namespace)
+}
+
+func (c *GaV1alpha1Client) AclAttachments(namespace string) AclAttachmentInterface {
+	return newAclAttachments(c, namespace)
+}
+
+func (c *GaV1alpha1Client) AdditionalCertificates(namespace string) AdditionalCertificateInterface {
+	return newAdditionalCertificates(c, namespace)
 }
 
 func (c *GaV1alpha1Client) BandwidthPackages(namespace string) BandwidthPackageInterface {

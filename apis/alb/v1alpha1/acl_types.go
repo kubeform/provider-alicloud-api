@@ -70,7 +70,6 @@ type AclSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
-	// +kubebuilder:validation:MaxItems=20
 	AclEntries []AclSpecAclEntries `json:"aclEntries,omitempty" tf:"acl_entries"`
 	AclName    *string             `json:"aclName" tf:"acl_name"`
 	// +optional

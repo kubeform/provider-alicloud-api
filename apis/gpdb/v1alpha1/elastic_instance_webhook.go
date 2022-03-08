@@ -42,6 +42,9 @@ func (r *ElasticInstance) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &ElasticInstance{}
 
 var elasticinstanceForceNewList = map[string]bool{
+	"/db_instance_category":  true,
+	"/encryption_key":        true,
+	"/encryption_type":       true,
 	"/engine":                true,
 	"/engine_version":        true,
 	"/instance_network_type": true,
@@ -97,7 +100,7 @@ func (r *ElasticInstance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range elasticinstanceForceNewList {
+	for key, _ := range elasticinstanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

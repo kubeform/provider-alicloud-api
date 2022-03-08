@@ -31,7 +31,9 @@ type HbrV1alpha1Interface interface {
 	EcsBackupPlansGetter
 	NasBackupPlansGetter
 	OssBackupPlansGetter
+	ReplicationVaultsGetter
 	RestoreJobsGetter
+	ServerBackupPlansGetter
 	VaultsGetter
 }
 
@@ -56,8 +58,16 @@ func (c *HbrV1alpha1Client) OssBackupPlans(namespace string) OssBackupPlanInterf
 	return newOssBackupPlans(c, namespace)
 }
 
+func (c *HbrV1alpha1Client) ReplicationVaults(namespace string) ReplicationVaultInterface {
+	return newReplicationVaults(c, namespace)
+}
+
 func (c *HbrV1alpha1Client) RestoreJobs(namespace string) RestoreJobInterface {
 	return newRestoreJobs(c, namespace)
+}
+
+func (c *HbrV1alpha1Client) ServerBackupPlans(namespace string) ServerBackupPlanInterface {
+	return newServerBackupPlans(c, namespace)
 }
 
 func (c *HbrV1alpha1Client) Vaults(namespace string) VaultInterface {

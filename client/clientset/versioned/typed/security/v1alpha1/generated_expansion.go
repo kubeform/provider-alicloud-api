@@ -20,6 +20,8 @@ package v1alpha1
 
 type CenterGroupExpansion interface{}
 
+type CenterServiceLinkedRoleExpansion interface{}
+
 type GroupExpansion interface{}
 
 type GroupRuleExpansion interface{}

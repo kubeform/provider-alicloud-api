@@ -20,4 +20,10 @@ package v1alpha1
 
 type AccountExpansion interface{}
 
+type BackupExpansion interface{}
+
+type CloneDbInstanceExpansion interface{}
+
 type ParameterGroupExpansion interface{}
+
+type UpgradeDbInstanceExpansion interface{}

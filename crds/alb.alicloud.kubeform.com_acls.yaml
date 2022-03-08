@@ -67,7 +67,6 @@ spec:
                         status:
                           type: string
                       type: object
-                    maxItems: 20
                     type: array
                   aclName:
                     type: string
@@ -136,7 +135,6 @@ spec:
                         status:
                           type: string
                       type: object
-                    maxItems: 20
                     type: array
                   aclName:
                     type: string

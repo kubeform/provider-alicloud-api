@@ -106,7 +106,7 @@ func (r *ServerlessKubernetes) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range serverlesskubernetesForceNewList {
+	for key, _ := range serverlesskubernetesForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

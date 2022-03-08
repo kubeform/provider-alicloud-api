@@ -58,6 +58,12 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Instance{},
 		&InstanceList{},
+		&InstanceAttachment{},
+		&InstanceAttachmentList{},
+		&ServiceLinkedRole{},
+		&ServiceLinkedRoleList{},
+		&Snapshot{},
+		&SnapshotList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

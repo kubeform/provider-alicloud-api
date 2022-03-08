@@ -89,7 +89,7 @@ func (r *ManagerRole) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range managerroleForceNewList {
+	for key, _ := range managerroleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -26,8 +26,14 @@ import (
 type Interface interface {
 	// Accounts returns a AccountInformer.
 	Accounts() AccountInformer
+	// Backups returns a BackupInformer.
+	Backups() BackupInformer
+	// CloneDbInstances returns a CloneDbInstanceInformer.
+	CloneDbInstances() CloneDbInstanceInformer
 	// ParameterGroups returns a ParameterGroupInformer.
 	ParameterGroups() ParameterGroupInformer
+	// UpgradeDbInstances returns a UpgradeDbInstanceInformer.
+	UpgradeDbInstances() UpgradeDbInstanceInformer
 }
 
 type version struct {
@@ -46,7 +52,22 @@ func (v *version) Accounts() AccountInformer {
 	return &accountInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// Backups returns a BackupInformer.
+func (v *version) Backups() BackupInformer {
+	return &backupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// CloneDbInstances returns a CloneDbInstanceInformer.
+func (v *version) CloneDbInstances() CloneDbInstanceInformer {
+	return &cloneDbInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // ParameterGroups returns a ParameterGroupInformer.
 func (v *version) ParameterGroups() ParameterGroupInformer {
 	return &parameterGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// UpgradeDbInstances returns a UpgradeDbInstanceInformer.
+func (v *version) UpgradeDbInstances() UpgradeDbInstanceInformer {
+	return &upgradeDbInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

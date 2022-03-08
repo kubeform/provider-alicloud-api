@@ -852,6 +852,11 @@ func (in *PrometheusAlertRuleSpecResource) DeepCopyInto(out *PrometheusAlertRule
 		*out = new(string)
 		**out = **in
 	}
+	if in.PrometheusAlertRuleID != nil {
+		in, out := &in.PrometheusAlertRuleID, &out.PrometheusAlertRuleID
+		*out = new(int64)
+		**out = **in
+	}
 	if in.PrometheusAlertRuleName != nil {
 		in, out := &in.PrometheusAlertRuleName, &out.PrometheusAlertRuleName
 		*out = new(string)

@@ -91,6 +91,8 @@ type LoadBalancerSpecResource struct {
 	// +optional
 	DeletionProtectionEnabled *bool `json:"deletionProtectionEnabled,omitempty" tf:"deletion_protection_enabled"`
 	// +optional
+	DnsName *string `json:"dnsName,omitempty" tf:"dns_name"`
+	// +optional
 	DryRun                    *bool                                      `json:"dryRun,omitempty" tf:"dry_run"`
 	LoadBalancerBillingConfig *LoadBalancerSpecLoadBalancerBillingConfig `json:"loadBalancerBillingConfig" tf:"load_balancer_billing_config"`
 	LoadBalancerEdition       *string                                    `json:"loadBalancerEdition" tf:"load_balancer_edition"`

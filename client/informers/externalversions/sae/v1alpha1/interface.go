@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// Applications returns a ApplicationInformer.
 	Applications() ApplicationInformer
+	// ApplicationScalingRules returns a ApplicationScalingRuleInformer.
+	ApplicationScalingRules() ApplicationScalingRuleInformer
 	// ConfigMaps returns a ConfigMapInformer.
 	ConfigMaps() ConfigMapInformer
 	// Ingresses returns a IngressInformer.
@@ -48,6 +50,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Applications returns a ApplicationInformer.
 func (v *version) Applications() ApplicationInformer {
 	return &applicationInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApplicationScalingRules returns a ApplicationScalingRuleInformer.
+func (v *version) ApplicationScalingRules() ApplicationScalingRuleInformer {
+	return &applicationScalingRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // ConfigMaps returns a ConfigMapInformer.

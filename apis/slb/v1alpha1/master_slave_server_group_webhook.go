@@ -89,7 +89,7 @@ func (r *MasterSlaveServerGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range masterslaveservergroupForceNewList {
+	for key, _ := range masterslaveservergroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

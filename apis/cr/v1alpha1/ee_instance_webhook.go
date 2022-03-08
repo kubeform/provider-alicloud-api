@@ -92,7 +92,7 @@ func (r *EeInstance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range eeinstanceForceNewList {
+	for key, _ := range eeinstanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

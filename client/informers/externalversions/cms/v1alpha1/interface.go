@@ -30,6 +30,8 @@ type Interface interface {
 	AlarmContacts() AlarmContactInformer
 	// AlarmContactGroups returns a AlarmContactGroupInformer.
 	AlarmContactGroups() AlarmContactGroupInformer
+	// DynamicTagGroups returns a DynamicTagGroupInformer.
+	DynamicTagGroups() DynamicTagGroupInformer
 	// GroupMetricRules returns a GroupMetricRuleInformer.
 	GroupMetricRules() GroupMetricRuleInformer
 	// MetricRuleTemplates returns a MetricRuleTemplateInformer.
@@ -66,6 +68,11 @@ func (v *version) AlarmContacts() AlarmContactInformer {
 // AlarmContactGroups returns a AlarmContactGroupInformer.
 func (v *version) AlarmContactGroups() AlarmContactGroupInformer {
 	return &alarmContactGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// DynamicTagGroups returns a DynamicTagGroupInformer.
+func (v *version) DynamicTagGroups() DynamicTagGroupInformer {
+	return &dynamicTagGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // GroupMetricRules returns a GroupMetricRuleInformer.

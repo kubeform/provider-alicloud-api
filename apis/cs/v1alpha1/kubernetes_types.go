@@ -266,6 +266,8 @@ type KubernetesSpecResource struct {
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
 	// +optional
+	RetainResources []string `json:"retainResources,omitempty" tf:"retain_resources"`
+	// +optional
 	Runtime map[string]KubernetesSpecRuntime `json:"runtime,omitempty" tf:"runtime"`
 	// +optional
 	SecurityGroupID *string `json:"securityGroupID,omitempty" tf:"security_group_id"`

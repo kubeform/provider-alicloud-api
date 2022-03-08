@@ -97,7 +97,7 @@ func (r *EeSyncRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range eesyncruleForceNewList {
+	for key, _ := range eesyncruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

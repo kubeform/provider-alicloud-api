@@ -41,6 +41,10 @@ func (c *FakeDirectV1alpha1) MailReceiverses(namespace string) v1alpha1.MailRece
 	return &FakeMailReceiverses{c, namespace}
 }
 
+func (c *FakeDirectV1alpha1) MailTags(namespace string) v1alpha1.MailTagInterface {
+	return &FakeMailTags{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeDirectV1alpha1) RESTClient() rest.Interface {

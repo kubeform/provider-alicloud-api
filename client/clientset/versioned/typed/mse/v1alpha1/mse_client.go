@@ -28,6 +28,7 @@ import (
 type MseV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	ClustersGetter
+	GatewaysGetter
 }
 
 // MseV1alpha1Client is used to interact with features provided by the mse.alicloud.kubeform.com group.
@@ -37,6 +38,10 @@ type MseV1alpha1Client struct {
 
 func (c *MseV1alpha1Client) Clusters(namespace string) ClusterInterface {
 	return newClusters(c, namespace)
+}
+
+func (c *MseV1alpha1Client) Gateways(namespace string) GatewayInterface {
+	return newGateways(c, namespace)
 }
 
 // NewForConfig creates a new MseV1alpha1Client for the given config.

@@ -88,7 +88,7 @@ func (r *SsoGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range ssogroupForceNewList {
+	for key, _ := range ssogroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

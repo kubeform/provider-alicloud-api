@@ -90,7 +90,7 @@ func (r *OssShipper) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range ossshipperForceNewList {
+	for key, _ := range ossshipperForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

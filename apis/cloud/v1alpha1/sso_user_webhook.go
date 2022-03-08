@@ -43,6 +43,7 @@ var _ webhook.Validator = &SsoUser{}
 
 var ssouserForceNewList = map[string]bool{
 	"/directory_id": true,
+	"/user_name":    true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -88,7 +89,7 @@ func (r *SsoUser) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range ssouserForceNewList {
+	for key, _ := range ssouserForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

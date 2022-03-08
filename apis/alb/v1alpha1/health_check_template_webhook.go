@@ -86,7 +86,7 @@ func (r *HealthCheckTemplate) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range healthchecktemplateForceNewList {
+	for key, _ := range healthchecktemplateForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

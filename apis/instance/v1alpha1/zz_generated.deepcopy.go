@@ -234,6 +234,16 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.DeploymentSetGroupNo != nil {
+		in, out := &in.DeploymentSetGroupNo, &out.DeploymentSetGroupNo
+		*out = new(string)
+		**out = **in
+	}
+	if in.DeploymentSetID != nil {
+		in, out := &in.DeploymentSetID, &out.DeploymentSetID
+		*out = new(string)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -251,6 +261,11 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 	}
 	if in.HostName != nil {
 		in, out := &in.HostName, &out.HostName
+		*out = new(string)
+		**out = **in
+	}
+	if in.HpcClusterID != nil {
+		in, out := &in.HpcClusterID, &out.HpcClusterID
 		*out = new(string)
 		**out = **in
 	}
@@ -360,6 +375,16 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 		in, out := &in.RoleName, &out.RoleName
 		*out = new(string)
 		**out = **in
+	}
+	if in.SecondaryPrivateIPAddressCount != nil {
+		in, out := &in.SecondaryPrivateIPAddressCount, &out.SecondaryPrivateIPAddressCount
+		*out = new(int64)
+		**out = **in
+	}
+	if in.SecondaryPrivateIPS != nil {
+		in, out := &in.SecondaryPrivateIPS, &out.SecondaryPrivateIPS
+		*out = make([]string, len(*in))
+		copy(*out, *in)
 	}
 	if in.SecurityEnhancementStrategy != nil {
 		in, out := &in.SecurityEnhancementStrategy, &out.SecurityEnhancementStrategy

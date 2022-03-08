@@ -41,6 +41,10 @@ func (c *FakeCmsV1alpha1) AlarmContactGroups(namespace string) v1alpha1.AlarmCon
 	return &FakeAlarmContactGroups{c, namespace}
 }
 
+func (c *FakeCmsV1alpha1) DynamicTagGroups(namespace string) v1alpha1.DynamicTagGroupInterface {
+	return &FakeDynamicTagGroups{c, namespace}
+}
+
 func (c *FakeCmsV1alpha1) GroupMetricRules(namespace string) v1alpha1.GroupMetricRuleInterface {
 	return &FakeGroupMetricRules{c, namespace}
 }

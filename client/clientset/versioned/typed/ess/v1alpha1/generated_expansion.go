@@ -20,6 +20,8 @@ package v1alpha1
 
 type AlarmExpansion interface{}
 
+type AlbServerGroupAttachmentExpansion interface{}
+
 type AttachmentExpansion interface{}
 
 type LifecycleHookExpansion interface{}

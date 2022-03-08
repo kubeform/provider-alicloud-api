@@ -32,6 +32,8 @@ type Interface interface {
 	Commands() CommandInformer
 	// DedicatedHosts returns a DedicatedHostInformer.
 	DedicatedHosts() DedicatedHostInformer
+	// DedicatedHostClusters returns a DedicatedHostClusterInformer.
+	DedicatedHostClusters() DedicatedHostClusterInformer
 	// DeploymentSets returns a DeploymentSetInformer.
 	DeploymentSets() DeploymentSetInformer
 	// Disks returns a DiskInformer.
@@ -40,6 +42,8 @@ type Interface interface {
 	DiskAttachments() DiskAttachmentInformer
 	// HpcClusters returns a HpcClusterInformer.
 	HpcClusters() HpcClusterInformer
+	// ImageComponents returns a ImageComponentInformer.
+	ImageComponents() ImageComponentInformer
 	// KeyPairs returns a KeyPairInformer.
 	KeyPairs() KeyPairInformer
 	// KeyPairAttachments returns a KeyPairAttachmentInformer.
@@ -50,8 +54,14 @@ type Interface interface {
 	NetworkInterfaces() NetworkInterfaceInformer
 	// NetworkInterfaceAttachments returns a NetworkInterfaceAttachmentInformer.
 	NetworkInterfaceAttachments() NetworkInterfaceAttachmentInformer
+	// PrefixLists returns a PrefixListInformer.
+	PrefixLists() PrefixListInformer
+	// SessionManagerStatuses returns a SessionManagerStatusInformer.
+	SessionManagerStatuses() SessionManagerStatusInformer
 	// Snapshots returns a SnapshotInformer.
 	Snapshots() SnapshotInformer
+	// StorageCapacityUnits returns a StorageCapacityUnitInformer.
+	StorageCapacityUnits() StorageCapacityUnitInformer
 }
 
 type version struct {
@@ -85,6 +95,11 @@ func (v *version) DedicatedHosts() DedicatedHostInformer {
 	return &dedicatedHostInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// DedicatedHostClusters returns a DedicatedHostClusterInformer.
+func (v *version) DedicatedHostClusters() DedicatedHostClusterInformer {
+	return &dedicatedHostClusterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // DeploymentSets returns a DeploymentSetInformer.
 func (v *version) DeploymentSets() DeploymentSetInformer {
 	return &deploymentSetInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
@@ -103,6 +118,11 @@ func (v *version) DiskAttachments() DiskAttachmentInformer {
 // HpcClusters returns a HpcClusterInformer.
 func (v *version) HpcClusters() HpcClusterInformer {
 	return &hpcClusterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ImageComponents returns a ImageComponentInformer.
+func (v *version) ImageComponents() ImageComponentInformer {
+	return &imageComponentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // KeyPairs returns a KeyPairInformer.
@@ -130,7 +150,22 @@ func (v *version) NetworkInterfaceAttachments() NetworkInterfaceAttachmentInform
 	return &networkInterfaceAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// PrefixLists returns a PrefixListInformer.
+func (v *version) PrefixLists() PrefixListInformer {
+	return &prefixListInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SessionManagerStatuses returns a SessionManagerStatusInformer.
+func (v *version) SessionManagerStatuses() SessionManagerStatusInformer {
+	return &sessionManagerStatusInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Snapshots returns a SnapshotInformer.
 func (v *version) Snapshots() SnapshotInformer {
 	return &snapshotInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageCapacityUnits returns a StorageCapacityUnitInformer.
+func (v *version) StorageCapacityUnits() StorageCapacityUnitInformer {
+	return &storageCapacityUnitInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

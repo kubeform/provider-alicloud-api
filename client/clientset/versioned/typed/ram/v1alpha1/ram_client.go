@@ -40,6 +40,7 @@ type RamV1alpha1Interface interface {
 	RoleAttachmentsGetter
 	RolePolicyAttachmentsGetter
 	SamlProvidersGetter
+	SecurityPreferencesGetter
 	UsersGetter
 	UserPolicyAttachmentsGetter
 }
@@ -99,6 +100,10 @@ func (c *RamV1alpha1Client) RolePolicyAttachments(namespace string) RolePolicyAt
 
 func (c *RamV1alpha1Client) SamlProviders(namespace string) SamlProviderInterface {
 	return newSamlProviders(c, namespace)
+}
+
+func (c *RamV1alpha1Client) SecurityPreferences(namespace string) SecurityPreferenceInterface {
+	return newSecurityPreferences(c, namespace)
 }
 
 func (c *RamV1alpha1Client) Users(namespace string) UserInterface {

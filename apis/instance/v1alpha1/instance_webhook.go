@@ -51,6 +51,7 @@ var instanceForceNewList = map[string]bool{
 	"/data_disks/*/name":                    true,
 	"/data_disks/*/size":                    true,
 	"/data_disks/*/snapshot_id":             true,
+	"/hpc_cluster_id":                       true,
 	"/key_name":                             true,
 	"/role_name":                            true,
 	"/security_enhancement_strategy":        true,
@@ -103,7 +104,7 @@ func (r *Instance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range instanceForceNewList {
+	for key, _ := range instanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

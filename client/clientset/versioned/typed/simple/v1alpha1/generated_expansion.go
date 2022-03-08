@@ -18,4 +18,10 @@ limitations under the License.
 
 package v1alpha1
 
+type ApplicationServerCustomImageExpansion interface{}
+
+type ApplicationServerFirewallRuleExpansion interface{}
+
 type ApplicationServerInstanceExpansion interface{}
+
+type ApplicationServerSnapshotExpansion interface{}

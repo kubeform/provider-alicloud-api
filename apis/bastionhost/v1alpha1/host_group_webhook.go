@@ -88,7 +88,7 @@ func (r *HostGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range hostgroupForceNewList {
+	for key, _ := range hostgroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -77,6 +77,8 @@ spec:
                     type: string
                   resourceGroupID:
                     type: string
+                  syncStatus:
+                    type: string
                   timeouts:
                     properties:
                       create:
@@ -119,6 +121,17 @@ spec:
                     type: string
                   userClientIP:
                     type: string
+                  userInfo:
+                    items:
+                      properties:
+                        regionIDS:
+                          items:
+                            type: string
+                          type: array
+                        userID:
+                          type: string
+                      type: object
+                    type: array
                   zoneName:
                     type: string
                 type: object
@@ -144,6 +157,8 @@ spec:
                     type: string
                   resourceGroupID:
                     type: string
+                  syncStatus:
+                    type: string
                   timeouts:
                     properties:
                       create:
@@ -186,6 +201,17 @@ spec:
                     type: string
                   userClientIP:
                     type: string
+                  userInfo:
+                    items:
+                      properties:
+                        regionIDS:
+                          items:
+                            type: string
+                          type: array
+                        userID:
+                          type: string
+                      type: object
+                    type: array
                   zoneName:
                     type: string
                 type: object

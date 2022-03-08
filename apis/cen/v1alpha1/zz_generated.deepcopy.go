@@ -2057,6 +2057,11 @@ func (in *TransitRouterPeerAttachmentSpecResource) DeepCopyInto(out *TransitRout
 		*out = new(int64)
 		**out = **in
 	}
+	if in.BandwidthType != nil {
+		in, out := &in.BandwidthType, &out.BandwidthType
+		*out = new(string)
+		**out = **in
+	}
 	if in.CenBandwidthPackageID != nil {
 		in, out := &in.CenBandwidthPackageID, &out.CenBandwidthPackageID
 		*out = new(string)

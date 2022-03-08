@@ -27,16 +27,33 @@ import (
 
 type AlidnsV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	AccessStrategiesGetter
+	AddressPoolsGetter
+	CustomLinesGetter
 	DomainsGetter
 	DomainAttachmentsGetter
 	DomainGroupsGetter
+	GtmInstancesGetter
 	InstancesGetter
+	MonitorConfigsGetter
 	RecordsGetter
 }
 
 // AlidnsV1alpha1Client is used to interact with features provided by the alidns.alicloud.kubeform.com group.
 type AlidnsV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *AlidnsV1alpha1Client) AccessStrategies(namespace string) AccessStrategyInterface {
+	return newAccessStrategies(c, namespace)
+}
+
+func (c *AlidnsV1alpha1Client) AddressPools(namespace string) AddressPoolInterface {
+	return newAddressPools(c, namespace)
+}
+
+func (c *AlidnsV1alpha1Client) CustomLines(namespace string) CustomLineInterface {
+	return newCustomLines(c, namespace)
 }
 
 func (c *AlidnsV1alpha1Client) Domains(namespace string) DomainInterface {
@@ -51,8 +68,16 @@ func (c *AlidnsV1alpha1Client) DomainGroups(namespace string) DomainGroupInterfa
 	return newDomainGroups(c, namespace)
 }
 
+func (c *AlidnsV1alpha1Client) GtmInstances(namespace string) GtmInstanceInterface {
+	return newGtmInstances(c, namespace)
+}
+
 func (c *AlidnsV1alpha1Client) Instances(namespace string) InstanceInterface {
 	return newInstances(c, namespace)
+}
+
+func (c *AlidnsV1alpha1Client) MonitorConfigs(namespace string) MonitorConfigInterface {
+	return newMonitorConfigs(c, namespace)
 }
 
 func (c *AlidnsV1alpha1Client) Records(namespace string) RecordInterface {

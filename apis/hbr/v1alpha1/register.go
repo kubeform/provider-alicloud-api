@@ -64,8 +64,12 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&NasBackupPlanList{},
 		&OssBackupPlan{},
 		&OssBackupPlanList{},
+		&ReplicationVault{},
+		&ReplicationVaultList{},
 		&RestoreJob{},
 		&RestoreJobList{},
+		&ServerBackupPlan{},
+		&ServerBackupPlanList{},
 		&Vault{},
 		&VaultList{},
 	)

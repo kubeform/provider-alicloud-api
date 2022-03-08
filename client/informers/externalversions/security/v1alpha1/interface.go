@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// CenterGroups returns a CenterGroupInformer.
 	CenterGroups() CenterGroupInformer
+	// CenterServiceLinkedRoles returns a CenterServiceLinkedRoleInformer.
+	CenterServiceLinkedRoles() CenterServiceLinkedRoleInformer
 	// Groups returns a GroupInformer.
 	Groups() GroupInformer
 	// GroupRules returns a GroupRuleInformer.
@@ -46,6 +48,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // CenterGroups returns a CenterGroupInformer.
 func (v *version) CenterGroups() CenterGroupInformer {
 	return &centerGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// CenterServiceLinkedRoles returns a CenterServiceLinkedRoleInformer.
+func (v *version) CenterServiceLinkedRoles() CenterServiceLinkedRoleInformer {
+	return &centerServiceLinkedRoleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Groups returns a GroupInformer.

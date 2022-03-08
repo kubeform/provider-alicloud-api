@@ -91,7 +91,7 @@ func (r *MountPoint) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range mountpointForceNewList {
+	for key, _ := range mountpointForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

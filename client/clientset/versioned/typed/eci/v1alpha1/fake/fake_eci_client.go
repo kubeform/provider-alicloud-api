@@ -41,6 +41,10 @@ func (c *FakeEciV1alpha1) OpenapiImageCaches(namespace string) v1alpha1.OpenapiI
 	return &FakeOpenapiImageCaches{c, namespace}
 }
 
+func (c *FakeEciV1alpha1) VirtualNodes(namespace string) v1alpha1.VirtualNodeInterface {
+	return &FakeVirtualNodes{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeEciV1alpha1) RESTClient() rest.Interface {

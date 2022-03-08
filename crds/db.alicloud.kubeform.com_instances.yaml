@@ -98,6 +98,8 @@ spec:
                     type: string
                   forceRestart:
                     type: boolean
+                  freshWhiteListReadins:
+                    type: string
                   haConfig:
                     type: string
                   id:
@@ -135,6 +137,35 @@ spec:
                   period:
                     format: int64
                     type: integer
+                  pgHbaConf:
+                    items:
+                      properties:
+                        address:
+                          type: string
+                        database:
+                          type: string
+                        mask:
+                          type: string
+                        method:
+                          type: string
+                        option:
+                          type: string
+                        priorityID:
+                          format: int64
+                          type: integer
+                        type:
+                          type: string
+                        user:
+                          type: string
+                      required:
+                      - address
+                      - database
+                      - method
+                      - priorityID
+                      - type
+                      - user
+                      type: object
+                    type: array
                   port:
                     type: string
                   privateIPAddress:
@@ -292,6 +323,8 @@ spec:
                     type: string
                   forceRestart:
                     type: boolean
+                  freshWhiteListReadins:
+                    type: string
                   haConfig:
                     type: string
                   id:
@@ -329,6 +362,35 @@ spec:
                   period:
                     format: int64
                     type: integer
+                  pgHbaConf:
+                    items:
+                      properties:
+                        address:
+                          type: string
+                        database:
+                          type: string
+                        mask:
+                          type: string
+                        method:
+                          type: string
+                        option:
+                          type: string
+                        priorityID:
+                          format: int64
+                          type: integer
+                        type:
+                          type: string
+                        user:
+                          type: string
+                      required:
+                      - address
+                      - database
+                      - method
+                      - priorityID
+                      - type
+                      - user
+                      type: object
+                    type: array
                   port:
                     type: string
                   privateIPAddress:

@@ -86,7 +86,7 @@ func (r *ConnectNetwork) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range connectnetworkForceNewList {
+	for key, _ := range connectnetworkForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

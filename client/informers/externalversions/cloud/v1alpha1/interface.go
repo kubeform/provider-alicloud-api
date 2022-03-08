@@ -36,8 +36,12 @@ type Interface interface {
 	FirewallControlPolicyOrders() FirewallControlPolicyOrderInformer
 	// FirewallInstances returns a FirewallInstanceInformer.
 	FirewallInstances() FirewallInstanceInformer
+	// SsoAccessAssignments returns a SsoAccessAssignmentInformer.
+	SsoAccessAssignments() SsoAccessAssignmentInformer
 	// SsoAccessConfigurations returns a SsoAccessConfigurationInformer.
 	SsoAccessConfigurations() SsoAccessConfigurationInformer
+	// SsoAccessConfigurationProvisionings returns a SsoAccessConfigurationProvisioningInformer.
+	SsoAccessConfigurationProvisionings() SsoAccessConfigurationProvisioningInformer
 	// SsoDirectories returns a SsoDirectoryInformer.
 	SsoDirectories() SsoDirectoryInformer
 	// SsoGroups returns a SsoGroupInformer.
@@ -46,8 +50,24 @@ type Interface interface {
 	SsoScimServerCredentials() SsoScimServerCredentialInformer
 	// SsoUsers returns a SsoUserInformer.
 	SsoUsers() SsoUserInformer
+	// SsoUserAttachments returns a SsoUserAttachmentInformer.
+	SsoUserAttachments() SsoUserAttachmentInformer
+	// StorageGatewayExpressSyncs returns a StorageGatewayExpressSyncInformer.
+	StorageGatewayExpressSyncs() StorageGatewayExpressSyncInformer
+	// StorageGatewayExpressSyncShareAttachments returns a StorageGatewayExpressSyncShareAttachmentInformer.
+	StorageGatewayExpressSyncShareAttachments() StorageGatewayExpressSyncShareAttachmentInformer
 	// StorageGatewayGateways returns a StorageGatewayGatewayInformer.
 	StorageGatewayGateways() StorageGatewayGatewayInformer
+	// StorageGatewayGatewayBlockVolumes returns a StorageGatewayGatewayBlockVolumeInformer.
+	StorageGatewayGatewayBlockVolumes() StorageGatewayGatewayBlockVolumeInformer
+	// StorageGatewayGatewayCacheDisks returns a StorageGatewayGatewayCacheDiskInformer.
+	StorageGatewayGatewayCacheDisks() StorageGatewayGatewayCacheDiskInformer
+	// StorageGatewayGatewayFileShares returns a StorageGatewayGatewayFileShareInformer.
+	StorageGatewayGatewayFileShares() StorageGatewayGatewayFileShareInformer
+	// StorageGatewayGatewayLoggings returns a StorageGatewayGatewayLoggingInformer.
+	StorageGatewayGatewayLoggings() StorageGatewayGatewayLoggingInformer
+	// StorageGatewayGatewaySmbUsers returns a StorageGatewayGatewaySmbUserInformer.
+	StorageGatewayGatewaySmbUsers() StorageGatewayGatewaySmbUserInformer
 	// StorageGatewayStorageBundles returns a StorageGatewayStorageBundleInformer.
 	StorageGatewayStorageBundles() StorageGatewayStorageBundleInformer
 }
@@ -93,9 +113,19 @@ func (v *version) FirewallInstances() FirewallInstanceInformer {
 	return &firewallInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// SsoAccessAssignments returns a SsoAccessAssignmentInformer.
+func (v *version) SsoAccessAssignments() SsoAccessAssignmentInformer {
+	return &ssoAccessAssignmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // SsoAccessConfigurations returns a SsoAccessConfigurationInformer.
 func (v *version) SsoAccessConfigurations() SsoAccessConfigurationInformer {
 	return &ssoAccessConfigurationInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SsoAccessConfigurationProvisionings returns a SsoAccessConfigurationProvisioningInformer.
+func (v *version) SsoAccessConfigurationProvisionings() SsoAccessConfigurationProvisioningInformer {
+	return &ssoAccessConfigurationProvisioningInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // SsoDirectories returns a SsoDirectoryInformer.
@@ -118,9 +148,49 @@ func (v *version) SsoUsers() SsoUserInformer {
 	return &ssoUserInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// SsoUserAttachments returns a SsoUserAttachmentInformer.
+func (v *version) SsoUserAttachments() SsoUserAttachmentInformer {
+	return &ssoUserAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayExpressSyncs returns a StorageGatewayExpressSyncInformer.
+func (v *version) StorageGatewayExpressSyncs() StorageGatewayExpressSyncInformer {
+	return &storageGatewayExpressSyncInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayExpressSyncShareAttachments returns a StorageGatewayExpressSyncShareAttachmentInformer.
+func (v *version) StorageGatewayExpressSyncShareAttachments() StorageGatewayExpressSyncShareAttachmentInformer {
+	return &storageGatewayExpressSyncShareAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // StorageGatewayGateways returns a StorageGatewayGatewayInformer.
 func (v *version) StorageGatewayGateways() StorageGatewayGatewayInformer {
 	return &storageGatewayGatewayInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayGatewayBlockVolumes returns a StorageGatewayGatewayBlockVolumeInformer.
+func (v *version) StorageGatewayGatewayBlockVolumes() StorageGatewayGatewayBlockVolumeInformer {
+	return &storageGatewayGatewayBlockVolumeInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayGatewayCacheDisks returns a StorageGatewayGatewayCacheDiskInformer.
+func (v *version) StorageGatewayGatewayCacheDisks() StorageGatewayGatewayCacheDiskInformer {
+	return &storageGatewayGatewayCacheDiskInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayGatewayFileShares returns a StorageGatewayGatewayFileShareInformer.
+func (v *version) StorageGatewayGatewayFileShares() StorageGatewayGatewayFileShareInformer {
+	return &storageGatewayGatewayFileShareInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayGatewayLoggings returns a StorageGatewayGatewayLoggingInformer.
+func (v *version) StorageGatewayGatewayLoggings() StorageGatewayGatewayLoggingInformer {
+	return &storageGatewayGatewayLoggingInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StorageGatewayGatewaySmbUsers returns a StorageGatewayGatewaySmbUserInformer.
+func (v *version) StorageGatewayGatewaySmbUsers() StorageGatewayGatewaySmbUserInformer {
+	return &storageGatewayGatewaySmbUserInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // StorageGatewayStorageBundles returns a StorageGatewayStorageBundleInformer.

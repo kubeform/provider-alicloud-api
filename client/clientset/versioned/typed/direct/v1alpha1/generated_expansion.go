@@ -23,3 +23,5 @@ type MailDomainExpansion interface{}
 type MailMailAddressExpansion interface{}
 
 type MailReceiversExpansion interface{}
+
+type MailTagExpansion interface{}

@@ -88,11 +88,18 @@ spec:
                           type: string
                       type: object
                     type: array
+                  deploymentSetID:
+                    type: string
+                  desiredSize:
+                    format: int64
+                    type: integer
                   formatDisk:
                     type: boolean
                   id:
                     type: string
                   imageID:
+                    type: string
+                  imageType:
                     type: string
                   installCloudMonitor:
                     type: boolean
@@ -152,6 +159,7 @@ spec:
                   name:
                     type: string
                   nodeCount:
+                    description: Deprecated
                     format: int64
                     type: integer
                   nodeNameMode:
@@ -162,8 +170,13 @@ spec:
                   periodUnit:
                     type: string
                   platform:
+                    description: Deprecated
                     type: string
                   resourceGroupID:
+                    type: string
+                  runtimeName:
+                    type: string
+                  runtimeVersion:
                     type: string
                   scalingConfig:
                     properties:
@@ -191,7 +204,13 @@ spec:
                   scalingPolicy:
                     type: string
                   securityGroupID:
+                    description: Deprecated
                     type: string
+                  securityGroupIDS:
+                    items:
+                      type: string
+                    maxItems: 5
+                    type: array
                   spotPriceLimit:
                     items:
                       properties:
@@ -324,11 +343,18 @@ spec:
                           type: string
                       type: object
                     type: array
+                  deploymentSetID:
+                    type: string
+                  desiredSize:
+                    format: int64
+                    type: integer
                   formatDisk:
                     type: boolean
                   id:
                     type: string
                   imageID:
+                    type: string
+                  imageType:
                     type: string
                   installCloudMonitor:
                     type: boolean
@@ -388,6 +414,7 @@ spec:
                   name:
                     type: string
                   nodeCount:
+                    description: Deprecated
                     format: int64
                     type: integer
                   nodeNameMode:
@@ -398,8 +425,13 @@ spec:
                   periodUnit:
                     type: string
                   platform:
+                    description: Deprecated
                     type: string
                   resourceGroupID:
+                    type: string
+                  runtimeName:
+                    type: string
+                  runtimeVersion:
                     type: string
                   scalingConfig:
                     properties:
@@ -427,7 +459,13 @@ spec:
                   scalingPolicy:
                     type: string
                   securityGroupID:
+                    description: Deprecated
                     type: string
+                  securityGroupIDS:
+                    items:
+                      type: string
+                    maxItems: 5
+                    type: array
                   spotPriceLimit:
                     items:
                       properties:

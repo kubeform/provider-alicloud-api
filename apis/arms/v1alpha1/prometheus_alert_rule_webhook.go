@@ -47,7 +47,6 @@ var prometheusalertruleForceNewList = map[string]bool{
 	"/expression":                 true,
 	"/message":                    true,
 	"/prometheus_alert_rule_name": true,
-	"/status":                     true,
 	"/type":                       true,
 }
 
@@ -94,7 +93,7 @@ func (r *PrometheusAlertRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range prometheusalertruleForceNewList {
+	for key, _ := range prometheusalertruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -29,6 +29,10 @@ type FakeGpdbV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeGpdbV1alpha1) Accounts(namespace string) v1alpha1.AccountInterface {
+	return &FakeAccounts{c, namespace}
+}
+
 func (c *FakeGpdbV1alpha1) Connections(namespace string) v1alpha1.ConnectionInterface {
 	return &FakeConnections{c, namespace}
 }

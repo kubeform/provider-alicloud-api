@@ -29,12 +29,36 @@ type FakeEcdV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeEcdV1alpha1) Commands(namespace string) v1alpha1.CommandInterface {
+	return &FakeCommands{c, namespace}
+}
+
+func (c *FakeEcdV1alpha1) Desktops(namespace string) v1alpha1.DesktopInterface {
+	return &FakeDesktops{c, namespace}
+}
+
+func (c *FakeEcdV1alpha1) Images(namespace string) v1alpha1.ImageInterface {
+	return &FakeImages{c, namespace}
+}
+
+func (c *FakeEcdV1alpha1) NasFileSystems(namespace string) v1alpha1.NasFileSystemInterface {
+	return &FakeNasFileSystems{c, namespace}
+}
+
+func (c *FakeEcdV1alpha1) NetworkPackages(namespace string) v1alpha1.NetworkPackageInterface {
+	return &FakeNetworkPackages{c, namespace}
+}
+
 func (c *FakeEcdV1alpha1) PolicyGroups(namespace string) v1alpha1.PolicyGroupInterface {
 	return &FakePolicyGroups{c, namespace}
 }
 
 func (c *FakeEcdV1alpha1) SimpleOfficeSites(namespace string) v1alpha1.SimpleOfficeSiteInterface {
 	return &FakeSimpleOfficeSites{c, namespace}
+}
+
+func (c *FakeEcdV1alpha1) Users(namespace string) v1alpha1.UserInterface {
+	return &FakeUsers{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

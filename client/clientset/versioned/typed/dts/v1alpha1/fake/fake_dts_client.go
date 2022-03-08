@@ -29,8 +29,20 @@ type FakeDtsV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeDtsV1alpha1) ConsumerChannels(namespace string) v1alpha1.ConsumerChannelInterface {
+	return &FakeConsumerChannels{c, namespace}
+}
+
 func (c *FakeDtsV1alpha1) JobMonitorRules(namespace string) v1alpha1.JobMonitorRuleInterface {
 	return &FakeJobMonitorRules{c, namespace}
+}
+
+func (c *FakeDtsV1alpha1) MigrationInstances(namespace string) v1alpha1.MigrationInstanceInterface {
+	return &FakeMigrationInstances{c, namespace}
+}
+
+func (c *FakeDtsV1alpha1) MigrationJobs(namespace string) v1alpha1.MigrationJobInterface {
+	return &FakeMigrationJobs{c, namespace}
 }
 
 func (c *FakeDtsV1alpha1) SubscriptionJobs(namespace string) v1alpha1.SubscriptionJobInterface {

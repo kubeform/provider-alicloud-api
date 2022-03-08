@@ -92,7 +92,7 @@ func (r *DbCluster) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range dbclusterForceNewList {
+	for key, _ := range dbclusterForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -94,7 +94,7 @@ func (r *Binding) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range bindingForceNewList {
+	for key, _ := range bindingForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

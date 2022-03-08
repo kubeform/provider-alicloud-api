@@ -62,6 +62,8 @@ spec:
                   bandwidth:
                     format: int64
                     type: integer
+                  bandwidthType:
+                    type: string
                   cenBandwidthPackageID:
                     type: string
                   cenID:
@@ -140,6 +142,8 @@ spec:
                   bandwidth:
                     format: int64
                     type: integer
+                  bandwidthType:
+                    type: string
                   cenBandwidthPackageID:
                     type: string
                   cenID:

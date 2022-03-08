@@ -20,6 +20,8 @@ package v1alpha1
 
 type ConfigExpansion interface{}
 
+type DataLimitExpansion interface{}
+
 type InstanceExpansion interface{}
 
 type RuleExpansion interface{}

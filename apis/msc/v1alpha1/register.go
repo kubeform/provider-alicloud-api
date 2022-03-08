@@ -60,6 +60,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&SubContactList{},
 		&SubSubscription{},
 		&SubSubscriptionList{},
+		&SubWebhook{},
+		&SubWebhookList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

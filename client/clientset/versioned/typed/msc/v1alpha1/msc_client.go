@@ -29,6 +29,7 @@ type MscV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	SubContactsGetter
 	SubSubscriptionsGetter
+	SubWebhooksGetter
 }
 
 // MscV1alpha1Client is used to interact with features provided by the msc.alicloud.kubeform.com group.
@@ -42,6 +43,10 @@ func (c *MscV1alpha1Client) SubContacts(namespace string) SubContactInterface {
 
 func (c *MscV1alpha1Client) SubSubscriptions(namespace string) SubSubscriptionInterface {
 	return newSubSubscriptions(c, namespace)
+}
+
+func (c *MscV1alpha1Client) SubWebhooks(namespace string) SubWebhookInterface {
+	return newSubWebhooks(c, namespace)
 }
 
 // NewForConfig creates a new MscV1alpha1Client for the given config.

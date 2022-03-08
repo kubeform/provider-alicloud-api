@@ -26,6 +26,14 @@ type AlarmListerExpansion interface{}
 // AlarmNamespaceLister.
 type AlarmNamespaceListerExpansion interface{}
 
+// AlbServerGroupAttachmentListerExpansion allows custom methods to be added to
+// AlbServerGroupAttachmentLister.
+type AlbServerGroupAttachmentListerExpansion interface{}
+
+// AlbServerGroupAttachmentNamespaceListerExpansion allows custom methods to be added to
+// AlbServerGroupAttachmentNamespaceLister.
+type AlbServerGroupAttachmentNamespaceListerExpansion interface{}
+
 // AttachmentListerExpansion allows custom methods to be added to
 // AttachmentLister.
 type AttachmentListerExpansion interface{}

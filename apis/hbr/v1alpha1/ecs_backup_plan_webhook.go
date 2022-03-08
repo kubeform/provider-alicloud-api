@@ -90,7 +90,7 @@ func (r *EcsBackupPlan) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range ecsbackupplanForceNewList {
+	for key, _ := range ecsbackupplanForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

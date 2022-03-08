@@ -18,6 +18,30 @@ limitations under the License.
 
 package v1alpha1
 
+// AccessStrategyListerExpansion allows custom methods to be added to
+// AccessStrategyLister.
+type AccessStrategyListerExpansion interface{}
+
+// AccessStrategyNamespaceListerExpansion allows custom methods to be added to
+// AccessStrategyNamespaceLister.
+type AccessStrategyNamespaceListerExpansion interface{}
+
+// AddressPoolListerExpansion allows custom methods to be added to
+// AddressPoolLister.
+type AddressPoolListerExpansion interface{}
+
+// AddressPoolNamespaceListerExpansion allows custom methods to be added to
+// AddressPoolNamespaceLister.
+type AddressPoolNamespaceListerExpansion interface{}
+
+// CustomLineListerExpansion allows custom methods to be added to
+// CustomLineLister.
+type CustomLineListerExpansion interface{}
+
+// CustomLineNamespaceListerExpansion allows custom methods to be added to
+// CustomLineNamespaceLister.
+type CustomLineNamespaceListerExpansion interface{}
+
 // DomainListerExpansion allows custom methods to be added to
 // DomainLister.
 type DomainListerExpansion interface{}
@@ -42,6 +66,14 @@ type DomainGroupListerExpansion interface{}
 // DomainGroupNamespaceLister.
 type DomainGroupNamespaceListerExpansion interface{}
 
+// GtmInstanceListerExpansion allows custom methods to be added to
+// GtmInstanceLister.
+type GtmInstanceListerExpansion interface{}
+
+// GtmInstanceNamespaceListerExpansion allows custom methods to be added to
+// GtmInstanceNamespaceLister.
+type GtmInstanceNamespaceListerExpansion interface{}
+
 // InstanceListerExpansion allows custom methods to be added to
 // InstanceLister.
 type InstanceListerExpansion interface{}
@@ -49,6 +81,14 @@ type InstanceListerExpansion interface{}
 // InstanceNamespaceListerExpansion allows custom methods to be added to
 // InstanceNamespaceLister.
 type InstanceNamespaceListerExpansion interface{}
+
+// MonitorConfigListerExpansion allows custom methods to be added to
+// MonitorConfigLister.
+type MonitorConfigListerExpansion interface{}
+
+// MonitorConfigNamespaceListerExpansion allows custom methods to be added to
+// MonitorConfigNamespaceLister.
+type MonitorConfigNamespaceListerExpansion interface{}
 
 // RecordListerExpansion allows custom methods to be added to
 // RecordLister.

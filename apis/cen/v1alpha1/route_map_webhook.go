@@ -90,7 +90,7 @@ func (r *RouteMap) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range routemapForceNewList {
+	for key, _ := range routemapForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

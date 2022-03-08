@@ -122,6 +122,14 @@ type SamlProviderListerExpansion interface{}
 // SamlProviderNamespaceLister.
 type SamlProviderNamespaceListerExpansion interface{}
 
+// SecurityPreferenceListerExpansion allows custom methods to be added to
+// SecurityPreferenceLister.
+type SecurityPreferenceListerExpansion interface{}
+
+// SecurityPreferenceNamespaceListerExpansion allows custom methods to be added to
+// SecurityPreferenceNamespaceLister.
+type SecurityPreferenceNamespaceListerExpansion interface{}
+
 // UserListerExpansion allows custom methods to be added to
 // UserLister.
 type UserListerExpansion interface{}

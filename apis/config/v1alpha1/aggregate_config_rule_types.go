@@ -62,7 +62,9 @@ type AggregateConfigRuleSpecResource struct {
 
 	AggregateConfigRuleName *string `json:"aggregateConfigRuleName" tf:"aggregate_config_rule_name"`
 	AggregatorID            *string `json:"aggregatorID" tf:"aggregator_id"`
-	ConfigRuleTriggerTypes  *string `json:"configRuleTriggerTypes" tf:"config_rule_trigger_types"`
+	// +optional
+	ConfigRuleID           *string `json:"configRuleID,omitempty" tf:"config_rule_id"`
+	ConfigRuleTriggerTypes *string `json:"configRuleTriggerTypes" tf:"config_rule_trigger_types"`
 	// +optional
 	Description *string `json:"description,omitempty" tf:"description"`
 	// +optional

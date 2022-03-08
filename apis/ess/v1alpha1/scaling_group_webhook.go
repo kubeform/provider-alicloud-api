@@ -88,7 +88,7 @@ func (r *ScalingGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range scalinggroupForceNewList {
+	for key, _ := range scalinggroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

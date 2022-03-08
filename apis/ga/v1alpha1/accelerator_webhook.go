@@ -41,9 +41,7 @@ func (r *Accelerator) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 var _ webhook.Validator = &Accelerator{}
 
-var acceleratorForceNewList = map[string]bool{
-	"/duration": true,
-}
+var acceleratorForceNewList = map[string]bool{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
 func (r *Accelerator) ValidateCreate() error {
@@ -88,7 +86,7 @@ func (r *Accelerator) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range acceleratorForceNewList {
+	for key, _ := range acceleratorForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -71,6 +71,10 @@ spec:
                     type: boolean
                   id:
                     type: string
+                  launchTemplateID:
+                    type: string
+                  launchTemplateVersion:
+                    type: string
                   loadbalancerIDS:
                     items:
                       type: string
@@ -129,6 +133,10 @@ spec:
                   groupDeletionProtection:
                     type: boolean
                   id:
+                    type: string
+                  launchTemplateID:
+                    type: string
+                  launchTemplateVersion:
                     type: string
                   loadbalancerIDS:
                     items:

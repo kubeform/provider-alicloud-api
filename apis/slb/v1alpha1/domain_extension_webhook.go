@@ -90,7 +90,7 @@ func (r *DomainExtension) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range domainextensionForceNewList {
+	for key, _ := range domainextensionForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

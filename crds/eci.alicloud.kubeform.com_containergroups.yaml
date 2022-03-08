@@ -175,6 +175,21 @@ spec:
                     type: array
                   id:
                     type: string
+                  imageRegistryCredential:
+                    items:
+                      properties:
+                        password:
+                          type: string
+                        server:
+                          type: string
+                        userName:
+                          type: string
+                      required:
+                      - password
+                      - server
+                      - userName
+                      type: object
+                    type: array
                   initContainers:
                     items:
                       properties:
@@ -461,6 +476,21 @@ spec:
                     type: array
                   id:
                     type: string
+                  imageRegistryCredential:
+                    items:
+                      properties:
+                        password:
+                          type: string
+                        server:
+                          type: string
+                        userName:
+                          type: string
+                      required:
+                      - password
+                      - server
+                      - userName
+                      type: object
+                    type: array
                   initContainers:
                     items:
                       properties:

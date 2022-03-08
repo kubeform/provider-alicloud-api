@@ -34,6 +34,22 @@ type AccessRuleListerExpansion interface{}
 // AccessRuleNamespaceLister.
 type AccessRuleNamespaceListerExpansion interface{}
 
+// AutoSnapshotPolicyListerExpansion allows custom methods to be added to
+// AutoSnapshotPolicyLister.
+type AutoSnapshotPolicyListerExpansion interface{}
+
+// AutoSnapshotPolicyNamespaceListerExpansion allows custom methods to be added to
+// AutoSnapshotPolicyNamespaceLister.
+type AutoSnapshotPolicyNamespaceListerExpansion interface{}
+
+// DataFlowListerExpansion allows custom methods to be added to
+// DataFlowLister.
+type DataFlowListerExpansion interface{}
+
+// DataFlowNamespaceListerExpansion allows custom methods to be added to
+// DataFlowNamespaceLister.
+type DataFlowNamespaceListerExpansion interface{}
+
 // FileSystemListerExpansion allows custom methods to be added to
 // FileSystemLister.
 type FileSystemListerExpansion interface{}
@@ -42,6 +58,22 @@ type FileSystemListerExpansion interface{}
 // FileSystemNamespaceLister.
 type FileSystemNamespaceListerExpansion interface{}
 
+// FilesetListerExpansion allows custom methods to be added to
+// FilesetLister.
+type FilesetListerExpansion interface{}
+
+// FilesetNamespaceListerExpansion allows custom methods to be added to
+// FilesetNamespaceLister.
+type FilesetNamespaceListerExpansion interface{}
+
+// LifecyclePolicyListerExpansion allows custom methods to be added to
+// LifecyclePolicyLister.
+type LifecyclePolicyListerExpansion interface{}
+
+// LifecyclePolicyNamespaceListerExpansion allows custom methods to be added to
+// LifecyclePolicyNamespaceLister.
+type LifecyclePolicyNamespaceListerExpansion interface{}
+
 // MountTargetListerExpansion allows custom methods to be added to
 // MountTargetLister.
 type MountTargetListerExpansion interface{}
@@ -49,3 +81,19 @@ type MountTargetListerExpansion interface{}
 // MountTargetNamespaceListerExpansion allows custom methods to be added to
 // MountTargetNamespaceLister.
 type MountTargetNamespaceListerExpansion interface{}
+
+// RecycleBinListerExpansion allows custom methods to be added to
+// RecycleBinLister.
+type RecycleBinListerExpansion interface{}
+
+// RecycleBinNamespaceListerExpansion allows custom methods to be added to
+// RecycleBinNamespaceLister.
+type RecycleBinNamespaceListerExpansion interface{}
+
+// SnapshotListerExpansion allows custom methods to be added to
+// SnapshotLister.
+type SnapshotListerExpansion interface{}
+
+// SnapshotNamespaceListerExpansion allows custom methods to be added to
+// SnapshotNamespaceLister.
+type SnapshotNamespaceListerExpansion interface{}

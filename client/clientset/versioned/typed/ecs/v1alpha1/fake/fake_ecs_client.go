@@ -45,6 +45,10 @@ func (c *FakeEcsV1alpha1) DedicatedHosts(namespace string) v1alpha1.DedicatedHos
 	return &FakeDedicatedHosts{c, namespace}
 }
 
+func (c *FakeEcsV1alpha1) DedicatedHostClusters(namespace string) v1alpha1.DedicatedHostClusterInterface {
+	return &FakeDedicatedHostClusters{c, namespace}
+}
+
 func (c *FakeEcsV1alpha1) DeploymentSets(namespace string) v1alpha1.DeploymentSetInterface {
 	return &FakeDeploymentSets{c, namespace}
 }
@@ -59,6 +63,10 @@ func (c *FakeEcsV1alpha1) DiskAttachments(namespace string) v1alpha1.DiskAttachm
 
 func (c *FakeEcsV1alpha1) HpcClusters(namespace string) v1alpha1.HpcClusterInterface {
 	return &FakeHpcClusters{c, namespace}
+}
+
+func (c *FakeEcsV1alpha1) ImageComponents(namespace string) v1alpha1.ImageComponentInterface {
+	return &FakeImageComponents{c, namespace}
 }
 
 func (c *FakeEcsV1alpha1) KeyPairs(namespace string) v1alpha1.KeyPairInterface {
@@ -81,8 +89,20 @@ func (c *FakeEcsV1alpha1) NetworkInterfaceAttachments(namespace string) v1alpha1
 	return &FakeNetworkInterfaceAttachments{c, namespace}
 }
 
+func (c *FakeEcsV1alpha1) PrefixLists(namespace string) v1alpha1.PrefixListInterface {
+	return &FakePrefixLists{c, namespace}
+}
+
+func (c *FakeEcsV1alpha1) SessionManagerStatuses(namespace string) v1alpha1.SessionManagerStatusInterface {
+	return &FakeSessionManagerStatuses{c, namespace}
+}
+
 func (c *FakeEcsV1alpha1) Snapshots(namespace string) v1alpha1.SnapshotInterface {
 	return &FakeSnapshots{c, namespace}
+}
+
+func (c *FakeEcsV1alpha1) StorageCapacityUnits(namespace string) v1alpha1.StorageCapacityUnitInterface {
+	return &FakeStorageCapacityUnits{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

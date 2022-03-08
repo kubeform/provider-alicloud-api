@@ -57,15 +57,12 @@ spec:
                 type: object
               resource:
                 properties:
-                  attachMode:
-                    type: string
-                  attachPoint:
-                    type: string
                   category:
                     type: string
                   deleteSnapshot:
                     type: boolean
                   ecsList:
+                    description: Deprecated
                     items:
                       properties:
                         ecsID:
@@ -135,8 +132,6 @@ spec:
                         format: int64
                         type: integer
                     type: object
-                  usedScene:
-                    type: string
                   zoneID:
                     type: string
                 required:
@@ -146,15 +141,12 @@ spec:
                 type: object
               state:
                 properties:
-                  attachMode:
-                    type: string
-                  attachPoint:
-                    type: string
                   category:
                     type: string
                   deleteSnapshot:
                     type: boolean
                   ecsList:
+                    description: Deprecated
                     items:
                       properties:
                         ecsID:
@@ -224,8 +216,6 @@ spec:
                         format: int64
                         type: integer
                     type: object
-                  usedScene:
-                    type: string
                   zoneID:
                     type: string
                 required:

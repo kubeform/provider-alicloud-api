@@ -58,6 +58,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&HouseAccount{},
 		&HouseAccountList{},
+		&HouseBackupPolicy{},
+		&HouseBackupPolicyList{},
 		&HouseDbCluster{},
 		&HouseDbClusterList{},
 	)

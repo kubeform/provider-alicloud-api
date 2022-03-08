@@ -89,7 +89,7 @@ func (r *WorksFolder) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range worksfolderForceNewList {
+	for key, _ := range worksfolderForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

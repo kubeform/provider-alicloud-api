@@ -68,6 +68,7 @@ type DhcpOptionsSetSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
+	// Deprecated
 	AssociateVpcs []DhcpOptionsSetSpecAssociateVpcs `json:"associateVpcs,omitempty" tf:"associate_vpcs"`
 	// +optional
 	DhcpOptionsSetDescription *string `json:"dhcpOptionsSetDescription,omitempty" tf:"dhcp_options_set_description"`

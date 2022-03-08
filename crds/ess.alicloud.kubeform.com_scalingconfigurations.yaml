@@ -94,6 +94,8 @@ spec:
                     type: boolean
                   forceDelete:
                     type: boolean
+                  hostName:
+                    type: string
                   id:
                     type: string
                   imageID:
@@ -156,6 +158,18 @@ spec:
                       type: string
                     maxItems: 16
                     type: array
+                  spotPriceLimit:
+                    items:
+                      properties:
+                        instanceType:
+                          type: string
+                        priceLimit:
+                          format: double
+                          type: number
+                      type: object
+                    type: array
+                  spotStrategy:
+                    type: string
                   substitute:
                     type: string
                   systemDiskAutoSnapshotPolicyID:
@@ -219,6 +233,8 @@ spec:
                     type: boolean
                   forceDelete:
                     type: boolean
+                  hostName:
+                    type: string
                   id:
                     type: string
                   imageID:
@@ -281,6 +297,18 @@ spec:
                       type: string
                     maxItems: 16
                     type: array
+                  spotPriceLimit:
+                    items:
+                      properties:
+                        instanceType:
+                          type: string
+                        priceLimit:
+                          format: double
+                          type: number
+                      type: object
+                    type: array
+                  spotStrategy:
+                    type: string
                   substitute:
                     type: string
                   systemDiskAutoSnapshotPolicyID:

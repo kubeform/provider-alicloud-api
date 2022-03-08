@@ -30,6 +30,7 @@ type DirectV1alpha1Interface interface {
 	MailDomainsGetter
 	MailMailAddressesGetter
 	MailReceiversesGetter
+	MailTagsGetter
 }
 
 // DirectV1alpha1Client is used to interact with features provided by the direct.alicloud.kubeform.com group.
@@ -47,6 +48,10 @@ func (c *DirectV1alpha1Client) MailMailAddresses(namespace string) MailMailAddre
 
 func (c *DirectV1alpha1Client) MailReceiverses(namespace string) MailReceiversInterface {
 	return newMailReceiverses(c, namespace)
+}
+
+func (c *DirectV1alpha1Client) MailTags(namespace string) MailTagInterface {
+	return newMailTags(c, namespace)
 }
 
 // NewForConfig creates a new DirectV1alpha1Client for the given config.

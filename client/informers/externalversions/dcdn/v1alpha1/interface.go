@@ -28,6 +28,8 @@ type Interface interface {
 	Domains() DomainInformer
 	// DomainConfigs returns a DomainConfigInformer.
 	DomainConfigs() DomainConfigInformer
+	// IpaDomains returns a IpaDomainInformer.
+	IpaDomains() IpaDomainInformer
 }
 
 type version struct {
@@ -49,4 +51,9 @@ func (v *version) Domains() DomainInformer {
 // DomainConfigs returns a DomainConfigInformer.
 func (v *version) DomainConfigs() DomainConfigInformer {
 	return &domainConfigInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// IpaDomains returns a IpaDomainInformer.
+func (v *version) IpaDomains() IpaDomainInformer {
+	return &ipaDomainInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

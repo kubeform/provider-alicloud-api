@@ -27,7 +27,10 @@ import (
 
 type SimpleV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	ApplicationServerCustomImagesGetter
+	ApplicationServerFirewallRulesGetter
 	ApplicationServerInstancesGetter
+	ApplicationServerSnapshotsGetter
 }
 
 // SimpleV1alpha1Client is used to interact with features provided by the simple.alicloud.kubeform.com group.
@@ -35,8 +38,20 @@ type SimpleV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *SimpleV1alpha1Client) ApplicationServerCustomImages(namespace string) ApplicationServerCustomImageInterface {
+	return newApplicationServerCustomImages(c, namespace)
+}
+
+func (c *SimpleV1alpha1Client) ApplicationServerFirewallRules(namespace string) ApplicationServerFirewallRuleInterface {
+	return newApplicationServerFirewallRules(c, namespace)
+}
+
 func (c *SimpleV1alpha1Client) ApplicationServerInstances(namespace string) ApplicationServerInstanceInterface {
 	return newApplicationServerInstances(c, namespace)
+}
+
+func (c *SimpleV1alpha1Client) ApplicationServerSnapshots(namespace string) ApplicationServerSnapshotInterface {
+	return newApplicationServerSnapshots(c, namespace)
 }
 
 // NewForConfig creates a new SimpleV1alpha1Client for the given config.

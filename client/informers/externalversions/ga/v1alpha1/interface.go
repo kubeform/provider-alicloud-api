@@ -26,6 +26,12 @@ import (
 type Interface interface {
 	// Accelerators returns a AcceleratorInformer.
 	Accelerators() AcceleratorInformer
+	// Acls returns a AclInformer.
+	Acls() AclInformer
+	// AclAttachments returns a AclAttachmentInformer.
+	AclAttachments() AclAttachmentInformer
+	// AdditionalCertificates returns a AdditionalCertificateInformer.
+	AdditionalCertificates() AdditionalCertificateInformer
 	// BandwidthPackages returns a BandwidthPackageInformer.
 	BandwidthPackages() BandwidthPackageInformer
 	// BandwidthPackageAttachments returns a BandwidthPackageAttachmentInformer.
@@ -54,6 +60,21 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Accelerators returns a AcceleratorInformer.
 func (v *version) Accelerators() AcceleratorInformer {
 	return &acceleratorInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Acls returns a AclInformer.
+func (v *version) Acls() AclInformer {
+	return &aclInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AclAttachments returns a AclAttachmentInformer.
+func (v *version) AclAttachments() AclAttachmentInformer {
+	return &aclAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AdditionalCertificates returns a AdditionalCertificateInformer.
+func (v *version) AdditionalCertificates() AdditionalCertificateInformer {
+	return &additionalCertificateInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // BandwidthPackages returns a BandwidthPackageInformer.

@@ -95,7 +95,7 @@ func (r *SlbAttachment) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range slbattachmentForceNewList {
+	for key, _ := range slbattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

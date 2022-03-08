@@ -37,12 +37,36 @@ func (c *FakeNasV1alpha1) AccessRules(namespace string) v1alpha1.AccessRuleInter
 	return &FakeAccessRules{c, namespace}
 }
 
+func (c *FakeNasV1alpha1) AutoSnapshotPolicies(namespace string) v1alpha1.AutoSnapshotPolicyInterface {
+	return &FakeAutoSnapshotPolicies{c, namespace}
+}
+
+func (c *FakeNasV1alpha1) DataFlows(namespace string) v1alpha1.DataFlowInterface {
+	return &FakeDataFlows{c, namespace}
+}
+
 func (c *FakeNasV1alpha1) FileSystems(namespace string) v1alpha1.FileSystemInterface {
 	return &FakeFileSystems{c, namespace}
 }
 
+func (c *FakeNasV1alpha1) Filesets(namespace string) v1alpha1.FilesetInterface {
+	return &FakeFilesets{c, namespace}
+}
+
+func (c *FakeNasV1alpha1) LifecyclePolicies(namespace string) v1alpha1.LifecyclePolicyInterface {
+	return &FakeLifecyclePolicies{c, namespace}
+}
+
 func (c *FakeNasV1alpha1) MountTargets(namespace string) v1alpha1.MountTargetInterface {
 	return &FakeMountTargets{c, namespace}
+}
+
+func (c *FakeNasV1alpha1) RecycleBins(namespace string) v1alpha1.RecycleBinInterface {
+	return &FakeRecycleBins{c, namespace}
+}
+
+func (c *FakeNasV1alpha1) Snapshots(namespace string) v1alpha1.SnapshotInterface {
+	return &FakeSnapshots{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

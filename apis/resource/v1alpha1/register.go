@@ -80,6 +80,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&ManagerResourceShareList{},
 		&ManagerRole{},
 		&ManagerRoleList{},
+		&ManagerServiceLinkedRole{},
+		&ManagerServiceLinkedRoleList{},
 		&ManagerSharedResource{},
 		&ManagerSharedResourceList{},
 		&ManagerSharedTarget{},

@@ -33,6 +33,10 @@ func (c *FakeSddpV1alpha1) Configs(namespace string) v1alpha1.ConfigInterface {
 	return &FakeConfigs{c, namespace}
 }
 
+func (c *FakeSddpV1alpha1) DataLimits(namespace string) v1alpha1.DataLimitInterface {
+	return &FakeDataLimits{c, namespace}
+}
+
 func (c *FakeSddpV1alpha1) Instances(namespace string) v1alpha1.InstanceInterface {
 	return &FakeInstances{c, namespace}
 }

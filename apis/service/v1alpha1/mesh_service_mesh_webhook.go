@@ -90,7 +90,7 @@ func (r *MeshServiceMesh) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range meshservicemeshForceNewList {
+	for key, _ := range meshservicemeshForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

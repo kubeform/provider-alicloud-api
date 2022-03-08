@@ -43,6 +43,7 @@ var _ webhook.Validator = &ConsumerGroup{}
 
 var consumergroupForceNewList = map[string]bool{
 	"/consumer_id": true,
+	"/description": true,
 	"/instance_id": true,
 }
 
@@ -89,7 +90,7 @@ func (r *ConsumerGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range consumergroupForceNewList {
+	for key, _ := range consumergroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

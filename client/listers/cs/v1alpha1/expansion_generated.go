@@ -50,6 +50,14 @@ type KubernetesListerExpansion interface{}
 // KubernetesNamespaceLister.
 type KubernetesNamespaceListerExpansion interface{}
 
+// KubernetesAddonListerExpansion allows custom methods to be added to
+// KubernetesAddonLister.
+type KubernetesAddonListerExpansion interface{}
+
+// KubernetesAddonNamespaceListerExpansion allows custom methods to be added to
+// KubernetesAddonNamespaceLister.
+type KubernetesAddonNamespaceListerExpansion interface{}
+
 // KubernetesAutoscalerListerExpansion allows custom methods to be added to
 // KubernetesAutoscalerLister.
 type KubernetesAutoscalerListerExpansion interface{}

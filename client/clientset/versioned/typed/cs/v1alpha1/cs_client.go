@@ -31,6 +31,7 @@ type CsV1alpha1Interface interface {
 	AutoscalingConfigsGetter
 	EdgeKubernetesesGetter
 	KubernetesesGetter
+	KubernetesAddonsGetter
 	KubernetesAutoscalersGetter
 	KubernetesNodePoolsGetter
 	KubernetesPermissionsesGetter
@@ -58,6 +59,10 @@ func (c *CsV1alpha1Client) EdgeKuberneteses(namespace string) EdgeKubernetesInte
 
 func (c *CsV1alpha1Client) Kuberneteses(namespace string) KubernetesInterface {
 	return newKuberneteses(c, namespace)
+}
+
+func (c *CsV1alpha1Client) KubernetesAddons(namespace string) KubernetesAddonInterface {
+	return newKubernetesAddons(c, namespace)
 }
 
 func (c *CsV1alpha1Client) KubernetesAutoscalers(namespace string) KubernetesAutoscalerInterface {

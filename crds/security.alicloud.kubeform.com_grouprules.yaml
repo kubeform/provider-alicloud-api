@@ -71,6 +71,8 @@ spec:
                     type: string
                   portRange:
                     type: string
+                  prefixListID:
+                    type: string
                   priority:
                     format: int64
                     type: integer
@@ -103,6 +105,8 @@ spec:
                   policy:
                     type: string
                   portRange:
+                    type: string
+                  prefixListID:
                     type: string
                   priority:
                     format: int64

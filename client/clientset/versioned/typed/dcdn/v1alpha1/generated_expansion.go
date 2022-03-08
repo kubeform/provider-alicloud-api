@@ -21,3 +21,5 @@ package v1alpha1
 type DomainExpansion interface{}
 
 type DomainConfigExpansion interface{}
+
+type IpaDomainExpansion interface{}

@@ -86,7 +86,7 @@ func (r *IndustrialPidProject) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range industrialpidprojectForceNewList {
+	for key, _ := range industrialpidprojectForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

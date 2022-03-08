@@ -1370,6 +1370,11 @@ func (in *InstanceSpecResource) DeepCopyInto(out *InstanceSpecResource) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.EnablePublicAccess != nil {
+		in, out := &in.EnablePublicAccess, &out.EnablePublicAccess
+		*out = new(bool)
+		**out = **in
+	}
 	if in.LicenseCode != nil {
 		in, out := &in.LicenseCode, &out.LicenseCode
 		*out = new(string)

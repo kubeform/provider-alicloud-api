@@ -1125,6 +1125,11 @@ func (in *LoadBalancerSpecResource) DeepCopyInto(out *LoadBalancerSpecResource) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.DnsName != nil {
+		in, out := &in.DnsName, &out.DnsName
+		*out = new(string)
+		**out = **in
+	}
 	if in.DryRun != nil {
 		in, out := &in.DryRun, &out.DryRun
 		*out = new(bool)

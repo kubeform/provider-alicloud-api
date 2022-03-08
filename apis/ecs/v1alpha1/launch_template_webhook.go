@@ -90,7 +90,7 @@ func (r *LaunchTemplate) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range launchtemplateForceNewList {
+	for key, _ := range launchtemplateForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -33,3 +33,11 @@ type DomainConfigListerExpansion interface{}
 // DomainConfigNamespaceListerExpansion allows custom methods to be added to
 // DomainConfigNamespaceLister.
 type DomainConfigNamespaceListerExpansion interface{}
+
+// IpaDomainListerExpansion allows custom methods to be added to
+// IpaDomainLister.
+type IpaDomainListerExpansion interface{}
+
+// IpaDomainNamespaceListerExpansion allows custom methods to be added to
+// IpaDomainNamespaceLister.
+type IpaDomainNamespaceListerExpansion interface{}

@@ -30,7 +30,9 @@ type RosV1alpha1Interface interface {
 	ChangeSetsGetter
 	StacksGetter
 	StackGroupsGetter
+	StackInstancesGetter
 	TemplatesGetter
+	TemplateScratchesGetter
 }
 
 // RosV1alpha1Client is used to interact with features provided by the ros.alicloud.kubeform.com group.
@@ -50,8 +52,16 @@ func (c *RosV1alpha1Client) StackGroups(namespace string) StackGroupInterface {
 	return newStackGroups(c, namespace)
 }
 
+func (c *RosV1alpha1Client) StackInstances(namespace string) StackInstanceInterface {
+	return newStackInstances(c, namespace)
+}
+
 func (c *RosV1alpha1Client) Templates(namespace string) TemplateInterface {
 	return newTemplates(c, namespace)
+}
+
+func (c *RosV1alpha1Client) TemplateScratches(namespace string) TemplateScratchInterface {
+	return newTemplateScratches(c, namespace)
 }
 
 // NewForConfig creates a new RosV1alpha1Client for the given config.

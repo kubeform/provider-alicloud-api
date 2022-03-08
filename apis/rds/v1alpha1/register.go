@@ -58,8 +58,14 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&Account{},
 		&AccountList{},
+		&Backup{},
+		&BackupList{},
+		&CloneDbInstance{},
+		&CloneDbInstanceList{},
 		&ParameterGroup{},
 		&ParameterGroupList{},
+		&UpgradeDbInstance{},
+		&UpgradeDbInstanceList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

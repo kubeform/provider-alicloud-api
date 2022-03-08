@@ -18,6 +18,30 @@ limitations under the License.
 
 package v1alpha1
 
+// BgpGroupListerExpansion allows custom methods to be added to
+// BgpGroupLister.
+type BgpGroupListerExpansion interface{}
+
+// BgpGroupNamespaceListerExpansion allows custom methods to be added to
+// BgpGroupNamespaceLister.
+type BgpGroupNamespaceListerExpansion interface{}
+
+// BgpNetworkListerExpansion allows custom methods to be added to
+// BgpNetworkLister.
+type BgpNetworkListerExpansion interface{}
+
+// BgpNetworkNamespaceListerExpansion allows custom methods to be added to
+// BgpNetworkNamespaceLister.
+type BgpNetworkNamespaceListerExpansion interface{}
+
+// BgpPeerListerExpansion allows custom methods to be added to
+// BgpPeerLister.
+type BgpPeerListerExpansion interface{}
+
+// BgpPeerNamespaceListerExpansion allows custom methods to be added to
+// BgpPeerNamespaceLister.
+type BgpPeerNamespaceListerExpansion interface{}
+
 // DhcpOptionsSetListerExpansion allows custom methods to be added to
 // DhcpOptionsSetLister.
 type DhcpOptionsSetListerExpansion interface{}
@@ -26,6 +50,14 @@ type DhcpOptionsSetListerExpansion interface{}
 // DhcpOptionsSetNamespaceLister.
 type DhcpOptionsSetNamespaceListerExpansion interface{}
 
+// DhcpOptionsSetAttachmentListerExpansion allows custom methods to be added to
+// DhcpOptionsSetAttachmentLister.
+type DhcpOptionsSetAttachmentListerExpansion interface{}
+
+// DhcpOptionsSetAttachmentNamespaceListerExpansion allows custom methods to be added to
+// DhcpOptionsSetAttachmentNamespaceLister.
+type DhcpOptionsSetAttachmentNamespaceListerExpansion interface{}
+
 // FlowLogListerExpansion allows custom methods to be added to
 // FlowLogLister.
 type FlowLogListerExpansion interface{}
@@ -33,6 +65,30 @@ type FlowLogListerExpansion interface{}
 // FlowLogNamespaceListerExpansion allows custom methods to be added to
 // FlowLogNamespaceLister.
 type FlowLogNamespaceListerExpansion interface{}
+
+// Ipv6EgressRuleListerExpansion allows custom methods to be added to
+// Ipv6EgressRuleLister.
+type Ipv6EgressRuleListerExpansion interface{}
+
+// Ipv6EgressRuleNamespaceListerExpansion allows custom methods to be added to
+// Ipv6EgressRuleNamespaceLister.
+type Ipv6EgressRuleNamespaceListerExpansion interface{}
+
+// Ipv6GatewayListerExpansion allows custom methods to be added to
+// Ipv6GatewayLister.
+type Ipv6GatewayListerExpansion interface{}
+
+// Ipv6GatewayNamespaceListerExpansion allows custom methods to be added to
+// Ipv6GatewayNamespaceLister.
+type Ipv6GatewayNamespaceListerExpansion interface{}
+
+// Ipv6InternetBandwidthListerExpansion allows custom methods to be added to
+// Ipv6InternetBandwidthLister.
+type Ipv6InternetBandwidthListerExpansion interface{}
+
+// Ipv6InternetBandwidthNamespaceListerExpansion allows custom methods to be added to
+// Ipv6InternetBandwidthNamespaceLister.
+type Ipv6InternetBandwidthNamespaceListerExpansion interface{}
 
 // NatIPListerExpansion allows custom methods to be added to
 // NatIPLister.
@@ -65,6 +121,30 @@ type TrafficMirrorFilterEgressRuleListerExpansion interface{}
 // TrafficMirrorFilterEgressRuleNamespaceListerExpansion allows custom methods to be added to
 // TrafficMirrorFilterEgressRuleNamespaceLister.
 type TrafficMirrorFilterEgressRuleNamespaceListerExpansion interface{}
+
+// TrafficMirrorFilterIngressRuleListerExpansion allows custom methods to be added to
+// TrafficMirrorFilterIngressRuleLister.
+type TrafficMirrorFilterIngressRuleListerExpansion interface{}
+
+// TrafficMirrorFilterIngressRuleNamespaceListerExpansion allows custom methods to be added to
+// TrafficMirrorFilterIngressRuleNamespaceLister.
+type TrafficMirrorFilterIngressRuleNamespaceListerExpansion interface{}
+
+// TrafficMirrorSessionListerExpansion allows custom methods to be added to
+// TrafficMirrorSessionLister.
+type TrafficMirrorSessionListerExpansion interface{}
+
+// TrafficMirrorSessionNamespaceListerExpansion allows custom methods to be added to
+// TrafficMirrorSessionNamespaceLister.
+type TrafficMirrorSessionNamespaceListerExpansion interface{}
+
+// VbrHaListerExpansion allows custom methods to be added to
+// VbrHaLister.
+type VbrHaListerExpansion interface{}
+
+// VbrHaNamespaceListerExpansion allows custom methods to be added to
+// VbrHaNamespaceLister.
+type VbrHaNamespaceListerExpansion interface{}
 
 // VpcListerExpansion allows custom methods to be added to
 // VpcLister.

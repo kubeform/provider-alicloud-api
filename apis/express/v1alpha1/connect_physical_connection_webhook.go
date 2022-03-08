@@ -89,7 +89,7 @@ func (r *ConnectPhysicalConnection) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range connectphysicalconnectionForceNewList {
+	for key, _ := range connectphysicalconnectionForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

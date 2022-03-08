@@ -24,6 +24,10 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// DedicatedHosts returns a DedicatedHostInformer.
+	DedicatedHosts() DedicatedHostInformer
+	// DedicatedHostAccounts returns a DedicatedHostAccountInformer.
+	DedicatedHostAccounts() DedicatedHostAccountInformer
 	// DedicatedHostGroups returns a DedicatedHostGroupInformer.
 	DedicatedHostGroups() DedicatedHostGroupInformer
 }
@@ -37,6 +41,16 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// DedicatedHosts returns a DedicatedHostInformer.
+func (v *version) DedicatedHosts() DedicatedHostInformer {
+	return &dedicatedHostInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// DedicatedHostAccounts returns a DedicatedHostAccountInformer.
+func (v *version) DedicatedHostAccounts() DedicatedHostAccountInformer {
+	return &dedicatedHostAccountInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // DedicatedHostGroups returns a DedicatedHostGroupInformer.

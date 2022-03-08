@@ -92,7 +92,7 @@ func (r *InstanceClusterAttachment) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range instanceclusterattachmentForceNewList {
+	for key, _ := range instanceclusterattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

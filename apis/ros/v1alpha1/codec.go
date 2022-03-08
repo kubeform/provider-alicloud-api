@@ -19,15 +19,24 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"unsafe"
+
 	jsoniter "github.com/json-iterator/go"
+	"github.com/modern-go/reflect2"
 )
 
 func GetEncoder() map[string]jsoniter.ValEncoder {
-	return map[string]jsoniter.ValEncoder{}
+	return map[string]jsoniter.ValEncoder{
+		jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceResourceGroup{}).Type1()): TemplateScratchSpecSourceResourceGroupCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceTag{}).Type1()):           TemplateScratchSpecSourceTagCodec{},
+	}
 }
 
 func GetDecoder() map[string]jsoniter.ValDecoder {
-	return map[string]jsoniter.ValDecoder{}
+	return map[string]jsoniter.ValDecoder{
+		jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceResourceGroup{}).Type1()): TemplateScratchSpecSourceResourceGroupCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceTag{}).Type1()):           TemplateScratchSpecSourceTagCodec{},
+	}
 }
 
 func getEncodersWithout(typ string) map[string]jsoniter.ValEncoder {
@@ -40,4 +49,162 @@ func getDecodersWithout(typ string) map[string]jsoniter.ValDecoder {
 	origMap := GetDecoder()
 	delete(origMap, typ)
 	return origMap
+}
+
+// +k8s:deepcopy-gen=false
+type TemplateScratchSpecSourceResourceGroupCodec struct {
+}
+
+func (TemplateScratchSpecSourceResourceGroupCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*TemplateScratchSpecSourceResourceGroup)(ptr) == nil
+}
+
+func (TemplateScratchSpecSourceResourceGroupCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*TemplateScratchSpecSourceResourceGroup)(ptr)
+	var objs []TemplateScratchSpecSourceResourceGroup
+	if obj != nil {
+		objs = []TemplateScratchSpecSourceResourceGroup{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceResourceGroup{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (TemplateScratchSpecSourceResourceGroupCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*TemplateScratchSpecSourceResourceGroup)(ptr) = TemplateScratchSpecSourceResourceGroup{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []TemplateScratchSpecSourceResourceGroup
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceResourceGroup{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*TemplateScratchSpecSourceResourceGroup)(ptr) = objs[0]
+			} else {
+				*(*TemplateScratchSpecSourceResourceGroup)(ptr) = TemplateScratchSpecSourceResourceGroup{}
+			}
+		} else {
+			*(*TemplateScratchSpecSourceResourceGroup)(ptr) = TemplateScratchSpecSourceResourceGroup{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj TemplateScratchSpecSourceResourceGroup
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceResourceGroup{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*TemplateScratchSpecSourceResourceGroup)(ptr) = obj
+		} else {
+			*(*TemplateScratchSpecSourceResourceGroup)(ptr) = TemplateScratchSpecSourceResourceGroup{}
+		}
+	default:
+		iter.ReportError("decode TemplateScratchSpecSourceResourceGroup", "unexpected JSON type")
+	}
+}
+
+// +k8s:deepcopy-gen=false
+type TemplateScratchSpecSourceTagCodec struct {
+}
+
+func (TemplateScratchSpecSourceTagCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*TemplateScratchSpecSourceTag)(ptr) == nil
+}
+
+func (TemplateScratchSpecSourceTagCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*TemplateScratchSpecSourceTag)(ptr)
+	var objs []TemplateScratchSpecSourceTag
+	if obj != nil {
+		objs = []TemplateScratchSpecSourceTag{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceTag{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (TemplateScratchSpecSourceTagCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*TemplateScratchSpecSourceTag)(ptr) = TemplateScratchSpecSourceTag{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []TemplateScratchSpecSourceTag
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceTag{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*TemplateScratchSpecSourceTag)(ptr) = objs[0]
+			} else {
+				*(*TemplateScratchSpecSourceTag)(ptr) = TemplateScratchSpecSourceTag{}
+			}
+		} else {
+			*(*TemplateScratchSpecSourceTag)(ptr) = TemplateScratchSpecSourceTag{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj TemplateScratchSpecSourceTag
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(TemplateScratchSpecSourceTag{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*TemplateScratchSpecSourceTag)(ptr) = obj
+		} else {
+			*(*TemplateScratchSpecSourceTag)(ptr) = TemplateScratchSpecSourceTag{}
+		}
+	default:
+		iter.ReportError("decode TemplateScratchSpecSourceTag", "unexpected JSON type")
+	}
 }

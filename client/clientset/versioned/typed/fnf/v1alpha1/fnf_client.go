@@ -27,6 +27,7 @@ import (
 
 type FnfV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	ExecutionsGetter
 	FlowsGetter
 	SchedulesGetter
 }
@@ -34,6 +35,10 @@ type FnfV1alpha1Interface interface {
 // FnfV1alpha1Client is used to interact with features provided by the fnf.alicloud.kubeform.com group.
 type FnfV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *FnfV1alpha1Client) Executions(namespace string) ExecutionInterface {
+	return newExecutions(c, namespace)
 }
 
 func (c *FnfV1alpha1Client) Flows(namespace string) FlowInterface {

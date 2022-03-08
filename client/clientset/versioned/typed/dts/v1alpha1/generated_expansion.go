@@ -18,7 +18,13 @@ limitations under the License.
 
 package v1alpha1
 
+type ConsumerChannelExpansion interface{}
+
 type JobMonitorRuleExpansion interface{}
+
+type MigrationInstanceExpansion interface{}
+
+type MigrationJobExpansion interface{}
 
 type SubscriptionJobExpansion interface{}
 

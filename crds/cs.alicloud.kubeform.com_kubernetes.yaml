@@ -235,6 +235,10 @@ spec:
                     type: array
                   resourceGroupID:
                     type: string
+                  retainResources:
+                    items:
+                      type: string
+                    type: array
                   runtime:
                     additionalProperties:
                       properties:
@@ -611,6 +615,10 @@ spec:
                     type: array
                   resourceGroupID:
                     type: string
+                  retainResources:
+                    items:
+                      type: string
+                    type: array
                   runtime:
                     additionalProperties:
                       properties:

@@ -102,6 +102,10 @@ type InstanceSpecResource struct {
 	// +optional
 	DeletionProtection *bool `json:"deletionProtection,omitempty" tf:"deletion_protection"`
 	// +optional
+	DeploymentSetGroupNo *string `json:"deploymentSetGroupNo,omitempty" tf:"deployment_set_group_no"`
+	// +optional
+	DeploymentSetID *string `json:"deploymentSetID,omitempty" tf:"deployment_set_id"`
+	// +optional
 	Description *string `json:"description,omitempty" tf:"description"`
 	// +optional
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run"`
@@ -109,7 +113,9 @@ type InstanceSpecResource struct {
 	ForceDelete *bool `json:"forceDelete,omitempty" tf:"force_delete"`
 	// +optional
 	HostName *string `json:"hostName,omitempty" tf:"host_name"`
-	ImageID  *string `json:"imageID" tf:"image_id"`
+	// +optional
+	HpcClusterID *string `json:"hpcClusterID,omitempty" tf:"hpc_cluster_id"`
+	ImageID      *string `json:"imageID" tf:"image_id"`
 	// +optional
 	IncludeDataDisks *bool `json:"includeDataDisks,omitempty" tf:"include_data_disks"`
 	// +optional
@@ -151,6 +157,10 @@ type InstanceSpecResource struct {
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
 	// +optional
 	RoleName *string `json:"roleName,omitempty" tf:"role_name"`
+	// +optional
+	SecondaryPrivateIPAddressCount *int64 `json:"secondaryPrivateIPAddressCount,omitempty" tf:"secondary_private_ip_address_count"`
+	// +optional
+	SecondaryPrivateIPS []string `json:"secondaryPrivateIPS,omitempty" tf:"secondary_private_ips"`
 	// +optional
 	SecurityEnhancementStrategy *string  `json:"securityEnhancementStrategy,omitempty" tf:"security_enhancement_strategy"`
 	SecurityGroups              []string `json:"securityGroups" tf:"security_groups"`

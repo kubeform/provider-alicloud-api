@@ -144,6 +144,10 @@ spec:
                     type: array
                   resourceGroupID:
                     type: string
+                  retainResources:
+                    items:
+                      type: string
+                    type: array
                   securityGroupID:
                     type: string
                   serviceCIDR:
@@ -364,6 +368,10 @@ spec:
                     type: array
                   resourceGroupID:
                     type: string
+                  retainResources:
+                    items:
+                      type: string
+                    type: array
                   securityGroupID:
                     type: string
                   serviceCIDR:

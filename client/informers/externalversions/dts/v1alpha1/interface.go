@@ -24,8 +24,14 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// ConsumerChannels returns a ConsumerChannelInformer.
+	ConsumerChannels() ConsumerChannelInformer
 	// JobMonitorRules returns a JobMonitorRuleInformer.
 	JobMonitorRules() JobMonitorRuleInformer
+	// MigrationInstances returns a MigrationInstanceInformer.
+	MigrationInstances() MigrationInstanceInformer
+	// MigrationJobs returns a MigrationJobInformer.
+	MigrationJobs() MigrationJobInformer
 	// SubscriptionJobs returns a SubscriptionJobInformer.
 	SubscriptionJobs() SubscriptionJobInformer
 	// SynchronizationInstances returns a SynchronizationInstanceInformer.
@@ -45,9 +51,24 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// ConsumerChannels returns a ConsumerChannelInformer.
+func (v *version) ConsumerChannels() ConsumerChannelInformer {
+	return &consumerChannelInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // JobMonitorRules returns a JobMonitorRuleInformer.
 func (v *version) JobMonitorRules() JobMonitorRuleInformer {
 	return &jobMonitorRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// MigrationInstances returns a MigrationInstanceInformer.
+func (v *version) MigrationInstances() MigrationInstanceInformer {
+	return &migrationInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// MigrationJobs returns a MigrationJobInformer.
+func (v *version) MigrationJobs() MigrationJobInformer {
+	return &migrationJobInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // SubscriptionJobs returns a SubscriptionJobInformer.

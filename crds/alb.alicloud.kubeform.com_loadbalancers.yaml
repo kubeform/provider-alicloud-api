@@ -70,6 +70,8 @@ spec:
                     type: string
                   deletionProtectionEnabled:
                     type: boolean
+                  dnsName:
+                    type: string
                   dryRun:
                     type: boolean
                   id:
@@ -176,6 +178,8 @@ spec:
                     type: string
                   deletionProtectionEnabled:
                     type: boolean
+                  dnsName:
+                    type: string
                   dryRun:
                     type: boolean
                   id:

@@ -26,6 +26,14 @@ type ApplicationListerExpansion interface{}
 // ApplicationNamespaceLister.
 type ApplicationNamespaceListerExpansion interface{}
 
+// ApplicationScalingRuleListerExpansion allows custom methods to be added to
+// ApplicationScalingRuleLister.
+type ApplicationScalingRuleListerExpansion interface{}
+
+// ApplicationScalingRuleNamespaceListerExpansion allows custom methods to be added to
+// ApplicationScalingRuleNamespaceLister.
+type ApplicationScalingRuleNamespaceListerExpansion interface{}
+
 // ConfigMapListerExpansion allows custom methods to be added to
 // ConfigMapLister.
 type ConfigMapListerExpansion interface{}

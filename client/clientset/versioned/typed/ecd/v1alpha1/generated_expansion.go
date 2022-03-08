@@ -18,6 +18,18 @@ limitations under the License.
 
 package v1alpha1
 
+type CommandExpansion interface{}
+
+type DesktopExpansion interface{}
+
+type ImageExpansion interface{}
+
+type NasFileSystemExpansion interface{}
+
+type NetworkPackageExpansion interface{}
+
 type PolicyGroupExpansion interface{}
 
 type SimpleOfficeSiteExpansion interface{}
+
+type UserExpansion interface{}

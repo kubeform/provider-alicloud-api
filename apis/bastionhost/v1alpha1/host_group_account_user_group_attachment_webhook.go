@@ -90,7 +90,7 @@ func (r *HostGroupAccountUserGroupAttachment) ValidateUpdate(old runtime.Object)
 		return err
 	}
 
-	for key := range hostgroupaccountusergroupattachmentForceNewList {
+	for key, _ := range hostgroupaccountusergroupattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

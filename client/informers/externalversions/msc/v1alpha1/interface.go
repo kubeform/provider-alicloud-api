@@ -28,6 +28,8 @@ type Interface interface {
 	SubContacts() SubContactInformer
 	// SubSubscriptions returns a SubSubscriptionInformer.
 	SubSubscriptions() SubSubscriptionInformer
+	// SubWebhooks returns a SubWebhookInformer.
+	SubWebhooks() SubWebhookInformer
 }
 
 type version struct {
@@ -49,4 +51,9 @@ func (v *version) SubContacts() SubContactInformer {
 // SubSubscriptions returns a SubSubscriptionInformer.
 func (v *version) SubSubscriptions() SubSubscriptionInformer {
 	return &subSubscriptionInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SubWebhooks returns a SubWebhookInformer.
+func (v *version) SubWebhooks() SubWebhookInformer {
+	return &subWebhookInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

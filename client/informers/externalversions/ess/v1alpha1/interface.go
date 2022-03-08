@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// Alarms returns a AlarmInformer.
 	Alarms() AlarmInformer
+	// AlbServerGroupAttachments returns a AlbServerGroupAttachmentInformer.
+	AlbServerGroupAttachments() AlbServerGroupAttachmentInformer
 	// Attachments returns a AttachmentInformer.
 	Attachments() AttachmentInformer
 	// LifecycleHooks returns a LifecycleHookInformer.
@@ -60,6 +62,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Alarms returns a AlarmInformer.
 func (v *version) Alarms() AlarmInformer {
 	return &alarmInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AlbServerGroupAttachments returns a AlbServerGroupAttachmentInformer.
+func (v *version) AlbServerGroupAttachments() AlbServerGroupAttachmentInformer {
+	return &albServerGroupAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Attachments returns a AttachmentInformer.

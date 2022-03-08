@@ -82,6 +82,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&RolePolicyAttachmentList{},
 		&SamlProvider{},
 		&SamlProviderList{},
+		&SecurityPreference{},
+		&SecurityPreferenceList{},
 		&User{},
 		&UserList{},
 		&UserPolicyAttachment{},

@@ -88,7 +88,7 @@ func (r *VpnServer) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range vpnserverForceNewList {
+	for key, _ := range vpnserverForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

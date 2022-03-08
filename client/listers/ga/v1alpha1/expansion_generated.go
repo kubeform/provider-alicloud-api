@@ -26,6 +26,30 @@ type AcceleratorListerExpansion interface{}
 // AcceleratorNamespaceLister.
 type AcceleratorNamespaceListerExpansion interface{}
 
+// AclListerExpansion allows custom methods to be added to
+// AclLister.
+type AclListerExpansion interface{}
+
+// AclNamespaceListerExpansion allows custom methods to be added to
+// AclNamespaceLister.
+type AclNamespaceListerExpansion interface{}
+
+// AclAttachmentListerExpansion allows custom methods to be added to
+// AclAttachmentLister.
+type AclAttachmentListerExpansion interface{}
+
+// AclAttachmentNamespaceListerExpansion allows custom methods to be added to
+// AclAttachmentNamespaceLister.
+type AclAttachmentNamespaceListerExpansion interface{}
+
+// AdditionalCertificateListerExpansion allows custom methods to be added to
+// AdditionalCertificateLister.
+type AdditionalCertificateListerExpansion interface{}
+
+// AdditionalCertificateNamespaceListerExpansion allows custom methods to be added to
+// AdditionalCertificateNamespaceLister.
+type AdditionalCertificateNamespaceListerExpansion interface{}
+
 // BandwidthPackageListerExpansion allows custom methods to be added to
 // BandwidthPackageLister.
 type BandwidthPackageListerExpansion interface{}

@@ -24,8 +24,14 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// ApplicationServerCustomImages returns a ApplicationServerCustomImageInformer.
+	ApplicationServerCustomImages() ApplicationServerCustomImageInformer
+	// ApplicationServerFirewallRules returns a ApplicationServerFirewallRuleInformer.
+	ApplicationServerFirewallRules() ApplicationServerFirewallRuleInformer
 	// ApplicationServerInstances returns a ApplicationServerInstanceInformer.
 	ApplicationServerInstances() ApplicationServerInstanceInformer
+	// ApplicationServerSnapshots returns a ApplicationServerSnapshotInformer.
+	ApplicationServerSnapshots() ApplicationServerSnapshotInformer
 }
 
 type version struct {
@@ -39,7 +45,22 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// ApplicationServerCustomImages returns a ApplicationServerCustomImageInformer.
+func (v *version) ApplicationServerCustomImages() ApplicationServerCustomImageInformer {
+	return &applicationServerCustomImageInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApplicationServerFirewallRules returns a ApplicationServerFirewallRuleInformer.
+func (v *version) ApplicationServerFirewallRules() ApplicationServerFirewallRuleInformer {
+	return &applicationServerFirewallRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // ApplicationServerInstances returns a ApplicationServerInstanceInformer.
 func (v *version) ApplicationServerInstances() ApplicationServerInstanceInformer {
 	return &applicationServerInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApplicationServerSnapshots returns a ApplicationServerSnapshotInformer.
+func (v *version) ApplicationServerSnapshots() ApplicationServerSnapshotInformer {
+	return &applicationServerSnapshotInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

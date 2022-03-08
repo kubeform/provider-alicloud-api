@@ -27,13 +27,39 @@ import (
 
 type EcdV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	CommandsGetter
+	DesktopsGetter
+	ImagesGetter
+	NasFileSystemsGetter
+	NetworkPackagesGetter
 	PolicyGroupsGetter
 	SimpleOfficeSitesGetter
+	UsersGetter
 }
 
 // EcdV1alpha1Client is used to interact with features provided by the ecd.alicloud.kubeform.com group.
 type EcdV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *EcdV1alpha1Client) Commands(namespace string) CommandInterface {
+	return newCommands(c, namespace)
+}
+
+func (c *EcdV1alpha1Client) Desktops(namespace string) DesktopInterface {
+	return newDesktops(c, namespace)
+}
+
+func (c *EcdV1alpha1Client) Images(namespace string) ImageInterface {
+	return newImages(c, namespace)
+}
+
+func (c *EcdV1alpha1Client) NasFileSystems(namespace string) NasFileSystemInterface {
+	return newNasFileSystems(c, namespace)
+}
+
+func (c *EcdV1alpha1Client) NetworkPackages(namespace string) NetworkPackageInterface {
+	return newNetworkPackages(c, namespace)
 }
 
 func (c *EcdV1alpha1Client) PolicyGroups(namespace string) PolicyGroupInterface {
@@ -42,6 +68,10 @@ func (c *EcdV1alpha1Client) PolicyGroups(namespace string) PolicyGroupInterface 
 
 func (c *EcdV1alpha1Client) SimpleOfficeSites(namespace string) SimpleOfficeSiteInterface {
 	return newSimpleOfficeSites(c, namespace)
+}
+
+func (c *EcdV1alpha1Client) Users(namespace string) UserInterface {
+	return newUsers(c, namespace)
 }
 
 // NewForConfig creates a new EcdV1alpha1Client for the given config.

@@ -91,7 +91,7 @@ func (r *AnycastEipAddressAttachment) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range anycasteipaddressattachmentForceNewList {
+	for key, _ := range anycasteipaddressattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

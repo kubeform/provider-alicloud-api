@@ -107,7 +107,7 @@ func (r *ContainerGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range containergroupForceNewList {
+	for key, _ := range containergroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

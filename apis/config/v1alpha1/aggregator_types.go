@@ -66,7 +66,8 @@ type AggregatorSpecResource struct {
 
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
-	AggregatorAccounts []AggregatorSpecAggregatorAccounts `json:"aggregatorAccounts" tf:"aggregator_accounts"`
+	// +optional
+	AggregatorAccounts []AggregatorSpecAggregatorAccounts `json:"aggregatorAccounts,omitempty" tf:"aggregator_accounts"`
 	AggregatorName     *string                            `json:"aggregatorName" tf:"aggregator_name"`
 	// +optional
 	AggregatorType *string `json:"aggregatorType,omitempty" tf:"aggregator_type"`

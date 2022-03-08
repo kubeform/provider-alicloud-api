@@ -32,8 +32,12 @@ type Interface interface {
 	NasBackupPlans() NasBackupPlanInformer
 	// OssBackupPlans returns a OssBackupPlanInformer.
 	OssBackupPlans() OssBackupPlanInformer
+	// ReplicationVaults returns a ReplicationVaultInformer.
+	ReplicationVaults() ReplicationVaultInformer
 	// RestoreJobs returns a RestoreJobInformer.
 	RestoreJobs() RestoreJobInformer
+	// ServerBackupPlans returns a ServerBackupPlanInformer.
+	ServerBackupPlans() ServerBackupPlanInformer
 	// Vaults returns a VaultInformer.
 	Vaults() VaultInformer
 }
@@ -69,9 +73,19 @@ func (v *version) OssBackupPlans() OssBackupPlanInformer {
 	return &ossBackupPlanInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// ReplicationVaults returns a ReplicationVaultInformer.
+func (v *version) ReplicationVaults() ReplicationVaultInformer {
+	return &replicationVaultInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // RestoreJobs returns a RestoreJobInformer.
 func (v *version) RestoreJobs() RestoreJobInformer {
 	return &restoreJobInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ServerBackupPlans returns a ServerBackupPlanInformer.
+func (v *version) ServerBackupPlans() ServerBackupPlanInformer {
+	return &serverBackupPlanInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Vaults returns a VaultInformer.

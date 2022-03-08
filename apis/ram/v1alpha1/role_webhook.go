@@ -42,8 +42,7 @@ func (r *Role) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &Role{}
 
 var roleForceNewList = map[string]bool{
-	"/description": true,
-	"/name":        true,
+	"/name": true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -89,7 +88,7 @@ func (r *Role) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range roleForceNewList {
+	for key, _ := range roleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -86,7 +86,7 @@ func (r *QosCar) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range qoscarForceNewList {
+	for key, _ := range qoscarForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

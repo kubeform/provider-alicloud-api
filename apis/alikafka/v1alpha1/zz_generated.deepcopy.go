@@ -126,6 +126,11 @@ func (in *ConsumerGroupSpecResource) DeepCopyInto(out *ConsumerGroupSpecResource
 		*out = new(string)
 		**out = **in
 	}
+	if in.Description != nil {
+		in, out := &in.Description, &out.Description
+		*out = new(string)
+		**out = **in
+	}
 	if in.InstanceID != nil {
 		in, out := &in.InstanceID, &out.InstanceID
 		*out = new(string)
@@ -668,6 +673,11 @@ func (in *SaslUserSpecResource) DeepCopyInto(out *SaslUserSpecResource) {
 	}
 	if in.Password != nil {
 		in, out := &in.Password, &out.Password
+		*out = new(string)
+		**out = **in
+	}
+	if in.Type != nil {
+		in, out := &in.Type, &out.Type
 		*out = new(string)
 		**out = **in
 	}

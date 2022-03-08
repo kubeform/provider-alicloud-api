@@ -29,6 +29,14 @@ type FakeCddcV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeCddcV1alpha1) DedicatedHosts(namespace string) v1alpha1.DedicatedHostInterface {
+	return &FakeDedicatedHosts{c, namespace}
+}
+
+func (c *FakeCddcV1alpha1) DedicatedHostAccounts(namespace string) v1alpha1.DedicatedHostAccountInterface {
+	return &FakeDedicatedHostAccounts{c, namespace}
+}
+
 func (c *FakeCddcV1alpha1) DedicatedHostGroups(namespace string) v1alpha1.DedicatedHostGroupInterface {
 	return &FakeDedicatedHostGroups{c, namespace}
 }

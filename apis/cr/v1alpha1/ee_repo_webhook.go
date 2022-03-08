@@ -90,7 +90,7 @@ func (r *EeRepo) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range eerepoForceNewList {
+	for key, _ := range eerepoForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

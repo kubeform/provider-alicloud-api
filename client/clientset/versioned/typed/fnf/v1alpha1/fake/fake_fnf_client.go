@@ -29,6 +29,10 @@ type FakeFnfV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeFnfV1alpha1) Executions(namespace string) v1alpha1.ExecutionInterface {
+	return &FakeExecutions{c, namespace}
+}
+
 func (c *FakeFnfV1alpha1) Flows(namespace string) v1alpha1.FlowInterface {
 	return &FakeFlows{c, namespace}
 }

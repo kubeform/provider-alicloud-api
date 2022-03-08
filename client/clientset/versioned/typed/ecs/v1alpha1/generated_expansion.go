@@ -26,6 +26,8 @@ type CommandExpansion interface{}
 
 type DedicatedHostExpansion interface{}
 
+type DedicatedHostClusterExpansion interface{}
+
 type DeploymentSetExpansion interface{}
 
 type DiskExpansion interface{}
@@ -33,6 +35,8 @@ type DiskExpansion interface{}
 type DiskAttachmentExpansion interface{}
 
 type HpcClusterExpansion interface{}
+
+type ImageComponentExpansion interface{}
 
 type KeyPairExpansion interface{}
 
@@ -44,4 +48,10 @@ type NetworkInterfaceExpansion interface{}
 
 type NetworkInterfaceAttachmentExpansion interface{}
 
+type PrefixListExpansion interface{}
+
+type SessionManagerStatusExpansion interface{}
+
 type SnapshotExpansion interface{}
+
+type StorageCapacityUnitExpansion interface{}

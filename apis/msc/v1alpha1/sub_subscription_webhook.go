@@ -88,7 +88,7 @@ func (r *SubSubscription) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range subsubscriptionForceNewList {
+	for key, _ := range subsubscriptionForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

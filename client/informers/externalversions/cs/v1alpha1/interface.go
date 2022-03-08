@@ -32,6 +32,8 @@ type Interface interface {
 	EdgeKuberneteses() EdgeKubernetesInformer
 	// Kuberneteses returns a KubernetesInformer.
 	Kuberneteses() KubernetesInformer
+	// KubernetesAddons returns a KubernetesAddonInformer.
+	KubernetesAddons() KubernetesAddonInformer
 	// KubernetesAutoscalers returns a KubernetesAutoscalerInformer.
 	KubernetesAutoscalers() KubernetesAutoscalerInformer
 	// KubernetesNodePools returns a KubernetesNodePoolInformer.
@@ -75,6 +77,11 @@ func (v *version) EdgeKuberneteses() EdgeKubernetesInformer {
 // Kuberneteses returns a KubernetesInformer.
 func (v *version) Kuberneteses() KubernetesInformer {
 	return &kubernetesInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// KubernetesAddons returns a KubernetesAddonInformer.
+func (v *version) KubernetesAddons() KubernetesAddonInformer {
+	return &kubernetesAddonInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // KubernetesAutoscalers returns a KubernetesAutoscalerInformer.

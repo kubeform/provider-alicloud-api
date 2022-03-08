@@ -52,8 +52,6 @@ type SsoUserSpec struct {
 
 	ProviderRef core.LocalObjectReference `json:"providerRef" tf:"-"`
 
-	SecretRef *core.LocalObjectReference `json:"secretRef,omitempty" tf:"-"`
-
 	BackendRef *core.LocalObjectReference `json:"backendRef,omitempty" tf:"-"`
 }
 
@@ -64,19 +62,18 @@ type SsoUserSpecResource struct {
 	Description *string `json:"description,omitempty" tf:"description"`
 	DirectoryID *string `json:"directoryID" tf:"directory_id"`
 	// +optional
-	DisplayName *string `json:"-" sensitive:"true" tf:"display_name"`
+	DisplayName *string `json:"displayName,omitempty" tf:"display_name"`
 	// +optional
-	Email *string `json:"-" sensitive:"true" tf:"email"`
+	Email *string `json:"email,omitempty" tf:"email"`
 	// +optional
-	FirstName *string `json:"-" sensitive:"true" tf:"first_name"`
+	FirstName *string `json:"firstName,omitempty" tf:"first_name"`
 	// +optional
-	LastName *string `json:"-" sensitive:"true" tf:"last_name"`
+	LastName *string `json:"lastName,omitempty" tf:"last_name"`
 	// +optional
 	Status *string `json:"status,omitempty" tf:"status"`
 	// +optional
-	UserID *string `json:"userID,omitempty" tf:"user_id"`
-	// +optional
-	UserName *string `json:"-" sensitive:"true" tf:"user_name"`
+	UserID   *string `json:"userID,omitempty" tf:"user_id"`
+	UserName *string `json:"userName" tf:"user_name"`
 }
 
 type SsoUserStatus struct {

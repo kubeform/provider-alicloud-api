@@ -30,6 +30,7 @@ type EciV1alpha1Interface interface {
 	ContainerGroupsGetter
 	ImageCachesGetter
 	OpenapiImageCachesGetter
+	VirtualNodesGetter
 }
 
 // EciV1alpha1Client is used to interact with features provided by the eci.alicloud.kubeform.com group.
@@ -47,6 +48,10 @@ func (c *EciV1alpha1Client) ImageCaches(namespace string) ImageCacheInterface {
 
 func (c *EciV1alpha1Client) OpenapiImageCaches(namespace string) OpenapiImageCacheInterface {
 	return newOpenapiImageCaches(c, namespace)
+}
+
+func (c *EciV1alpha1Client) VirtualNodes(namespace string) VirtualNodeInterface {
+	return newVirtualNodes(c, namespace)
 }
 
 // NewForConfig creates a new EciV1alpha1Client for the given config.

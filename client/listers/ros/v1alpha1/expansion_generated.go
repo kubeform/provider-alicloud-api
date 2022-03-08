@@ -42,6 +42,14 @@ type StackGroupListerExpansion interface{}
 // StackGroupNamespaceLister.
 type StackGroupNamespaceListerExpansion interface{}
 
+// StackInstanceListerExpansion allows custom methods to be added to
+// StackInstanceLister.
+type StackInstanceListerExpansion interface{}
+
+// StackInstanceNamespaceListerExpansion allows custom methods to be added to
+// StackInstanceNamespaceLister.
+type StackInstanceNamespaceListerExpansion interface{}
+
 // TemplateListerExpansion allows custom methods to be added to
 // TemplateLister.
 type TemplateListerExpansion interface{}
@@ -49,3 +57,11 @@ type TemplateListerExpansion interface{}
 // TemplateNamespaceListerExpansion allows custom methods to be added to
 // TemplateNamespaceLister.
 type TemplateNamespaceListerExpansion interface{}
+
+// TemplateScratchListerExpansion allows custom methods to be added to
+// TemplateScratchLister.
+type TemplateScratchListerExpansion interface{}
+
+// TemplateScratchNamespaceListerExpansion allows custom methods to be added to
+// TemplateScratchNamespaceLister.
+type TemplateScratchNamespaceListerExpansion interface{}

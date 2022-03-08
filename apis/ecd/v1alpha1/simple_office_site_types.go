@@ -59,6 +59,7 @@ type SimpleOfficeSiteSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
+	// Deprecated
 	Bandwidth *int64 `json:"bandwidth,omitempty" tf:"bandwidth"`
 	// +optional
 	CenID *string `json:"cenID,omitempty" tf:"cen_id"`
@@ -72,6 +73,7 @@ type SimpleOfficeSiteSpecResource struct {
 	// +optional
 	EnableCrossDesktopAccess *bool `json:"enableCrossDesktopAccess,omitempty" tf:"enable_cross_desktop_access"`
 	// +optional
+	// Deprecated
 	EnableInternetAccess *bool `json:"enableInternetAccess,omitempty" tf:"enable_internet_access"`
 	// +optional
 	MfaEnabled *bool `json:"mfaEnabled,omitempty" tf:"mfa_enabled"`

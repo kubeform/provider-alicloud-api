@@ -97,7 +97,7 @@ func (r *DataCenter) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range datacenterForceNewList {
+	for key, _ := range datacenterForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -83,7 +83,9 @@ type PrometheusAlertRuleSpecResource struct {
 	Labels  []PrometheusAlertRuleSpecLabels `json:"labels,omitempty" tf:"labels"`
 	Message *string                         `json:"message" tf:"message"`
 	// +optional
-	NotifyType              *string `json:"notifyType,omitempty" tf:"notify_type"`
+	NotifyType *string `json:"notifyType,omitempty" tf:"notify_type"`
+	// +optional
+	PrometheusAlertRuleID   *int64  `json:"prometheusAlertRuleID,omitempty" tf:"prometheus_alert_rule_id"`
 	PrometheusAlertRuleName *string `json:"prometheusAlertRuleName" tf:"prometheus_alert_rule_name"`
 	// +optional
 	Status *int64 `json:"status,omitempty" tf:"status"`

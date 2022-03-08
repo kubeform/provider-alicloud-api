@@ -29,6 +29,7 @@ type DcdnV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	DomainsGetter
 	DomainConfigsGetter
+	IpaDomainsGetter
 }
 
 // DcdnV1alpha1Client is used to interact with features provided by the dcdn.alicloud.kubeform.com group.
@@ -42,6 +43,10 @@ func (c *DcdnV1alpha1Client) Domains(namespace string) DomainInterface {
 
 func (c *DcdnV1alpha1Client) DomainConfigs(namespace string) DomainConfigInterface {
 	return newDomainConfigs(c, namespace)
+}
+
+func (c *DcdnV1alpha1Client) IpaDomains(namespace string) IpaDomainInterface {
+	return newIpaDomains(c, namespace)
 }
 
 // NewForConfig creates a new DcdnV1alpha1Client for the given config.

@@ -33,12 +33,22 @@ type CloudV1alpha1Interface interface {
 	FirewallControlPoliciesGetter
 	FirewallControlPolicyOrdersGetter
 	FirewallInstancesGetter
+	SsoAccessAssignmentsGetter
 	SsoAccessConfigurationsGetter
+	SsoAccessConfigurationProvisioningsGetter
 	SsoDirectoriesGetter
 	SsoGroupsGetter
 	SsoScimServerCredentialsGetter
 	SsoUsersGetter
+	SsoUserAttachmentsGetter
+	StorageGatewayExpressSyncsGetter
+	StorageGatewayExpressSyncShareAttachmentsGetter
 	StorageGatewayGatewaysGetter
+	StorageGatewayGatewayBlockVolumesGetter
+	StorageGatewayGatewayCacheDisksGetter
+	StorageGatewayGatewayFileSharesGetter
+	StorageGatewayGatewayLoggingsGetter
+	StorageGatewayGatewaySmbUsersGetter
 	StorageGatewayStorageBundlesGetter
 }
 
@@ -71,8 +81,16 @@ func (c *CloudV1alpha1Client) FirewallInstances(namespace string) FirewallInstan
 	return newFirewallInstances(c, namespace)
 }
 
+func (c *CloudV1alpha1Client) SsoAccessAssignments(namespace string) SsoAccessAssignmentInterface {
+	return newSsoAccessAssignments(c, namespace)
+}
+
 func (c *CloudV1alpha1Client) SsoAccessConfigurations(namespace string) SsoAccessConfigurationInterface {
 	return newSsoAccessConfigurations(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) SsoAccessConfigurationProvisionings(namespace string) SsoAccessConfigurationProvisioningInterface {
+	return newSsoAccessConfigurationProvisionings(c, namespace)
 }
 
 func (c *CloudV1alpha1Client) SsoDirectories(namespace string) SsoDirectoryInterface {
@@ -91,8 +109,40 @@ func (c *CloudV1alpha1Client) SsoUsers(namespace string) SsoUserInterface {
 	return newSsoUsers(c, namespace)
 }
 
+func (c *CloudV1alpha1Client) SsoUserAttachments(namespace string) SsoUserAttachmentInterface {
+	return newSsoUserAttachments(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayExpressSyncs(namespace string) StorageGatewayExpressSyncInterface {
+	return newStorageGatewayExpressSyncs(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayExpressSyncShareAttachments(namespace string) StorageGatewayExpressSyncShareAttachmentInterface {
+	return newStorageGatewayExpressSyncShareAttachments(c, namespace)
+}
+
 func (c *CloudV1alpha1Client) StorageGatewayGateways(namespace string) StorageGatewayGatewayInterface {
 	return newStorageGatewayGateways(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayGatewayBlockVolumes(namespace string) StorageGatewayGatewayBlockVolumeInterface {
+	return newStorageGatewayGatewayBlockVolumes(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayGatewayCacheDisks(namespace string) StorageGatewayGatewayCacheDiskInterface {
+	return newStorageGatewayGatewayCacheDisks(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayGatewayFileShares(namespace string) StorageGatewayGatewayFileShareInterface {
+	return newStorageGatewayGatewayFileShares(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayGatewayLoggings(namespace string) StorageGatewayGatewayLoggingInterface {
+	return newStorageGatewayGatewayLoggings(c, namespace)
+}
+
+func (c *CloudV1alpha1Client) StorageGatewayGatewaySmbUsers(namespace string) StorageGatewayGatewaySmbUserInterface {
+	return newStorageGatewayGatewaySmbUsers(c, namespace)
 }
 
 func (c *CloudV1alpha1Client) StorageGatewayStorageBundles(namespace string) StorageGatewayStorageBundleInterface {

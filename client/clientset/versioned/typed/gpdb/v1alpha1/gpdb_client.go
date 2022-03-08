@@ -27,6 +27,7 @@ import (
 
 type GpdbV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	AccountsGetter
 	ConnectionsGetter
 	ElasticInstancesGetter
 	InstancesGetter
@@ -35,6 +36,10 @@ type GpdbV1alpha1Interface interface {
 // GpdbV1alpha1Client is used to interact with features provided by the gpdb.alicloud.kubeform.com group.
 type GpdbV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *GpdbV1alpha1Client) Accounts(namespace string) AccountInterface {
+	return newAccounts(c, namespace)
 }
 
 func (c *GpdbV1alpha1Client) Connections(namespace string) ConnectionInterface {

@@ -89,7 +89,7 @@ func (r *ManagerSharedTarget) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range managersharedtargetForceNewList {
+	for key, _ := range managersharedtargetForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

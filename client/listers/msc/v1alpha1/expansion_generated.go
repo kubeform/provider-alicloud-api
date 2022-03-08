@@ -33,3 +33,11 @@ type SubSubscriptionListerExpansion interface{}
 // SubSubscriptionNamespaceListerExpansion allows custom methods to be added to
 // SubSubscriptionNamespaceLister.
 type SubSubscriptionNamespaceListerExpansion interface{}
+
+// SubWebhookListerExpansion allows custom methods to be added to
+// SubWebhookLister.
+type SubWebhookListerExpansion interface{}
+
+// SubWebhookNamespaceListerExpansion allows custom methods to be added to
+// SubWebhookNamespaceLister.
+type SubWebhookNamespaceListerExpansion interface{}

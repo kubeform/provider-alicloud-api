@@ -21,3 +21,5 @@ package v1alpha1
 type SubContactExpansion interface{}
 
 type SubSubscriptionExpansion interface{}
+
+type SubWebhookExpansion interface{}

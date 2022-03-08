@@ -42,6 +42,14 @@ type AlarmContactGroupListerExpansion interface{}
 // AlarmContactGroupNamespaceLister.
 type AlarmContactGroupNamespaceListerExpansion interface{}
 
+// DynamicTagGroupListerExpansion allows custom methods to be added to
+// DynamicTagGroupLister.
+type DynamicTagGroupListerExpansion interface{}
+
+// DynamicTagGroupNamespaceListerExpansion allows custom methods to be added to
+// DynamicTagGroupNamespaceLister.
+type DynamicTagGroupNamespaceListerExpansion interface{}
+
 // GroupMetricRuleListerExpansion allows custom methods to be added to
 // GroupMetricRuleLister.
 type GroupMetricRuleListerExpansion interface{}

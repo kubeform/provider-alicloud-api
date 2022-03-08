@@ -18,6 +18,16 @@ limitations under the License.
 
 package v1alpha1
 
+type AccountExpansion interface{}
+
+type AuditPolicyExpansion interface{}
+
 type InstanceExpansion interface{}
 
+type ServerlessInstanceExpansion interface{}
+
 type ShardingInstanceExpansion interface{}
+
+type ShardingNetworkPrivateAddressExpansion interface{}
+
+type ShardingNetworkPublicAddressExpansion interface{}

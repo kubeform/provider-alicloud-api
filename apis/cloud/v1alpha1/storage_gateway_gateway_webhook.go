@@ -92,7 +92,7 @@ func (r *StorageGatewayGateway) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range storagegatewaygatewayForceNewList {
+	for key, _ := range storagegatewaygatewayForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -89,7 +89,7 @@ func (r *TransitRouterRouteTablePropagation) ValidateUpdate(old runtime.Object) 
 		return err
 	}
 
-	for key := range transitrouterroutetablepropagationForceNewList {
+	for key, _ := range transitrouterroutetablepropagationForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

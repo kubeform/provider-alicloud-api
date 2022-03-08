@@ -26,6 +26,8 @@ type EdgeKubernetesExpansion interface{}
 
 type KubernetesExpansion interface{}
 
+type KubernetesAddonExpansion interface{}
+
 type KubernetesAutoscalerExpansion interface{}
 
 type KubernetesNodePoolExpansion interface{}

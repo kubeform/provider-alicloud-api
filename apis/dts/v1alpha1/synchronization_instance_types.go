@@ -59,6 +59,10 @@ type SynchronizationInstanceSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
+	AutoPay *string `json:"autoPay,omitempty" tf:"auto_pay"`
+	// +optional
+	AutoStart *string `json:"autoStart,omitempty" tf:"auto_start"`
+	// +optional
 	ComputeUnit *int64 `json:"computeUnit,omitempty" tf:"compute_unit"`
 	// +optional
 	DatabaseCount                 *int64  `json:"databaseCount,omitempty" tf:"database_count"`

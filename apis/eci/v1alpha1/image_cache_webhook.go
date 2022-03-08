@@ -96,7 +96,7 @@ func (r *ImageCache) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range imagecacheForceNewList {
+	for key, _ := range imagecacheForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -59,6 +59,8 @@ spec:
                 properties:
                   description:
                     type: string
+                  enablePublicAccess:
+                    type: boolean
                   id:
                     type: string
                   licenseCode:
@@ -126,6 +128,8 @@ spec:
                 properties:
                   description:
                     type: string
+                  enablePublicAccess:
+                    type: boolean
                   id:
                     type: string
                   licenseCode:

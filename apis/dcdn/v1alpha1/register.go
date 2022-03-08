@@ -60,6 +60,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&DomainList{},
 		&DomainConfig{},
 		&DomainConfigList{},
+		&IpaDomain{},
+		&IpaDomainList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

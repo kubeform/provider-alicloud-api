@@ -82,6 +82,8 @@ type InstanceSpecResource struct {
 	// +optional
 	AccountPassword *string `json:"-" sensitive:"true" tf:"account_password"`
 	// +optional
+	AutoRenew *bool `json:"autoRenew,omitempty" tf:"auto_renew"`
+	// +optional
 	BackupPeriod []string `json:"backupPeriod,omitempty" tf:"backup_period"`
 	// +optional
 	BackupTime        *string `json:"backupTime,omitempty" tf:"backup_time"`

@@ -41,8 +41,16 @@ func (c *FakeRosV1alpha1) StackGroups(namespace string) v1alpha1.StackGroupInter
 	return &FakeStackGroups{c, namespace}
 }
 
+func (c *FakeRosV1alpha1) StackInstances(namespace string) v1alpha1.StackInstanceInterface {
+	return &FakeStackInstances{c, namespace}
+}
+
 func (c *FakeRosV1alpha1) Templates(namespace string) v1alpha1.TemplateInterface {
 	return &FakeTemplates{c, namespace}
+}
+
+func (c *FakeRosV1alpha1) TemplateScratches(namespace string) v1alpha1.TemplateScratchInterface {
+	return &FakeTemplateScratches{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

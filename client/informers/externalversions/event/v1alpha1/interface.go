@@ -30,6 +30,8 @@ type Interface interface {
 	BridgeEventSources() BridgeEventSourceInformer
 	// BridgeRules returns a BridgeRuleInformer.
 	BridgeRules() BridgeRuleInformer
+	// BridgeServiceLinkedRoles returns a BridgeServiceLinkedRoleInformer.
+	BridgeServiceLinkedRoles() BridgeServiceLinkedRoleInformer
 	// BridgeSlrs returns a BridgeSlrInformer.
 	BridgeSlrs() BridgeSlrInformer
 }
@@ -58,6 +60,11 @@ func (v *version) BridgeEventSources() BridgeEventSourceInformer {
 // BridgeRules returns a BridgeRuleInformer.
 func (v *version) BridgeRules() BridgeRuleInformer {
 	return &bridgeRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// BridgeServiceLinkedRoles returns a BridgeServiceLinkedRoleInformer.
+func (v *version) BridgeServiceLinkedRoles() BridgeServiceLinkedRoleInformer {
+	return &bridgeServiceLinkedRoleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // BridgeSlrs returns a BridgeSlrInformer.

@@ -41,6 +41,13 @@ type Zone struct {
 	Status            ZoneStatus `json:"status,omitempty"`
 }
 
+type ZoneSpecUserInfo struct {
+	// +optional
+	RegionIDS []string `json:"regionIDS,omitempty" tf:"region_ids"`
+	// +optional
+	UserID *string `json:"userID,omitempty" tf:"user_id"`
+}
+
 type ZoneSpec struct {
 	State *ZoneSpecResource `json:"state,omitempty" tf:"-"`
 
@@ -78,9 +85,13 @@ type ZoneSpecResource struct {
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
 	// +optional
+	SyncStatus *string `json:"syncStatus,omitempty" tf:"sync_status"`
+	// +optional
 	UpdateTime *string `json:"updateTime,omitempty" tf:"update_time"`
 	// +optional
 	UserClientIP *string `json:"userClientIP,omitempty" tf:"user_client_ip"`
+	// +optional
+	UserInfo []ZoneSpecUserInfo `json:"userInfo,omitempty" tf:"user_info"`
 	// +optional
 	ZoneName *string `json:"zoneName,omitempty" tf:"zone_name"`
 }

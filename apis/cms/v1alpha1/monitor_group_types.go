@@ -59,8 +59,13 @@ type MonitorGroupSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
-	ContactGroups    []string `json:"contactGroups,omitempty" tf:"contact_groups"`
-	MonitorGroupName *string  `json:"monitorGroupName" tf:"monitor_group_name"`
+	ContactGroups []string `json:"contactGroups,omitempty" tf:"contact_groups"`
+	// +optional
+	MonitorGroupName *string `json:"monitorGroupName,omitempty" tf:"monitor_group_name"`
+	// +optional
+	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
+	// +optional
+	ResourceGroupName *string `json:"resourceGroupName,omitempty" tf:"resource_group_name"`
 	// +optional
 	Tags map[string]string `json:"tags,omitempty" tf:"tags"`
 }

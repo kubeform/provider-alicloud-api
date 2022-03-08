@@ -98,6 +98,8 @@ type BackupPolicySpecResource struct {
 	// +optional
 	PreferredBackupTime *string `json:"preferredBackupTime,omitempty" tf:"preferred_backup_time"`
 	// +optional
+	ReleasedKeepPolicy *string `json:"releasedKeepPolicy,omitempty" tf:"released_keep_policy"`
+	// +optional
 	// Deprecated
 	RetentionPeriod *int64 `json:"retentionPeriod,omitempty" tf:"retention_period"`
 }

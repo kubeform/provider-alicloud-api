@@ -86,7 +86,7 @@ func (r *AclRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range aclruleForceNewList {
+	for key, _ := range aclruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

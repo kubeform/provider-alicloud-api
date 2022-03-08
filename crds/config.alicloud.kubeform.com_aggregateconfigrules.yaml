@@ -61,6 +61,8 @@ spec:
                     type: string
                   aggregatorID:
                     type: string
+                  configRuleID:
+                    type: string
                   configRuleTriggerTypes:
                     type: string
                   description:
@@ -148,6 +150,8 @@ spec:
                   aggregateConfigRuleName:
                     type: string
                   aggregatorID:
+                    type: string
+                  configRuleID:
                     type: string
                   configRuleTriggerTypes:
                     type: string

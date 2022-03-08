@@ -18,6 +18,46 @@ limitations under the License.
 
 package v1alpha1
 
+// CommandListerExpansion allows custom methods to be added to
+// CommandLister.
+type CommandListerExpansion interface{}
+
+// CommandNamespaceListerExpansion allows custom methods to be added to
+// CommandNamespaceLister.
+type CommandNamespaceListerExpansion interface{}
+
+// DesktopListerExpansion allows custom methods to be added to
+// DesktopLister.
+type DesktopListerExpansion interface{}
+
+// DesktopNamespaceListerExpansion allows custom methods to be added to
+// DesktopNamespaceLister.
+type DesktopNamespaceListerExpansion interface{}
+
+// ImageListerExpansion allows custom methods to be added to
+// ImageLister.
+type ImageListerExpansion interface{}
+
+// ImageNamespaceListerExpansion allows custom methods to be added to
+// ImageNamespaceLister.
+type ImageNamespaceListerExpansion interface{}
+
+// NasFileSystemListerExpansion allows custom methods to be added to
+// NasFileSystemLister.
+type NasFileSystemListerExpansion interface{}
+
+// NasFileSystemNamespaceListerExpansion allows custom methods to be added to
+// NasFileSystemNamespaceLister.
+type NasFileSystemNamespaceListerExpansion interface{}
+
+// NetworkPackageListerExpansion allows custom methods to be added to
+// NetworkPackageLister.
+type NetworkPackageListerExpansion interface{}
+
+// NetworkPackageNamespaceListerExpansion allows custom methods to be added to
+// NetworkPackageNamespaceLister.
+type NetworkPackageNamespaceListerExpansion interface{}
+
 // PolicyGroupListerExpansion allows custom methods to be added to
 // PolicyGroupLister.
 type PolicyGroupListerExpansion interface{}
@@ -33,3 +73,11 @@ type SimpleOfficeSiteListerExpansion interface{}
 // SimpleOfficeSiteNamespaceListerExpansion allows custom methods to be added to
 // SimpleOfficeSiteNamespaceLister.
 type SimpleOfficeSiteNamespaceListerExpansion interface{}
+
+// UserListerExpansion allows custom methods to be added to
+// UserLister.
+type UserListerExpansion interface{}
+
+// UserNamespaceListerExpansion allows custom methods to be added to
+// UserNamespaceLister.
+type UserNamespaceListerExpansion interface{}

@@ -26,6 +26,14 @@ type ConfigListerExpansion interface{}
 // ConfigNamespaceLister.
 type ConfigNamespaceListerExpansion interface{}
 
+// DataLimitListerExpansion allows custom methods to be added to
+// DataLimitLister.
+type DataLimitListerExpansion interface{}
+
+// DataLimitNamespaceListerExpansion allows custom methods to be added to
+// DataLimitNamespaceLister.
+type DataLimitNamespaceListerExpansion interface{}
+
 // InstanceListerExpansion allows custom methods to be added to
 // InstanceLister.
 type InstanceListerExpansion interface{}

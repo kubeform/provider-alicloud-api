@@ -29,6 +29,10 @@ type FakeEcpV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeEcpV1alpha1) Instances(namespace string) v1alpha1.InstanceInterface {
+	return &FakeInstances{c, namespace}
+}
+
 func (c *FakeEcpV1alpha1) KeyPairs(namespace string) v1alpha1.KeyPairInterface {
 	return &FakeKeyPairs{c, namespace}
 }

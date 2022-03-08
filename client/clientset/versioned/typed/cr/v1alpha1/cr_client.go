@@ -27,6 +27,8 @@ import (
 
 type CrV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	ChartNamespacesGetter
+	ChartRepositoriesGetter
 	EeInstancesGetter
 	EeNamespacesGetter
 	EeReposGetter
@@ -39,6 +41,14 @@ type CrV1alpha1Interface interface {
 // CrV1alpha1Client is used to interact with features provided by the cr.alicloud.kubeform.com group.
 type CrV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *CrV1alpha1Client) ChartNamespaces(namespace string) ChartNamespaceInterface {
+	return newChartNamespaces(c, namespace)
+}
+
+func (c *CrV1alpha1Client) ChartRepositories(namespace string) ChartRepositoryInterface {
+	return newChartRepositories(c, namespace)
 }
 
 func (c *CrV1alpha1Client) EeInstances(namespace string) EeInstanceInterface {

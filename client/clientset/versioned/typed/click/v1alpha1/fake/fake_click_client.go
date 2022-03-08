@@ -33,6 +33,10 @@ func (c *FakeClickV1alpha1) HouseAccounts(namespace string) v1alpha1.HouseAccoun
 	return &FakeHouseAccounts{c, namespace}
 }
 
+func (c *FakeClickV1alpha1) HouseBackupPolicies(namespace string) v1alpha1.HouseBackupPolicyInterface {
+	return &FakeHouseBackupPolicies{c, namespace}
+}
+
 func (c *FakeClickV1alpha1) HouseDbClusters(namespace string) v1alpha1.HouseDbClusterInterface {
 	return &FakeHouseDbClusters{c, namespace}
 }

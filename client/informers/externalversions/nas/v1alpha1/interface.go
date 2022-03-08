@@ -28,10 +28,22 @@ type Interface interface {
 	AccessGroups() AccessGroupInformer
 	// AccessRules returns a AccessRuleInformer.
 	AccessRules() AccessRuleInformer
+	// AutoSnapshotPolicies returns a AutoSnapshotPolicyInformer.
+	AutoSnapshotPolicies() AutoSnapshotPolicyInformer
+	// DataFlows returns a DataFlowInformer.
+	DataFlows() DataFlowInformer
 	// FileSystems returns a FileSystemInformer.
 	FileSystems() FileSystemInformer
+	// Filesets returns a FilesetInformer.
+	Filesets() FilesetInformer
+	// LifecyclePolicies returns a LifecyclePolicyInformer.
+	LifecyclePolicies() LifecyclePolicyInformer
 	// MountTargets returns a MountTargetInformer.
 	MountTargets() MountTargetInformer
+	// RecycleBins returns a RecycleBinInformer.
+	RecycleBins() RecycleBinInformer
+	// Snapshots returns a SnapshotInformer.
+	Snapshots() SnapshotInformer
 }
 
 type version struct {
@@ -55,12 +67,42 @@ func (v *version) AccessRules() AccessRuleInformer {
 	return &accessRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// AutoSnapshotPolicies returns a AutoSnapshotPolicyInformer.
+func (v *version) AutoSnapshotPolicies() AutoSnapshotPolicyInformer {
+	return &autoSnapshotPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// DataFlows returns a DataFlowInformer.
+func (v *version) DataFlows() DataFlowInformer {
+	return &dataFlowInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // FileSystems returns a FileSystemInformer.
 func (v *version) FileSystems() FileSystemInformer {
 	return &fileSystemInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// Filesets returns a FilesetInformer.
+func (v *version) Filesets() FilesetInformer {
+	return &filesetInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// LifecyclePolicies returns a LifecyclePolicyInformer.
+func (v *version) LifecyclePolicies() LifecyclePolicyInformer {
+	return &lifecyclePolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // MountTargets returns a MountTargetInformer.
 func (v *version) MountTargets() MountTargetInformer {
 	return &mountTargetInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// RecycleBins returns a RecycleBinInformer.
+func (v *version) RecycleBins() RecycleBinInformer {
+	return &recycleBinInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Snapshots returns a SnapshotInformer.
+func (v *version) Snapshots() SnapshotInformer {
+	return &snapshotInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

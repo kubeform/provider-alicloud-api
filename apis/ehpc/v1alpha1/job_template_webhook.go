@@ -86,7 +86,7 @@ func (r *JobTemplate) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range jobtemplateForceNewList {
+	for key, _ := range jobtemplateForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

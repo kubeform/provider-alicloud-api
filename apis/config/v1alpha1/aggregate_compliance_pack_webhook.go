@@ -42,9 +42,8 @@ func (r *AggregateCompliancePack) SetupWebhookWithManager(mgr ctrl.Manager) erro
 var _ webhook.Validator = &AggregateCompliancePack{}
 
 var aggregatecompliancepackForceNewList = map[string]bool{
-	"/aggregate_compliance_pack_name": true,
-	"/aggregator_id":                  true,
-	"/compliance_pack_template_id":    true,
+	"/aggregator_id":               true,
+	"/compliance_pack_template_id": true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -90,7 +89,7 @@ func (r *AggregateCompliancePack) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range aggregatecompliancepackForceNewList {
+	for key, _ := range aggregatecompliancepackForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false
