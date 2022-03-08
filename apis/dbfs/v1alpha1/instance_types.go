@@ -66,14 +66,11 @@ type InstanceSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
-	AttachMode *string `json:"attachMode,omitempty" tf:"attach_mode"`
-	// +optional
-	AttachPoint *string `json:"attachPoint,omitempty" tf:"attach_point"`
-	// +optional
 	Category *string `json:"category,omitempty" tf:"category"`
 	// +optional
 	DeleteSnapshot *bool `json:"deleteSnapshot,omitempty" tf:"delete_snapshot"`
 	// +optional
+	// Deprecated
 	EcsList []InstanceSpecEcsList `json:"ecsList,omitempty" tf:"ecs_list"`
 	// +optional
 	EnableRaid *bool `json:"enableRaid,omitempty" tf:"enable_raid"`
@@ -92,10 +89,8 @@ type InstanceSpecResource struct {
 	// +optional
 	Status *string `json:"status,omitempty" tf:"status"`
 	// +optional
-	Tags map[string]string `json:"tags,omitempty" tf:"tags"`
-	// +optional
-	UsedScene *string `json:"usedScene,omitempty" tf:"used_scene"`
-	ZoneID    *string `json:"zoneID" tf:"zone_id"`
+	Tags   map[string]string `json:"tags,omitempty" tf:"tags"`
+	ZoneID *string           `json:"zoneID" tf:"zone_id"`
 }
 
 type InstanceStatus struct {

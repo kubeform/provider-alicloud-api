@@ -29,12 +29,40 @@ type FakeVpcV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeVpcV1alpha1) BgpGroups(namespace string) v1alpha1.BgpGroupInterface {
+	return &FakeBgpGroups{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) BgpNetworks(namespace string) v1alpha1.BgpNetworkInterface {
+	return &FakeBgpNetworks{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) BgpPeers(namespace string) v1alpha1.BgpPeerInterface {
+	return &FakeBgpPeers{c, namespace}
+}
+
 func (c *FakeVpcV1alpha1) DhcpOptionsSets(namespace string) v1alpha1.DhcpOptionsSetInterface {
 	return &FakeDhcpOptionsSets{c, namespace}
 }
 
+func (c *FakeVpcV1alpha1) DhcpOptionsSetAttachments(namespace string) v1alpha1.DhcpOptionsSetAttachmentInterface {
+	return &FakeDhcpOptionsSetAttachments{c, namespace}
+}
+
 func (c *FakeVpcV1alpha1) FlowLogs(namespace string) v1alpha1.FlowLogInterface {
 	return &FakeFlowLogs{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) Ipv6EgressRules(namespace string) v1alpha1.Ipv6EgressRuleInterface {
+	return &FakeIpv6EgressRules{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) Ipv6Gateways(namespace string) v1alpha1.Ipv6GatewayInterface {
+	return &FakeIpv6Gateways{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) Ipv6InternetBandwidths(namespace string) v1alpha1.Ipv6InternetBandwidthInterface {
+	return &FakeIpv6InternetBandwidths{c, namespace}
 }
 
 func (c *FakeVpcV1alpha1) NatIPs(namespace string) v1alpha1.NatIPInterface {
@@ -51,6 +79,18 @@ func (c *FakeVpcV1alpha1) TrafficMirrorFilters(namespace string) v1alpha1.Traffi
 
 func (c *FakeVpcV1alpha1) TrafficMirrorFilterEgressRules(namespace string) v1alpha1.TrafficMirrorFilterEgressRuleInterface {
 	return &FakeTrafficMirrorFilterEgressRules{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) TrafficMirrorFilterIngressRules(namespace string) v1alpha1.TrafficMirrorFilterIngressRuleInterface {
+	return &FakeTrafficMirrorFilterIngressRules{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) TrafficMirrorSessions(namespace string) v1alpha1.TrafficMirrorSessionInterface {
+	return &FakeTrafficMirrorSessions{c, namespace}
+}
+
+func (c *FakeVpcV1alpha1) VbrHas(namespace string) v1alpha1.VbrHaInterface {
+	return &FakeVbrHas{c, namespace}
 }
 
 func (c *FakeVpcV1alpha1) Vpcs(namespace string) v1alpha1.VpcInterface {

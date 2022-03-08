@@ -94,7 +94,7 @@ func (r *Swarm) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range swarmForceNewList {
+	for key, _ := range swarmForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -27,8 +27,13 @@ import (
 
 type MongodbV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	AccountsGetter
+	AuditPoliciesGetter
 	InstancesGetter
+	ServerlessInstancesGetter
 	ShardingInstancesGetter
+	ShardingNetworkPrivateAddressesGetter
+	ShardingNetworkPublicAddressesGetter
 }
 
 // MongodbV1alpha1Client is used to interact with features provided by the mongodb.alicloud.kubeform.com group.
@@ -36,12 +41,32 @@ type MongodbV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *MongodbV1alpha1Client) Accounts(namespace string) AccountInterface {
+	return newAccounts(c, namespace)
+}
+
+func (c *MongodbV1alpha1Client) AuditPolicies(namespace string) AuditPolicyInterface {
+	return newAuditPolicies(c, namespace)
+}
+
 func (c *MongodbV1alpha1Client) Instances(namespace string) InstanceInterface {
 	return newInstances(c, namespace)
 }
 
+func (c *MongodbV1alpha1Client) ServerlessInstances(namespace string) ServerlessInstanceInterface {
+	return newServerlessInstances(c, namespace)
+}
+
 func (c *MongodbV1alpha1Client) ShardingInstances(namespace string) ShardingInstanceInterface {
 	return newShardingInstances(c, namespace)
+}
+
+func (c *MongodbV1alpha1Client) ShardingNetworkPrivateAddresses(namespace string) ShardingNetworkPrivateAddressInterface {
+	return newShardingNetworkPrivateAddresses(c, namespace)
+}
+
+func (c *MongodbV1alpha1Client) ShardingNetworkPublicAddresses(namespace string) ShardingNetworkPublicAddressInterface {
+	return newShardingNetworkPublicAddresses(c, namespace)
 }
 
 // NewForConfig creates a new MongodbV1alpha1Client for the given config.

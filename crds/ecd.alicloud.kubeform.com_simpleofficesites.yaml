@@ -58,6 +58,7 @@ spec:
               resource:
                 properties:
                   bandwidth:
+                    description: Deprecated
                     format: int64
                     type: integer
                   cenID:
@@ -73,6 +74,7 @@ spec:
                   enableCrossDesktopAccess:
                     type: boolean
                   enableInternetAccess:
+                    description: Deprecated
                     type: boolean
                   id:
                     type: string
@@ -90,6 +92,7 @@ spec:
               state:
                 properties:
                   bandwidth:
+                    description: Deprecated
                     format: int64
                     type: integer
                   cenID:
@@ -105,6 +108,7 @@ spec:
                   enableCrossDesktopAccess:
                     type: boolean
                   enableInternetAccess:
+                    description: Deprecated
                     type: boolean
                   id:
                     type: string

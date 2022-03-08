@@ -33,6 +33,10 @@ func (c *FakeSecurityV1alpha1) CenterGroups(namespace string) v1alpha1.CenterGro
 	return &FakeCenterGroups{c, namespace}
 }
 
+func (c *FakeSecurityV1alpha1) CenterServiceLinkedRoles(namespace string) v1alpha1.CenterServiceLinkedRoleInterface {
+	return &FakeCenterServiceLinkedRoles{c, namespace}
+}
+
 func (c *FakeSecurityV1alpha1) Groups(namespace string) v1alpha1.GroupInterface {
 	return &FakeGroups{c, namespace}
 }

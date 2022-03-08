@@ -28,7 +28,10 @@ import (
 type RdsV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AccountsGetter
+	BackupsGetter
+	CloneDbInstancesGetter
 	ParameterGroupsGetter
+	UpgradeDbInstancesGetter
 }
 
 // RdsV1alpha1Client is used to interact with features provided by the rds.alicloud.kubeform.com group.
@@ -40,8 +43,20 @@ func (c *RdsV1alpha1Client) Accounts(namespace string) AccountInterface {
 	return newAccounts(c, namespace)
 }
 
+func (c *RdsV1alpha1Client) Backups(namespace string) BackupInterface {
+	return newBackups(c, namespace)
+}
+
+func (c *RdsV1alpha1Client) CloneDbInstances(namespace string) CloneDbInstanceInterface {
+	return newCloneDbInstances(c, namespace)
+}
+
 func (c *RdsV1alpha1Client) ParameterGroups(namespace string) ParameterGroupInterface {
 	return newParameterGroups(c, namespace)
+}
+
+func (c *RdsV1alpha1Client) UpgradeDbInstances(namespace string) UpgradeDbInstanceInterface {
+	return newUpgradeDbInstances(c, namespace)
 }
 
 // NewForConfig creates a new RdsV1alpha1Client for the given config.

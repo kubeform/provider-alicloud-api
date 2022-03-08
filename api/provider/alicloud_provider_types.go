@@ -162,6 +162,9 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ECS endpoints.
 	// +optional
 	Ecs *string `json:"ecs,omitempty" tf:"ecs"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom edsuser endpoints.
+	// +optional
+	Edsuser *string `json:"edsuser,omitempty" tf:"edsuser"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ehpc endpoints.
 	// +optional
 	Ehpc *string `json:"ehpc,omitempty" tf:"ehpc"`
@@ -192,6 +195,9 @@ type AlicloudSpecEndpoints struct {
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom ga endpoints.
 	// +optional
 	Ga *string `json:"ga,omitempty" tf:"ga"`
+	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom gaplus endpoints.
+	// +optional
+	Gaplus *string `json:"gaplus,omitempty" tf:"gaplus"`
 	// Use this to override the default endpoint URL constructed from the `region`. It's typically used to connect to custom gds endpoints.
 	// +optional
 	Gds *string `json:"gds,omitempty" tf:"gds"`
@@ -371,6 +377,9 @@ type AlicloudSpec struct {
 	// Use this to mark a terraform configuration file source.
 	// +optional
 	ConfigurationSource *string `json:"configurationSource,omitempty" tf:"configuration_source"`
+	// The URI of sidecar credentials service.
+	// +optional
+	CredentialsURI *string `json:"credentialsURI,omitempty" tf:"credentials_uri"`
 	// The RAM Role Name attached on a ECS instance for API operations. You can retrieve this from the 'Access Control' section of the Alibaba Cloud console.
 	// +optional
 	EcsRoleName *string `json:"ecsRoleName,omitempty" tf:"ecs_role_name"`

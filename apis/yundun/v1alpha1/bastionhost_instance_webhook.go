@@ -88,7 +88,7 @@ func (r *BastionhostInstance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range bastionhostinstanceForceNewList {
+	for key, _ := range bastionhostinstanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

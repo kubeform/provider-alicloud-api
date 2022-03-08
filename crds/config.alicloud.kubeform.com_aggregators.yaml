@@ -121,7 +121,6 @@ spec:
                         type: integer
                     type: object
                 required:
-                - aggregatorAccounts
                 - aggregatorName
                 - description
                 type: object
@@ -191,7 +190,6 @@ spec:
                         type: integer
                     type: object
                 required:
-                - aggregatorAccounts
                 - aggregatorName
                 - description
                 type: object

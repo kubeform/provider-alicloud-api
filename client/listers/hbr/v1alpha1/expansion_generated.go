@@ -50,6 +50,14 @@ type OssBackupPlanListerExpansion interface{}
 // OssBackupPlanNamespaceLister.
 type OssBackupPlanNamespaceListerExpansion interface{}
 
+// ReplicationVaultListerExpansion allows custom methods to be added to
+// ReplicationVaultLister.
+type ReplicationVaultListerExpansion interface{}
+
+// ReplicationVaultNamespaceListerExpansion allows custom methods to be added to
+// ReplicationVaultNamespaceLister.
+type ReplicationVaultNamespaceListerExpansion interface{}
+
 // RestoreJobListerExpansion allows custom methods to be added to
 // RestoreJobLister.
 type RestoreJobListerExpansion interface{}
@@ -57,6 +65,14 @@ type RestoreJobListerExpansion interface{}
 // RestoreJobNamespaceListerExpansion allows custom methods to be added to
 // RestoreJobNamespaceLister.
 type RestoreJobNamespaceListerExpansion interface{}
+
+// ServerBackupPlanListerExpansion allows custom methods to be added to
+// ServerBackupPlanLister.
+type ServerBackupPlanListerExpansion interface{}
+
+// ServerBackupPlanNamespaceListerExpansion allows custom methods to be added to
+// ServerBackupPlanNamespaceLister.
+type ServerBackupPlanNamespaceListerExpansion interface{}
 
 // VaultListerExpansion allows custom methods to be added to
 // VaultLister.

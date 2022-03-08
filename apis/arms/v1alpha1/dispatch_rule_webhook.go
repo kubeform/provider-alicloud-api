@@ -86,7 +86,7 @@ func (r *DispatchRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range dispatchruleForceNewList {
+	for key, _ := range dispatchruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

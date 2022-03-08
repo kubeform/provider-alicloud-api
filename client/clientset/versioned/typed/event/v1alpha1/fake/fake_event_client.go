@@ -41,6 +41,10 @@ func (c *FakeEventV1alpha1) BridgeRules(namespace string) v1alpha1.BridgeRuleInt
 	return &FakeBridgeRules{c, namespace}
 }
 
+func (c *FakeEventV1alpha1) BridgeServiceLinkedRoles(namespace string) v1alpha1.BridgeServiceLinkedRoleInterface {
+	return &FakeBridgeServiceLinkedRoles{c, namespace}
+}
+
 func (c *FakeEventV1alpha1) BridgeSlrs(namespace string) v1alpha1.BridgeSlrInterface {
 	return &FakeBridgeSlrs{c, namespace}
 }

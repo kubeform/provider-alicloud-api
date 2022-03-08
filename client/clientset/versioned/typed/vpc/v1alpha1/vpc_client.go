@@ -27,12 +27,22 @@ import (
 
 type VpcV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	BgpGroupsGetter
+	BgpNetworksGetter
+	BgpPeersGetter
 	DhcpOptionsSetsGetter
+	DhcpOptionsSetAttachmentsGetter
 	FlowLogsGetter
+	Ipv6EgressRulesGetter
+	Ipv6GatewaysGetter
+	Ipv6InternetBandwidthsGetter
 	NatIPsGetter
 	NatIPCIDRsGetter
 	TrafficMirrorFiltersGetter
 	TrafficMirrorFilterEgressRulesGetter
+	TrafficMirrorFilterIngressRulesGetter
+	TrafficMirrorSessionsGetter
+	VbrHasGetter
 	VpcsGetter
 }
 
@@ -41,12 +51,40 @@ type VpcV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *VpcV1alpha1Client) BgpGroups(namespace string) BgpGroupInterface {
+	return newBgpGroups(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) BgpNetworks(namespace string) BgpNetworkInterface {
+	return newBgpNetworks(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) BgpPeers(namespace string) BgpPeerInterface {
+	return newBgpPeers(c, namespace)
+}
+
 func (c *VpcV1alpha1Client) DhcpOptionsSets(namespace string) DhcpOptionsSetInterface {
 	return newDhcpOptionsSets(c, namespace)
 }
 
+func (c *VpcV1alpha1Client) DhcpOptionsSetAttachments(namespace string) DhcpOptionsSetAttachmentInterface {
+	return newDhcpOptionsSetAttachments(c, namespace)
+}
+
 func (c *VpcV1alpha1Client) FlowLogs(namespace string) FlowLogInterface {
 	return newFlowLogs(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) Ipv6EgressRules(namespace string) Ipv6EgressRuleInterface {
+	return newIpv6EgressRules(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) Ipv6Gateways(namespace string) Ipv6GatewayInterface {
+	return newIpv6Gateways(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) Ipv6InternetBandwidths(namespace string) Ipv6InternetBandwidthInterface {
+	return newIpv6InternetBandwidths(c, namespace)
 }
 
 func (c *VpcV1alpha1Client) NatIPs(namespace string) NatIPInterface {
@@ -63,6 +101,18 @@ func (c *VpcV1alpha1Client) TrafficMirrorFilters(namespace string) TrafficMirror
 
 func (c *VpcV1alpha1Client) TrafficMirrorFilterEgressRules(namespace string) TrafficMirrorFilterEgressRuleInterface {
 	return newTrafficMirrorFilterEgressRules(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) TrafficMirrorFilterIngressRules(namespace string) TrafficMirrorFilterIngressRuleInterface {
+	return newTrafficMirrorFilterIngressRules(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) TrafficMirrorSessions(namespace string) TrafficMirrorSessionInterface {
+	return newTrafficMirrorSessions(c, namespace)
+}
+
+func (c *VpcV1alpha1Client) VbrHas(namespace string) VbrHaInterface {
+	return newVbrHas(c, namespace)
 }
 
 func (c *VpcV1alpha1Client) Vpcs(namespace string) VpcInterface {

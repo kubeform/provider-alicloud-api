@@ -86,7 +86,7 @@ func (r *SsoDirectory) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range ssodirectoryForceNewList {
+	for key, _ := range ssodirectoryForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

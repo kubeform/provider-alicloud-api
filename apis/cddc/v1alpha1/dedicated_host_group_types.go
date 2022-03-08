@@ -70,8 +70,10 @@ type DedicatedHostGroupSpecResource struct {
 	// +optional
 	HostReplacePolicy *string `json:"hostReplacePolicy,omitempty" tf:"host_replace_policy"`
 	// +optional
-	MemAllocationRatio *int64  `json:"memAllocationRatio,omitempty" tf:"mem_allocation_ratio"`
-	VpcID              *string `json:"vpcID" tf:"vpc_id"`
+	MemAllocationRatio *int64 `json:"memAllocationRatio,omitempty" tf:"mem_allocation_ratio"`
+	// +optional
+	OpenPermission *bool   `json:"openPermission,omitempty" tf:"open_permission"`
+	VpcID          *string `json:"vpcID" tf:"vpc_id"`
 }
 
 type DedicatedHostGroupStatus struct {

@@ -90,7 +90,7 @@ func (r *ScalingConfiguration) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range scalingconfigurationForceNewList {
+	for key, _ := range scalingconfigurationForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

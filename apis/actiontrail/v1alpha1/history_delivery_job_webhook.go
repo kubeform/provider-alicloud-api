@@ -88,7 +88,7 @@ func (r *HistoryDeliveryJob) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range historydeliveryjobForceNewList {
+	for key, _ := range historydeliveryjobForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

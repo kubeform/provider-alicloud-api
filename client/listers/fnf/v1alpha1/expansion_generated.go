@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// ExecutionListerExpansion allows custom methods to be added to
+// ExecutionLister.
+type ExecutionListerExpansion interface{}
+
+// ExecutionNamespaceListerExpansion allows custom methods to be added to
+// ExecutionNamespaceLister.
+type ExecutionNamespaceListerExpansion interface{}
+
 // FlowListerExpansion allows custom methods to be added to
 // FlowLister.
 type FlowListerExpansion interface{}

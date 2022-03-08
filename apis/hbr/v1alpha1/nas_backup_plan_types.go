@@ -59,28 +59,19 @@ type NasBackupPlanSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	BackupType *string `json:"backupType" tf:"backup_type"`
-	CreateTime *string `json:"createTime" tf:"create_time"`
 	// +optional
-	Detail *string `json:"detail,omitempty" tf:"detail"`
+	// Deprecated
+	CreateTime *string `json:"createTime,omitempty" tf:"create_time"`
 	// +optional
-	Disabled *bool `json:"disabled,omitempty" tf:"disabled"`
-	// +optional
-	Exclude      *string `json:"exclude,omitempty" tf:"exclude"`
-	FileSystemID *string `json:"fileSystemID" tf:"file_system_id"`
-	// +optional
-	Include           *string `json:"include,omitempty" tf:"include"`
+	Disabled          *bool   `json:"disabled,omitempty" tf:"disabled"`
+	FileSystemID      *string `json:"fileSystemID" tf:"file_system_id"`
 	NasBackupPlanName *string `json:"nasBackupPlanName" tf:"nas_backup_plan_name"`
 	// +optional
 	Options   *string  `json:"options,omitempty" tf:"options"`
 	Path      []string `json:"path" tf:"path"`
 	Retention *string  `json:"retention" tf:"retention"`
 	Schedule  *string  `json:"schedule" tf:"schedule"`
-	// +optional
-	SpeedLimit *string `json:"speedLimit,omitempty" tf:"speed_limit"`
-	// +optional
-	// Deprecated
-	UpdatePaths *bool   `json:"updatePaths,omitempty" tf:"update_paths"`
-	VaultID     *string `json:"vaultID" tf:"vault_id"`
+	VaultID   *string  `json:"vaultID" tf:"vault_id"`
 }
 
 type NasBackupPlanStatus struct {

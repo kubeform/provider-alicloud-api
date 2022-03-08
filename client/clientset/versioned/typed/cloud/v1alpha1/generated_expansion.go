@@ -30,7 +30,11 @@ type FirewallControlPolicyOrderExpansion interface{}
 
 type FirewallInstanceExpansion interface{}
 
+type SsoAccessAssignmentExpansion interface{}
+
 type SsoAccessConfigurationExpansion interface{}
+
+type SsoAccessConfigurationProvisioningExpansion interface{}
 
 type SsoDirectoryExpansion interface{}
 
@@ -40,6 +44,22 @@ type SsoScimServerCredentialExpansion interface{}
 
 type SsoUserExpansion interface{}
 
+type SsoUserAttachmentExpansion interface{}
+
+type StorageGatewayExpressSyncExpansion interface{}
+
+type StorageGatewayExpressSyncShareAttachmentExpansion interface{}
+
 type StorageGatewayGatewayExpansion interface{}
+
+type StorageGatewayGatewayBlockVolumeExpansion interface{}
+
+type StorageGatewayGatewayCacheDiskExpansion interface{}
+
+type StorageGatewayGatewayFileShareExpansion interface{}
+
+type StorageGatewayGatewayLoggingExpansion interface{}
+
+type StorageGatewayGatewaySmbUserExpansion interface{}
 
 type StorageGatewayStorageBundleExpansion interface{}

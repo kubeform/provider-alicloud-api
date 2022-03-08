@@ -41,6 +41,15 @@ type HouseDbCluster struct {
 	Status            HouseDbClusterStatus `json:"status,omitempty"`
 }
 
+type HouseDbClusterSpecDbClusterAccessWhiteList struct {
+	// +optional
+	DbClusterIPArrayAttribute *string `json:"dbClusterIPArrayAttribute,omitempty" tf:"db_cluster_ip_array_attribute"`
+	// +optional
+	DbClusterIPArrayName *string `json:"dbClusterIPArrayName,omitempty" tf:"db_cluster_ip_array_name"`
+	// +optional
+	SecurityIPList *string `json:"securityIPList,omitempty" tf:"security_ip_list"`
+}
+
 type HouseDbClusterSpec struct {
 	State *HouseDbClusterSpecResource `json:"state,omitempty" tf:"-"`
 
@@ -56,10 +65,14 @@ type HouseDbClusterSpec struct {
 }
 
 type HouseDbClusterSpecResource struct {
+	Timeouts *base.ResourceTimeout `json:"timeouts,omitempty" tf:"timeouts"`
+
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
-	Category       *string `json:"category" tf:"category"`
-	DbClusterClass *string `json:"dbClusterClass" tf:"db_cluster_class"`
+	Category *string `json:"category" tf:"category"`
+	// +optional
+	DbClusterAccessWhiteList []HouseDbClusterSpecDbClusterAccessWhiteList `json:"dbClusterAccessWhiteList,omitempty" tf:"db_cluster_access_white_list"`
+	DbClusterClass           *string                                      `json:"dbClusterClass" tf:"db_cluster_class"`
 	// +optional
 	DbClusterDescription *string `json:"dbClusterDescription,omitempty" tf:"db_cluster_description"`
 	DbClusterNetworkType *string `json:"dbClusterNetworkType" tf:"db_cluster_network_type"`

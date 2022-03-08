@@ -58,6 +58,7 @@ spec:
               resource:
                 properties:
                   associateVpcs:
+                    description: Deprecated
                     items:
                       properties:
                         associateStatus:
@@ -124,6 +125,7 @@ spec:
               state:
                 properties:
                   associateVpcs:
+                    description: Deprecated
                     items:
                       properties:
                         associateStatus:

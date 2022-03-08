@@ -88,7 +88,7 @@ func (r *SurveillanceSystemGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range surveillancesystemgroupForceNewList {
+	for key, _ := range surveillancesystemgroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

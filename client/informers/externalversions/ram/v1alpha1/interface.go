@@ -50,6 +50,8 @@ type Interface interface {
 	RolePolicyAttachments() RolePolicyAttachmentInformer
 	// SamlProviders returns a SamlProviderInformer.
 	SamlProviders() SamlProviderInformer
+	// SecurityPreferences returns a SecurityPreferenceInformer.
+	SecurityPreferences() SecurityPreferenceInformer
 	// Users returns a UserInformer.
 	Users() UserInformer
 	// UserPolicyAttachments returns a UserPolicyAttachmentInformer.
@@ -130,6 +132,11 @@ func (v *version) RolePolicyAttachments() RolePolicyAttachmentInformer {
 // SamlProviders returns a SamlProviderInformer.
 func (v *version) SamlProviders() SamlProviderInformer {
 	return &samlProviderInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SecurityPreferences returns a SecurityPreferenceInformer.
+func (v *version) SecurityPreferences() SecurityPreferenceInformer {
+	return &securityPreferenceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Users returns a UserInformer.

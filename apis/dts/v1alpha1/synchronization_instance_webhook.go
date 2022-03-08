@@ -47,7 +47,6 @@ var synchronizationinstanceForceNewList = map[string]bool{
 	"/payment_type":                     true,
 	"/source_endpoint_engine_name":      true,
 	"/source_endpoint_region":           true,
-	"/sync_architecture":                true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -93,7 +92,7 @@ func (r *SynchronizationInstance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range synchronizationinstanceForceNewList {
+	for key, _ := range synchronizationinstanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

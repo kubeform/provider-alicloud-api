@@ -110,6 +110,8 @@ spec:
                     type: array
                   preferredBackupTime:
                     type: string
+                  releasedKeepPolicy:
+                    type: string
                   retentionPeriod:
                     description: Deprecated
                     format: int64
@@ -171,6 +173,8 @@ spec:
                       type: string
                     type: array
                   preferredBackupTime:
+                    type: string
+                  releasedKeepPolicy:
                     type: string
                   retentionPeriod:
                     description: Deprecated

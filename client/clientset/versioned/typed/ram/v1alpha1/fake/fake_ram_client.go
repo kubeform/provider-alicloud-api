@@ -81,6 +81,10 @@ func (c *FakeRamV1alpha1) SamlProviders(namespace string) v1alpha1.SamlProviderI
 	return &FakeSamlProviders{c, namespace}
 }
 
+func (c *FakeRamV1alpha1) SecurityPreferences(namespace string) v1alpha1.SecurityPreferenceInterface {
+	return &FakeSecurityPreferences{c, namespace}
+}
+
 func (c *FakeRamV1alpha1) Users(namespace string) v1alpha1.UserInterface {
 	return &FakeUsers{c, namespace}
 }

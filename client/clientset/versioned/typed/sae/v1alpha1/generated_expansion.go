@@ -20,6 +20,8 @@ package v1alpha1
 
 type ApplicationExpansion interface{}
 
+type ApplicationScalingRuleExpansion interface{}
+
 type ConfigMapExpansion interface{}
 
 type IngressExpansion interface{}

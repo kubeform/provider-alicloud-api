@@ -59,7 +59,9 @@ type ConsumerGroupSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	ConsumerID *string `json:"consumerID" tf:"consumer_id"`
-	InstanceID *string `json:"instanceID" tf:"instance_id"`
+	// +optional
+	Description *string `json:"description,omitempty" tf:"description"`
+	InstanceID  *string `json:"instanceID" tf:"instance_id"`
 	// +optional
 	Tags map[string]string `json:"tags,omitempty" tf:"tags"`
 }

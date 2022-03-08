@@ -61,23 +61,25 @@ spec:
                     type: string
                   directoryID:
                     type: string
+                  displayName:
+                    type: string
+                  email:
+                    type: string
+                  firstName:
+                    type: string
                   id:
+                    type: string
+                  lastName:
                     type: string
                   status:
                     type: string
                   userID:
                     type: string
+                  userName:
+                    type: string
                 required:
                 - directoryID
-                type: object
-              secretRef:
-                description: LocalObjectReference contains enough information to let
-                  you locate the referenced object inside the same namespace.
-                properties:
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-                      TODO: Add other useful fields. apiVersion, kind, uid?'
-                    type: string
+                - userName
                 type: object
               state:
                 properties:
@@ -85,14 +87,25 @@ spec:
                     type: string
                   directoryID:
                     type: string
+                  displayName:
+                    type: string
+                  email:
+                    type: string
+                  firstName:
+                    type: string
                   id:
+                    type: string
+                  lastName:
                     type: string
                   status:
                     type: string
                   userID:
                     type: string
+                  userName:
+                    type: string
                 required:
                 - directoryID
+                - userName
                 type: object
               terminationPolicy:
                 enum:

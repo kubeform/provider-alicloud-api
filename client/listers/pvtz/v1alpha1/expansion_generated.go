@@ -18,6 +18,30 @@ limitations under the License.
 
 package v1alpha1
 
+// EndpointListerExpansion allows custom methods to be added to
+// EndpointLister.
+type EndpointListerExpansion interface{}
+
+// EndpointNamespaceListerExpansion allows custom methods to be added to
+// EndpointNamespaceLister.
+type EndpointNamespaceListerExpansion interface{}
+
+// RuleListerExpansion allows custom methods to be added to
+// RuleLister.
+type RuleListerExpansion interface{}
+
+// RuleNamespaceListerExpansion allows custom methods to be added to
+// RuleNamespaceLister.
+type RuleNamespaceListerExpansion interface{}
+
+// RuleAttachmentListerExpansion allows custom methods to be added to
+// RuleAttachmentLister.
+type RuleAttachmentListerExpansion interface{}
+
+// RuleAttachmentNamespaceListerExpansion allows custom methods to be added to
+// RuleAttachmentNamespaceLister.
+type RuleAttachmentNamespaceListerExpansion interface{}
+
 // UserVpcAuthorizationListerExpansion allows custom methods to be added to
 // UserVpcAuthorizationLister.
 type UserVpcAuthorizationListerExpansion interface{}

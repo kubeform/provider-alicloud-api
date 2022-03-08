@@ -22,6 +22,18 @@ type AccessGroupExpansion interface{}
 
 type AccessRuleExpansion interface{}
 
+type AutoSnapshotPolicyExpansion interface{}
+
+type DataFlowExpansion interface{}
+
 type FileSystemExpansion interface{}
 
+type FilesetExpansion interface{}
+
+type LifecyclePolicyExpansion interface{}
+
 type MountTargetExpansion interface{}
+
+type RecycleBinExpansion interface{}
+
+type SnapshotExpansion interface{}

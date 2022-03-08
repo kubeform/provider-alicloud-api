@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// ConsumerChannelListerExpansion allows custom methods to be added to
+// ConsumerChannelLister.
+type ConsumerChannelListerExpansion interface{}
+
+// ConsumerChannelNamespaceListerExpansion allows custom methods to be added to
+// ConsumerChannelNamespaceLister.
+type ConsumerChannelNamespaceListerExpansion interface{}
+
 // JobMonitorRuleListerExpansion allows custom methods to be added to
 // JobMonitorRuleLister.
 type JobMonitorRuleListerExpansion interface{}
@@ -25,6 +33,22 @@ type JobMonitorRuleListerExpansion interface{}
 // JobMonitorRuleNamespaceListerExpansion allows custom methods to be added to
 // JobMonitorRuleNamespaceLister.
 type JobMonitorRuleNamespaceListerExpansion interface{}
+
+// MigrationInstanceListerExpansion allows custom methods to be added to
+// MigrationInstanceLister.
+type MigrationInstanceListerExpansion interface{}
+
+// MigrationInstanceNamespaceListerExpansion allows custom methods to be added to
+// MigrationInstanceNamespaceLister.
+type MigrationInstanceNamespaceListerExpansion interface{}
+
+// MigrationJobListerExpansion allows custom methods to be added to
+// MigrationJobLister.
+type MigrationJobListerExpansion interface{}
+
+// MigrationJobNamespaceListerExpansion allows custom methods to be added to
+// MigrationJobNamespaceLister.
+type MigrationJobNamespaceListerExpansion interface{}
 
 // SubscriptionJobListerExpansion allows custom methods to be added to
 // SubscriptionJobLister.

@@ -92,7 +92,7 @@ func (r *BandwidthPackage) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range bandwidthpackageForceNewList {
+	for key, _ := range bandwidthpackageForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

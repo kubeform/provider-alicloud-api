@@ -29,6 +29,18 @@ type FakePvtzV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakePvtzV1alpha1) Endpoints(namespace string) v1alpha1.EndpointInterface {
+	return &FakeEndpoints{c, namespace}
+}
+
+func (c *FakePvtzV1alpha1) Rules(namespace string) v1alpha1.RuleInterface {
+	return &FakeRules{c, namespace}
+}
+
+func (c *FakePvtzV1alpha1) RuleAttachments(namespace string) v1alpha1.RuleAttachmentInterface {
+	return &FakeRuleAttachments{c, namespace}
+}
+
 func (c *FakePvtzV1alpha1) UserVpcAuthorizations(namespace string) v1alpha1.UserVpcAuthorizationInterface {
 	return &FakeUserVpcAuthorizations{c, namespace}
 }

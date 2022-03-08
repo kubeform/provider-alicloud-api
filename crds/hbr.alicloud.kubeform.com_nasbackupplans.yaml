@@ -60,18 +60,13 @@ spec:
                   backupType:
                     type: string
                   createTime:
-                    type: string
-                  detail:
+                    description: Deprecated
                     type: string
                   disabled:
                     type: boolean
-                  exclude:
-                    type: string
                   fileSystemID:
                     type: string
                   id:
-                    type: string
-                  include:
                     type: string
                   nasBackupPlanName:
                     type: string
@@ -85,16 +80,10 @@ spec:
                     type: string
                   schedule:
                     type: string
-                  speedLimit:
-                    type: string
-                  updatePaths:
-                    description: Deprecated
-                    type: boolean
                   vaultID:
                     type: string
                 required:
                 - backupType
-                - createTime
                 - fileSystemID
                 - nasBackupPlanName
                 - path
@@ -107,18 +96,13 @@ spec:
                   backupType:
                     type: string
                   createTime:
-                    type: string
-                  detail:
+                    description: Deprecated
                     type: string
                   disabled:
                     type: boolean
-                  exclude:
-                    type: string
                   fileSystemID:
                     type: string
                   id:
-                    type: string
-                  include:
                     type: string
                   nasBackupPlanName:
                     type: string
@@ -132,16 +116,10 @@ spec:
                     type: string
                   schedule:
                     type: string
-                  speedLimit:
-                    type: string
-                  updatePaths:
-                    description: Deprecated
-                    type: boolean
                   vaultID:
                     type: string
                 required:
                 - backupType
-                - createTime
                 - fileSystemID
                 - nasBackupPlanName
                 - path

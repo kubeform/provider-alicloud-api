@@ -89,7 +89,7 @@ func (r *MetricRuleTemplate) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range metricruletemplateForceNewList {
+	for key, _ := range metricruletemplateForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

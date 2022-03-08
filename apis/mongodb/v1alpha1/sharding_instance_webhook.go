@@ -42,12 +42,11 @@ func (r *ShardingInstance) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &ShardingInstance{}
 
 var shardinginstanceForceNewList = map[string]bool{
-	"/engine_version":       true,
-	"/instance_charge_type": true,
-	"/storage_engine":       true,
-	"/tde_status":           true,
-	"/vswitch_id":           true,
-	"/zone_id":              true,
+	"/engine_version": true,
+	"/storage_engine": true,
+	"/tde_status":     true,
+	"/vswitch_id":     true,
+	"/zone_id":        true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -93,7 +92,7 @@ func (r *ShardingInstance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range shardinginstanceForceNewList {
+	for key, _ := range shardinginstanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

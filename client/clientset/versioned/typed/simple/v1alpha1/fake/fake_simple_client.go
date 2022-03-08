@@ -29,8 +29,20 @@ type FakeSimpleV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeSimpleV1alpha1) ApplicationServerCustomImages(namespace string) v1alpha1.ApplicationServerCustomImageInterface {
+	return &FakeApplicationServerCustomImages{c, namespace}
+}
+
+func (c *FakeSimpleV1alpha1) ApplicationServerFirewallRules(namespace string) v1alpha1.ApplicationServerFirewallRuleInterface {
+	return &FakeApplicationServerFirewallRules{c, namespace}
+}
+
 func (c *FakeSimpleV1alpha1) ApplicationServerInstances(namespace string) v1alpha1.ApplicationServerInstanceInterface {
 	return &FakeApplicationServerInstances{c, namespace}
+}
+
+func (c *FakeSimpleV1alpha1) ApplicationServerSnapshots(namespace string) v1alpha1.ApplicationServerSnapshotInterface {
+	return &FakeApplicationServerSnapshots{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

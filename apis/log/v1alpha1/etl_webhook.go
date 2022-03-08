@@ -89,7 +89,7 @@ func (r *Etl) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range etlForceNewList {
+	for key, _ := range etlForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

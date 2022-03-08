@@ -88,7 +88,7 @@ func (r *DomainAttachment) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range domainattachmentForceNewList {
+	for key, _ := range domainattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

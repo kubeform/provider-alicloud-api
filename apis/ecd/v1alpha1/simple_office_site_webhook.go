@@ -42,11 +42,9 @@ func (r *SimpleOfficeSite) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &SimpleOfficeSite{}
 
 var simpleofficesiteForceNewList = map[string]bool{
-	"/bandwidth":              true,
-	"/cen_id":                 true,
-	"/cidr_block":             true,
-	"/enable_admin_access":    true,
-	"/enable_internet_access": true,
+	"/cen_id":              true,
+	"/cidr_block":          true,
+	"/enable_admin_access": true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -92,7 +90,7 @@ func (r *SimpleOfficeSite) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range simpleofficesiteForceNewList {
+	for key, _ := range simpleofficesiteForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

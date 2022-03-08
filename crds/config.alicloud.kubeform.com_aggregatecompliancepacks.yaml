@@ -63,7 +63,15 @@ spec:
                     type: string
                   compliancePackTemplateID:
                     type: string
+                  configRuleIDS:
+                    items:
+                      properties:
+                        configRuleID:
+                          type: string
+                      type: object
+                    type: array
                   configRules:
+                    description: Deprecated
                     items:
                       properties:
                         configRuleParameters:
@@ -131,8 +139,6 @@ spec:
                 required:
                 - aggregateCompliancePackName
                 - aggregatorID
-                - compliancePackTemplateID
-                - configRules
                 - description
                 - riskLevel
                 type: object
@@ -144,7 +150,15 @@ spec:
                     type: string
                   compliancePackTemplateID:
                     type: string
+                  configRuleIDS:
+                    items:
+                      properties:
+                        configRuleID:
+                          type: string
+                      type: object
+                    type: array
                   configRules:
+                    description: Deprecated
                     items:
                       properties:
                         configRuleParameters:
@@ -212,8 +226,6 @@ spec:
                 required:
                 - aggregateCompliancePackName
                 - aggregatorID
-                - compliancePackTemplateID
-                - configRules
                 - description
                 - riskLevel
                 type: object

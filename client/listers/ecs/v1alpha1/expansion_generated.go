@@ -50,6 +50,14 @@ type DedicatedHostListerExpansion interface{}
 // DedicatedHostNamespaceLister.
 type DedicatedHostNamespaceListerExpansion interface{}
 
+// DedicatedHostClusterListerExpansion allows custom methods to be added to
+// DedicatedHostClusterLister.
+type DedicatedHostClusterListerExpansion interface{}
+
+// DedicatedHostClusterNamespaceListerExpansion allows custom methods to be added to
+// DedicatedHostClusterNamespaceLister.
+type DedicatedHostClusterNamespaceListerExpansion interface{}
+
 // DeploymentSetListerExpansion allows custom methods to be added to
 // DeploymentSetLister.
 type DeploymentSetListerExpansion interface{}
@@ -81,6 +89,14 @@ type HpcClusterListerExpansion interface{}
 // HpcClusterNamespaceListerExpansion allows custom methods to be added to
 // HpcClusterNamespaceLister.
 type HpcClusterNamespaceListerExpansion interface{}
+
+// ImageComponentListerExpansion allows custom methods to be added to
+// ImageComponentLister.
+type ImageComponentListerExpansion interface{}
+
+// ImageComponentNamespaceListerExpansion allows custom methods to be added to
+// ImageComponentNamespaceLister.
+type ImageComponentNamespaceListerExpansion interface{}
 
 // KeyPairListerExpansion allows custom methods to be added to
 // KeyPairLister.
@@ -122,6 +138,22 @@ type NetworkInterfaceAttachmentListerExpansion interface{}
 // NetworkInterfaceAttachmentNamespaceLister.
 type NetworkInterfaceAttachmentNamespaceListerExpansion interface{}
 
+// PrefixListListerExpansion allows custom methods to be added to
+// PrefixListLister.
+type PrefixListListerExpansion interface{}
+
+// PrefixListNamespaceListerExpansion allows custom methods to be added to
+// PrefixListNamespaceLister.
+type PrefixListNamespaceListerExpansion interface{}
+
+// SessionManagerStatusListerExpansion allows custom methods to be added to
+// SessionManagerStatusLister.
+type SessionManagerStatusListerExpansion interface{}
+
+// SessionManagerStatusNamespaceListerExpansion allows custom methods to be added to
+// SessionManagerStatusNamespaceLister.
+type SessionManagerStatusNamespaceListerExpansion interface{}
+
 // SnapshotListerExpansion allows custom methods to be added to
 // SnapshotLister.
 type SnapshotListerExpansion interface{}
@@ -129,3 +161,11 @@ type SnapshotListerExpansion interface{}
 // SnapshotNamespaceListerExpansion allows custom methods to be added to
 // SnapshotNamespaceLister.
 type SnapshotNamespaceListerExpansion interface{}
+
+// StorageCapacityUnitListerExpansion allows custom methods to be added to
+// StorageCapacityUnitLister.
+type StorageCapacityUnitListerExpansion interface{}
+
+// StorageCapacityUnitNamespaceListerExpansion allows custom methods to be added to
+// StorageCapacityUnitNamespaceLister.
+type StorageCapacityUnitNamespaceListerExpansion interface{}

@@ -90,7 +90,7 @@ func (r *EndpointAddress) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range endpointaddressForceNewList {
+	for key, _ := range endpointaddressForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

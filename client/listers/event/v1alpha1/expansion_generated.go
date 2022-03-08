@@ -42,6 +42,14 @@ type BridgeRuleListerExpansion interface{}
 // BridgeRuleNamespaceLister.
 type BridgeRuleNamespaceListerExpansion interface{}
 
+// BridgeServiceLinkedRoleListerExpansion allows custom methods to be added to
+// BridgeServiceLinkedRoleLister.
+type BridgeServiceLinkedRoleListerExpansion interface{}
+
+// BridgeServiceLinkedRoleNamespaceListerExpansion allows custom methods to be added to
+// BridgeServiceLinkedRoleNamespaceLister.
+type BridgeServiceLinkedRoleNamespaceListerExpansion interface{}
+
 // BridgeSlrListerExpansion allows custom methods to be added to
 // BridgeSlrLister.
 type BridgeSlrListerExpansion interface{}

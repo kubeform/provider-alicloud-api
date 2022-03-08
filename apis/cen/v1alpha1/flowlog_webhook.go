@@ -90,7 +90,7 @@ func (r *Flowlog) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range flowlogForceNewList {
+	for key, _ := range flowlogForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

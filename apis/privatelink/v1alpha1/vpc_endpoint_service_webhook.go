@@ -88,7 +88,7 @@ func (r *VpcEndpointService) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range vpcendpointserviceForceNewList {
+	for key, _ := range vpcendpointserviceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -28,6 +28,9 @@ import (
 type DbfsV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	InstancesGetter
+	InstanceAttachmentsGetter
+	ServiceLinkedRolesGetter
+	SnapshotsGetter
 }
 
 // DbfsV1alpha1Client is used to interact with features provided by the dbfs.alicloud.kubeform.com group.
@@ -37,6 +40,18 @@ type DbfsV1alpha1Client struct {
 
 func (c *DbfsV1alpha1Client) Instances(namespace string) InstanceInterface {
 	return newInstances(c, namespace)
+}
+
+func (c *DbfsV1alpha1Client) InstanceAttachments(namespace string) InstanceAttachmentInterface {
+	return newInstanceAttachments(c, namespace)
+}
+
+func (c *DbfsV1alpha1Client) ServiceLinkedRoles(namespace string) ServiceLinkedRoleInterface {
+	return newServiceLinkedRoles(c, namespace)
+}
+
+func (c *DbfsV1alpha1Client) Snapshots(namespace string) SnapshotInterface {
+	return newSnapshots(c, namespace)
 }
 
 // NewForConfig creates a new DbfsV1alpha1Client for the given config.

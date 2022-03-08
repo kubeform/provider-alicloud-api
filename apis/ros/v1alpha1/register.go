@@ -62,8 +62,12 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&StackList{},
 		&StackGroup{},
 		&StackGroupList{},
+		&StackInstance{},
+		&StackInstanceList{},
 		&Template{},
 		&TemplateList{},
+		&TemplateScratch{},
+		&TemplateScratchList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

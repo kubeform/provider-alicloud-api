@@ -43,7 +43,6 @@ var _ webhook.Validator = &NasBackupPlan{}
 
 var nasbackupplanForceNewList = map[string]bool{
 	"/backup_type":    true,
-	"/create_time":    true,
 	"/file_system_id": true,
 	"/vault_id":       true,
 }
@@ -91,7 +90,7 @@ func (r *NasBackupPlan) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range nasbackupplanForceNewList {
+	for key, _ := range nasbackupplanForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

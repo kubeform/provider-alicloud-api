@@ -90,7 +90,7 @@ func (r *FunctionAsyncInvokeConfig) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range functionasyncinvokeconfigForceNewList {
+	for key, _ := range functionasyncinvokeconfigForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

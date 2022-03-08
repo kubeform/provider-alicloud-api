@@ -62,6 +62,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&ImageCacheList{},
 		&OpenapiImageCache{},
 		&OpenapiImageCacheList{},
+		&VirtualNode{},
+		&VirtualNodeList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

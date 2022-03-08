@@ -24,6 +24,12 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Endpoints returns a EndpointInformer.
+	Endpoints() EndpointInformer
+	// Rules returns a RuleInformer.
+	Rules() RuleInformer
+	// RuleAttachments returns a RuleAttachmentInformer.
+	RuleAttachments() RuleAttachmentInformer
 	// UserVpcAuthorizations returns a UserVpcAuthorizationInformer.
 	UserVpcAuthorizations() UserVpcAuthorizationInformer
 	// Zones returns a ZoneInformer.
@@ -43,6 +49,21 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// Endpoints returns a EndpointInformer.
+func (v *version) Endpoints() EndpointInformer {
+	return &endpointInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Rules returns a RuleInformer.
+func (v *version) Rules() RuleInformer {
+	return &ruleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// RuleAttachments returns a RuleAttachmentInformer.
+func (v *version) RuleAttachments() RuleAttachmentInformer {
+	return &ruleAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // UserVpcAuthorizations returns a UserVpcAuthorizationInformer.

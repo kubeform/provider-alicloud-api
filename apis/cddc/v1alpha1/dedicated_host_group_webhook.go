@@ -42,8 +42,9 @@ func (r *DedicatedHostGroup) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &DedicatedHostGroup{}
 
 var dedicatedhostgroupForceNewList = map[string]bool{
-	"/engine": true,
-	"/vpc_id": true,
+	"/engine":          true,
+	"/open_permission": true,
+	"/vpc_id":          true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -89,7 +90,7 @@ func (r *DedicatedHostGroup) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range dedicatedhostgroupForceNewList {
+	for key, _ := range dedicatedhostgroupForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

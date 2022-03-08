@@ -33,8 +33,20 @@ func (c *FakeRdsV1alpha1) Accounts(namespace string) v1alpha1.AccountInterface {
 	return &FakeAccounts{c, namespace}
 }
 
+func (c *FakeRdsV1alpha1) Backups(namespace string) v1alpha1.BackupInterface {
+	return &FakeBackups{c, namespace}
+}
+
+func (c *FakeRdsV1alpha1) CloneDbInstances(namespace string) v1alpha1.CloneDbInstanceInterface {
+	return &FakeCloneDbInstances{c, namespace}
+}
+
 func (c *FakeRdsV1alpha1) ParameterGroups(namespace string) v1alpha1.ParameterGroupInterface {
 	return &FakeParameterGroups{c, namespace}
+}
+
+func (c *FakeRdsV1alpha1) UpgradeDbInstances(namespace string) v1alpha1.UpgradeDbInstanceInterface {
+	return &FakeUpgradeDbInstances{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

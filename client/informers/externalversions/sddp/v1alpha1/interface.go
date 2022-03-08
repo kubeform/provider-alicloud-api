@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// Configs returns a ConfigInformer.
 	Configs() ConfigInformer
+	// DataLimits returns a DataLimitInformer.
+	DataLimits() DataLimitInformer
 	// Instances returns a InstanceInformer.
 	Instances() InstanceInformer
 	// Rules returns a RuleInformer.
@@ -46,6 +48,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Configs returns a ConfigInformer.
 func (v *version) Configs() ConfigInformer {
 	return &configInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// DataLimits returns a DataLimitInformer.
+func (v *version) DataLimits() DataLimitInformer {
+	return &dataLimitInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Instances returns a InstanceInformer.

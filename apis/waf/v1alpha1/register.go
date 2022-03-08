@@ -62,6 +62,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&DomainList{},
 		&Instance{},
 		&InstanceList{},
+		&ProtectionModule{},
+		&ProtectionModuleList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,

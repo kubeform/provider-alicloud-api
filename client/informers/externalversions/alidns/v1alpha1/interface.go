@@ -24,14 +24,24 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// AccessStrategies returns a AccessStrategyInformer.
+	AccessStrategies() AccessStrategyInformer
+	// AddressPools returns a AddressPoolInformer.
+	AddressPools() AddressPoolInformer
+	// CustomLines returns a CustomLineInformer.
+	CustomLines() CustomLineInformer
 	// Domains returns a DomainInformer.
 	Domains() DomainInformer
 	// DomainAttachments returns a DomainAttachmentInformer.
 	DomainAttachments() DomainAttachmentInformer
 	// DomainGroups returns a DomainGroupInformer.
 	DomainGroups() DomainGroupInformer
+	// GtmInstances returns a GtmInstanceInformer.
+	GtmInstances() GtmInstanceInformer
 	// Instances returns a InstanceInformer.
 	Instances() InstanceInformer
+	// MonitorConfigs returns a MonitorConfigInformer.
+	MonitorConfigs() MonitorConfigInformer
 	// Records returns a RecordInformer.
 	Records() RecordInformer
 }
@@ -45,6 +55,21 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// AccessStrategies returns a AccessStrategyInformer.
+func (v *version) AccessStrategies() AccessStrategyInformer {
+	return &accessStrategyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AddressPools returns a AddressPoolInformer.
+func (v *version) AddressPools() AddressPoolInformer {
+	return &addressPoolInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// CustomLines returns a CustomLineInformer.
+func (v *version) CustomLines() CustomLineInformer {
+	return &customLineInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Domains returns a DomainInformer.
@@ -62,9 +87,19 @@ func (v *version) DomainGroups() DomainGroupInformer {
 	return &domainGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// GtmInstances returns a GtmInstanceInformer.
+func (v *version) GtmInstances() GtmInstanceInformer {
+	return &gtmInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Instances returns a InstanceInformer.
 func (v *version) Instances() InstanceInformer {
 	return &instanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// MonitorConfigs returns a MonitorConfigInformer.
+func (v *version) MonitorConfigs() MonitorConfigInformer {
+	return &monitorConfigInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Records returns a RecordInformer.

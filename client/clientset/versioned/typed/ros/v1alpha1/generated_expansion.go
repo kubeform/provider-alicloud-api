@@ -24,4 +24,8 @@ type StackExpansion interface{}
 
 type StackGroupExpansion interface{}
 
+type StackInstanceExpansion interface{}
+
 type TemplateExpansion interface{}
+
+type TemplateScratchExpansion interface{}

@@ -41,6 +41,11 @@ type CompliancePack struct {
 	Status            CompliancePackStatus `json:"status,omitempty"`
 }
 
+type CompliancePackSpecConfigRuleIDS struct {
+	// +optional
+	ConfigRuleID *string `json:"configRuleID,omitempty" tf:"config_rule_id"`
+}
+
 type CompliancePackSpecConfigRulesConfigRuleParameters struct {
 	// +optional
 	ParameterName *string `json:"parameterName,omitempty" tf:"parameter_name"`
@@ -73,11 +78,16 @@ type CompliancePackSpecResource struct {
 
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
-	CompliancePackName       *string                         `json:"compliancePackName" tf:"compliance_pack_name"`
-	CompliancePackTemplateID *string                         `json:"compliancePackTemplateID" tf:"compliance_pack_template_id"`
-	ConfigRules              []CompliancePackSpecConfigRules `json:"configRules" tf:"config_rules"`
-	Description              *string                         `json:"description" tf:"description"`
-	RiskLevel                *int64                          `json:"riskLevel" tf:"risk_level"`
+	CompliancePackName *string `json:"compliancePackName" tf:"compliance_pack_name"`
+	// +optional
+	CompliancePackTemplateID *string `json:"compliancePackTemplateID,omitempty" tf:"compliance_pack_template_id"`
+	// +optional
+	ConfigRuleIDS []CompliancePackSpecConfigRuleIDS `json:"configRuleIDS,omitempty" tf:"config_rule_ids"`
+	// +optional
+	// Deprecated
+	ConfigRules []CompliancePackSpecConfigRules `json:"configRules,omitempty" tf:"config_rules"`
+	Description *string                         `json:"description" tf:"description"`
+	RiskLevel   *int64                          `json:"riskLevel" tf:"risk_level"`
 	// +optional
 	Status *string `json:"status,omitempty" tf:"status"`
 }

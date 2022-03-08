@@ -18,6 +18,12 @@ limitations under the License.
 
 package v1alpha1
 
+type EndpointExpansion interface{}
+
+type RuleExpansion interface{}
+
+type RuleAttachmentExpansion interface{}
+
 type UserVpcAuthorizationExpansion interface{}
 
 type ZoneExpansion interface{}

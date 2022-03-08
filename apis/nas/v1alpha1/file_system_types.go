@@ -56,6 +56,8 @@ type FileSystemSpec struct {
 }
 
 type FileSystemSpecResource struct {
+	Timeouts *base.ResourceTimeout `json:"timeouts,omitempty" tf:"timeouts"`
+
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional
@@ -70,6 +72,12 @@ type FileSystemSpecResource struct {
 	KmsKeyID     *string `json:"kmsKeyID,omitempty" tf:"kms_key_id"`
 	ProtocolType *string `json:"protocolType" tf:"protocol_type"`
 	StorageType  *string `json:"storageType" tf:"storage_type"`
+	// +optional
+	Tags map[string]string `json:"tags,omitempty" tf:"tags"`
+	// +optional
+	VpcID *string `json:"vpcID,omitempty" tf:"vpc_id"`
+	// +optional
+	VswitchID *string `json:"vswitchID,omitempty" tf:"vswitch_id"`
 	// +optional
 	ZoneID *string `json:"zoneID,omitempty" tf:"zone_id"`
 }

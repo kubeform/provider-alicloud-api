@@ -27,7 +27,10 @@ import (
 
 type DtsV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	ConsumerChannelsGetter
 	JobMonitorRulesGetter
+	MigrationInstancesGetter
+	MigrationJobsGetter
 	SubscriptionJobsGetter
 	SynchronizationInstancesGetter
 	SynchronizationJobsGetter
@@ -38,8 +41,20 @@ type DtsV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *DtsV1alpha1Client) ConsumerChannels(namespace string) ConsumerChannelInterface {
+	return newConsumerChannels(c, namespace)
+}
+
 func (c *DtsV1alpha1Client) JobMonitorRules(namespace string) JobMonitorRuleInterface {
 	return newJobMonitorRules(c, namespace)
+}
+
+func (c *DtsV1alpha1Client) MigrationInstances(namespace string) MigrationInstanceInterface {
+	return newMigrationInstances(c, namespace)
+}
+
+func (c *DtsV1alpha1Client) MigrationJobs(namespace string) MigrationJobInterface {
+	return newMigrationJobs(c, namespace)
 }
 
 func (c *DtsV1alpha1Client) SubscriptionJobs(namespace string) SubscriptionJobInterface {

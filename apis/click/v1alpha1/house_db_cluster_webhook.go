@@ -100,7 +100,7 @@ func (r *HouseDbCluster) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range housedbclusterForceNewList {
+	for key, _ := range housedbclusterForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

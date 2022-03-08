@@ -174,6 +174,13 @@ type ManagedKubernetesSpecResource struct {
 	// +optional
 	Connections map[string]ManagedKubernetesSpecConnections `json:"connections,omitempty" tf:"connections"`
 	// +optional
+	// +kubebuilder:validation:MinItems=1
+	ControlPlaneLogComponents []string `json:"controlPlaneLogComponents,omitempty" tf:"control_plane_log_components"`
+	// +optional
+	ControlPlaneLogProject *string `json:"controlPlaneLogProject,omitempty" tf:"control_plane_log_project"`
+	// +optional
+	ControlPlaneLogTtl *string `json:"controlPlaneLogTtl,omitempty" tf:"control_plane_log_ttl"`
+	// +optional
 	CpuPolicy *string `json:"cpuPolicy,omitempty" tf:"cpu_policy"`
 	// +optional
 	CustomSan *string `json:"customSan,omitempty" tf:"custom_san"`
@@ -239,6 +246,8 @@ type ManagedKubernetesSpecResource struct {
 	RdsInstances []string `json:"rdsInstances,omitempty" tf:"rds_instances"`
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
+	// +optional
+	RetainResources []string `json:"retainResources,omitempty" tf:"retain_resources"`
 	// +optional
 	Runtime map[string]ManagedKubernetesSpecRuntime `json:"runtime,omitempty" tf:"runtime"`
 	// +optional

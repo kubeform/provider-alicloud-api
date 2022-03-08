@@ -88,7 +88,7 @@ func (r *ConnectVirtualBorderRouter) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range connectvirtualborderrouterForceNewList {
+	for key, _ := range connectvirtualborderrouterForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

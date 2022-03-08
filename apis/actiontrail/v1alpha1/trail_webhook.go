@@ -90,7 +90,7 @@ func (r *Trail) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range trailForceNewList {
+	for key, _ := range trailForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -29,8 +29,14 @@ type NasV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AccessGroupsGetter
 	AccessRulesGetter
+	AutoSnapshotPoliciesGetter
+	DataFlowsGetter
 	FileSystemsGetter
+	FilesetsGetter
+	LifecyclePoliciesGetter
 	MountTargetsGetter
+	RecycleBinsGetter
+	SnapshotsGetter
 }
 
 // NasV1alpha1Client is used to interact with features provided by the nas.alicloud.kubeform.com group.
@@ -46,12 +52,36 @@ func (c *NasV1alpha1Client) AccessRules(namespace string) AccessRuleInterface {
 	return newAccessRules(c, namespace)
 }
 
+func (c *NasV1alpha1Client) AutoSnapshotPolicies(namespace string) AutoSnapshotPolicyInterface {
+	return newAutoSnapshotPolicies(c, namespace)
+}
+
+func (c *NasV1alpha1Client) DataFlows(namespace string) DataFlowInterface {
+	return newDataFlows(c, namespace)
+}
+
 func (c *NasV1alpha1Client) FileSystems(namespace string) FileSystemInterface {
 	return newFileSystems(c, namespace)
 }
 
+func (c *NasV1alpha1Client) Filesets(namespace string) FilesetInterface {
+	return newFilesets(c, namespace)
+}
+
+func (c *NasV1alpha1Client) LifecyclePolicies(namespace string) LifecyclePolicyInterface {
+	return newLifecyclePolicies(c, namespace)
+}
+
 func (c *NasV1alpha1Client) MountTargets(namespace string) MountTargetInterface {
 	return newMountTargets(c, namespace)
+}
+
+func (c *NasV1alpha1Client) RecycleBins(namespace string) RecycleBinInterface {
+	return newRecycleBins(c, namespace)
+}
+
+func (c *NasV1alpha1Client) Snapshots(namespace string) SnapshotInterface {
+	return newSnapshots(c, namespace)
 }
 
 // NewForConfig creates a new NasV1alpha1Client for the given config.

@@ -77,6 +77,10 @@ func (c *FakeResourceV1alpha1) ManagerRoles(namespace string) v1alpha1.ManagerRo
 	return &FakeManagerRoles{c, namespace}
 }
 
+func (c *FakeResourceV1alpha1) ManagerServiceLinkedRoles(namespace string) v1alpha1.ManagerServiceLinkedRoleInterface {
+	return &FakeManagerServiceLinkedRoles{c, namespace}
+}
+
 func (c *FakeResourceV1alpha1) ManagerSharedResources(namespace string) v1alpha1.ManagerSharedResourceInterface {
 	return &FakeManagerSharedResources{c, namespace}
 }

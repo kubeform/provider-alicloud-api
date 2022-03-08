@@ -86,7 +86,7 @@ func (r *AlertContact) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range alertcontactForceNewList {
+	for key, _ := range alertcontactForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -18,6 +18,22 @@ limitations under the License.
 
 package v1alpha1
 
+// ApplicationServerCustomImageListerExpansion allows custom methods to be added to
+// ApplicationServerCustomImageLister.
+type ApplicationServerCustomImageListerExpansion interface{}
+
+// ApplicationServerCustomImageNamespaceListerExpansion allows custom methods to be added to
+// ApplicationServerCustomImageNamespaceLister.
+type ApplicationServerCustomImageNamespaceListerExpansion interface{}
+
+// ApplicationServerFirewallRuleListerExpansion allows custom methods to be added to
+// ApplicationServerFirewallRuleLister.
+type ApplicationServerFirewallRuleListerExpansion interface{}
+
+// ApplicationServerFirewallRuleNamespaceListerExpansion allows custom methods to be added to
+// ApplicationServerFirewallRuleNamespaceLister.
+type ApplicationServerFirewallRuleNamespaceListerExpansion interface{}
+
 // ApplicationServerInstanceListerExpansion allows custom methods to be added to
 // ApplicationServerInstanceLister.
 type ApplicationServerInstanceListerExpansion interface{}
@@ -25,3 +41,11 @@ type ApplicationServerInstanceListerExpansion interface{}
 // ApplicationServerInstanceNamespaceListerExpansion allows custom methods to be added to
 // ApplicationServerInstanceNamespaceLister.
 type ApplicationServerInstanceNamespaceListerExpansion interface{}
+
+// ApplicationServerSnapshotListerExpansion allows custom methods to be added to
+// ApplicationServerSnapshotLister.
+type ApplicationServerSnapshotListerExpansion interface{}
+
+// ApplicationServerSnapshotNamespaceListerExpansion allows custom methods to be added to
+// ApplicationServerSnapshotNamespaceLister.
+type ApplicationServerSnapshotNamespaceListerExpansion interface{}

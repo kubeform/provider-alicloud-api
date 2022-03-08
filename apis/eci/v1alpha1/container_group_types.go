@@ -128,6 +128,12 @@ type ContainerGroupSpecHostAliases struct {
 	Ip *string `json:"ip,omitempty" tf:"ip"`
 }
 
+type ContainerGroupSpecImageRegistryCredential struct {
+	Password *string `json:"password" tf:"password"`
+	Server   *string `json:"server" tf:"server"`
+	UserName *string `json:"userName" tf:"user_name"`
+}
+
 type ContainerGroupSpecInitContainersEnvironmentVars struct {
 	// +optional
 	Key *string `json:"key,omitempty" tf:"key"`
@@ -243,6 +249,8 @@ type ContainerGroupSpecResource struct {
 	EciSecurityContext *ContainerGroupSpecEciSecurityContext `json:"eciSecurityContext,omitempty" tf:"eci_security_context"`
 	// +optional
 	HostAliases []ContainerGroupSpecHostAliases `json:"hostAliases,omitempty" tf:"host_aliases"`
+	// +optional
+	ImageRegistryCredential []ContainerGroupSpecImageRegistryCredential `json:"imageRegistryCredential,omitempty" tf:"image_registry_credential"`
 	// +optional
 	InitContainers []ContainerGroupSpecInitContainers `json:"initContainers,omitempty" tf:"init_containers"`
 	// +optional

@@ -137,9 +137,15 @@ type KubernetesNodePoolSpecResource struct {
 	// +optional
 	DataDisks []KubernetesNodePoolSpecDataDisks `json:"dataDisks,omitempty" tf:"data_disks"`
 	// +optional
+	DeploymentSetID *string `json:"deploymentSetID,omitempty" tf:"deployment_set_id"`
+	// +optional
+	DesiredSize *int64 `json:"desiredSize,omitempty" tf:"desired_size"`
+	// +optional
 	FormatDisk *bool `json:"formatDisk,omitempty" tf:"format_disk"`
 	// +optional
 	ImageID *string `json:"imageID,omitempty" tf:"image_id"`
+	// +optional
+	ImageType *string `json:"imageType,omitempty" tf:"image_type"`
 	// +optional
 	InstallCloudMonitor *bool `json:"installCloudMonitor,omitempty" tf:"install_cloud_monitor"`
 	// +optional
@@ -166,6 +172,7 @@ type KubernetesNodePoolSpecResource struct {
 	Management *KubernetesNodePoolSpecManagement `json:"management,omitempty" tf:"management"`
 	Name       *string                           `json:"name" tf:"name"`
 	// +optional
+	// Deprecated
 	NodeCount *int64 `json:"nodeCount,omitempty" tf:"node_count"`
 	// +optional
 	NodeNameMode *string `json:"nodeNameMode,omitempty" tf:"node_name_mode"`
@@ -176,9 +183,14 @@ type KubernetesNodePoolSpecResource struct {
 	// +optional
 	PeriodUnit *string `json:"periodUnit,omitempty" tf:"period_unit"`
 	// +optional
+	// Deprecated
 	Platform *string `json:"platform,omitempty" tf:"platform"`
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
+	// +optional
+	RuntimeName *string `json:"runtimeName,omitempty" tf:"runtime_name"`
+	// +optional
+	RuntimeVersion *string `json:"runtimeVersion,omitempty" tf:"runtime_version"`
 	// +optional
 	ScalingConfig *KubernetesNodePoolSpecScalingConfig `json:"scalingConfig,omitempty" tf:"scaling_config"`
 	// +optional
@@ -186,7 +198,11 @@ type KubernetesNodePoolSpecResource struct {
 	// +optional
 	ScalingPolicy *string `json:"scalingPolicy,omitempty" tf:"scaling_policy"`
 	// +optional
+	// Deprecated
 	SecurityGroupID *string `json:"securityGroupID,omitempty" tf:"security_group_id"`
+	// +optional
+	// +kubebuilder:validation:MaxItems=5
+	SecurityGroupIDS []string `json:"securityGroupIDS,omitempty" tf:"security_group_ids"`
 	// +optional
 	SpotPriceLimit []KubernetesNodePoolSpecSpotPriceLimit `json:"spotPriceLimit,omitempty" tf:"spot_price_limit"`
 	// +optional

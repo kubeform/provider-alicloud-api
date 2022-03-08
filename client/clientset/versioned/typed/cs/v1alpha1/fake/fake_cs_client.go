@@ -45,6 +45,10 @@ func (c *FakeCsV1alpha1) Kuberneteses(namespace string) v1alpha1.KubernetesInter
 	return &FakeKuberneteses{c, namespace}
 }
 
+func (c *FakeCsV1alpha1) KubernetesAddons(namespace string) v1alpha1.KubernetesAddonInterface {
+	return &FakeKubernetesAddons{c, namespace}
+}
+
 func (c *FakeCsV1alpha1) KubernetesAutoscalers(namespace string) v1alpha1.KubernetesAutoscalerInterface {
 	return &FakeKubernetesAutoscalers{c, namespace}
 }

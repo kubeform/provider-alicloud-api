@@ -29,12 +29,32 @@ type FakeMongodbV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeMongodbV1alpha1) Accounts(namespace string) v1alpha1.AccountInterface {
+	return &FakeAccounts{c, namespace}
+}
+
+func (c *FakeMongodbV1alpha1) AuditPolicies(namespace string) v1alpha1.AuditPolicyInterface {
+	return &FakeAuditPolicies{c, namespace}
+}
+
 func (c *FakeMongodbV1alpha1) Instances(namespace string) v1alpha1.InstanceInterface {
 	return &FakeInstances{c, namespace}
 }
 
+func (c *FakeMongodbV1alpha1) ServerlessInstances(namespace string) v1alpha1.ServerlessInstanceInterface {
+	return &FakeServerlessInstances{c, namespace}
+}
+
 func (c *FakeMongodbV1alpha1) ShardingInstances(namespace string) v1alpha1.ShardingInstanceInterface {
 	return &FakeShardingInstances{c, namespace}
+}
+
+func (c *FakeMongodbV1alpha1) ShardingNetworkPrivateAddresses(namespace string) v1alpha1.ShardingNetworkPrivateAddressInterface {
+	return &FakeShardingNetworkPrivateAddresses{c, namespace}
+}
+
+func (c *FakeMongodbV1alpha1) ShardingNetworkPublicAddresses(namespace string) v1alpha1.ShardingNetworkPublicAddressInterface {
+	return &FakeShardingNetworkPublicAddresses{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

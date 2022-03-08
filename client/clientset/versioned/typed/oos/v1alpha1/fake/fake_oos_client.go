@@ -29,8 +29,36 @@ type FakeOosV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeOosV1alpha1) Applications(namespace string) v1alpha1.ApplicationInterface {
+	return &FakeApplications{c, namespace}
+}
+
+func (c *FakeOosV1alpha1) ApplicationGroups(namespace string) v1alpha1.ApplicationGroupInterface {
+	return &FakeApplicationGroups{c, namespace}
+}
+
 func (c *FakeOosV1alpha1) Executions(namespace string) v1alpha1.ExecutionInterface {
 	return &FakeExecutions{c, namespace}
+}
+
+func (c *FakeOosV1alpha1) Parameters(namespace string) v1alpha1.ParameterInterface {
+	return &FakeParameters{c, namespace}
+}
+
+func (c *FakeOosV1alpha1) PatchBaselines(namespace string) v1alpha1.PatchBaselineInterface {
+	return &FakePatchBaselines{c, namespace}
+}
+
+func (c *FakeOosV1alpha1) SecretParameters(namespace string) v1alpha1.SecretParameterInterface {
+	return &FakeSecretParameters{c, namespace}
+}
+
+func (c *FakeOosV1alpha1) ServiceSettings(namespace string) v1alpha1.ServiceSettingInterface {
+	return &FakeServiceSettings{c, namespace}
+}
+
+func (c *FakeOosV1alpha1) StateConfigurations(namespace string) v1alpha1.StateConfigurationInterface {
+	return &FakeStateConfigurations{c, namespace}
 }
 
 func (c *FakeOosV1alpha1) Templates(namespace string) v1alpha1.TemplateInterface {

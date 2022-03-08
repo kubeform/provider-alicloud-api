@@ -18,12 +18,22 @@ limitations under the License.
 
 package v1alpha1
 
+type AccessStrategyExpansion interface{}
+
+type AddressPoolExpansion interface{}
+
+type CustomLineExpansion interface{}
+
 type DomainExpansion interface{}
 
 type DomainAttachmentExpansion interface{}
 
 type DomainGroupExpansion interface{}
 
+type GtmInstanceExpansion interface{}
+
 type InstanceExpansion interface{}
+
+type MonitorConfigExpansion interface{}
 
 type RecordExpansion interface{}

@@ -18,6 +18,22 @@ limitations under the License.
 
 package v1alpha1
 
+// DedicatedHostListerExpansion allows custom methods to be added to
+// DedicatedHostLister.
+type DedicatedHostListerExpansion interface{}
+
+// DedicatedHostNamespaceListerExpansion allows custom methods to be added to
+// DedicatedHostNamespaceLister.
+type DedicatedHostNamespaceListerExpansion interface{}
+
+// DedicatedHostAccountListerExpansion allows custom methods to be added to
+// DedicatedHostAccountLister.
+type DedicatedHostAccountListerExpansion interface{}
+
+// DedicatedHostAccountNamespaceListerExpansion allows custom methods to be added to
+// DedicatedHostAccountNamespaceLister.
+type DedicatedHostAccountNamespaceListerExpansion interface{}
+
 // DedicatedHostGroupListerExpansion allows custom methods to be added to
 // DedicatedHostGroupLister.
 type DedicatedHostGroupListerExpansion interface{}

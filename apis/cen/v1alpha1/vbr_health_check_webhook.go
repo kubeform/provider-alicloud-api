@@ -90,7 +90,7 @@ func (r *VbrHealthCheck) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range vbrhealthcheckForceNewList {
+	for key, _ := range vbrhealthcheckForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

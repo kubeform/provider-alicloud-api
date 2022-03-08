@@ -45,7 +45,6 @@ var bandwidthpackageForceNewList = map[string]bool{
 	"/billing_type":              true,
 	"/cbn_geographic_region_ida": true,
 	"/cbn_geographic_region_idb": true,
-	"/duration":                  true,
 	"/payment_type":              true,
 	"/ratio":                     true,
 	"/type":                      true,
@@ -94,7 +93,7 @@ func (r *BandwidthPackage) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range bandwidthpackageForceNewList {
+	for key, _ := range bandwidthpackageForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

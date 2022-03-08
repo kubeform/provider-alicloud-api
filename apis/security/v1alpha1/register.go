@@ -58,6 +58,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&CenterGroup{},
 		&CenterGroupList{},
+		&CenterServiceLinkedRole{},
+		&CenterServiceLinkedRoleList{},
 		&Group{},
 		&GroupList{},
 		&GroupRule{},

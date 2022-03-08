@@ -90,7 +90,7 @@ func (r *NatIP) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range natipForceNewList {
+	for key, _ := range natipForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -53,8 +53,16 @@ func (c *FakeCloudV1alpha1) FirewallInstances(namespace string) v1alpha1.Firewal
 	return &FakeFirewallInstances{c, namespace}
 }
 
+func (c *FakeCloudV1alpha1) SsoAccessAssignments(namespace string) v1alpha1.SsoAccessAssignmentInterface {
+	return &FakeSsoAccessAssignments{c, namespace}
+}
+
 func (c *FakeCloudV1alpha1) SsoAccessConfigurations(namespace string) v1alpha1.SsoAccessConfigurationInterface {
 	return &FakeSsoAccessConfigurations{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) SsoAccessConfigurationProvisionings(namespace string) v1alpha1.SsoAccessConfigurationProvisioningInterface {
+	return &FakeSsoAccessConfigurationProvisionings{c, namespace}
 }
 
 func (c *FakeCloudV1alpha1) SsoDirectories(namespace string) v1alpha1.SsoDirectoryInterface {
@@ -73,8 +81,40 @@ func (c *FakeCloudV1alpha1) SsoUsers(namespace string) v1alpha1.SsoUserInterface
 	return &FakeSsoUsers{c, namespace}
 }
 
+func (c *FakeCloudV1alpha1) SsoUserAttachments(namespace string) v1alpha1.SsoUserAttachmentInterface {
+	return &FakeSsoUserAttachments{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayExpressSyncs(namespace string) v1alpha1.StorageGatewayExpressSyncInterface {
+	return &FakeStorageGatewayExpressSyncs{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayExpressSyncShareAttachments(namespace string) v1alpha1.StorageGatewayExpressSyncShareAttachmentInterface {
+	return &FakeStorageGatewayExpressSyncShareAttachments{c, namespace}
+}
+
 func (c *FakeCloudV1alpha1) StorageGatewayGateways(namespace string) v1alpha1.StorageGatewayGatewayInterface {
 	return &FakeStorageGatewayGateways{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayGatewayBlockVolumes(namespace string) v1alpha1.StorageGatewayGatewayBlockVolumeInterface {
+	return &FakeStorageGatewayGatewayBlockVolumes{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayGatewayCacheDisks(namespace string) v1alpha1.StorageGatewayGatewayCacheDiskInterface {
+	return &FakeStorageGatewayGatewayCacheDisks{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayGatewayFileShares(namespace string) v1alpha1.StorageGatewayGatewayFileShareInterface {
+	return &FakeStorageGatewayGatewayFileShares{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayGatewayLoggings(namespace string) v1alpha1.StorageGatewayGatewayLoggingInterface {
+	return &FakeStorageGatewayGatewayLoggings{c, namespace}
+}
+
+func (c *FakeCloudV1alpha1) StorageGatewayGatewaySmbUsers(namespace string) v1alpha1.StorageGatewayGatewaySmbUserInterface {
+	return &FakeStorageGatewayGatewaySmbUsers{c, namespace}
 }
 
 func (c *FakeCloudV1alpha1) StorageGatewayStorageBundles(namespace string) v1alpha1.StorageGatewayStorageBundleInterface {

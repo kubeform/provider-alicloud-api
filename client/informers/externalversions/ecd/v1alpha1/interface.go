@@ -24,10 +24,22 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Commands returns a CommandInformer.
+	Commands() CommandInformer
+	// Desktops returns a DesktopInformer.
+	Desktops() DesktopInformer
+	// Images returns a ImageInformer.
+	Images() ImageInformer
+	// NasFileSystems returns a NasFileSystemInformer.
+	NasFileSystems() NasFileSystemInformer
+	// NetworkPackages returns a NetworkPackageInformer.
+	NetworkPackages() NetworkPackageInformer
 	// PolicyGroups returns a PolicyGroupInformer.
 	PolicyGroups() PolicyGroupInformer
 	// SimpleOfficeSites returns a SimpleOfficeSiteInformer.
 	SimpleOfficeSites() SimpleOfficeSiteInformer
+	// Users returns a UserInformer.
+	Users() UserInformer
 }
 
 type version struct {
@@ -41,6 +53,31 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// Commands returns a CommandInformer.
+func (v *version) Commands() CommandInformer {
+	return &commandInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Desktops returns a DesktopInformer.
+func (v *version) Desktops() DesktopInformer {
+	return &desktopInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Images returns a ImageInformer.
+func (v *version) Images() ImageInformer {
+	return &imageInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// NasFileSystems returns a NasFileSystemInformer.
+func (v *version) NasFileSystems() NasFileSystemInformer {
+	return &nasFileSystemInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// NetworkPackages returns a NetworkPackageInformer.
+func (v *version) NetworkPackages() NetworkPackageInformer {
+	return &networkPackageInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // PolicyGroups returns a PolicyGroupInformer.
 func (v *version) PolicyGroups() PolicyGroupInformer {
 	return &policyGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
@@ -49,4 +86,9 @@ func (v *version) PolicyGroups() PolicyGroupInformer {
 // SimpleOfficeSites returns a SimpleOfficeSiteInformer.
 func (v *version) SimpleOfficeSites() SimpleOfficeSiteInformer {
 	return &simpleOfficeSiteInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Users returns a UserInformer.
+func (v *version) Users() UserInformer {
+	return &userInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

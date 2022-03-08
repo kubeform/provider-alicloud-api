@@ -18,6 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+type ExecutionExpansion interface{}
+
 type FlowExpansion interface{}
 
 type ScheduleExpansion interface{}

@@ -31,16 +31,21 @@ type EcsV1alpha1Interface interface {
 	AutoSnapshotPolicyAttachmentsGetter
 	CommandsGetter
 	DedicatedHostsGetter
+	DedicatedHostClustersGetter
 	DeploymentSetsGetter
 	DisksGetter
 	DiskAttachmentsGetter
 	HpcClustersGetter
+	ImageComponentsGetter
 	KeyPairsGetter
 	KeyPairAttachmentsGetter
 	LaunchTemplatesGetter
 	NetworkInterfacesGetter
 	NetworkInterfaceAttachmentsGetter
+	PrefixListsGetter
+	SessionManagerStatusesGetter
 	SnapshotsGetter
+	StorageCapacityUnitsGetter
 }
 
 // EcsV1alpha1Client is used to interact with features provided by the ecs.alicloud.kubeform.com group.
@@ -64,6 +69,10 @@ func (c *EcsV1alpha1Client) DedicatedHosts(namespace string) DedicatedHostInterf
 	return newDedicatedHosts(c, namespace)
 }
 
+func (c *EcsV1alpha1Client) DedicatedHostClusters(namespace string) DedicatedHostClusterInterface {
+	return newDedicatedHostClusters(c, namespace)
+}
+
 func (c *EcsV1alpha1Client) DeploymentSets(namespace string) DeploymentSetInterface {
 	return newDeploymentSets(c, namespace)
 }
@@ -78,6 +87,10 @@ func (c *EcsV1alpha1Client) DiskAttachments(namespace string) DiskAttachmentInte
 
 func (c *EcsV1alpha1Client) HpcClusters(namespace string) HpcClusterInterface {
 	return newHpcClusters(c, namespace)
+}
+
+func (c *EcsV1alpha1Client) ImageComponents(namespace string) ImageComponentInterface {
+	return newImageComponents(c, namespace)
 }
 
 func (c *EcsV1alpha1Client) KeyPairs(namespace string) KeyPairInterface {
@@ -100,8 +113,20 @@ func (c *EcsV1alpha1Client) NetworkInterfaceAttachments(namespace string) Networ
 	return newNetworkInterfaceAttachments(c, namespace)
 }
 
+func (c *EcsV1alpha1Client) PrefixLists(namespace string) PrefixListInterface {
+	return newPrefixLists(c, namespace)
+}
+
+func (c *EcsV1alpha1Client) SessionManagerStatuses(namespace string) SessionManagerStatusInterface {
+	return newSessionManagerStatuses(c, namespace)
+}
+
 func (c *EcsV1alpha1Client) Snapshots(namespace string) SnapshotInterface {
 	return newSnapshots(c, namespace)
+}
+
+func (c *EcsV1alpha1Client) StorageCapacityUnits(namespace string) StorageCapacityUnitInterface {
+	return newStorageCapacityUnits(c, namespace)
 }
 
 // NewForConfig creates a new EcsV1alpha1Client for the given config.

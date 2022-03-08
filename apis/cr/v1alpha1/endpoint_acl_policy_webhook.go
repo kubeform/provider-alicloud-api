@@ -92,7 +92,7 @@ func (r *EndpointACLPolicy) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range endpointaclpolicyForceNewList {
+	for key, _ := range endpointaclpolicyForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

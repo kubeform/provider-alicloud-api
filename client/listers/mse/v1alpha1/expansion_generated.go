@@ -25,3 +25,11 @@ type ClusterListerExpansion interface{}
 // ClusterNamespaceListerExpansion allows custom methods to be added to
 // ClusterNamespaceLister.
 type ClusterNamespaceListerExpansion interface{}
+
+// GatewayListerExpansion allows custom methods to be added to
+// GatewayLister.
+type GatewayListerExpansion interface{}
+
+// GatewayNamespaceListerExpansion allows custom methods to be added to
+// GatewayNamespaceLister.
+type GatewayNamespaceListerExpansion interface{}

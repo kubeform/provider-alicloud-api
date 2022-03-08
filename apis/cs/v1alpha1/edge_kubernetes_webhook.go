@@ -88,7 +88,7 @@ func (r *EdgeKubernetes) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range edgekubernetesForceNewList {
+	for key, _ := range edgekubernetesForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

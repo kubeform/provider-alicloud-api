@@ -24,6 +24,8 @@ type AlarmContactExpansion interface{}
 
 type AlarmContactGroupExpansion interface{}
 
+type DynamicTagGroupExpansion interface{}
+
 type GroupMetricRuleExpansion interface{}
 
 type MetricRuleTemplateExpansion interface{}

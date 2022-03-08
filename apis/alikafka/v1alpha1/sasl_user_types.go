@@ -67,6 +67,8 @@ type SaslUserSpecResource struct {
 	KmsEncryptionContext map[string]string `json:"kmsEncryptionContext,omitempty" tf:"kms_encryption_context"`
 	// +optional
 	Password *string `json:"-" sensitive:"true" tf:"password"`
+	// +optional
+	Type     *string `json:"type,omitempty" tf:"type"`
 	Username *string `json:"username" tf:"username"`
 }
 

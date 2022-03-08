@@ -27,7 +27,14 @@ import (
 
 type OosV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	ApplicationsGetter
+	ApplicationGroupsGetter
 	ExecutionsGetter
+	ParametersGetter
+	PatchBaselinesGetter
+	SecretParametersGetter
+	ServiceSettingsGetter
+	StateConfigurationsGetter
 	TemplatesGetter
 }
 
@@ -36,8 +43,36 @@ type OosV1alpha1Client struct {
 	restClient rest.Interface
 }
 
+func (c *OosV1alpha1Client) Applications(namespace string) ApplicationInterface {
+	return newApplications(c, namespace)
+}
+
+func (c *OosV1alpha1Client) ApplicationGroups(namespace string) ApplicationGroupInterface {
+	return newApplicationGroups(c, namespace)
+}
+
 func (c *OosV1alpha1Client) Executions(namespace string) ExecutionInterface {
 	return newExecutions(c, namespace)
+}
+
+func (c *OosV1alpha1Client) Parameters(namespace string) ParameterInterface {
+	return newParameters(c, namespace)
+}
+
+func (c *OosV1alpha1Client) PatchBaselines(namespace string) PatchBaselineInterface {
+	return newPatchBaselines(c, namespace)
+}
+
+func (c *OosV1alpha1Client) SecretParameters(namespace string) SecretParameterInterface {
+	return newSecretParameters(c, namespace)
+}
+
+func (c *OosV1alpha1Client) ServiceSettings(namespace string) ServiceSettingInterface {
+	return newServiceSettings(c, namespace)
+}
+
+func (c *OosV1alpha1Client) StateConfigurations(namespace string) StateConfigurationInterface {
+	return newStateConfigurations(c, namespace)
 }
 
 func (c *OosV1alpha1Client) Templates(namespace string) TemplateInterface {

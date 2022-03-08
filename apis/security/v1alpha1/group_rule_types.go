@@ -70,6 +70,8 @@ type GroupRuleSpecResource struct {
 	// +optional
 	PortRange *string `json:"portRange,omitempty" tf:"port_range"`
 	// +optional
+	PrefixListID *string `json:"prefixListID,omitempty" tf:"prefix_list_id"`
+	// +optional
 	Priority        *int64  `json:"priority,omitempty" tf:"priority"`
 	SecurityGroupID *string `json:"securityGroupID" tf:"security_group_id"`
 	// +optional

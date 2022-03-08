@@ -90,7 +90,7 @@ func (r *VpcEndpointZone) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range vpcendpointzoneForceNewList {
+	for key, _ := range vpcendpointzoneForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

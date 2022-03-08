@@ -30,6 +30,7 @@ type EventV1alpha1Interface interface {
 	BridgeEventBusesGetter
 	BridgeEventSourcesGetter
 	BridgeRulesGetter
+	BridgeServiceLinkedRolesGetter
 	BridgeSlrsGetter
 }
 
@@ -48,6 +49,10 @@ func (c *EventV1alpha1Client) BridgeEventSources(namespace string) BridgeEventSo
 
 func (c *EventV1alpha1Client) BridgeRules(namespace string) BridgeRuleInterface {
 	return newBridgeRules(c, namespace)
+}
+
+func (c *EventV1alpha1Client) BridgeServiceLinkedRoles(namespace string) BridgeServiceLinkedRoleInterface {
+	return newBridgeServiceLinkedRoles(c, namespace)
 }
 
 func (c *EventV1alpha1Client) BridgeSlrs(namespace string) BridgeSlrInterface {

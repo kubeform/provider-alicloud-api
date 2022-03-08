@@ -90,7 +90,7 @@ func (r *AccountPrivilege) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range accountprivilegeForceNewList {
+	for key, _ := range accountprivilegeForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

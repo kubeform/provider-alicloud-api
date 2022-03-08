@@ -88,7 +88,7 @@ func (r *Flow) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range flowForceNewList {
+	for key, _ := range flowForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -29,6 +29,18 @@ type FakeAlidnsV1alpha1 struct {
 	*testing.Fake
 }
 
+func (c *FakeAlidnsV1alpha1) AccessStrategies(namespace string) v1alpha1.AccessStrategyInterface {
+	return &FakeAccessStrategies{c, namespace}
+}
+
+func (c *FakeAlidnsV1alpha1) AddressPools(namespace string) v1alpha1.AddressPoolInterface {
+	return &FakeAddressPools{c, namespace}
+}
+
+func (c *FakeAlidnsV1alpha1) CustomLines(namespace string) v1alpha1.CustomLineInterface {
+	return &FakeCustomLines{c, namespace}
+}
+
 func (c *FakeAlidnsV1alpha1) Domains(namespace string) v1alpha1.DomainInterface {
 	return &FakeDomains{c, namespace}
 }
@@ -41,8 +53,16 @@ func (c *FakeAlidnsV1alpha1) DomainGroups(namespace string) v1alpha1.DomainGroup
 	return &FakeDomainGroups{c, namespace}
 }
 
+func (c *FakeAlidnsV1alpha1) GtmInstances(namespace string) v1alpha1.GtmInstanceInterface {
+	return &FakeGtmInstances{c, namespace}
+}
+
 func (c *FakeAlidnsV1alpha1) Instances(namespace string) v1alpha1.InstanceInterface {
 	return &FakeInstances{c, namespace}
+}
+
+func (c *FakeAlidnsV1alpha1) MonitorConfigs(namespace string) v1alpha1.MonitorConfigInterface {
+	return &FakeMonitorConfigs{c, namespace}
 }
 
 func (c *FakeAlidnsV1alpha1) Records(namespace string) v1alpha1.RecordInterface {

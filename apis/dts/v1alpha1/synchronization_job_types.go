@@ -90,8 +90,7 @@ type SynchronizationJobSpecResource struct {
 	// +optional
 	DestinationEndpointUserName *string `json:"destinationEndpointUserName,omitempty" tf:"destination_endpoint_user_name"`
 	DtsInstanceID               *string `json:"dtsInstanceID" tf:"dts_instance_id"`
-	// +optional
-	DtsJobName *string `json:"dtsJobName,omitempty" tf:"dts_job_name"`
+	DtsJobName                  *string `json:"dtsJobName" tf:"dts_job_name"`
 	// +optional
 	ErrorNotice *bool `json:"errorNotice,omitempty" tf:"error_notice"`
 	// +optional

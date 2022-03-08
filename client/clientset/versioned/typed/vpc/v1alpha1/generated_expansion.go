@@ -18,9 +18,23 @@ limitations under the License.
 
 package v1alpha1
 
+type BgpGroupExpansion interface{}
+
+type BgpNetworkExpansion interface{}
+
+type BgpPeerExpansion interface{}
+
 type DhcpOptionsSetExpansion interface{}
 
+type DhcpOptionsSetAttachmentExpansion interface{}
+
 type FlowLogExpansion interface{}
+
+type Ipv6EgressRuleExpansion interface{}
+
+type Ipv6GatewayExpansion interface{}
+
+type Ipv6InternetBandwidthExpansion interface{}
 
 type NatIPExpansion interface{}
 
@@ -29,5 +43,11 @@ type NatIPCIDRExpansion interface{}
 type TrafficMirrorFilterExpansion interface{}
 
 type TrafficMirrorFilterEgressRuleExpansion interface{}
+
+type TrafficMirrorFilterIngressRuleExpansion interface{}
+
+type TrafficMirrorSessionExpansion interface{}
+
+type VbrHaExpansion interface{}
 
 type VpcExpansion interface{}

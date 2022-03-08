@@ -89,7 +89,7 @@ func (r *AutoSnapshotPolicyAttachment) ValidateUpdate(old runtime.Object) error 
 		return err
 	}
 
-	for key := range autosnapshotpolicyattachmentForceNewList {
+	for key, _ := range autosnapshotpolicyattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

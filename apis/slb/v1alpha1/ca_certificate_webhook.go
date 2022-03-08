@@ -89,7 +89,7 @@ func (r *CaCertificate) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range cacertificateForceNewList {
+	for key, _ := range cacertificateForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

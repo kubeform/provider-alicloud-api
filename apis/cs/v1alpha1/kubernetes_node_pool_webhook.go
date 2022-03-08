@@ -42,8 +42,11 @@ func (r *KubernetesNodePool) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &KubernetesNodePool{}
 
 var kubernetesnodepoolForceNewList = map[string]bool{
+	"/deployment_set_id":    true,
 	"/instance_charge_type": true,
 	"/resource_group_id":    true,
+	"/runtime_name":         true,
+	"/runtime_version":      true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -89,7 +92,7 @@ func (r *KubernetesNodePool) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range kubernetesnodepoolForceNewList {
+	for key, _ := range kubernetesnodepoolForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -27,12 +27,22 @@ import (
 
 type CddcV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	DedicatedHostsGetter
+	DedicatedHostAccountsGetter
 	DedicatedHostGroupsGetter
 }
 
 // CddcV1alpha1Client is used to interact with features provided by the cddc.alicloud.kubeform.com group.
 type CddcV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *CddcV1alpha1Client) DedicatedHosts(namespace string) DedicatedHostInterface {
+	return newDedicatedHosts(c, namespace)
+}
+
+func (c *CddcV1alpha1Client) DedicatedHostAccounts(namespace string) DedicatedHostAccountInterface {
+	return newDedicatedHostAccounts(c, namespace)
 }
 
 func (c *CddcV1alpha1Client) DedicatedHostGroups(namespace string) DedicatedHostGroupInterface {

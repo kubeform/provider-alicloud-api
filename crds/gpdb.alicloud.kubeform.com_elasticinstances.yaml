@@ -59,7 +59,13 @@ spec:
                 properties:
                   connectionString:
                     type: string
+                  dbInstanceCategory:
+                    type: string
                   dbInstanceDescription:
+                    type: string
+                  encryptionKey:
+                    type: string
+                  encryptionType:
                     type: string
                   engine:
                     type: string
@@ -92,6 +98,10 @@ spec:
                   storageSize:
                     format: int64
                     type: integer
+                  tags:
+                    additionalProperties:
+                      type: string
+                    type: object
                   timeouts:
                     properties:
                       create:
@@ -147,7 +157,13 @@ spec:
                 properties:
                   connectionString:
                     type: string
+                  dbInstanceCategory:
+                    type: string
                   dbInstanceDescription:
+                    type: string
+                  encryptionKey:
+                    type: string
+                  encryptionType:
                     type: string
                   engine:
                     type: string
@@ -180,6 +196,10 @@ spec:
                   storageSize:
                     format: int64
                     type: integer
+                  tags:
+                    additionalProperties:
+                      type: string
+                    type: object
                   timeouts:
                     properties:
                       create:

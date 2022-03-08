@@ -41,3 +41,11 @@ type InstanceListerExpansion interface{}
 // InstanceNamespaceListerExpansion allows custom methods to be added to
 // InstanceNamespaceLister.
 type InstanceNamespaceListerExpansion interface{}
+
+// ProtectionModuleListerExpansion allows custom methods to be added to
+// ProtectionModuleLister.
+type ProtectionModuleListerExpansion interface{}
+
+// ProtectionModuleNamespaceListerExpansion allows custom methods to be added to
+// ProtectionModuleNamespaceLister.
+type ProtectionModuleNamespaceListerExpansion interface{}

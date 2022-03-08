@@ -63,9 +63,15 @@ type ElasticInstanceSpecResource struct {
 	// +optional
 	ConnectionString *string `json:"connectionString,omitempty" tf:"connection_string"`
 	// +optional
+	DbInstanceCategory *string `json:"dbInstanceCategory,omitempty" tf:"db_instance_category"`
+	// +optional
 	DbInstanceDescription *string `json:"dbInstanceDescription,omitempty" tf:"db_instance_description"`
-	Engine                *string `json:"engine" tf:"engine"`
-	EngineVersion         *string `json:"engineVersion" tf:"engine_version"`
+	// +optional
+	EncryptionKey *string `json:"encryptionKey,omitempty" tf:"encryption_key"`
+	// +optional
+	EncryptionType *string `json:"encryptionType,omitempty" tf:"encryption_type"`
+	Engine         *string `json:"engine" tf:"engine"`
+	EngineVersion  *string `json:"engineVersion" tf:"engine_version"`
 	// +optional
 	InstanceNetworkType *string `json:"instanceNetworkType,omitempty" tf:"instance_network_type"`
 	InstanceSpec        *string `json:"instanceSpec" tf:"instance_spec"`
@@ -82,7 +88,9 @@ type ElasticInstanceSpecResource struct {
 	// +optional
 	Status      *string `json:"status,omitempty" tf:"status"`
 	StorageSize *int64  `json:"storageSize" tf:"storage_size"`
-	VswitchID   *string `json:"vswitchID" tf:"vswitch_id"`
+	// +optional
+	Tags      map[string]string `json:"tags,omitempty" tf:"tags"`
+	VswitchID *string           `json:"vswitchID" tf:"vswitch_id"`
 	// +optional
 	ZoneID *string `json:"zoneID,omitempty" tf:"zone_id"`
 }

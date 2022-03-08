@@ -24,4 +24,6 @@ type BridgeEventSourceExpansion interface{}
 
 type BridgeRuleExpansion interface{}
 
+type BridgeServiceLinkedRoleExpansion interface{}
+
 type BridgeSlrExpansion interface{}

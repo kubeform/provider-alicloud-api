@@ -86,7 +86,7 @@ func (r *DhcpOptionsSet) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range dhcpoptionssetForceNewList {
+	for key, _ := range dhcpoptionssetForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

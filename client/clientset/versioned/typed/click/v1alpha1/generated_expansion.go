@@ -20,4 +20,6 @@ package v1alpha1
 
 type HouseAccountExpansion interface{}
 
+type HouseBackupPolicyExpansion interface{}
+
 type HouseDbClusterExpansion interface{}

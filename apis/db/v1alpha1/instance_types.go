@@ -46,6 +46,19 @@ type InstanceSpecParameters struct {
 	Value *string `json:"value" tf:"value"`
 }
 
+type InstanceSpecPgHbaConf struct {
+	Address  *string `json:"address" tf:"address"`
+	Database *string `json:"database" tf:"database"`
+	// +optional
+	Mask   *string `json:"mask,omitempty" tf:"mask"`
+	Method *string `json:"method" tf:"method"`
+	// +optional
+	Option     *string `json:"option,omitempty" tf:"option"`
+	PriorityID *int64  `json:"priorityID" tf:"priority_id"`
+	Type       *string `json:"type" tf:"type"`
+	User       *string `json:"user" tf:"user"`
+}
+
 type InstanceSpec struct {
 	State *InstanceSpecResource `json:"state,omitempty" tf:"-"`
 
@@ -102,6 +115,8 @@ type InstanceSpecResource struct {
 	// +optional
 	ForceRestart *bool `json:"forceRestart,omitempty" tf:"force_restart"`
 	// +optional
+	FreshWhiteListReadins *string `json:"freshWhiteListReadins,omitempty" tf:"fresh_white_list_readins"`
+	// +optional
 	HaConfig *string `json:"haConfig,omitempty" tf:"ha_config"`
 	// +optional
 	InstanceChargeType *string `json:"instanceChargeType,omitempty" tf:"instance_charge_type"`
@@ -121,6 +136,8 @@ type InstanceSpecResource struct {
 	Parameters []InstanceSpecParameters `json:"parameters,omitempty" tf:"parameters"`
 	// +optional
 	Period *int64 `json:"period,omitempty" tf:"period"`
+	// +optional
+	PgHbaConf []InstanceSpecPgHbaConf `json:"pgHbaConf,omitempty" tf:"pg_hba_conf"`
 	// +optional
 	Port *string `json:"port,omitempty" tf:"port"`
 	// +optional

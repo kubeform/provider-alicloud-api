@@ -101,6 +101,8 @@ type ServerlessKubernetesSpecResource struct {
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
 	// +optional
+	RetainResources []string `json:"retainResources,omitempty" tf:"retain_resources"`
+	// +optional
 	SecurityGroupID *string `json:"securityGroupID,omitempty" tf:"security_group_id"`
 	// +optional
 	ServiceCIDR *string `json:"serviceCIDR,omitempty" tf:"service_cidr"`

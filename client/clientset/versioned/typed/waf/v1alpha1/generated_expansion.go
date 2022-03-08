@@ -23,3 +23,5 @@ type CertificateExpansion interface{}
 type DomainExpansion interface{}
 
 type InstanceExpansion interface{}
+
+type ProtectionModuleExpansion interface{}

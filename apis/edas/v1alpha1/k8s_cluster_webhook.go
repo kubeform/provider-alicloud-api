@@ -89,7 +89,7 @@ func (r *K8sCluster) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range k8sclusterForceNewList {
+	for key, _ := range k8sclusterForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

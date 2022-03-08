@@ -42,7 +42,6 @@ func (r *FirewallControlPolicy) SetupWebhookWithManager(mgr ctrl.Manager) error 
 var _ webhook.Validator = &FirewallControlPolicy{}
 
 var firewallcontrolpolicyForceNewList = map[string]bool{
-	"/acl_uuid":  true,
 	"/direction": true,
 }
 
@@ -89,7 +88,7 @@ func (r *FirewallControlPolicy) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range firewallcontrolpolicyForceNewList {
+	for key, _ := range firewallcontrolpolicyForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

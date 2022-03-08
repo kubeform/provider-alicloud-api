@@ -24,6 +24,8 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Executions returns a ExecutionInformer.
+	Executions() ExecutionInformer
 	// Flows returns a FlowInformer.
 	Flows() FlowInformer
 	// Schedules returns a ScheduleInformer.
@@ -39,6 +41,11 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// Executions returns a ExecutionInformer.
+func (v *version) Executions() ExecutionInformer {
+	return &executionInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Flows returns a FlowInformer.

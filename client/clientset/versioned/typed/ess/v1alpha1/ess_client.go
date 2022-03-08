@@ -28,6 +28,7 @@ import (
 type EssV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AlarmsGetter
+	AlbServerGroupAttachmentsGetter
 	AttachmentsGetter
 	LifecycleHooksGetter
 	NotificationsGetter
@@ -46,6 +47,10 @@ type EssV1alpha1Client struct {
 
 func (c *EssV1alpha1Client) Alarms(namespace string) AlarmInterface {
 	return newAlarms(c, namespace)
+}
+
+func (c *EssV1alpha1Client) AlbServerGroupAttachments(namespace string) AlbServerGroupAttachmentInterface {
+	return newAlbServerGroupAttachments(c, namespace)
 }
 
 func (c *EssV1alpha1Client) Attachments(namespace string) AttachmentInterface {

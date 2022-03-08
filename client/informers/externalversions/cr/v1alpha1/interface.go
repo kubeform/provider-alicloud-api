@@ -24,6 +24,10 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// ChartNamespaces returns a ChartNamespaceInformer.
+	ChartNamespaces() ChartNamespaceInformer
+	// ChartRepositories returns a ChartRepositoryInformer.
+	ChartRepositories() ChartRepositoryInformer
 	// EeInstances returns a EeInstanceInformer.
 	EeInstances() EeInstanceInformer
 	// EeNamespaces returns a EeNamespaceInformer.
@@ -49,6 +53,16 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// ChartNamespaces returns a ChartNamespaceInformer.
+func (v *version) ChartNamespaces() ChartNamespaceInformer {
+	return &chartNamespaceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ChartRepositories returns a ChartRepositoryInformer.
+func (v *version) ChartRepositories() ChartRepositoryInformer {
+	return &chartRepositoryInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // EeInstances returns a EeInstanceInformer.

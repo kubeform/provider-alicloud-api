@@ -42,6 +42,8 @@ type ManagerResourceShareExpansion interface{}
 
 type ManagerRoleExpansion interface{}
 
+type ManagerServiceLinkedRoleExpansion interface{}
+
 type ManagerSharedResourceExpansion interface{}
 
 type ManagerSharedTargetExpansion interface{}

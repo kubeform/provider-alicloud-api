@@ -67,6 +67,10 @@ type ScalingGroupSpecResource struct {
 	// +optional
 	GroupDeletionProtection *bool `json:"groupDeletionProtection,omitempty" tf:"group_deletion_protection"`
 	// +optional
+	LaunchTemplateID *string `json:"launchTemplateID,omitempty" tf:"launch_template_id"`
+	// +optional
+	LaunchTemplateVersion *string `json:"launchTemplateVersion,omitempty" tf:"launch_template_version"`
+	// +optional
 	LoadbalancerIDS []string `json:"loadbalancerIDS,omitempty" tf:"loadbalancer_ids"`
 	MaxSize         *int64   `json:"maxSize" tf:"max_size"`
 	MinSize         *int64   `json:"minSize" tf:"min_size"`

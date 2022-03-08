@@ -24,8 +24,22 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Applications returns a ApplicationInformer.
+	Applications() ApplicationInformer
+	// ApplicationGroups returns a ApplicationGroupInformer.
+	ApplicationGroups() ApplicationGroupInformer
 	// Executions returns a ExecutionInformer.
 	Executions() ExecutionInformer
+	// Parameters returns a ParameterInformer.
+	Parameters() ParameterInformer
+	// PatchBaselines returns a PatchBaselineInformer.
+	PatchBaselines() PatchBaselineInformer
+	// SecretParameters returns a SecretParameterInformer.
+	SecretParameters() SecretParameterInformer
+	// ServiceSettings returns a ServiceSettingInformer.
+	ServiceSettings() ServiceSettingInformer
+	// StateConfigurations returns a StateConfigurationInformer.
+	StateConfigurations() StateConfigurationInformer
 	// Templates returns a TemplateInformer.
 	Templates() TemplateInformer
 }
@@ -41,9 +55,44 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// Applications returns a ApplicationInformer.
+func (v *version) Applications() ApplicationInformer {
+	return &applicationInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ApplicationGroups returns a ApplicationGroupInformer.
+func (v *version) ApplicationGroups() ApplicationGroupInformer {
+	return &applicationGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Executions returns a ExecutionInformer.
 func (v *version) Executions() ExecutionInformer {
 	return &executionInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Parameters returns a ParameterInformer.
+func (v *version) Parameters() ParameterInformer {
+	return &parameterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// PatchBaselines returns a PatchBaselineInformer.
+func (v *version) PatchBaselines() PatchBaselineInformer {
+	return &patchBaselineInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// SecretParameters returns a SecretParameterInformer.
+func (v *version) SecretParameters() SecretParameterInformer {
+	return &secretParameterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ServiceSettings returns a ServiceSettingInformer.
+func (v *version) ServiceSettings() ServiceSettingInformer {
+	return &serviceSettingInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// StateConfigurations returns a StateConfigurationInformer.
+func (v *version) StateConfigurations() StateConfigurationInformer {
+	return &stateConfigurationInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Templates returns a TemplateInformer.

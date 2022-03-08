@@ -180,6 +180,7 @@ spec:
                 - destinationEndpointEngineName
                 - destinationEndpointInstanceType
                 - dtsInstanceID
+                - dtsJobName
                 - sourceEndpointEngineName
                 - sourceEndpointInstanceType
                 - structureInitialization
@@ -309,6 +310,7 @@ spec:
                 - destinationEndpointEngineName
                 - destinationEndpointInstanceType
                 - dtsInstanceID
+                - dtsJobName
                 - sourceEndpointEngineName
                 - sourceEndpointInstanceType
                 - structureInitialization

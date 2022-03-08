@@ -26,6 +26,22 @@ type AccountListerExpansion interface{}
 // AccountNamespaceLister.
 type AccountNamespaceListerExpansion interface{}
 
+// BackupListerExpansion allows custom methods to be added to
+// BackupLister.
+type BackupListerExpansion interface{}
+
+// BackupNamespaceListerExpansion allows custom methods to be added to
+// BackupNamespaceLister.
+type BackupNamespaceListerExpansion interface{}
+
+// CloneDbInstanceListerExpansion allows custom methods to be added to
+// CloneDbInstanceLister.
+type CloneDbInstanceListerExpansion interface{}
+
+// CloneDbInstanceNamespaceListerExpansion allows custom methods to be added to
+// CloneDbInstanceNamespaceLister.
+type CloneDbInstanceNamespaceListerExpansion interface{}
+
 // ParameterGroupListerExpansion allows custom methods to be added to
 // ParameterGroupLister.
 type ParameterGroupListerExpansion interface{}
@@ -33,3 +49,11 @@ type ParameterGroupListerExpansion interface{}
 // ParameterGroupNamespaceListerExpansion allows custom methods to be added to
 // ParameterGroupNamespaceLister.
 type ParameterGroupNamespaceListerExpansion interface{}
+
+// UpgradeDbInstanceListerExpansion allows custom methods to be added to
+// UpgradeDbInstanceLister.
+type UpgradeDbInstanceListerExpansion interface{}
+
+// UpgradeDbInstanceNamespaceListerExpansion allows custom methods to be added to
+// UpgradeDbInstanceNamespaceLister.
+type UpgradeDbInstanceNamespaceListerExpansion interface{}

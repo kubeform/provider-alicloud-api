@@ -27,12 +27,17 @@ import (
 
 type EcpV1alpha1Interface interface {
 	RESTClient() rest.Interface
+	InstancesGetter
 	KeyPairsGetter
 }
 
 // EcpV1alpha1Client is used to interact with features provided by the ecp.alicloud.kubeform.com group.
 type EcpV1alpha1Client struct {
 	restClient rest.Interface
+}
+
+func (c *EcpV1alpha1Client) Instances(namespace string) InstanceInterface {
+	return newInstances(c, namespace)
 }
 
 func (c *EcpV1alpha1Client) KeyPairs(namespace string) KeyPairInterface {

@@ -28,6 +28,7 @@ import (
 type SecurityV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	CenterGroupsGetter
+	CenterServiceLinkedRolesGetter
 	GroupsGetter
 	GroupRulesGetter
 }
@@ -39,6 +40,10 @@ type SecurityV1alpha1Client struct {
 
 func (c *SecurityV1alpha1Client) CenterGroups(namespace string) CenterGroupInterface {
 	return newCenterGroups(c, namespace)
+}
+
+func (c *SecurityV1alpha1Client) CenterServiceLinkedRoles(namespace string) CenterServiceLinkedRoleInterface {
+	return newCenterServiceLinkedRoles(c, namespace)
 }
 
 func (c *SecurityV1alpha1Client) Groups(namespace string) GroupInterface {

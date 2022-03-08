@@ -33,6 +33,10 @@ func (c *FakeEssV1alpha1) Alarms(namespace string) v1alpha1.AlarmInterface {
 	return &FakeAlarms{c, namespace}
 }
 
+func (c *FakeEssV1alpha1) AlbServerGroupAttachments(namespace string) v1alpha1.AlbServerGroupAttachmentInterface {
+	return &FakeAlbServerGroupAttachments{c, namespace}
+}
+
 func (c *FakeEssV1alpha1) Attachments(namespace string) v1alpha1.AttachmentInterface {
 	return &FakeAttachments{c, namespace}
 }

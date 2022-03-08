@@ -24,6 +24,8 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Accounts returns a AccountInformer.
+	Accounts() AccountInformer
 	// Connections returns a ConnectionInformer.
 	Connections() ConnectionInformer
 	// ElasticInstances returns a ElasticInstanceInformer.
@@ -41,6 +43,11 @@ type version struct {
 // New returns a new Interface.
 func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakListOptions internalinterfaces.TweakListOptionsFunc) Interface {
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
+}
+
+// Accounts returns a AccountInformer.
+func (v *version) Accounts() AccountInformer {
+	return &accountInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Connections returns a ConnectionInformer.

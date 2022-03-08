@@ -89,7 +89,7 @@ func (r *EeNamespace) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range eenamespaceForceNewList {
+	for key, _ := range eenamespaceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

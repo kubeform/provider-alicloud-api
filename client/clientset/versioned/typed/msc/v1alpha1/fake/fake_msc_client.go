@@ -37,6 +37,10 @@ func (c *FakeMscV1alpha1) SubSubscriptions(namespace string) v1alpha1.SubSubscri
 	return &FakeSubSubscriptions{c, namespace}
 }
 
+func (c *FakeMscV1alpha1) SubWebhooks(namespace string) v1alpha1.SubWebhookInterface {
+	return &FakeSubWebhooks{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeMscV1alpha1) RESTClient() rest.Interface {

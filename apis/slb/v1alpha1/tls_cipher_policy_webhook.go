@@ -86,7 +86,7 @@ func (r *TlsCipherPolicy) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range tlscipherpolicyForceNewList {
+	for key, _ := range tlscipherpolicyForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

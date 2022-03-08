@@ -95,7 +95,7 @@ func (r *Order) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range orderForceNewList {
+	for key, _ := range orderForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

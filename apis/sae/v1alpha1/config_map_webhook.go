@@ -89,7 +89,7 @@ func (r *ConfigMap) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range configmapForceNewList {
+	for key, _ := range configmapForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -65,6 +65,8 @@ type TransitRouterPeerAttachmentSpecResource struct {
 	// +optional
 	Bandwidth *int64 `json:"bandwidth,omitempty" tf:"bandwidth"`
 	// +optional
+	BandwidthType *string `json:"bandwidthType,omitempty" tf:"bandwidth_type"`
+	// +optional
 	CenBandwidthPackageID *string `json:"cenBandwidthPackageID,omitempty" tf:"cen_bandwidth_package_id"`
 	CenID                 *string `json:"cenID" tf:"cen_id"`
 	// +optional

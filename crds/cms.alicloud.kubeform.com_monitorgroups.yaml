@@ -65,12 +65,14 @@ spec:
                     type: string
                   monitorGroupName:
                     type: string
+                  resourceGroupID:
+                    type: string
+                  resourceGroupName:
+                    type: string
                   tags:
                     additionalProperties:
                       type: string
                     type: object
-                required:
-                - monitorGroupName
                 type: object
               state:
                 properties:
@@ -82,12 +84,14 @@ spec:
                     type: string
                   monitorGroupName:
                     type: string
+                  resourceGroupID:
+                    type: string
+                  resourceGroupName:
+                    type: string
                   tags:
                     additionalProperties:
                       type: string
                     type: object
-                required:
-                - monitorGroupName
                 type: object
               terminationPolicy:
                 enum:

@@ -39,6 +39,7 @@ type ResourceV1alpha1Interface interface {
 	ManagerResourceGroupsGetter
 	ManagerResourceSharesGetter
 	ManagerRolesGetter
+	ManagerServiceLinkedRolesGetter
 	ManagerSharedResourcesGetter
 	ManagerSharedTargetsGetter
 }
@@ -94,6 +95,10 @@ func (c *ResourceV1alpha1Client) ManagerResourceShares(namespace string) Manager
 
 func (c *ResourceV1alpha1Client) ManagerRoles(namespace string) ManagerRoleInterface {
 	return newManagerRoles(c, namespace)
+}
+
+func (c *ResourceV1alpha1Client) ManagerServiceLinkedRoles(namespace string) ManagerServiceLinkedRoleInterface {
+	return newManagerServiceLinkedRoles(c, namespace)
 }
 
 func (c *ResourceV1alpha1Client) ManagerSharedResources(namespace string) ManagerSharedResourceInterface {

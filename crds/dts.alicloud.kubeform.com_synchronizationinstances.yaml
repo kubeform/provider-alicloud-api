@@ -57,6 +57,10 @@ spec:
                 type: object
               resource:
                 properties:
+                  autoPay:
+                    type: string
+                  autoStart:
+                    type: string
                   computeUnit:
                     format: int64
                     type: integer
@@ -98,6 +102,10 @@ spec:
                 type: object
               state:
                 properties:
+                  autoPay:
+                    type: string
+                  autoStart:
+                    type: string
                   computeUnit:
                     format: int64
                     type: integer

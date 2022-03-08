@@ -30,6 +30,8 @@ type Interface interface {
 	MailMailAddresses() MailMailAddressInformer
 	// MailReceiverses returns a MailReceiversInformer.
 	MailReceiverses() MailReceiversInformer
+	// MailTags returns a MailTagInformer.
+	MailTags() MailTagInformer
 }
 
 type version struct {
@@ -56,4 +58,9 @@ func (v *version) MailMailAddresses() MailMailAddressInformer {
 // MailReceiverses returns a MailReceiversInformer.
 func (v *version) MailReceiverses() MailReceiversInformer {
 	return &mailReceiversInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// MailTags returns a MailTagInformer.
+func (v *version) MailTags() MailTagInformer {
+	return &mailTagInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

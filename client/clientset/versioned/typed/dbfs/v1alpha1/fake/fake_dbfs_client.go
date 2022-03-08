@@ -33,6 +33,18 @@ func (c *FakeDbfsV1alpha1) Instances(namespace string) v1alpha1.InstanceInterfac
 	return &FakeInstances{c, namespace}
 }
 
+func (c *FakeDbfsV1alpha1) InstanceAttachments(namespace string) v1alpha1.InstanceAttachmentInterface {
+	return &FakeInstanceAttachments{c, namespace}
+}
+
+func (c *FakeDbfsV1alpha1) ServiceLinkedRoles(namespace string) v1alpha1.ServiceLinkedRoleInterface {
+	return &FakeServiceLinkedRoles{c, namespace}
+}
+
+func (c *FakeDbfsV1alpha1) Snapshots(namespace string) v1alpha1.SnapshotInterface {
+	return &FakeSnapshots{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeDbfsV1alpha1) RESTClient() rest.Interface {

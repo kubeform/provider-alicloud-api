@@ -91,7 +91,7 @@ func (r *AggregateConfigRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range aggregateconfigruleForceNewList {
+	for key, _ := range aggregateconfigruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

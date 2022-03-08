@@ -25,3 +25,27 @@ type InstanceListerExpansion interface{}
 // InstanceNamespaceListerExpansion allows custom methods to be added to
 // InstanceNamespaceLister.
 type InstanceNamespaceListerExpansion interface{}
+
+// InstanceAttachmentListerExpansion allows custom methods to be added to
+// InstanceAttachmentLister.
+type InstanceAttachmentListerExpansion interface{}
+
+// InstanceAttachmentNamespaceListerExpansion allows custom methods to be added to
+// InstanceAttachmentNamespaceLister.
+type InstanceAttachmentNamespaceListerExpansion interface{}
+
+// ServiceLinkedRoleListerExpansion allows custom methods to be added to
+// ServiceLinkedRoleLister.
+type ServiceLinkedRoleListerExpansion interface{}
+
+// ServiceLinkedRoleNamespaceListerExpansion allows custom methods to be added to
+// ServiceLinkedRoleNamespaceLister.
+type ServiceLinkedRoleNamespaceListerExpansion interface{}
+
+// SnapshotListerExpansion allows custom methods to be added to
+// SnapshotLister.
+type SnapshotListerExpansion interface{}
+
+// SnapshotNamespaceListerExpansion allows custom methods to be added to
+// SnapshotNamespaceLister.
+type SnapshotNamespaceListerExpansion interface{}

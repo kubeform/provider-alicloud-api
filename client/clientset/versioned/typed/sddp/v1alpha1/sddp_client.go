@@ -28,6 +28,7 @@ import (
 type SddpV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	ConfigsGetter
+	DataLimitsGetter
 	InstancesGetter
 	RulesGetter
 }
@@ -39,6 +40,10 @@ type SddpV1alpha1Client struct {
 
 func (c *SddpV1alpha1Client) Configs(namespace string) ConfigInterface {
 	return newConfigs(c, namespace)
+}
+
+func (c *SddpV1alpha1Client) DataLimits(namespace string) DataLimitInterface {
+	return newDataLimits(c, namespace)
 }
 
 func (c *SddpV1alpha1Client) Instances(namespace string) InstanceInterface {

@@ -94,7 +94,7 @@ func (r *TransitRouterPeerAttachment) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range transitrouterpeerattachmentForceNewList {
+	for key, _ := range transitrouterpeerattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -114,6 +114,14 @@ type ManagerRoleListerExpansion interface{}
 // ManagerRoleNamespaceLister.
 type ManagerRoleNamespaceListerExpansion interface{}
 
+// ManagerServiceLinkedRoleListerExpansion allows custom methods to be added to
+// ManagerServiceLinkedRoleLister.
+type ManagerServiceLinkedRoleListerExpansion interface{}
+
+// ManagerServiceLinkedRoleNamespaceListerExpansion allows custom methods to be added to
+// ManagerServiceLinkedRoleNamespaceLister.
+type ManagerServiceLinkedRoleNamespaceListerExpansion interface{}
+
 // ManagerSharedResourceListerExpansion allows custom methods to be added to
 // ManagerSharedResourceLister.
 type ManagerSharedResourceListerExpansion interface{}

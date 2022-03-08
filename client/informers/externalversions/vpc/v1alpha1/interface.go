@@ -24,10 +24,24 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// BgpGroups returns a BgpGroupInformer.
+	BgpGroups() BgpGroupInformer
+	// BgpNetworks returns a BgpNetworkInformer.
+	BgpNetworks() BgpNetworkInformer
+	// BgpPeers returns a BgpPeerInformer.
+	BgpPeers() BgpPeerInformer
 	// DhcpOptionsSets returns a DhcpOptionsSetInformer.
 	DhcpOptionsSets() DhcpOptionsSetInformer
+	// DhcpOptionsSetAttachments returns a DhcpOptionsSetAttachmentInformer.
+	DhcpOptionsSetAttachments() DhcpOptionsSetAttachmentInformer
 	// FlowLogs returns a FlowLogInformer.
 	FlowLogs() FlowLogInformer
+	// Ipv6EgressRules returns a Ipv6EgressRuleInformer.
+	Ipv6EgressRules() Ipv6EgressRuleInformer
+	// Ipv6Gateways returns a Ipv6GatewayInformer.
+	Ipv6Gateways() Ipv6GatewayInformer
+	// Ipv6InternetBandwidths returns a Ipv6InternetBandwidthInformer.
+	Ipv6InternetBandwidths() Ipv6InternetBandwidthInformer
 	// NatIPs returns a NatIPInformer.
 	NatIPs() NatIPInformer
 	// NatIPCIDRs returns a NatIPCIDRInformer.
@@ -36,6 +50,12 @@ type Interface interface {
 	TrafficMirrorFilters() TrafficMirrorFilterInformer
 	// TrafficMirrorFilterEgressRules returns a TrafficMirrorFilterEgressRuleInformer.
 	TrafficMirrorFilterEgressRules() TrafficMirrorFilterEgressRuleInformer
+	// TrafficMirrorFilterIngressRules returns a TrafficMirrorFilterIngressRuleInformer.
+	TrafficMirrorFilterIngressRules() TrafficMirrorFilterIngressRuleInformer
+	// TrafficMirrorSessions returns a TrafficMirrorSessionInformer.
+	TrafficMirrorSessions() TrafficMirrorSessionInformer
+	// VbrHas returns a VbrHaInformer.
+	VbrHas() VbrHaInformer
 	// Vpcs returns a VpcInformer.
 	Vpcs() VpcInformer
 }
@@ -51,14 +71,49 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// BgpGroups returns a BgpGroupInformer.
+func (v *version) BgpGroups() BgpGroupInformer {
+	return &bgpGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// BgpNetworks returns a BgpNetworkInformer.
+func (v *version) BgpNetworks() BgpNetworkInformer {
+	return &bgpNetworkInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// BgpPeers returns a BgpPeerInformer.
+func (v *version) BgpPeers() BgpPeerInformer {
+	return &bgpPeerInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // DhcpOptionsSets returns a DhcpOptionsSetInformer.
 func (v *version) DhcpOptionsSets() DhcpOptionsSetInformer {
 	return &dhcpOptionsSetInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// DhcpOptionsSetAttachments returns a DhcpOptionsSetAttachmentInformer.
+func (v *version) DhcpOptionsSetAttachments() DhcpOptionsSetAttachmentInformer {
+	return &dhcpOptionsSetAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // FlowLogs returns a FlowLogInformer.
 func (v *version) FlowLogs() FlowLogInformer {
 	return &flowLogInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Ipv6EgressRules returns a Ipv6EgressRuleInformer.
+func (v *version) Ipv6EgressRules() Ipv6EgressRuleInformer {
+	return &ipv6EgressRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Ipv6Gateways returns a Ipv6GatewayInformer.
+func (v *version) Ipv6Gateways() Ipv6GatewayInformer {
+	return &ipv6GatewayInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Ipv6InternetBandwidths returns a Ipv6InternetBandwidthInformer.
+func (v *version) Ipv6InternetBandwidths() Ipv6InternetBandwidthInformer {
+	return &ipv6InternetBandwidthInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // NatIPs returns a NatIPInformer.
@@ -79,6 +134,21 @@ func (v *version) TrafficMirrorFilters() TrafficMirrorFilterInformer {
 // TrafficMirrorFilterEgressRules returns a TrafficMirrorFilterEgressRuleInformer.
 func (v *version) TrafficMirrorFilterEgressRules() TrafficMirrorFilterEgressRuleInformer {
 	return &trafficMirrorFilterEgressRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TrafficMirrorFilterIngressRules returns a TrafficMirrorFilterIngressRuleInformer.
+func (v *version) TrafficMirrorFilterIngressRules() TrafficMirrorFilterIngressRuleInformer {
+	return &trafficMirrorFilterIngressRuleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TrafficMirrorSessions returns a TrafficMirrorSessionInformer.
+func (v *version) TrafficMirrorSessions() TrafficMirrorSessionInformer {
+	return &trafficMirrorSessionInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// VbrHas returns a VbrHaInformer.
+func (v *version) VbrHas() VbrHaInformer {
+	return &vbrHaInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // Vpcs returns a VpcInformer.

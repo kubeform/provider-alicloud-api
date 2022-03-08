@@ -97,7 +97,7 @@ func (r *Disk) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range diskForceNewList {
+	for key, _ := range diskForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -33,6 +33,10 @@ func (c *FakeSaeV1alpha1) Applications(namespace string) v1alpha1.ApplicationInt
 	return &FakeApplications{c, namespace}
 }
 
+func (c *FakeSaeV1alpha1) ApplicationScalingRules(namespace string) v1alpha1.ApplicationScalingRuleInterface {
+	return &FakeApplicationScalingRules{c, namespace}
+}
+
 func (c *FakeSaeV1alpha1) ConfigMaps(namespace string) v1alpha1.ConfigMapInterface {
 	return &FakeConfigMaps{c, namespace}
 }

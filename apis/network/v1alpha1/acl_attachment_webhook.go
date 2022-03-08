@@ -88,7 +88,7 @@ func (r *AclAttachment) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range aclattachmentForceNewList {
+	for key, _ := range aclattachmentForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

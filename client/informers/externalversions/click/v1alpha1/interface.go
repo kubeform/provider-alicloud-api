@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// HouseAccounts returns a HouseAccountInformer.
 	HouseAccounts() HouseAccountInformer
+	// HouseBackupPolicies returns a HouseBackupPolicyInformer.
+	HouseBackupPolicies() HouseBackupPolicyInformer
 	// HouseDbClusters returns a HouseDbClusterInformer.
 	HouseDbClusters() HouseDbClusterInformer
 }
@@ -44,6 +46,11 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // HouseAccounts returns a HouseAccountInformer.
 func (v *version) HouseAccounts() HouseAccountInformer {
 	return &houseAccountInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// HouseBackupPolicies returns a HouseBackupPolicyInformer.
+func (v *version) HouseBackupPolicies() HouseBackupPolicyInformer {
+	return &houseBackupPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // HouseDbClusters returns a HouseDbClusterInformer.

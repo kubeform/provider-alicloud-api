@@ -42,7 +42,6 @@ func (r *CompliancePack) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &CompliancePack{}
 
 var compliancepackForceNewList = map[string]bool{
-	"/compliance_pack_name":        true,
 	"/compliance_pack_template_id": true,
 }
 
@@ -89,7 +88,7 @@ func (r *CompliancePack) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range compliancepackForceNewList {
+	for key, _ := range compliancepackForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -89,6 +89,9 @@ spec:
                     type: string
                   notifyType:
                     type: string
+                  prometheusAlertRuleID:
+                    format: int64
+                    type: integer
                   prometheusAlertRuleName:
                     type: string
                   status:
@@ -137,6 +140,9 @@ spec:
                     type: string
                   notifyType:
                     type: string
+                  prometheusAlertRuleID:
+                    format: int64
+                    type: integer
                   prometheusAlertRuleName:
                     type: string
                   status:

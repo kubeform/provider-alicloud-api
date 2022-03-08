@@ -48,6 +48,8 @@ type Interface interface {
 	ManagerResourceShares() ManagerResourceShareInformer
 	// ManagerRoles returns a ManagerRoleInformer.
 	ManagerRoles() ManagerRoleInformer
+	// ManagerServiceLinkedRoles returns a ManagerServiceLinkedRoleInformer.
+	ManagerServiceLinkedRoles() ManagerServiceLinkedRoleInformer
 	// ManagerSharedResources returns a ManagerSharedResourceInformer.
 	ManagerSharedResources() ManagerSharedResourceInformer
 	// ManagerSharedTargets returns a ManagerSharedTargetInformer.
@@ -123,6 +125,11 @@ func (v *version) ManagerResourceShares() ManagerResourceShareInformer {
 // ManagerRoles returns a ManagerRoleInformer.
 func (v *version) ManagerRoles() ManagerRoleInformer {
 	return &managerRoleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ManagerServiceLinkedRoles returns a ManagerServiceLinkedRoleInformer.
+func (v *version) ManagerServiceLinkedRoles() ManagerServiceLinkedRoleInformer {
+	return &managerServiceLinkedRoleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // ManagerSharedResources returns a ManagerSharedResourceInformer.

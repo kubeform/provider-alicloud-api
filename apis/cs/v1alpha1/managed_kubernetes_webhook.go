@@ -42,17 +42,20 @@ func (r *ManagedKubernetes) SetupWebhookWithManager(mgr ctrl.Manager) error {
 var _ webhook.Validator = &ManagedKubernetes{}
 
 var managedkubernetesForceNewList = map[string]bool{
-	"/api_audiences":           true,
-	"/cluster_domain":          true,
-	"/custom_san":              true,
-	"/encryption_provider_key": true,
-	"/load_balancer_spec":      true,
-	"/node_port_range":         true,
-	"/os_type":                 true,
-	"/platform":                true,
-	"/resource_group_id":       true,
-	"/service_account_issuer":  true,
-	"/timezone":                true,
+	"/api_audiences":                true,
+	"/cluster_domain":               true,
+	"/control_plane_log_components": true,
+	"/control_plane_log_project":    true,
+	"/control_plane_log_ttl":        true,
+	"/custom_san":                   true,
+	"/encryption_provider_key":      true,
+	"/load_balancer_spec":           true,
+	"/node_port_range":              true,
+	"/os_type":                      true,
+	"/platform":                     true,
+	"/resource_group_id":            true,
+	"/service_account_issuer":       true,
+	"/timezone":                     true,
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
@@ -98,7 +101,7 @@ func (r *ManagedKubernetes) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range managedkubernetesForceNewList {
+	for key, _ := range managedkubernetesForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

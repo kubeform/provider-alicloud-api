@@ -41,3 +41,11 @@ type OpenapiImageCacheListerExpansion interface{}
 // OpenapiImageCacheNamespaceListerExpansion allows custom methods to be added to
 // OpenapiImageCacheNamespaceLister.
 type OpenapiImageCacheNamespaceListerExpansion interface{}
+
+// VirtualNodeListerExpansion allows custom methods to be added to
+// VirtualNodeLister.
+type VirtualNodeListerExpansion interface{}
+
+// VirtualNodeNamespaceListerExpansion allows custom methods to be added to
+// VirtualNodeNamespaceLister.
+type VirtualNodeNamespaceListerExpansion interface{}

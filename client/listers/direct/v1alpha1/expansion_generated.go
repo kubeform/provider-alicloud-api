@@ -41,3 +41,11 @@ type MailReceiversListerExpansion interface{}
 // MailReceiversNamespaceListerExpansion allows custom methods to be added to
 // MailReceiversNamespaceLister.
 type MailReceiversNamespaceListerExpansion interface{}
+
+// MailTagListerExpansion allows custom methods to be added to
+// MailTagLister.
+type MailTagListerExpansion interface{}
+
+// MailTagNamespaceListerExpansion allows custom methods to be added to
+// MailTagNamespaceLister.
+type MailTagNamespaceListerExpansion interface{}

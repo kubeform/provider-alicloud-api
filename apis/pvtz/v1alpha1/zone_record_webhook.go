@@ -88,7 +88,7 @@ func (r *ZoneRecord) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range zonerecordForceNewList {
+	for key, _ := range zonerecordForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

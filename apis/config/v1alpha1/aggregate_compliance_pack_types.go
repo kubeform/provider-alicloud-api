@@ -41,6 +41,11 @@ type AggregateCompliancePack struct {
 	Status            AggregateCompliancePackStatus `json:"status,omitempty"`
 }
 
+type AggregateCompliancePackSpecConfigRuleIDS struct {
+	// +optional
+	ConfigRuleID *string `json:"configRuleID,omitempty" tf:"config_rule_id"`
+}
+
 type AggregateCompliancePackSpecConfigRulesConfigRuleParameters struct {
 	// +optional
 	ParameterName *string `json:"parameterName,omitempty" tf:"parameter_name"`
@@ -73,12 +78,17 @@ type AggregateCompliancePackSpecResource struct {
 
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
-	AggregateCompliancePackName *string                                  `json:"aggregateCompliancePackName" tf:"aggregate_compliance_pack_name"`
-	AggregatorID                *string                                  `json:"aggregatorID" tf:"aggregator_id"`
-	CompliancePackTemplateID    *string                                  `json:"compliancePackTemplateID" tf:"compliance_pack_template_id"`
-	ConfigRules                 []AggregateCompliancePackSpecConfigRules `json:"configRules" tf:"config_rules"`
-	Description                 *string                                  `json:"description" tf:"description"`
-	RiskLevel                   *int64                                   `json:"riskLevel" tf:"risk_level"`
+	AggregateCompliancePackName *string `json:"aggregateCompliancePackName" tf:"aggregate_compliance_pack_name"`
+	AggregatorID                *string `json:"aggregatorID" tf:"aggregator_id"`
+	// +optional
+	CompliancePackTemplateID *string `json:"compliancePackTemplateID,omitempty" tf:"compliance_pack_template_id"`
+	// +optional
+	ConfigRuleIDS []AggregateCompliancePackSpecConfigRuleIDS `json:"configRuleIDS,omitempty" tf:"config_rule_ids"`
+	// +optional
+	// Deprecated
+	ConfigRules []AggregateCompliancePackSpecConfigRules `json:"configRules,omitempty" tf:"config_rules"`
+	Description *string                                  `json:"description" tf:"description"`
+	RiskLevel   *int64                                   `json:"riskLevel" tf:"risk_level"`
 	// +optional
 	Status *string `json:"status,omitempty" tf:"status"`
 }

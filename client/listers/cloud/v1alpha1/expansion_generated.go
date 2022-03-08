@@ -66,6 +66,14 @@ type FirewallInstanceListerExpansion interface{}
 // FirewallInstanceNamespaceLister.
 type FirewallInstanceNamespaceListerExpansion interface{}
 
+// SsoAccessAssignmentListerExpansion allows custom methods to be added to
+// SsoAccessAssignmentLister.
+type SsoAccessAssignmentListerExpansion interface{}
+
+// SsoAccessAssignmentNamespaceListerExpansion allows custom methods to be added to
+// SsoAccessAssignmentNamespaceLister.
+type SsoAccessAssignmentNamespaceListerExpansion interface{}
+
 // SsoAccessConfigurationListerExpansion allows custom methods to be added to
 // SsoAccessConfigurationLister.
 type SsoAccessConfigurationListerExpansion interface{}
@@ -73,6 +81,14 @@ type SsoAccessConfigurationListerExpansion interface{}
 // SsoAccessConfigurationNamespaceListerExpansion allows custom methods to be added to
 // SsoAccessConfigurationNamespaceLister.
 type SsoAccessConfigurationNamespaceListerExpansion interface{}
+
+// SsoAccessConfigurationProvisioningListerExpansion allows custom methods to be added to
+// SsoAccessConfigurationProvisioningLister.
+type SsoAccessConfigurationProvisioningListerExpansion interface{}
+
+// SsoAccessConfigurationProvisioningNamespaceListerExpansion allows custom methods to be added to
+// SsoAccessConfigurationProvisioningNamespaceLister.
+type SsoAccessConfigurationProvisioningNamespaceListerExpansion interface{}
 
 // SsoDirectoryListerExpansion allows custom methods to be added to
 // SsoDirectoryLister.
@@ -106,6 +122,30 @@ type SsoUserListerExpansion interface{}
 // SsoUserNamespaceLister.
 type SsoUserNamespaceListerExpansion interface{}
 
+// SsoUserAttachmentListerExpansion allows custom methods to be added to
+// SsoUserAttachmentLister.
+type SsoUserAttachmentListerExpansion interface{}
+
+// SsoUserAttachmentNamespaceListerExpansion allows custom methods to be added to
+// SsoUserAttachmentNamespaceLister.
+type SsoUserAttachmentNamespaceListerExpansion interface{}
+
+// StorageGatewayExpressSyncListerExpansion allows custom methods to be added to
+// StorageGatewayExpressSyncLister.
+type StorageGatewayExpressSyncListerExpansion interface{}
+
+// StorageGatewayExpressSyncNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayExpressSyncNamespaceLister.
+type StorageGatewayExpressSyncNamespaceListerExpansion interface{}
+
+// StorageGatewayExpressSyncShareAttachmentListerExpansion allows custom methods to be added to
+// StorageGatewayExpressSyncShareAttachmentLister.
+type StorageGatewayExpressSyncShareAttachmentListerExpansion interface{}
+
+// StorageGatewayExpressSyncShareAttachmentNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayExpressSyncShareAttachmentNamespaceLister.
+type StorageGatewayExpressSyncShareAttachmentNamespaceListerExpansion interface{}
+
 // StorageGatewayGatewayListerExpansion allows custom methods to be added to
 // StorageGatewayGatewayLister.
 type StorageGatewayGatewayListerExpansion interface{}
@@ -113,6 +153,46 @@ type StorageGatewayGatewayListerExpansion interface{}
 // StorageGatewayGatewayNamespaceListerExpansion allows custom methods to be added to
 // StorageGatewayGatewayNamespaceLister.
 type StorageGatewayGatewayNamespaceListerExpansion interface{}
+
+// StorageGatewayGatewayBlockVolumeListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayBlockVolumeLister.
+type StorageGatewayGatewayBlockVolumeListerExpansion interface{}
+
+// StorageGatewayGatewayBlockVolumeNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayBlockVolumeNamespaceLister.
+type StorageGatewayGatewayBlockVolumeNamespaceListerExpansion interface{}
+
+// StorageGatewayGatewayCacheDiskListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayCacheDiskLister.
+type StorageGatewayGatewayCacheDiskListerExpansion interface{}
+
+// StorageGatewayGatewayCacheDiskNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayCacheDiskNamespaceLister.
+type StorageGatewayGatewayCacheDiskNamespaceListerExpansion interface{}
+
+// StorageGatewayGatewayFileShareListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayFileShareLister.
+type StorageGatewayGatewayFileShareListerExpansion interface{}
+
+// StorageGatewayGatewayFileShareNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayFileShareNamespaceLister.
+type StorageGatewayGatewayFileShareNamespaceListerExpansion interface{}
+
+// StorageGatewayGatewayLoggingListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayLoggingLister.
+type StorageGatewayGatewayLoggingListerExpansion interface{}
+
+// StorageGatewayGatewayLoggingNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayGatewayLoggingNamespaceLister.
+type StorageGatewayGatewayLoggingNamespaceListerExpansion interface{}
+
+// StorageGatewayGatewaySmbUserListerExpansion allows custom methods to be added to
+// StorageGatewayGatewaySmbUserLister.
+type StorageGatewayGatewaySmbUserListerExpansion interface{}
+
+// StorageGatewayGatewaySmbUserNamespaceListerExpansion allows custom methods to be added to
+// StorageGatewayGatewaySmbUserNamespaceLister.
+type StorageGatewayGatewaySmbUserNamespaceListerExpansion interface{}
 
 // StorageGatewayStorageBundleListerExpansion allows custom methods to be added to
 // StorageGatewayStorageBundleLister.

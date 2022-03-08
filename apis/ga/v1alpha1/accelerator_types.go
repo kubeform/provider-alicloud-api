@@ -63,11 +63,17 @@ type AcceleratorSpecResource struct {
 	// +optional
 	AcceleratorName *string `json:"acceleratorName,omitempty" tf:"accelerator_name"`
 	// +optional
+	AutoRenewDuration *int64 `json:"autoRenewDuration,omitempty" tf:"auto_renew_duration"`
+	// +optional
 	AutoUseCoupon *bool `json:"autoUseCoupon,omitempty" tf:"auto_use_coupon"`
 	// +optional
 	Description *string `json:"description,omitempty" tf:"description"`
 	Duration    *int64  `json:"duration" tf:"duration"`
-	Spec        *string `json:"spec" tf:"spec"`
+	// +optional
+	PricingCycle *string `json:"pricingCycle,omitempty" tf:"pricing_cycle"`
+	// +optional
+	RenewalStatus *string `json:"renewalStatus,omitempty" tf:"renewal_status"`
+	Spec          *string `json:"spec" tf:"spec"`
 	// +optional
 	Status *string `json:"status,omitempty" tf:"status"`
 }

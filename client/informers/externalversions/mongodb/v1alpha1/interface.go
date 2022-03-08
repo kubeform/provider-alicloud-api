@@ -24,10 +24,20 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
+	// Accounts returns a AccountInformer.
+	Accounts() AccountInformer
+	// AuditPolicies returns a AuditPolicyInformer.
+	AuditPolicies() AuditPolicyInformer
 	// Instances returns a InstanceInformer.
 	Instances() InstanceInformer
+	// ServerlessInstances returns a ServerlessInstanceInformer.
+	ServerlessInstances() ServerlessInstanceInformer
 	// ShardingInstances returns a ShardingInstanceInformer.
 	ShardingInstances() ShardingInstanceInformer
+	// ShardingNetworkPrivateAddresses returns a ShardingNetworkPrivateAddressInformer.
+	ShardingNetworkPrivateAddresses() ShardingNetworkPrivateAddressInformer
+	// ShardingNetworkPublicAddresses returns a ShardingNetworkPublicAddressInformer.
+	ShardingNetworkPublicAddresses() ShardingNetworkPublicAddressInformer
 }
 
 type version struct {
@@ -41,12 +51,37 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
+// Accounts returns a AccountInformer.
+func (v *version) Accounts() AccountInformer {
+	return &accountInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AuditPolicies returns a AuditPolicyInformer.
+func (v *version) AuditPolicies() AuditPolicyInformer {
+	return &auditPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Instances returns a InstanceInformer.
 func (v *version) Instances() InstanceInformer {
 	return &instanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// ServerlessInstances returns a ServerlessInstanceInformer.
+func (v *version) ServerlessInstances() ServerlessInstanceInformer {
+	return &serverlessInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // ShardingInstances returns a ShardingInstanceInformer.
 func (v *version) ShardingInstances() ShardingInstanceInformer {
 	return &shardingInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ShardingNetworkPrivateAddresses returns a ShardingNetworkPrivateAddressInformer.
+func (v *version) ShardingNetworkPrivateAddresses() ShardingNetworkPrivateAddressInformer {
+	return &shardingNetworkPrivateAddressInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ShardingNetworkPublicAddresses returns a ShardingNetworkPublicAddressInformer.
+func (v *version) ShardingNetworkPublicAddresses() ShardingNetworkPublicAddressInformer {
+	return &shardingNetworkPublicAddressInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

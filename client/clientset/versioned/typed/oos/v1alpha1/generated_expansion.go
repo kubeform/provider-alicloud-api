@@ -18,6 +18,20 @@ limitations under the License.
 
 package v1alpha1
 
+type ApplicationExpansion interface{}
+
+type ApplicationGroupExpansion interface{}
+
 type ExecutionExpansion interface{}
+
+type ParameterExpansion interface{}
+
+type PatchBaselineExpansion interface{}
+
+type SecretParameterExpansion interface{}
+
+type ServiceSettingExpansion interface{}
+
+type StateConfigurationExpansion interface{}
 
 type TemplateExpansion interface{}

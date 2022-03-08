@@ -89,7 +89,7 @@ func (r *UserVpcAuthorization) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range uservpcauthorizationForceNewList {
+	for key, _ := range uservpcauthorizationForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

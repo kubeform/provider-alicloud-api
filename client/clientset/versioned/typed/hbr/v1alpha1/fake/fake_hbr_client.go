@@ -45,8 +45,16 @@ func (c *FakeHbrV1alpha1) OssBackupPlans(namespace string) v1alpha1.OssBackupPla
 	return &FakeOssBackupPlans{c, namespace}
 }
 
+func (c *FakeHbrV1alpha1) ReplicationVaults(namespace string) v1alpha1.ReplicationVaultInterface {
+	return &FakeReplicationVaults{c, namespace}
+}
+
 func (c *FakeHbrV1alpha1) RestoreJobs(namespace string) v1alpha1.RestoreJobInterface {
 	return &FakeRestoreJobs{c, namespace}
+}
+
+func (c *FakeHbrV1alpha1) ServerBackupPlans(namespace string) v1alpha1.ServerBackupPlanInterface {
+	return &FakeServerBackupPlans{c, namespace}
 }
 
 func (c *FakeHbrV1alpha1) Vaults(namespace string) v1alpha1.VaultInterface {

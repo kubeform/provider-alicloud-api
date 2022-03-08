@@ -61,9 +61,8 @@ type DbauditInstanceSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	Description *string `json:"description" tf:"description"`
-	// +optional
-	Period   *int64  `json:"period,omitempty" tf:"period"`
-	PlanCode *string `json:"planCode" tf:"plan_code"`
+	Period      *int64  `json:"period" tf:"period"`
+	PlanCode    *string `json:"planCode" tf:"plan_code"`
 	// +optional
 	ResourceGroupID *string `json:"resourceGroupID,omitempty" tf:"resource_group_id"`
 	// +optional

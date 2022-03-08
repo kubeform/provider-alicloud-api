@@ -90,7 +90,7 @@ func (r *ManagerSharedResource) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range managersharedresourceForceNewList {
+	for key, _ := range managersharedresourceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

@@ -18,6 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+type AccountExpansion interface{}
+
 type ConnectionExpansion interface{}
 
 type ElasticInstanceExpansion interface{}

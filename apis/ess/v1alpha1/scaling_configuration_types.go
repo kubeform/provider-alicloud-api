@@ -67,6 +67,13 @@ type ScalingConfigurationSpecDataDisk struct {
 	SnapshotID *string `json:"snapshotID,omitempty" tf:"snapshot_id"`
 }
 
+type ScalingConfigurationSpecSpotPriceLimit struct {
+	// +optional
+	InstanceType *string `json:"instanceType,omitempty" tf:"instance_type"`
+	// +optional
+	PriceLimit *float64 `json:"priceLimit,omitempty" tf:"price_limit"`
+}
+
 type ScalingConfigurationSpec struct {
 	State *ScalingConfigurationSpecResource `json:"state,omitempty" tf:"-"`
 
@@ -94,6 +101,8 @@ type ScalingConfigurationSpecResource struct {
 	Enable *bool `json:"enable,omitempty" tf:"enable"`
 	// +optional
 	ForceDelete *bool `json:"forceDelete,omitempty" tf:"force_delete"`
+	// +optional
+	HostName *string `json:"hostName,omitempty" tf:"host_name"`
 	// +optional
 	ImageID *string `json:"imageID,omitempty" tf:"image_id"`
 	// +optional
@@ -143,6 +152,10 @@ type ScalingConfigurationSpecResource struct {
 	// +optional
 	// +kubebuilder:validation:MaxItems=16
 	SecurityGroupIDS []string `json:"securityGroupIDS,omitempty" tf:"security_group_ids"`
+	// +optional
+	SpotPriceLimit []ScalingConfigurationSpecSpotPriceLimit `json:"spotPriceLimit,omitempty" tf:"spot_price_limit"`
+	// +optional
+	SpotStrategy *string `json:"spotStrategy,omitempty" tf:"spot_strategy"`
 	// +optional
 	Substitute *string `json:"substitute,omitempty" tf:"substitute"`
 	// +optional

@@ -89,7 +89,7 @@ func (r *ScalingRule) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range scalingruleForceNewList {
+	for key, _ := range scalingruleForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

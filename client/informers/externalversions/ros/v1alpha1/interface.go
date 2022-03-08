@@ -30,8 +30,12 @@ type Interface interface {
 	Stacks() StackInformer
 	// StackGroups returns a StackGroupInformer.
 	StackGroups() StackGroupInformer
+	// StackInstances returns a StackInstanceInformer.
+	StackInstances() StackInstanceInformer
 	// Templates returns a TemplateInformer.
 	Templates() TemplateInformer
+	// TemplateScratches returns a TemplateScratchInformer.
+	TemplateScratches() TemplateScratchInformer
 }
 
 type version struct {
@@ -60,7 +64,17 @@ func (v *version) StackGroups() StackGroupInformer {
 	return &stackGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
+// StackInstances returns a StackInstanceInformer.
+func (v *version) StackInstances() StackInstanceInformer {
+	return &stackInstanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
 // Templates returns a TemplateInformer.
 func (v *version) Templates() TemplateInformer {
 	return &templateInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TemplateScratches returns a TemplateScratchInformer.
+func (v *version) TemplateScratches() TemplateScratchInformer {
+	return &templateScratchInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

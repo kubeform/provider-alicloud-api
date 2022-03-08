@@ -19,3 +19,9 @@ limitations under the License.
 package v1alpha1
 
 type InstanceExpansion interface{}
+
+type InstanceAttachmentExpansion interface{}
+
+type ServiceLinkedRoleExpansion interface{}
+
+type SnapshotExpansion interface{}

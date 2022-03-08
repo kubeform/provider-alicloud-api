@@ -26,6 +26,14 @@ type HouseAccountListerExpansion interface{}
 // HouseAccountNamespaceLister.
 type HouseAccountNamespaceListerExpansion interface{}
 
+// HouseBackupPolicyListerExpansion allows custom methods to be added to
+// HouseBackupPolicyLister.
+type HouseBackupPolicyListerExpansion interface{}
+
+// HouseBackupPolicyNamespaceListerExpansion allows custom methods to be added to
+// HouseBackupPolicyNamespaceLister.
+type HouseBackupPolicyNamespaceListerExpansion interface{}
+
 // HouseDbClusterListerExpansion allows custom methods to be added to
 // HouseDbClusterLister.
 type HouseDbClusterListerExpansion interface{}

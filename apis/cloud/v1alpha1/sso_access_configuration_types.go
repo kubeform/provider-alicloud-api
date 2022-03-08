@@ -44,10 +44,8 @@ type SsoAccessConfiguration struct {
 type SsoAccessConfigurationSpecPermissionPolicies struct {
 	// +optional
 	PermissionPolicyDocument *string `json:"-" sensitive:"true" tf:"permission_policy_document"`
-	// +optional
-	PermissionPolicyName *string `json:"permissionPolicyName,omitempty" tf:"permission_policy_name"`
-	// +optional
-	PermissionPolicyType *string `json:"permissionPolicyType,omitempty" tf:"permission_policy_type"`
+	PermissionPolicyName     *string `json:"permissionPolicyName" tf:"permission_policy_name"`
+	PermissionPolicyType     *string `json:"permissionPolicyType" tf:"permission_policy_type"`
 }
 
 type SsoAccessConfigurationSpec struct {
@@ -67,6 +65,8 @@ type SsoAccessConfigurationSpec struct {
 }
 
 type SsoAccessConfigurationSpecResource struct {
+	Timeouts *base.ResourceTimeout `json:"timeouts,omitempty" tf:"timeouts"`
+
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	// +optional

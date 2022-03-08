@@ -28,6 +28,7 @@ import (
 type SaeV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	ApplicationsGetter
+	ApplicationScalingRulesGetter
 	ConfigMapsGetter
 	IngressesGetter
 	NamespacesGetter
@@ -40,6 +41,10 @@ type SaeV1alpha1Client struct {
 
 func (c *SaeV1alpha1Client) Applications(namespace string) ApplicationInterface {
 	return newApplications(c, namespace)
+}
+
+func (c *SaeV1alpha1Client) ApplicationScalingRules(namespace string) ApplicationScalingRuleInterface {
+	return newApplicationScalingRules(c, namespace)
 }
 
 func (c *SaeV1alpha1Client) ConfigMaps(namespace string) ConfigMapInterface {

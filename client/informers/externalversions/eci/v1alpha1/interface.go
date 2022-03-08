@@ -30,6 +30,8 @@ type Interface interface {
 	ImageCaches() ImageCacheInformer
 	// OpenapiImageCaches returns a OpenapiImageCacheInformer.
 	OpenapiImageCaches() OpenapiImageCacheInformer
+	// VirtualNodes returns a VirtualNodeInformer.
+	VirtualNodes() VirtualNodeInformer
 }
 
 type version struct {
@@ -56,4 +58,9 @@ func (v *version) ImageCaches() ImageCacheInformer {
 // OpenapiImageCaches returns a OpenapiImageCacheInformer.
 func (v *version) OpenapiImageCaches() OpenapiImageCacheInformer {
 	return &openapiImageCacheInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// VirtualNodes returns a VirtualNodeInformer.
+func (v *version) VirtualNodes() VirtualNodeInformer {
+	return &virtualNodeInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

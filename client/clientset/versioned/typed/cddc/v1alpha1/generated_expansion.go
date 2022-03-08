@@ -18,4 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+type DedicatedHostExpansion interface{}
+
+type DedicatedHostAccountExpansion interface{}
+
 type DedicatedHostGroupExpansion interface{}

@@ -114,6 +114,7 @@ spec:
                     type: string
                 required:
                 - description
+                - period
                 - planCode
                 - vswitchID
                 type: object
@@ -176,6 +177,7 @@ spec:
                     type: string
                 required:
                 - description
+                - period
                 - planCode
                 - vswitchID
                 type: object

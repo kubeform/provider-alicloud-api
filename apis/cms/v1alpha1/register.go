@@ -62,6 +62,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&AlarmContactList{},
 		&AlarmContactGroup{},
 		&AlarmContactGroupList{},
+		&DynamicTagGroup{},
+		&DynamicTagGroupList{},
 		&GroupMetricRule{},
 		&GroupMetricRuleList{},
 		&MetricRuleTemplate{},

@@ -28,6 +28,7 @@ import (
 type ClickV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	HouseAccountsGetter
+	HouseBackupPoliciesGetter
 	HouseDbClustersGetter
 }
 
@@ -38,6 +39,10 @@ type ClickV1alpha1Client struct {
 
 func (c *ClickV1alpha1Client) HouseAccounts(namespace string) HouseAccountInterface {
 	return newHouseAccounts(c, namespace)
+}
+
+func (c *ClickV1alpha1Client) HouseBackupPolicies(namespace string) HouseBackupPolicyInterface {
+	return newHouseBackupPolicies(c, namespace)
 }
 
 func (c *ClickV1alpha1Client) HouseDbClusters(namespace string) HouseDbClusterInterface {

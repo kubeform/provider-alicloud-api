@@ -61,7 +61,9 @@ type BastionhostInstanceSpecResource struct {
 	ID string `json:"id,omitempty" tf:"id,omitempty"`
 
 	Description *string `json:"description" tf:"description"`
-	LicenseCode *string `json:"licenseCode" tf:"license_code"`
+	// +optional
+	EnablePublicAccess *bool   `json:"enablePublicAccess,omitempty" tf:"enable_public_access"`
+	LicenseCode        *string `json:"licenseCode" tf:"license_code"`
 	// +optional
 	Period *int64 `json:"period,omitempty" tf:"period"`
 	// +optional

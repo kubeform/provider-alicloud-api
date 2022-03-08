@@ -43,6 +43,7 @@ var _ webhook.Validator = &SaslUser{}
 
 var sasluserForceNewList = map[string]bool{
 	"/instance_id": true,
+	"/type":        true,
 	"/username":    true,
 }
 
@@ -89,7 +90,7 @@ func (r *SaslUser) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range sasluserForceNewList {
+	for key, _ := range sasluserForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

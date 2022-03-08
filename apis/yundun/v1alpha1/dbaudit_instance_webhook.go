@@ -88,7 +88,7 @@ func (r *DbauditInstance) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range dbauditinstanceForceNewList {
+	for key, _ := range dbauditinstanceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

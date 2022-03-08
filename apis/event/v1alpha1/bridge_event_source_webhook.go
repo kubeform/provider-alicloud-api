@@ -89,7 +89,7 @@ func (r *BridgeEventSource) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range bridgeeventsourceForceNewList {
+	for key, _ := range bridgeeventsourceForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

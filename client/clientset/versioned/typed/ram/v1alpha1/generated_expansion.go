@@ -44,6 +44,8 @@ type RolePolicyAttachmentExpansion interface{}
 
 type SamlProviderExpansion interface{}
 
+type SecurityPreferenceExpansion interface{}
+
 type UserExpansion interface{}
 
 type UserPolicyAttachmentExpansion interface{}

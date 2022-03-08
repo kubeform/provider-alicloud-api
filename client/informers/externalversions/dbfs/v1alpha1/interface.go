@@ -26,6 +26,12 @@ import (
 type Interface interface {
 	// Instances returns a InstanceInformer.
 	Instances() InstanceInformer
+	// InstanceAttachments returns a InstanceAttachmentInformer.
+	InstanceAttachments() InstanceAttachmentInformer
+	// ServiceLinkedRoles returns a ServiceLinkedRoleInformer.
+	ServiceLinkedRoles() ServiceLinkedRoleInformer
+	// Snapshots returns a SnapshotInformer.
+	Snapshots() SnapshotInformer
 }
 
 type version struct {
@@ -42,4 +48,19 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Instances returns a InstanceInformer.
 func (v *version) Instances() InstanceInformer {
 	return &instanceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// InstanceAttachments returns a InstanceAttachmentInformer.
+func (v *version) InstanceAttachments() InstanceAttachmentInformer {
+	return &instanceAttachmentInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// ServiceLinkedRoles returns a ServiceLinkedRoleInformer.
+func (v *version) ServiceLinkedRoles() ServiceLinkedRoleInformer {
+	return &serviceLinkedRoleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Snapshots returns a SnapshotInformer.
+func (v *version) Snapshots() SnapshotInformer {
+	return &snapshotInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

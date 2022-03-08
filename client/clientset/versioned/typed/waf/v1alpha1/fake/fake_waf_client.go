@@ -41,6 +41,10 @@ func (c *FakeWafV1alpha1) Instances(namespace string) v1alpha1.InstanceInterface
 	return &FakeInstances{c, namespace}
 }
 
+func (c *FakeWafV1alpha1) ProtectionModules(namespace string) v1alpha1.ProtectionModuleInterface {
+	return &FakeProtectionModules{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeWafV1alpha1) RESTClient() rest.Interface {

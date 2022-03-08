@@ -26,6 +26,10 @@ type NasBackupPlanExpansion interface{}
 
 type OssBackupPlanExpansion interface{}
 
+type ReplicationVaultExpansion interface{}
+
 type RestoreJobExpansion interface{}
+
+type ServerBackupPlanExpansion interface{}
 
 type VaultExpansion interface{}

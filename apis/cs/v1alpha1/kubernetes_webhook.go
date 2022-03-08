@@ -98,7 +98,7 @@ func (r *Kubernetes) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range kubernetesForceNewList {
+	for key, _ := range kubernetesForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

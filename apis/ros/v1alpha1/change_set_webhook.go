@@ -104,7 +104,7 @@ func (r *ChangeSet) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range changesetForceNewList {
+	for key, _ := range changesetForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

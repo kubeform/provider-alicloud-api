@@ -23,3 +23,5 @@ type ContainerGroupExpansion interface{}
 type ImageCacheExpansion interface{}
 
 type OpenapiImageCacheExpansion interface{}
+
+type VirtualNodeExpansion interface{}

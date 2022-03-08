@@ -86,7 +86,7 @@ func (r *FaceConfig) ValidateUpdate(old runtime.Object) error {
 		return err
 	}
 
-	for key := range faceconfigForceNewList {
+	for key, _ := range faceconfigForceNewList {
 		keySplit := strings.Split(key, "/*")
 		length := len(keySplit)
 		checkIfAnyDif := false

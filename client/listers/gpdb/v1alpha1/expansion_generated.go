@@ -18,6 +18,14 @@ limitations under the License.
 
 package v1alpha1
 
+// AccountListerExpansion allows custom methods to be added to
+// AccountLister.
+type AccountListerExpansion interface{}
+
+// AccountNamespaceListerExpansion allows custom methods to be added to
+// AccountNamespaceLister.
+type AccountNamespaceListerExpansion interface{}
+
 // ConnectionListerExpansion allows custom methods to be added to
 // ConnectionLister.
 type ConnectionListerExpansion interface{}

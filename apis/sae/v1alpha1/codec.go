@@ -27,13 +27,17 @@ import (
 
 func GetEncoder() map[string]jsoniter.ValEncoder {
 	return map[string]jsoniter.ValEncoder{
-		jsoniter.MustGetKind(reflect2.TypeOf(IngressSpecDefaultRule{}).Type1()): IngressSpecDefaultRuleCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}).Type1()): ApplicationScalingRuleSpecScalingRuleMetricScaleDownRulesCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}).Type1()):   ApplicationScalingRuleSpecScalingRuleMetricScaleUpRulesCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(IngressSpecDefaultRule{}).Type1()):                                    IngressSpecDefaultRuleCodec{},
 	}
 }
 
 func GetDecoder() map[string]jsoniter.ValDecoder {
 	return map[string]jsoniter.ValDecoder{
-		jsoniter.MustGetKind(reflect2.TypeOf(IngressSpecDefaultRule{}).Type1()): IngressSpecDefaultRuleCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}).Type1()): ApplicationScalingRuleSpecScalingRuleMetricScaleDownRulesCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}).Type1()):   ApplicationScalingRuleSpecScalingRuleMetricScaleUpRulesCodec{},
+		jsoniter.MustGetKind(reflect2.TypeOf(IngressSpecDefaultRule{}).Type1()):                                    IngressSpecDefaultRuleCodec{},
 	}
 }
 
@@ -47,6 +51,164 @@ func getDecodersWithout(typ string) map[string]jsoniter.ValDecoder {
 	origMap := GetDecoder()
 	delete(origMap, typ)
 	return origMap
+}
+
+// +k8s:deepcopy-gen=false
+type ApplicationScalingRuleSpecScalingRuleMetricScaleDownRulesCodec struct {
+}
+
+func (ApplicationScalingRuleSpecScalingRuleMetricScaleDownRulesCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) == nil
+}
+
+func (ApplicationScalingRuleSpecScalingRuleMetricScaleDownRulesCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr)
+	var objs []ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules
+	if obj != nil {
+		objs = []ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (ApplicationScalingRuleSpecScalingRuleMetricScaleDownRulesCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) = objs[0]
+			} else {
+				*(*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}
+			}
+		} else {
+			*(*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) = obj
+		} else {
+			*(*ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules{}
+		}
+	default:
+		iter.ReportError("decode ApplicationScalingRuleSpecScalingRuleMetricScaleDownRules", "unexpected JSON type")
+	}
+}
+
+// +k8s:deepcopy-gen=false
+type ApplicationScalingRuleSpecScalingRuleMetricScaleUpRulesCodec struct {
+}
+
+func (ApplicationScalingRuleSpecScalingRuleMetricScaleUpRulesCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return (*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) == nil
+}
+
+func (ApplicationScalingRuleSpecScalingRuleMetricScaleUpRulesCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	obj := (*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr)
+	var objs []ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules
+	if obj != nil {
+		objs = []ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{*obj}
+	}
+
+	jsonit := jsoniter.Config{
+		EscapeHTML:             true,
+		SortMapKeys:            true,
+		ValidateJsonRawMessage: true,
+		TagKey:                 "tf",
+		TypeEncoders:           getEncodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}).Type1())),
+	}.Froze()
+
+	byt, _ := jsonit.Marshal(objs)
+
+	stream.Write(byt)
+}
+
+func (ApplicationScalingRuleSpecScalingRuleMetricScaleUpRulesCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	switch iter.WhatIsNext() {
+	case jsoniter.NilValue:
+		iter.Skip()
+		*(*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}
+		return
+	case jsoniter.ArrayValue:
+		objsByte := iter.SkipAndReturnBytes()
+		if len(objsByte) > 0 {
+			var objs []ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objsByte, &objs)
+
+			if len(objs) > 0 {
+				*(*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) = objs[0]
+			} else {
+				*(*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}
+			}
+		} else {
+			*(*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}
+		}
+	case jsoniter.ObjectValue:
+		objByte := iter.SkipAndReturnBytes()
+		if len(objByte) > 0 {
+			var obj ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules
+
+			jsonit := jsoniter.Config{
+				EscapeHTML:             true,
+				SortMapKeys:            true,
+				ValidateJsonRawMessage: true,
+				TagKey:                 "tf",
+				TypeDecoders:           getDecodersWithout(jsoniter.MustGetKind(reflect2.TypeOf(ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}).Type1())),
+			}.Froze()
+			jsonit.Unmarshal(objByte, &obj)
+
+			*(*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) = obj
+		} else {
+			*(*ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules)(ptr) = ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules{}
+		}
+	default:
+		iter.ReportError("decode ApplicationScalingRuleSpecScalingRuleMetricScaleUpRules", "unexpected JSON type")
+	}
 }
 
 // +k8s:deepcopy-gen=false
